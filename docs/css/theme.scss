@@ -1,0 +1,216 @@
+@import "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900";
+@import "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,600;0,800;0,900&display=swap&text=0123456789";
+
+/*-- scss:defaults --*/
+
+$primary-color: #2e7d32;
+$primary-color-dark: #1b5e20;
+$secondary-color: #66bb6a;
+$secondary-color-trans: rgba(102, 187, 106, 0.2);
+$tertiary-color: #81c784;
+
+$body-bg: #ffffff;
+$body-color: #1b1b1b;
+
+$footer-bg: $primary-color;
+$footer-fg: white;
+
+$navbar-bg: $body-bg;
+$navbar-fg: $primary-color;
+$navbar-hl: $secondary-color;
+$navbar-font-family: "Raleway";
+
+$headings-font-family: "Raleway";
+$headings-color: $primary-color-dark;
+$font-family-base: "Raleway";
+
+$link-color: $primary-color;
+$link-hover-color: $secondary-color;
+
+$code-block-bg: #f4f4f4;
+$code-color: $body-color;
+$code-border-radius: 5px;
+
+$tabset-border-color: $secondary-color-trans;
+$border-color: $secondary-color-trans;
+
+$pagination-active-bg: $primary-color;
+$pagination-active-color: white;
+$pagination-active-border-color: $primary-color;
+
+/*-- scss:rules --*/
+
+body {
+  font-family: "Roboto", $font-family-base, sans-serif;
+}
+
+div.quarto-post .metadata {
+  font-family: "Roboto", $font-family-base, sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  font-family: "Roboto", $font-family-base, sans-serif;
+  font-weight: 800;
+}
+
+a {
+  color: $link-color;
+  text-decoration: underline;
+}
+a:hover {
+  color: $link-hover-color;
+}
+
+/* Header buttons */
+div.quarto-about-trestles .about-entity .about-link {
+  background-color: $primary-color;
+  color: white;
+  font-weight: 600;
+  border: 1.5px solid $primary-color;
+  text-decoration: none;
+}
+
+div.quarto-about-trestles .about-entity .about-link:hover {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+}
+
+/* Navbar */
+.nav-link {
+  font-weight: 700;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: $secondary-color;
+}
+
+.nav-link.active {
+  color: $secondary-color !important;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Icon Buttons */
+.icon-link,
+.icon-link-summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  margin: 1px;
+  color: white;
+  background-color: $primary-color;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.icon-link:hover,
+.icon-link-summary:hover {
+  background-color: $secondary-color;
+  box-shadow: 0px 10px 15px $secondary-color-trans;
+  transform: translateY(-2px);
+}
+
+/* Code blocks */
+pre {
+  background-color: $primary-color-dark;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: $code-border-radius;
+  overflow-x: auto;
+}
+
+/* Tabs */
+.panel-tabset [role="tablist"] {
+  border-bottom: 5px solid $tabset-border-color;
+}
+
+.panel-tabset [role="tab"] {
+  background-color: #ffffff;
+  color: $navbar-bg;
+  border: 1px solid $tabset-border-color;
+  border-radius: 10px;
+  padding: 0.75em 1em;
+  margin: 2px;
+  font-size: 0.85em;
+}
+
+.panel-tabset [role="tab"][aria-selected="true"] {
+  background-color: $navbar-bg;
+  color: $body-bg;
+}
+
+/* Details/Summary toggles */
+details > summary {
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  background-color: $code-block-bg;
+  color: $navbar-fg;
+}
+
+/* Tables */
+thead, tbody, tfoot, tr, td, th {
+  border-style: none;
+  padding-bottom: 2px !important;
+}
+
+/* Callouts */
+div.callout-note.callout {
+  border-left-color: $navbar-fg;
+}
+
+div.callout-note.callout-style-default > .callout-header {
+  background-color: $code-block-bg;
+  color: $navbar-fg;
+}
+
+/* Sidebar TOC */
+.sidebar nav[role=doc-toc] ul > li > ul > li {
+  font-size: 0.85em;
+}
+
+/* Blockquotes & Asides */
+aside, .column-margin {
+  color: $tertiary-color;
+  font-size: .825rem;
+}
+
+blockquote {
+  border-left: 0.25rem solid $tertiary-color;
+  font-style: italic;
+  padding-left: 2em;
+  color: $tertiary-color;
+}
+
+/* Images */
+.float-left img {
+  float: left;
+  padding: 5px 10px 5px 0;
+}
+
+.float-right img {
+  float: right;
+  padding: 5px 0 5px 10px;
+}
+
+/* Slide Embeds */
+.golden-ratio-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 61.8%;
+  height: 0;
+}
+.golden-ratio-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid $primary-color;
+}
