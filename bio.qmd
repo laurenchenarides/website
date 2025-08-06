@@ -13,7 +13,7 @@ execute:
 source("_common.R")
 ```
 -->
-Welcome! I am a researcher, economist, data geek, baker, dog mom, and Assistant Professor at Colorado State University. I study food retail markets and how market structure impacts consumer food decisions. Through projects like [DemocratizingData.ai](https://democratizingdata.ai/), I work to make information more transparent, equitable, and build to serve the public good. See my <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a> for more details.
+Welcome! I am a researcher, economist, data geek, baker, dog mom, and Assistant Professor at Colorado State University. I study food retail markets and how market structure impacts consumer food decisions. Through projects like [DemocratizingData.ai](https://democratizingdata.ai/), I work to make information more transparent, equitable, and built to serve the public good. See my <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a> for more details.
 
 # Short Bio
 
