@@ -27,8 +27,8 @@ website:
     right:
       - text: "About"
         href: bio.qmd
-      - text: "The Consortium"
-        href: center.qmd
+      # - text: "The Consortium"
+      #   href: center.qmd
       # - text: "Lab"
       #   href: lab.qmd
       # - text: "Research"
