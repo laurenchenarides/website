@@ -8,7 +8,7 @@ about:
   template: trestles
   links:
     - text: '<i class="ai ai-cv fa-lg"></i>'
-      href: www.laurenchenarides.com/cv
+      href: https://laurenchenarides.com/cv.html
     - icon: github
       href: https://github.com/laurenchenarides
     - icon: linkedin
