@@ -1,0 +1,24 @@
+---
+title: "Rooted: Stories of Entrepreneurship in Agribusiness"
+toc: false
+toc-location: left
+preview: images/photo.jpg
+lightbox: true
+execute: 
+  echo: false
+  warning: false
+---
+
+Welcome to *Rooted: Stories of Entrepreneurship in Agribusiness*, a podcast from Colorado State University’s Department of Agricultural and Resource Economics. 
+
+In this podcast series, we explore stories of how people across the food and agriculture industry identify problems, create solutions, and build or improve businesses that make an impact.
+
+What makes *Rooted* unique is that each episode is co-hosted by students in the Agribusiness Entrepreneurship course, who bring their own curiosity and questions to the table. 
+
+Their conversations with leaders across food and agriculture are a chance to learn, reflect, and share those insights with you, our audience of students, entrepreneurs, and changemakers in food and agriculture. 
+
+I appreciate your time and attention, and I’m excited to share these inspiring stories with you!
+
+---
+
+**Playlist coming soon!**

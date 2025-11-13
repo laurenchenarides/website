@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.laurenchenarides.com/podcast.html</loc>
+    <lastmod>2025-11-13T20:09:43.848Z</lastmod>
+  </url>
+  <url>
     <loc>https://www.laurenchenarides.com/index.html</loc>
     <lastmod>2025-08-06T18:08:44.642Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.laurenchenarides.com/center.html</loc>
+    <lastmod>2025-11-06T22:23:22.501Z</lastmod>
   </url>
   <url>
     <loc>https://www.laurenchenarides.com/bio.html</loc>
     <lastmod>2025-08-06T18:08:16.252Z</lastmod>
   </url>
   <url>
-    <loc>https://www.laurenchenarides.com/center.html</loc>
-    <lastmod>2025-11-06T22:23:22.501Z</lastmod>
+    <loc>https://www.laurenchenarides.com/cv.html</loc>
+    <lastmod>2025-11-13T20:13:33.824Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.laurenchenarides.com/orchard.html</loc>
+    <lastmod>2025-11-13T20:11:11.813Z</lastmod>
   </url>
 </urlset>

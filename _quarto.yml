@@ -27,6 +27,12 @@ website:
     right:
       - text: "About"
         href: bio.qmd
+      - text: "Podcast"
+        href: podcast.qmd
+      - text: "Data Linkages"
+        href: orchard.qmd
+      - text: "CV"
+        href: cv.qmd
       # - text: "The Consortium"
       #   href: center.qmd
       # - text: "Lab"
