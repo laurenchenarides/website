@@ -9,5 +9,16 @@ execute:
   warning: false
 ---
 
+# Instructor of Record
 
 **More information coming soon!**
+
+# Additional Lab Notes
+
+The following lab notes are designed for short, hands-on workshops and class activities.
+
+## Building an Academic Website with GitHub and Quarto
+
+In this lab, students create a personal academic website using GitHub, RStudio, and Quarto. The notes assume no prior experience with GitHub or Git.
+
+[Open lab notes](build_git_website.qmd){.btn .btn-primary}

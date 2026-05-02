@@ -131,5 +131,110 @@
     "title": "Research",
     "section": "",
     "text": "More information coming soon!"
+  },
+  {
+    "objectID": "build_git_website.html",
+    "href": "build_git_website.html",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "",
+    "text": "By the end of this lab, you will have a starter academic website that lives in your own GitHub repository and can be published online with GitHub Pages.\nWe will use Professor Chenarides’ website repository as the starting point:\nhttps://github.com/laurenchenarides/website\nYou will make your own copy, edit the pages in RStudio, render the website with Quarto, and push your changes to GitHub.\n\n\n\n\n\n\nNoteWhat you are learning\n\n\n\n\n\nThis lab is not just about making a website. You are learning a basic research workflow:\n\nKeep project files organized in a folder.\nTrack changes with Git.\nStore and share your project on GitHub.\nUse Quarto to turn plain text files into a polished website.\nPublish the site using GitHub Pages."
+  },
+  {
+    "objectID": "build_git_website.html#goal-for-today",
+    "href": "build_git_website.html#goal-for-today",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "",
+    "text": "By the end of this lab, you will have a starter academic website that lives in your own GitHub repository and can be published online with GitHub Pages.\nWe will use Professor Chenarides’ website repository as the starting point:\nhttps://github.com/laurenchenarides/website\nYou will make your own copy, edit the pages in RStudio, render the website with Quarto, and push your changes to GitHub.\n\n\n\n\n\n\nNoteWhat you are learning\n\n\n\n\n\nThis lab is not just about making a website. You are learning a basic research workflow:\n\nKeep project files organized in a folder.\nTrack changes with Git.\nStore and share your project on GitHub.\nUse Quarto to turn plain text files into a polished website.\nPublish the site using GitHub Pages."
+  },
+  {
+    "objectID": "build_git_website.html#the-tools",
+    "href": "build_git_website.html#the-tools",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "The tools",
+    "text": "The tools\nBefore we start, it helps to separate the tools.\n\n\n\n\n\n\n\n\nTool\nWhat it does\nHow we use it today\n\n\n\n\nRStudio\nThe program where we edit files and run commands\nWe will open the website project in RStudio\n\n\nQuarto\nTurns .qmd files into web pages\nWe will render the website\n\n\nGit\nTracks changes to files over time\nWe will commit changes\n\n\nGitHub\nStores your Git project online\nWe will push the site to GitHub\n\n\nGitHub Pages\nPublishes a GitHub repository as a website\nWe will make the site public online\n\n\n\nA simple way to remember this:\n\nRStudio is where you work.\nGit tracks your work.\nGitHub stores your work online.\nQuarto turns your writing into a website.\nGitHub Pages publishes the website."
+  },
+  {
+    "objectID": "build_git_website.html#the-website-structure",
+    "href": "build_git_website.html#the-website-structure",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "The website structure",
+    "text": "The website structure\nThe starter repository is a Quarto website. The main files include:\n\n\n\n\n\n\n\nFile or folder\nWhat it does\n\n\n\n\n_quarto.yml\nControls the website title, navigation menu, theme, and publishing settings\n\n\nindex.qmd\nThe homepage\n\n\nbio.qmd\nThe About page\n\n\ncv.qmd\nThe CV page\n\n\nimages/\nStores photos and other images\n\n\ndocs/\nStores the rendered website files that GitHub Pages publishes\n\n\nwebsite.Rproj\nOpens the project in RStudio\n\n\n\nThe most important file for the website structure is _quarto.yml.\nIn this repository, the website is configured to render into the docs/ folder:\nproject:\n  type: website\n  output-dir: docs\nThat matters because GitHub Pages can be told to publish the site from the docs/ folder on the main branch."
+  },
+  {
+    "objectID": "build_git_website.html#instructor-setup",
+    "href": "build_git_website.html#instructor-setup",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Instructor setup",
+    "text": "Instructor setup\nBefore students begin, the instructor should decide whether students will use a template repository or a fork.\nRecommended option: use a template repository\nA template repository is usually the cleanest option for teaching. Students get their own copy of the files without preserving the full commit history of the original website.\nTo make the repository a template:\n\nGo to the repository on GitHub.\nClick Settings.\nScroll to Template repository.\nCheck the box.\n\nThen students can click Use this template and create their own copy.\nBackup option: fork the repository\nIf the repository is not set as a template, students can click Fork.\nA fork also creates a copy, but it keeps a visible connection to the original repository. That is fine for this workshop, but a template is a little easier to explain.\n\n\n\n\n\n\nTipTeaching recommendation\n\n\n\nFor this lab, I recommend using Use this template if possible.\nSay this to students:\n\nWe are using my website as a starter template. You are not editing my website. You are creating your own copy and then customizing it."
+  },
+  {
+    "objectID": "build_git_website.html#student-setup",
+    "href": "build_git_website.html#student-setup",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Student setup",
+    "text": "Student setup\n\nCreate a GitHub account\nGo to https://github.com.\nClick Sign up.\nChoose:\n\na username\nan email address\na password\n\nYour username matters because it becomes part of your website address.\nFor example, if your username is janedoe, your default GitHub Pages website can look like one of these:\nhttps://janedoe.github.io\nhttps://janedoe.github.io/repository-name\n\n\n\n\n\n\nWarningPick a professional username\n\n\n\n\n\nFor an academic website, choose a username you would be comfortable putting on your CV, job market materials, or research projects.\n\n\n\n\n\nInstall the software\nYou need four things on your computer:\n\nR\nRStudio\nQuarto\nGit\n\nDownload them here:\n\n\n\nSoftware\nLink\n\n\n\n\nR\nhttps://cran.r-project.org/\n\n\nRStudio Desktop\nhttps://posit.co/download/rstudio-desktop/\n\n\nQuarto\nhttps://quarto.org/docs/get-started/\n\n\nGit\nhttps://git-scm.com/downloads\n\n\n\n\n\n\n\n\n\nNoteHow do I know whether Git is installed?\n\n\n\n\n\nOpen RStudio.\nGo to:\nTools &gt; Global Options &gt; Git/SVN\nIf RStudio sees Git, you should see a path to a Git executable.\nOn Windows, it may look something like:\nC:/Program Files/Git/bin/git.exe"
+  },
+  {
+    "objectID": "build_git_website.html#create-your-website-repository",
+    "href": "build_git_website.html#create-your-website-repository",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Create your website repository",
+    "text": "Create your website repository\nGo to the starter repository:\nhttps://github.com/laurenchenarides/website\nOption A: If you see “Use this template”\nClick Use this template.\nChoose Create a new repository.\nUse one of these repository names:\n\n\n\nRepository name\nResulting website address\n\n\n\n\nusername.github.io\nhttps://username.github.io\n\n\nwebsite\nhttps://username.github.io/website\n\n\n\nFor a personal academic website, I recommend:\nusername.github.io\nReplace username with your actual GitHub username.\nFor example:\njanedoe.github.io\nChoose Public.\nClick Create repository.\nOption B: If you see “Fork”\nClick Fork.\nChange the repository name if needed.\nFor a personal academic website, use:\nusername.github.io\nChoose Public.\nClick Create fork.\n\n\n\n\n\n\nImportantPublic vs. private\n\n\n\nUse Public for this lab.\nGitHub Pages websites are intended to be visible online. Do not put private information, sensitive data, unpublished datasets, passwords, API keys, or confidential files in this repository."
+  },
+  {
+    "objectID": "build_git_website.html#open-the-project-in-rstudio",
+    "href": "build_git_website.html#open-the-project-in-rstudio",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Open the project in RStudio",
+    "text": "Open the project in RStudio\nYou need a way for RStudio to talk to GitHub.\nThe easiest beginner-friendly workflow is:\n\nUse GitHub to create the repository.\nUse RStudio to clone the repository.\nUse RStudio’s Git tab to commit and push changes.\n\nCopy your repository URL\nGo to your new GitHub repository.\nClick the green Code button.\nCopy the HTTPS URL.\nIt will look like this:\nhttps://github.com/username/username.github.io.git\nor:\nhttps://github.com/username/website.git\nClone the repository in RStudio\nOpen RStudio.\nGo to:\nFile &gt; New Project &gt; Version Control &gt; Git\nPaste your repository URL into Repository URL.\nChoose where the project should live on your computer.\nClick Create Project.\nRStudio will download the website files and open the project.\n\n\n\n\n\n\nTipWhat does “clone” mean?\n\n\n\n\n\nTo clone a repository means to download a copy from GitHub to your computer.\nAfter cloning, you have two connected versions:\n\nthe local version on your computer\nthe remote version on GitHub\n\nWhen you edit files locally, you commit and push them back to GitHub."
+  },
+  {
+    "objectID": "build_git_website.html#edit-and-preview-the-site",
+    "href": "build_git_website.html#edit-and-preview-the-site",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Edit and preview the site",
+    "text": "Edit and preview the site\n\nPreview the website\nIn RStudio, open the file:\nindex.qmd\nThis is the homepage.\nNow preview the website.\nIn RStudio, look for the Build tab.\nClick:\nRender Website\nIf that works, RStudio will render the Quarto website.\nYou can also run this command in the Terminal tab:\nquarto render\nThe rendered website files will appear in the docs/ folder.\n\n\n\n\n\n\nNoteSource files vs. rendered files\n\n\n\n\n\nYou edit the .qmd files.\nQuarto creates the .html files.\nFor example:\n\n\n\nYou edit\nQuarto creates\n\n\n\n\nindex.qmd\ndocs/index.html\n\n\nbio.qmd\ndocs/bio.html\n\n\ncv.qmd\ndocs/cv.html\n\n\n\n\n\n\n\n\nCustomize the homepage\nOpen:\nindex.qmd\nFind the title and homepage text.\nReplace the existing information with your own.\nFor example:\n---\ntitle: \"Your Name\"\nimage: \"images/photo.png\"\nexecute:\n  echo: false\n  warning: false\nabout:\n  template: trestles\n  links:\n    - icon: github\n      href: https://github.com/yourusername\n    - icon: linkedin\n      href: https://www.linkedin.com/in/yourname/\n---\n\n### Welcome!\n\nI am a PhD student in economics. My research interests include labor economics, public economics, industrial organization, and applied econometrics.\n\nThis website includes my research, teaching, CV, and contact information.\nEdit the text so that it sounds like you.\nYou do not need to sound overly polished. A simple first version is fine.\n\n\n\n\n\n\nTipSuggested homepage structure\n\n\n\n\n\nUse three short parts:\n\nWho you are\nWhat you study\nWhat people can find on your site\n\nExample:\n\nI am a PhD student in economics at [University]. I study [field/topic]. This site includes my research, teaching materials, CV, and contact information.\n\n\n\n\n\n\nAdd or replace your photo\nPut your photo in the images/ folder.\nA simple filename is best:\nphoto.png\nor:\nheadshot.jpg\nThen update the image line in index.qmd:\nimage: \"images/headshot.jpg\"\nRender the website again.\nquarto render\nCheck that the image appears.\n\n\n\n\n\n\nWarningImage filenames are picky\n\n\n\n\n\nThese are different filenames:\nHeadshot.jpg\nheadshot.jpg\nheadshot.JPG\nUse simple lowercase filenames with no spaces.\n\n\n\n\n\nCustomize the navigation menu\nOpen:\n_quarto.yml\nLook for the section that controls the navigation bar.\nIt will look something like this:\nwebsite:\n  title: \"your-site-title\"\n  navbar:\n    right:\n      - text: \"About\"\n        href: bio.qmd\n      - text: \"CV\"\n        href: cv.qmd\nYou can add, remove, or rename pages.\nFor a PhD student website, a good starter menu is:\nwebsite:\n  title: \"Your Name\"\n  navbar:\n    right:\n      - text: \"About\"\n        href: bio.qmd\n      - text: \"Research\"\n        href: research.qmd\n      - text: \"Teaching\"\n        href: teaching.qmd\n      - text: \"CV\"\n        href: cv.qmd\nIf you add a page to the menu, you also need to create the matching .qmd file.\nFor example, if you add:\n- text: \"Research\"\n  href: research.qmd\nthen create a file named:\nresearch.qmd\n\n\nCreate a research page\nIn RStudio, create a new file:\nFile &gt; New File &gt; Quarto Document\nSave it as:\nresearch.qmd\nYou can start with this:\n---\ntitle: \"Research\"\n---\n\n## Research interests\n\nI am interested in:\n\n- Topic 1\n- Topic 2\n- Topic 3\n\n## Working papers\n\n### Paper title\n\nBrief description of the paper.\n\n**Status:** In progress.\n\n## Publications\n\nAdd publications here as they become available.\nRender the website again:\nquarto render"
+  },
+  {
+    "objectID": "build_git_website.html#save-and-publish-changes",
+    "href": "build_git_website.html#save-and-publish-changes",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Save and publish changes",
+    "text": "Save and publish changes\n\nCommit and push\nNow we need to send your changes back to GitHub.\nIn RStudio, open the Git tab.\nYou should see a list of changed files.\nCheck the boxes next to the files you changed.\nClick Commit.\nWrite a short commit message.\nExamples:\nCustomize homepage\nAdd research page\nUpdate CV page\nClick Commit.\nThen click Push.\n\n\n\n\n\n\nNoteWhat is a commit?\n\n\n\n\n\nA commit is a saved checkpoint in your project history.\nA good commit message briefly says what changed.\n\n\n\n\n\n\n\n\n\nNoteWhat is a push?\n\n\n\n\n\nA push sends your committed changes from your computer to GitHub.\n\n\n\n\n\nPublish with GitHub Pages\nGo to your repository on GitHub.\nClick Settings.\nIn the left menu, click Pages.\nUnder Build and deployment, choose:\n\nSource: Deploy from a branch\nBranch: main\nFolder: /docs\n\nClick Save.\nGitHub will publish the website.\nThe first publication can take a few minutes.\nYour site will usually appear at one of these addresses:\nhttps://username.github.io\nor:\nhttps://username.github.io/repository-name\n\n\n\n\n\n\nImportantWhy do we choose /docs?\n\n\n\nThis Quarto website renders the finished HTML files into the docs/ folder.\nGitHub Pages needs to know where the finished website files are.\nFor this project, the answer is:\nmain branch / docs folder\n\n\n\n\nCheck your website\nAfter GitHub Pages finishes publishing, open your website in a browser.\nCheck:\n\nDoes the homepage load?\nDoes your photo show up?\nDo the navigation links work?\nDoes the CV page open?\nDoes the research page open?\nAre there any old links or names that still need to be replaced?\n\nIf something is wrong, go back to RStudio, edit the file, render again, commit, and push.\nThat is the basic cycle:\nEdit -&gt; Render -&gt; Commit -&gt; Push -&gt; Check website"
+  },
+  {
+    "objectID": "build_git_website.html#common-errors-and-fixes",
+    "href": "build_git_website.html#common-errors-and-fixes",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Common errors and fixes",
+    "text": "Common errors and fixes\nMy website still shows the old version\nTry these steps:\n\nWait a minute and refresh the page.\nMake sure you pushed your changes.\nMake sure you rendered the website before committing.\nMake sure GitHub Pages is publishing from main and /docs.\n\nMy image does not show up\nCheck:\n\nIs the image in the images/ folder?\nDoes the filename match exactly?\nDid you render the website after adding the image?\nDid you commit and push the image file?\n\nMy navigation link is broken\nCheck:\n\nDoes the .qmd file exist?\nIs the filename spelled the same way in _quarto.yml?\nDid you render the website after editing _quarto.yml?\n\nRStudio asks me to log in to GitHub\nThis is normal.\nFollow the login prompts.\nIf RStudio cannot authenticate, use GitHub’s instructions for connecting Git to GitHub, or ask for help during the lab.\nGitHub Pages says the site is not published\nCheck:\n\nIs the repository public?\nIs the source set to Deploy from a branch?\nIs the branch set to main?\nIs the folder set to /docs?\nDoes the docs/ folder contain an index.html file?"
+  },
+  {
+    "objectID": "build_git_website.html#workshop-plan",
+    "href": "build_git_website.html#workshop-plan",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Workshop plan",
+    "text": "Workshop plan\n\n\n\n\n\n\n\nTime\nActivity\n\n\n\n\n0–5 min\nExplain Git, GitHub, Quarto, RStudio, and GitHub Pages\n\n\n5–10 min\nStudents create or log into GitHub\n\n\n10–15 min\nStudents create their own copy of the repository\n\n\n15–20 min\nStudents clone the repository into RStudio\n\n\n20–25 min\nStudents edit index.qmd, render the site, and preview it\n\n\n25–30 min\nStudents commit, push, and configure GitHub Pages\n\n\n\n\n\n\n\n\n\nTipGood stopping point\n\n\n\nThe minimum successful outcome is:\n\nThe student has their own repository.\nThe repository opens in RStudio.\nThe student changes the homepage.\nThe student commits and pushes the change.\n\nPublishing with GitHub Pages can be completed at the end or immediately after class."
+  },
+  {
+    "objectID": "build_git_website.html#after-the-workshop",
+    "href": "build_git_website.html#after-the-workshop",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "After the workshop",
+    "text": "After the workshop\nAfter the first version is online, improve the website one page at a time.\nSuggested pages:\n\n\n\nPage\nWhat to include\n\n\n\n\nAbout\nShort bio, research interests, education\n\n\nResearch\nWorking papers, publications, projects\n\n\nTeaching\nCourses taught, teaching interests\n\n\nCV\nLink to a PDF CV\n\n\nContact\nEmail, office, GitHub, Google Scholar, LinkedIn\n\n\n\nBefore sharing your website, check:\n\nYour name is correct.\nYour homepage says who you are and what you study.\nYour photo loads.\nYour CV link works.\nYour GitHub and LinkedIn links work.\nThere is no placeholder text.\nThere are no private files in the repository.\nThe website works on your phone.\nThe site looks professional enough to share.\n\nOptional: Add your CV\nSave your CV as:\ncv.pdf\nPut it in the main project folder.\nThen link to it from cv.qmd:\n---\ntitle: \"CV\"\n---\n\nYou can download my CV [here](cv.pdf).\nRender, commit, and push.\nOptional: Use a custom domain later\nYou do not need a custom domain for this lab.\nThe free GitHub Pages address is enough to get started.\nLater, you can connect a custom domain such as:\nyourname.com\nor:\nyourname.org\nFor today, focus on publishing the site with the default GitHub Pages address."
+  },
+  {
+    "objectID": "build_git_website.html#final-workflow",
+    "href": "build_git_website.html#final-workflow",
+    "title": "Build Your Academic Website with Quarto and GitHub",
+    "section": "Final workflow",
+    "text": "Final workflow\nEvery time you update your website, use the same workflow:\n1. Edit the .qmd files in RStudio\n2. Render the website\n3. Look at the preview\n4. Commit the changed files\n5. Push to GitHub\n6. Check the live website\nThat is the foundation of a reproducible website workflow."
+  },
+  {
+    "objectID": "teaching.html#building-an-academic-website-with-github-and-quarto",
+    "href": "teaching.html#building-an-academic-website-with-github-and-quarto",
+    "title": "Teaching",
+    "section": "Building an Academic Website with GitHub and Quarto",
+    "text": "Building an Academic Website with GitHub and Quarto\nIn this lab, students create a personal academic website using GitHub, RStudio, and Quarto. The notes assume no prior experience with GitHub or Git.\nOpen lab notes"
   }
 ]
