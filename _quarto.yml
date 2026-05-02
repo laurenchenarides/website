@@ -27,20 +27,20 @@ website:
     right:
       - text: "About"
         href: bio.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "Teaching"
+        href: teaching.qmd
       - text: "Podcast"
         href: podcast.qmd
-      - text: "Data Linkages"
-        href: orchard.qmd
       - text: "CV"
         href: cv.qmd
+      # - text: "Data Linkages"
+      #   href: orchard.qmd
       # - text: "The Consortium"
       #   href: center.qmd
       # - text: "Lab"
       #   href: lab.qmd
-      # - text: "Research"
-      #   href: research.qmd
-      # - text: "Teaching"
-      #   href: teaching.qmd
       # - text: "Projects"
       #   href: projects.qmd
       # - text: "Workshops"
