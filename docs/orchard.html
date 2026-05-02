@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Data Linkages – laurenchenarides.com</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -36,10 +39,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b0ec91987bca90a9ff7e9f1237c60bf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f0541a12d71e19e82f0958cf3684a3cf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -121,12 +124,16 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./podcast.html"> 
-<span class="menu-text">Podcast</span></a>
+    <a class="nav-link" href="./research.html"> 
+<span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./orchard.html" aria-current="page"> 
-<span class="menu-text">Data Linkages</span></a>
+    <a class="nav-link" href="./teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./podcast.html"> 
+<span class="menu-text">Podcast</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./cv.html"> 
@@ -226,13 +233,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -588,7 +596,7 @@ ul.task-list li input[type="checkbox"] {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
- <a href="www.laurenchenarides.com/cv.html">CV</a> &nbsp;<a href="https://github.com/laurenchenarides" target="blank"><i class="bi bi-github"></i></a> &nbsp;<a href="https://www.linkedin.com/in/laurenchenarides/" target="blank"><i class="bi bi-linkedin"></i></a> &nbsp;<a href="https://scholar.google.com/citations?user=07RAgEQAAAAJ&amp;hl=en" target="blank"><i class="ai ai-google-scholar fa-lg"></i></a> &nbsp;<a href="https://orcid.org/my-orcid?orcid=0000-0001-8983-9694" target="blank"><i class="ai ai-orcid fa-lg"></i></a><br>Site made with <i class="bi bi-heart-fill"></i>, <a href="https://github.com/laurenchenarides/personal_website" target="_blank"><i class="bi bi-git"></i></a>, and <a href="https://quarto.org/" target="_blank"><img src="https://quarto.org/favicon.png" width="12"> quarto</a><br>© 2025 Lauren Chenarides
+ <a href="cv.html">CV</a> &nbsp;<a href="https://github.com/laurenchenarides" target="blank"><i class="bi bi-github"></i></a> &nbsp;<a href="https://www.linkedin.com/in/laurenchenarides/" target="blank"><i class="bi bi-linkedin"></i></a> &nbsp;<a href="https://scholar.google.com/citations?user=07RAgEQAAAAJ&amp;hl=en" target="blank"><i class="ai ai-google-scholar fa-lg"></i></a> &nbsp;<a href="https://orcid.org/my-orcid?orcid=0000-0001-8983-9694" target="blank"><i class="ai ai-orcid fa-lg"></i></a><br>Site made with <i class="bi bi-heart-fill"></i>, <a href="https://github.com/laurenchenarides/personal_website" target="_blank"><i class="bi bi-git"></i></a>, and <a href="https://quarto.org/" target="_blank"><img src="https://quarto.org/favicon.png" width="12"> quarto</a><br>© 2025 Lauren Chenarides
   </li>  
 </ul>
     </div>

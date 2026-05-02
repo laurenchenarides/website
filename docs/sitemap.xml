@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.laurenchenarides.com/teaching.html</loc>
+    <lastmod>2026-05-02T15:46:01.278Z</lastmod>
+  </url>
+  <url>
     <loc>https://www.laurenchenarides.com/podcast.html</loc>
     <lastmod>2025-11-13T20:09:43.848Z</lastmod>
   </url>
@@ -23,5 +27,9 @@
   <url>
     <loc>https://www.laurenchenarides.com/orchard.html</loc>
     <lastmod>2025-11-13T20:11:11.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.laurenchenarides.com/research.html</loc>
+    <lastmod>2026-05-02T15:43:47.832Z</lastmod>
   </url>
 </urlset>

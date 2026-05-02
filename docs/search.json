@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "More information coming soon!"
+  },
+  {
     "objectID": "podcast.html",
     "href": "podcast.html",
     "title": "Rooted: Stories of Entrepreneurship in Agribusiness",
@@ -115,6 +122,13 @@
     "objectID": "orchard.html",
     "href": "orchard.html",
     "title": "Data Linkages",
+    "section": "",
+    "text": "More information coming soon!"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
     "text": "More information coming soon!"
   }
