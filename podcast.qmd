@@ -21,4 +21,14 @@ I appreciate your time and attention, and I’m excited to share these inspiring
 
 ---
 
-**Playlist coming soon!**
+## Listen to the series
+
+<iframe width="100%" height="500"
+src="https://www.youtube.com/embed/videoseries?list=PL1r36DYIp1pcNj_YenH6J9BmX01v8O6MD"
+title="Rooted: Stories of Entrepreneurship in Agribusiness"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+[Open playlist on YouTube](https://www.youtube.com/playlist?list=PL1r36DYIp1pcNj_YenH6J9BmX01v8O6MD){.btn .btn-primary}
