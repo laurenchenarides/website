@@ -9,11 +9,11 @@ execute:
   warning: false
 ---
 
-Hello! I am an applied economist and Assistant Professor in the Department of Agricultural and Resource Economics at Colorado State University. My research examines food retail markets, consumer food decisions, and the role of data infrastructure in supporting evidence-based food policy. I use large-scale retail and household datasets to study how food retail markets and consumer food decisions interact and contribute to economic outcomes across communities.
+Hello! I am an applied economist and Assistant Professor in the Department of Agricultural and Resource Economics at Colorado State University. My research examines food retail markets, consumer food decisions, and the role of data infrastructure in supporting evidence-based food policy. I use large-scale retail and household datasets to study how food retail markets and consumer food decisions interact and contribute to economic outcomes across communities. This work is motivated by the need for transparent, accessible evidence to inform food and agricultural policy.
 
 In addition to my faculty appointment, I serve as an Associate Editor for the *American Journal of Agricultural Economics* and a board member of the [Council on Food, Agricultural, and Resource Economics](https://www.cfare.org/) (C-FARE). I am also involved in national efforts to improve access to high-quality data for food and agricultural economics research, including through [DemocratizingData.ai](https://democratizingdata.ai/).
 
-Outside of work, I enjoy baking and spending time with my fiancé and our dog Luca. I also care deeply about making research more transparent, useful, and connected to the public good.
+Outside of work, I enjoy baking and spending time with my fiancé and our dog Luca. 
 
 See my <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a> for more details.
 
