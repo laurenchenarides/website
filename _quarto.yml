@@ -31,10 +31,12 @@ website:
         href: research.qmd
       - text: "Teaching"
         href: teaching.qmd
-      - text: "Podcast"
-        href: podcast.qmd
+      - text: "Media"
+        href: media.qmd
       - text: "CV"
         href: cv.qmd
+      - text: "Podcast"
+        href: podcast.qmd
       # - text: "Data Linkages"
       #   href: orchard.qmd
       # - text: "The Consortium"

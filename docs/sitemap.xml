@@ -2,27 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.laurenchenarides.com/teaching.html</loc>
-    <lastmod>2026-05-02T22:52:35.553Z</lastmod>
+    <lastmod>2026-05-03T03:03:56.633Z</lastmod>
   </url>
   <url>
     <loc>https://www.laurenchenarides.com/podcast.html</loc>
     <lastmod>2025-11-13T20:09:43.848Z</lastmod>
   </url>
   <url>
-    <loc>https://www.laurenchenarides.com/index.html</loc>
-    <lastmod>2026-05-02T16:18:58.470Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.laurenchenarides.com/center.html</loc>
-    <lastmod>2025-11-06T22:23:22.501Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.laurenchenarides.com/bio.html</loc>
-    <lastmod>2025-08-06T18:08:16.252Z</lastmod>
+    <loc>https://www.laurenchenarides.com/media.html</loc>
+    <lastmod>2026-05-03T02:56:12.098Z</lastmod>
   </url>
   <url>
     <loc>https://www.laurenchenarides.com/cv.html</loc>
     <lastmod>2025-11-13T20:13:33.824Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.laurenchenarides.com/build_git_website.html</loc>
+    <lastmod>2026-05-03T03:11:45.628Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.laurenchenarides.com/bio.html</loc>
+    <lastmod>2026-05-03T02:35:50.356Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.laurenchenarides.com/center.html</loc>
+    <lastmod>2026-05-03T03:10:49.140Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.laurenchenarides.com/index.html</loc>
+    <lastmod>2026-05-03T02:42:39.777Z</lastmod>
   </url>
   <url>
     <loc>https://www.laurenchenarides.com/orchard.html</loc>
@@ -30,10 +38,6 @@
   </url>
   <url>
     <loc>https://www.laurenchenarides.com/research.html</loc>
-    <lastmod>2026-05-02T15:43:47.832Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.laurenchenarides.com/build_git_website.html</loc>
-    <lastmod>2026-05-02T22:52:32.907Z</lastmod>
+    <lastmod>2026-05-03T02:29:14.157Z</lastmod>
   </url>
 </urlset>

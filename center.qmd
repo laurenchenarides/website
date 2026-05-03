@@ -96,8 +96,8 @@ Through **funding**, **collaboration**, and **community engagement**, you help a
 <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1em;">
 
 ![](images/photo.png){fig-alt="Affiliate 1" height="200"}
-![](images/christie.jpg){fig-alt="Affiliate 2" height="200"}
-![](images/charlene.jpg){fig-alt="Affiliate 3" height="200"}
+![](images/center/christie.jpg){fig-alt="Affiliate 2" height="200"}
+![](images/center/charlene.jpg){fig-alt="Affiliate 3" height="200"}
 
 
 </div>

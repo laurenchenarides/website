@@ -168,12 +168,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./podcast.html"> 
-<span class="menu-text">Podcast</span></a>
+    <a class="nav-link" href="./media.html"> 
+<span class="menu-text">Media</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./cv.html"> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./podcast.html"> 
+<span class="menu-text">Podcast</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -192,6 +196,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#goal-for-today" id="toc-goal-for-today" class="nav-link active" data-scroll-target="#goal-for-today">Goal for today</a></li>
+  <li><a href="#before-you-build-a-website" id="toc-before-you-build-a-website" class="nav-link" data-scroll-target="#before-you-build-a-website">Before you build a website</a></li>
+  <li><a href="#examples-how-websites-can-help-you-differentiate" id="toc-examples-how-websites-can-help-you-differentiate" class="nav-link" data-scroll-target="#examples-how-websites-can-help-you-differentiate">Examples: How websites can help you differentiate</a>
+  <ul class="collapse">
+  <li><a href="#example-1-ujjwol-paudel" id="toc-example-1-ujjwol-paudel" class="nav-link" data-scroll-target="#example-1-ujjwol-paudel">Example 1: Ujjwol Paudel</a></li>
+  <li><a href="#example-2-matthew-patrick-rabbitt" id="toc-example-2-matthew-patrick-rabbitt" class="nav-link" data-scroll-target="#example-2-matthew-patrick-rabbitt">Example 2: Matthew Patrick Rabbitt</a></li>
+  <li><a href="#example-3-jacqueline-rifkin" id="toc-example-3-jacqueline-rifkin" class="nav-link" data-scroll-target="#example-3-jacqueline-rifkin">Example 3: Jacqueline Rifkin</a></li>
+  </ul></li>
   <li><a href="#the-tools" id="toc-the-tools" class="nav-link" data-scroll-target="#the-tools">The tools</a></li>
   <li><a href="#the-website-structure" id="toc-the-website-structure" class="nav-link" data-scroll-target="#the-website-structure">The website structure</a></li>
   <li><a href="#instructor-setup" id="toc-instructor-setup" class="nav-link" data-scroll-target="#instructor-setup">Instructor setup</a></li>
@@ -201,7 +212,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#edit-and-preview-the-site" id="toc-edit-and-preview-the-site" class="nav-link" data-scroll-target="#edit-and-preview-the-site">Edit and preview the site</a></li>
   <li><a href="#save-and-publish-changes" id="toc-save-and-publish-changes" class="nav-link" data-scroll-target="#save-and-publish-changes">Save and publish changes</a></li>
   <li><a href="#common-errors-and-fixes" id="toc-common-errors-and-fixes" class="nav-link" data-scroll-target="#common-errors-and-fixes">Common errors and fixes</a></li>
-  <li><a href="#workshop-plan" id="toc-workshop-plan" class="nav-link" data-scroll-target="#workshop-plan">Workshop plan</a></li>
   <li><a href="#after-the-workshop" id="toc-after-the-workshop" class="nav-link" data-scroll-target="#after-the-workshop">After the workshop</a></li>
   <li><a href="#final-workflow" id="toc-final-workflow" class="nav-link" data-scroll-target="#final-workflow">Final workflow</a></li>
   </ul>
@@ -213,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Build Your Academic Website with Quarto and GitHub</h1>
-<p class="subtitle lead">A 30-minute guided lab for PhD economics students</p>
+<p class="subtitle lead">A guided lab for PhD economics students</p>
 </div>
 
 <div>
@@ -238,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="goal-for-today" class="level2">
 <h2 class="anchored" data-anchor-id="goal-for-today">Goal for today</h2>
 <p>By the end of this lab, you will have a starter academic website that lives in your own GitHub repository and can be published online with GitHub Pages.</p>
-<p>We will use Professor Chenarides’ website repository as the starting point:</p>
+<p>We will use my personal website repository as the starting point:</p>
 <p><a href="https://github.com/laurenchenarides/website" class="uri">https://github.com/laurenchenarides/website</a></p>
 <p>You will make your own copy, edit the pages in RStudio, render the website with Quarto, and push your changes to GitHub.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -247,13 +257,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>What you are learning
+<span class="screen-reader-only">Note</span>Learning objectives
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>This lab is not just about making a website. You are learning a basic research workflow:</p>
+<p>This lab follows a basic GitHub workflow process:</p>
 <ol type="1">
 <li>Keep project files organized in a folder.</li>
 <li>Track changes with Git.</li>
@@ -265,9 +275,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="before-you-build-a-website" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-build-a-website">Before you build a website</h2>
+<p>Before spending time designing a website, make sure the basic pieces of your professional presence are in good shape.</p>
+<p>For most PhD students, these include:</p>
+<ul>
+<li>your CV</li>
+<li>your department or school profile page</li>
+<li>your Google Scholar page</li>
+<li>your LinkedIn page</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Time is a resource
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A personal website can be useful, but it should not come at the expense of the basics.</p>
+<p>Before you spend time customizing colors, layouts, fonts, or extra pages, make sure your CV is current and easy to read. Also make sure your school profile, Google Scholar page, and LinkedIn page are accurate.</p>
+<p>These are often the first places people look for information about you.</p>
+</div>
+</div>
+<p>For PhD students, these basic materials create a minimum professional presence. Most students on the job market will have a CV, a department profile, a Google Scholar page, and a LinkedIn profile. The question is: <strong>how do you differentiate yourself once those basics are in place?</strong></p>
+<p>A personal website can help.</p>
+<p>Your website gives you a place to organize the information you most want others to see. It can include your research interests, working papers, teaching materials, data projects, media appearances, or other examples of your professional work.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Why build a website?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your website may not be reviewed carefully at the first stage of the job market.</p>
+<p>But it can matter later.</p>
+<p>At the flyout stage, departments may want to learn more about you beyond your CV and job market paper. In many cases, those two documents, along with your personal website, are the main materials faculty see before meeting you.</p>
+<p>A website gives you a place to add context. It lets you show the work, materials, and professional identity you want people to notice.</p>
+</div>
+</div>
+</section>
+<section id="examples-how-websites-can-help-you-differentiate" class="level2">
+<h2 class="anchored" data-anchor-id="examples-how-websites-can-help-you-differentiate">Examples: How websites can help you differentiate</h2>
+<p>Before we start editing files, let’s look at a few examples of academic websites.</p>
+<p>Notice how different people use a website to communicate who they are, what they study, and what they want others to remember.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What to look for
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you look at each example, ask:</p>
+<ul>
+<li>What is the first thing I learn about this person?</li>
+<li>What kind of work do they want me to associate with them?</li>
+<li>What evidence do they provide beyond the CV?</li>
+<li>Is the website mostly a professional landing page, a research portfolio, or an impact narrative?</li>
+<li>What would I remember about this person after two minutes?</li>
+</ul>
+</div>
+</div>
+<section id="example-1-ujjwol-paudel" class="level3">
+<h3 class="anchored" data-anchor-id="example-1-ujjwol-paudel">Example 1: Ujjwol Paudel</h3>
+<p><a href="https://ujjwolpaudel.github.io/">Ujjwol Paudel’s website</a></p>
+<p>This is a strong example of a clean academic job-market-style website. The homepage quickly communicates current position, PhD completion, research areas, methods, job market status, CV, upcoming talks, education, and professional links. It is easy to find the basic information someone would want when learning about a PhD student or early-career researcher. :contentReference<span data-index="0">oaicite:0</span></p>
+<p><strong>What this website does well:</strong></p>
+<ul>
+<li>makes the researcher’s field and methods clear quickly</li>
+<li>links to the CV, Google Scholar, LinkedIn, and other professional profiles</li>
+<li>includes a simple navigation structure: About, Research, CV, Teaching, and Miscellaneous</li>
+<li>foregrounds job market status and recent talks</li>
+</ul>
+<p><strong>Differentiation lesson:</strong><br>
+This type of website helps visitors quickly understand your research identity and professional status. It is especially useful when you want a clean, low-friction academic presence.</p>
+</section>
+<section id="example-2-matthew-patrick-rabbitt" class="level3">
+<h3 class="anchored" data-anchor-id="example-2-matthew-patrick-rabbitt">Example 2: Matthew Patrick Rabbitt</h3>
+<p><a href="https://matthewpatrickrabbitt.com/">Matthew Patrick Rabbitt’s website</a></p>
+<p>This website presents a broader professional narrative around food security research, measurement, policy impact, media, programs, teaching, talks, and awards. The homepage highlights expertise, policy relevance, public-facing impact, and specific examples of how the work has been used by government agencies and other organizations. :contentReference<span data-index="1">oaicite:1</span></p>
+<p><strong>What this website does well:</strong></p>
+<ul>
+<li>communicates a clear area of expertise</li>
+<li>makes policy and public impact visible</li>
+<li>gives context for why the research matters</li>
+<li>organizes work across research, awards, media, policy impact, programs, teaching, and talks</li>
+</ul>
+<p><strong>Differentiation lesson:</strong><br>
+This type of website helps visitors understand why your work matters and where it has had influence. For students with policy, extension, media, data, or public scholarship interests, a website can show dimensions of your work that may not fit neatly on a CV.</p>
+</section>
+<section id="example-3-jacqueline-rifkin" class="level3">
+<h3 class="anchored" data-anchor-id="example-3-jacqueline-rifkin">Example 3: Jacqueline Rifkin</h3>
+<p><a href="http://jacquelinerifkin.com/">Jacqueline Rifkin’s website</a></p>
+<p>Use this example to think about branding, clarity, and audience. As you look through the site, notice how the homepage communicates research identity, professional positioning, and the kinds of work the visitor should associate with the scholar.</p>
+<p><strong>What to notice:</strong></p>
+<ul>
+<li>What is emphasized on the homepage?</li>
+<li>How quickly can you identify the person’s field and research interests?</li>
+<li>What types of outputs are highlighted?</li>
+<li>How does the website’s design or tone support the person’s professional identity?</li>
+</ul>
+<p><strong>Differentiation lesson:</strong><br>
+A website can help you communicate a coherent professional identity. The design does not need to be complicated, but it should help visitors understand what kind of scholar you are becoming.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Your website should have a purpose
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A good academic website does not need to be fancy.</p>
+<p>It should help people answer a few basic questions:</p>
+<ul>
+<li>Who are you?</li>
+<li>What do you study?</li>
+<li>What are you working on now?</li>
+<li>What should people read first?</li>
+<li>How can people contact you?</li>
+</ul>
+<p>Once those questions are answered, you can decide what else you want the website to show: teaching materials, policy writing, data projects, media appearances, software, public scholarship, or other work that helps people understand your professional identity.</p>
+</div>
+</div>
+</section>
+</section>
 <section id="the-tools" class="level2">
 <h2 class="anchored" data-anchor-id="the-tools">The tools</h2>
-<p>Before we start, it helps to separate the tools.</p>
+<p>Before we start, it helps to establish what tools we’ll be using.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -309,14 +453,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<p>A simple way to remember this:</p>
-<blockquote class="blockquote">
-<p>RStudio is where you work.<br>
-Git tracks your work.<br>
-GitHub stores your work online.<br>
-Quarto turns your writing into a website.<br>
-GitHub Pages publishes the website.</p>
-</blockquote>
 </section>
 <section id="the-website-structure" class="level2">
 <h2 class="anchored" data-anchor-id="the-website-structure">The website structure</h2>
@@ -368,39 +504,46 @@ GitHub Pages publishes the website.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">output-dir</span><span class="kw">:</span><span class="at"> docs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>That matters because GitHub Pages can be told to publish the site from the <code>docs/</code> folder on the <code>main</code> branch.</p>
-</section>
-<section id="instructor-setup" class="level2">
-<h2 class="anchored" data-anchor-id="instructor-setup">Instructor setup</h2>
-<p>Before students begin, the instructor should decide whether students will use a <strong>template repository</strong> or a <strong>fork</strong>.</p>
-<p><strong>Recommended option: use a template repository</strong></p>
-<p>A template repository is usually the cleanest option for teaching. Students get their own copy of the files without preserving the full commit history of the original website.</p>
-<p>To make the repository a template:</p>
-<ol type="1">
-<li>Go to the repository on GitHub.</li>
-<li>Click <strong>Settings</strong>.</li>
-<li>Scroll to <strong>Template repository</strong>.</li>
-<li>Check the box.</li>
-</ol>
-<p>Then students can click <strong>Use this template</strong> and create their own copy.</p>
-<p><strong>Backup option: fork the repository</strong></p>
-<p>If the repository is not set as a template, students can click <strong>Fork</strong>.</p>
-<p>A fork also creates a copy, but it keeps a visible connection to the original repository. That is fine for this workshop, but a template is a little easier to explain.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Teaching recommendation
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For this lab, I recommend using <strong>Use this template</strong> if possible.</p>
-<p>Say this to students:</p>
-<blockquote class="blockquote">
-<p>We are using my website as a starter template. You are not editing my website. You are creating your own copy and then customizing it.</p>
-</blockquote>
+<p>GitHub Pages will publish the site from the <code>docs/</code> folder on the <code>main</code> branch.</p>
+</div>
+</div>
+</section>
+<section id="instructor-setup" class="level2">
+<h2 class="anchored" data-anchor-id="instructor-setup">Instructor setup</h2>
+<p>For this lab, students will <strong>fork</strong> my website repository.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What does it mean to fork a repository?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>fork</strong> is your own copy of someone else’s GitHub repository.</p>
+<p>For this lab, you will fork my website repository. That means GitHub will create a copy of my website files inside your own GitHub account. You are <strong>not editing my website</strong>. You are creating your own version that you can change.</p>
+<p>After you fork the repository, you can replace my content with yours. For example, you can change:</p>
+<ul>
+<li>the site title</li>
+<li>the About page</li>
+<li>your photo</li>
+<li>your research interests</li>
+<li>your teaching page</li>
+<li>your CV</li>
+<li>the colors and layout</li>
+</ul>
+<p>By the end of the lab, your website should start looking like <strong>your academic website</strong>, not mine. My repository is just the starting structure.</p>
 </div>
 </div>
 </section>
@@ -421,7 +564,7 @@ GitHub Pages publishes the website.</p>
 <pre class="text"><code>https://janedoe.github.io
 https://janedoe.github.io/repository-name</code></pre>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -430,7 +573,7 @@ https://janedoe.github.io/repository-name</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>For an academic website, choose a username you would be comfortable putting on your CV, job market materials, or research projects.</p>
 </div>
@@ -474,7 +617,7 @@ https://janedoe.github.io/repository-name</code></pre>
 </tbody>
 </table>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -483,7 +626,7 @@ https://janedoe.github.io/repository-name</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Open RStudio.</p>
 <p>Go to:</p>
@@ -500,36 +643,6 @@ https://janedoe.github.io/repository-name</code></pre>
 <h2 class="anchored" data-anchor-id="create-your-website-repository">Create your website repository</h2>
 <p>Go to the starter repository:</p>
 <p><a href="https://github.com/laurenchenarides/website" class="uri">https://github.com/laurenchenarides/website</a></p>
-<p><strong>Option A: If you see “Use this template”</strong></p>
-<p>Click <strong>Use this template</strong>.</p>
-<p>Choose <strong>Create a new repository</strong>.</p>
-<p>Use one of these repository names:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Repository name</th>
-<th>Resulting website address</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>username.github.io</code></td>
-<td><code>https://username.github.io</code></td>
-</tr>
-<tr class="even">
-<td><code>website</code></td>
-<td><code>https://username.github.io/website</code></td>
-</tr>
-</tbody>
-</table>
-<p>For a personal academic website, I recommend:</p>
-<pre class="text"><code>username.github.io</code></pre>
-<p>Replace <code>username</code> with your actual GitHub username.</p>
-<p>For example:</p>
-<pre class="text"><code>janedoe.github.io</code></pre>
-<p>Choose <strong>Public</strong>.</p>
-<p>Click <strong>Create repository</strong>.</p>
-<p><strong>Option B: If you see “Fork”</strong></p>
 <p>Click <strong>Fork</strong>.</p>
 <p>Change the repository name if needed.</p>
 <p>For a personal academic website, use:</p>
@@ -577,7 +690,7 @@ https://janedoe.github.io/repository-name</code></pre>
 <p>Click <strong>Create Project</strong>.</p>
 <p>RStudio will download the website files and open the project.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -586,7 +699,7 @@ https://janedoe.github.io/repository-name</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To clone a repository means to download a copy from GitHub to your computer.</p>
 <p>After cloning, you have two connected versions:</p>
@@ -612,10 +725,10 @@ https://janedoe.github.io/repository-name</code></pre>
 <p><strong>Render Website</strong></p>
 <p>If that works, RStudio will render the Quarto website.</p>
 <p>You can also run this command in the Terminal tab:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The rendered website files will appear in the <code>docs/</code> folder.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -624,7 +737,7 @@ https://janedoe.github.io/repository-name</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You edit the <code>.qmd</code> files.</p>
 <p>Quarto creates the <code>.html</code> files.</p>
@@ -662,30 +775,30 @@ https://janedoe.github.io/repository-name</code></pre>
 <p>Find the title and homepage text.</p>
 <p>Replace the existing information with your own.</p>
 <p>For example:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Your Name"</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/photo.png"</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="an">about:</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">  template: trestles</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">  links:</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co">    - icon: github</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">      href: https://github.com/yourusername</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co">    - icon: linkedin</span></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">      href: https://www.linkedin.com/in/yourname/</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="fu">### Welcome!</span></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>I am a PhD student in economics. My research interests include labor economics, public economics, industrial organization, and applied econometrics.</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>This website includes my research, teaching, CV, and contact information.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Your Name"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/photo.png"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="an">about:</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">  template: trestles</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">  links:</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="co">    - icon: github</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">      href: https://github.com/yourusername</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">    - icon: linkedin</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co">      href: https://www.linkedin.com/in/yourname/</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu">### Welcome!</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>I am a PhD student in economics. My research interests include labor economics, public economics, industrial organization, and applied econometrics.</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>This website includes my research, teaching, CV, and contact information.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Edit the text so that it sounds like you.</p>
 <p>You do not need to sound overly polished. A simple first version is fine.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -694,7 +807,7 @@ https://janedoe.github.io/repository-name</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use three short parts:</p>
 <ol type="1">
@@ -718,12 +831,12 @@ https://janedoe.github.io/repository-name</code></pre>
 <p>or:</p>
 <pre class="text"><code>headshot.jpg</code></pre>
 <p>Then update the image line in <code>index.qmd</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"images/headshot.jpg"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"images/headshot.jpg"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Render the website again.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Check that the image appears.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -732,7 +845,7 @@ https://janedoe.github.io/repository-name</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>These are different filenames:</p>
 <pre class="text"><code>Headshot.jpg
@@ -749,32 +862,32 @@ headshot.JPG</code></pre>
 <pre class="text"><code>_quarto.yml</code></pre>
 <p>Look for the section that controls the navigation bar.</p>
 <p>It will look something like this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"your-site-title"</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"About"</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> bio.qmd</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"CV"</span></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> cv.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"your-site-title"</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"About"</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> bio.qmd</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"CV"</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> cv.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can add, remove, or rename pages.</p>
 <p>For a PhD student website, a good starter menu is:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"About"</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> bio.qmd</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Research"</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> research.qmd</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> teaching.qmd</span></span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"CV"</span></span>
-<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> cv.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">website</span><span class="kw">:</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Your Name"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">navbar</span><span class="kw">:</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">right</span><span class="kw">:</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"About"</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> bio.qmd</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Research"</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> research.qmd</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> teaching.qmd</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"CV"</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">href</span><span class="kw">:</span><span class="at"> cv.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If you add a page to the menu, you also need to create the matching <code>.qmd</code> file.</p>
 <p>For example, if you add:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Research"</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">href</span><span class="kw">:</span><span class="at"> research.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">text</span><span class="kw">:</span><span class="at"> </span><span class="st">"Research"</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">href</span><span class="kw">:</span><span class="at"> research.qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>then create a file named:</p>
 <pre class="text"><code>research.qmd</code></pre>
 </section>
@@ -785,31 +898,31 @@ headshot.JPG</code></pre>
 <p>Save it as:</p>
 <pre class="text"><code>research.qmd</code></pre>
 <p>You can start with this:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Research"</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Research interests</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>I am interested in:</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Topic 1</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Topic 2</span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Topic 3</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Working papers</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### Paper title</span></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>Brief description of the paper.</span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>**Status:** In progress.</span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Publications</span></span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>Add publications here as they become available.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Research"</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Research interests</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>I am interested in:</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Topic 1</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Topic 2</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Topic 3</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Working papers</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### Paper title</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>Brief description of the paper.</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>**Status:** In progress.</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Publications</span></span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>Add publications here as they become available.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Render the website again:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="save-and-publish-changes" class="level2">
@@ -829,7 +942,7 @@ headshot.JPG</code></pre>
 <p>Click <strong>Commit</strong>.</p>
 <p>Then click <strong>Push</strong>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -838,7 +951,7 @@ headshot.JPG</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A commit is a saved checkpoint in your project history.</p>
 <p>A good commit message briefly says what changed.</p>
@@ -846,7 +959,7 @@ headshot.JPG</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -855,7 +968,7 @@ headshot.JPG</code></pre>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>A push sends your committed changes from your computer to GitHub.</p>
 </div>
@@ -952,54 +1065,13 @@ headshot.JPG</code></pre>
 <li>Is the folder set to <code>/docs</code>?</li>
 <li>Does the <code>docs/</code> folder contain an <code>index.html</code> file?</li>
 </ol>
-</section>
-<section id="workshop-plan" class="level2">
-<h2 class="anchored" data-anchor-id="workshop-plan">Workshop plan</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 57%">
-<col style="width: 42%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: right;">Time</th>
-<th>Activity</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">0–5 min</td>
-<td>Explain Git, GitHub, Quarto, RStudio, and GitHub Pages</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">5–10 min</td>
-<td>Students create or log into GitHub</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">10–15 min</td>
-<td>Students create their own copy of the repository</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">15–20 min</td>
-<td>Students clone the repository into RStudio</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">20–25 min</td>
-<td>Students edit <code>index.qmd</code>, render the site, and preview it</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">25–30 min</td>
-<td>Students commit, push, and configure GitHub Pages</td>
-</tr>
-</tbody>
-</table>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Good stopping point
+<span class="screen-reader-only">Tip</span>Best case scenario
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1065,11 +1137,11 @@ headshot.JPG</code></pre>
 <pre class="text"><code>cv.pdf</code></pre>
 <p>Put it in the main project folder.</p>
 <p>Then link to it from <code>cv.qmd</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "CV"</span></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>You can download my CV <span class="co">[</span><span class="ot">here</span><span class="co">](cv.pdf)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "CV"</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>You can download my CV <span class="co">[</span><span class="ot">here</span><span class="co">](cv.pdf)</span>.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Render, commit, and push.</p>
 <p><strong>Optional: Use a custom domain later</strong></p>
 <p>You do not need a custom domain for this lab.</p>

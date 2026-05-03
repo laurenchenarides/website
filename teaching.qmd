@@ -9,9 +9,53 @@ execute:
   warning: false
 ---
 
-# Instructor of Record
+I teach courses in food and agricultural markets, agribusiness entrepreneurship, and data-driven decision-making. Across my teaching, I emphasize applied economic reasoning, evidence-based decision-making, and professional skill development.
 
-**More information coming soon!**
+Many of my courses use GitHub and Quarto websites to organize lecture notes, lab materials, assignments, and examples for students.
+
+# Courses
+
+## AREC 224: Introduction to Agribusiness Entrepreneurship
+
+AREC 224 introduces students to entrepreneurship in agribusiness and food systems. The course emphasizes problem identification, business model development, professional skill-building, case analysis, mentorship, and student-produced podcasting.
+
+Core course elements include:
+
+- student-led podcast episodes
+- case-based discussion and analysis
+- business model development
+- professional development activities
+- mentorship and reflection through the Entrepreneurial Individual Development Plan
+
+[Course website](https://laurenchenarides.github.io/csu-arec-224/){.btn .btn-primary}
+[Podcast](podcast.html){.btn .btn-secondary}
+
+## AREC 310: Food and Agricultural Markets
+
+AREC 310 examines the structure, behavior, and performance of food and agricultural markets. Students use economic tools to understand pricing, competition, market power, risk, and current issues affecting agricultural and food markets.
+
+Core course elements include:
+
+- market structure and competition
+- agricultural and food price analysis
+- futures markets and risk management
+- applied market case studies
+- connections between economic theory and real-world food markets
+
+[Course website](https://laurenchenarides.github.io/csu-arec-310/){.btn .btn-primary}
+
+## AREC 330: Data-Driven Decision-Making in Agricultural and Resource Economics
+
+AREC 330 introduces students to data analysis, visualization, and decision-making using applied examples from food, agriculture, and resource economics. The course emphasizes reproducible workflows and communicating insights clearly.
+
+Core course elements include:
+
+- data cleaning and analysis in R
+- visualization in Tableau
+- applied labs using real-world datasets
+- translating analysis into actionable insights
+
+[Course website](https://csu-arec-330.github.io/){.btn .btn-primary}
 
 # Additional Lab Notes
 
@@ -21,4 +65,4 @@ The following lab notes are designed for short, hands-on workshops and class act
 
 In this lab, students create a personal academic website using GitHub, RStudio, and Quarto. The notes assume no prior experience with GitHub or Git.
 
-[Open lab notes](build_git_website.qmd){.btn .btn-primary}
+[Open lab notes](build_git_website.html){.btn .btn-primary}

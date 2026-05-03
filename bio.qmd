@@ -8,16 +8,20 @@ execute:
   echo: false
   warning: false
 ---
-<!--
-```{r setup}
-source("_common.R")
-```
--->
-Welcome! I am a researcher, economist, data geek, baker, dog mom, and Assistant Professor at Colorado State University. I study food retail markets and how market structure impacts consumer food decisions. Through projects like [DemocratizingData.ai](https://democratizingdata.ai/), I work to make information more transparent, equitable, and built to serve the public good. See my <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a> for more details.
+
+Hello! I am an applied economist and Assistant Professor in the Department of Agricultural and Resource Economics at Colorado State University. My research examines food retail markets, consumer food decisions, and the role of data infrastructure in supporting evidence-based food policy. I use large-scale retail and household datasets to study how food retail markets and consumer food decisions interact and contribute to economic outcomes across communities.
+
+In addition to my faculty appointment, I serve as an Associate Editor for the *American Journal of Agricultural Economics* and a board member of the [Council on Food, Agricultural, and Resource Economics](https://www.cfare.org/) (C-FARE). I am also involved in national efforts to improve access to high-quality data for food and agricultural economics research, including through [DemocratizingData.ai](https://democratizingdata.ai/).
+
+Outside of work, I enjoy baking and spending time with my fiancé and our dog Luca. I also care deeply about making research more transparent, useful, and connected to the public good.
+
+See my <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a> for more details.
 
 # Short Bio
 
-Lauren Chenarides is an Assistant Professor at Colorado State University in the Department of Agricultural and Resource Economics. Her [research](research.qmd) focuses on how food retail markets and consumer food decisions interact and contribute to economic outcomes across communities. She also studies the role of data infrastructure in supporting evidence-based food policy, including efforts to increase transparency and public access to high-quality datasets through initiatives like [DemocratizingData.ai](https://democratizingdata.ai/). Lauren has expertise in applied microeconomics, industrial organization, spatial analysis, scanner data, and food systems research. She regularly works with large-scale retail and household datasets and collaborates with interdisciplinary teams on policy-relevant research. She holds a Ph.D. in Agricultural and Resource Economics from Penn State and a B.A. in Mathematics from the College of the Holy Cross.
+Lauren Chenarides is an Assistant Professor in the Department of Agricultural and Resource Economics at Colorado State University and an Associate Editor for the *American Journal of Agricultural Economics*. Her [research](research.qmd) focuses on food retail markets, consumer food decisions, and data infrastructure for evidence-based food policy. She studies how market structure, firm behavior, public policy, and information systems relate to economic outcomes across communities.
+
+Lauren has expertise in applied microeconomics, empirical industrial organization, spatial analysis, scanner data, and food systems research. She regularly works with large-scale retail and household datasets and collaborates with interdisciplinary teams on policy-relevant research. Through initiatives such as [DemocratizingData.ai](https://democratizingdata.ai/), she works to improve transparency, discoverability, and public access to high-quality datasets for food and agricultural economics research. She holds a Ph.D. in Agricultural and Resource Economics from Penn State and a B.A. in Mathematics from the College of the Holy Cross.
 
 -----
 

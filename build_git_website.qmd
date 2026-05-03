@@ -1,6 +1,6 @@
 ---
 title: "Build Your Academic Website with Quarto and GitHub"
-subtitle: "A 30-minute guided lab for PhD economics students"
+subtitle: "A guided lab for PhD economics students"
 description: "A beginner-friendly walkthrough for creating a personal academic website using Quarto, RStudio, Git, and GitHub Pages."
 format:
   html:
@@ -17,16 +17,16 @@ execute:
 
 By the end of this lab, you will have a starter academic website that lives in your own GitHub repository and can be published online with GitHub Pages.
 
-We will use Professor Chenarides' website repository as the starting point:
+We will use my personal website repository as the starting point:
 
 <https://github.com/laurenchenarides/website>
 
 You will make your own copy, edit the pages in RStudio, render the website with Quarto, and push your changes to GitHub.
 
 ::: {.callout-note collapse="true"}
-## What you are learning {.unlisted .unnumbered}
+## Learning objectives {.unlisted .unnumbered}
 
-This lab is not just about making a website. You are learning a basic research workflow:
+This lab follows a basic GitHub workflow process:
 
 1. Keep project files organized in a folder.
 2. Track changes with Git.
@@ -35,9 +35,130 @@ This lab is not just about making a website. You are learning a basic research w
 5. Publish the site using GitHub Pages.
 :::
 
+## Before you build a website
+
+Before spending time designing a website, make sure the basic pieces of your professional presence are in good shape.
+
+For most PhD students, these include:
+
+- your CV
+- your department or school profile page
+- your Google Scholar page
+- your LinkedIn page
+
+::: {.callout-note}
+## Time is a resource {.unlisted .unnumbered}
+
+A personal website can be useful, but it should not come at the expense of the basics.
+
+Before you spend time customizing colors, layouts, fonts, or extra pages, make sure your CV is current and easy to read. Also make sure your school profile, Google Scholar page, and LinkedIn page are accurate.
+
+These are often the first places people look for information about you.
+:::
+
+For PhD students, these basic materials create a minimum professional presence. Most students on the job market will have a CV, a department profile, a Google Scholar page, and a LinkedIn profile. The question is: **how do you differentiate yourself once those basics are in place?**
+
+A personal website can help.
+
+Your website gives you a place to organize the information you most want others to see. It can include your research interests, working papers, teaching materials, data projects, media appearances, or other examples of your professional work.
+
+::: {.callout-tip}
+## Why build a website? {.unlisted .unnumbered}
+
+Your website may not be reviewed carefully at the first stage of the job market.
+
+But it can matter later.
+
+At the flyout stage, departments may want to learn more about you beyond your CV and job market paper. In many cases, those two documents, along with your personal website, are the main materials faculty see before meeting you.
+
+A website gives you a place to add context. It lets you show the work, materials, and professional identity you want people to notice.
+:::
+
+## Examples: How websites can help you differentiate
+
+Before we start editing files, let’s look at a few examples of academic websites.
+
+Notice how different people use a website to communicate who they are, what they study, and what they want others to remember.
+
+::: {.callout-tip}
+## What to look for {.unlisted .unnumbered}
+
+As you look at each example, ask:
+
+- What is the first thing I learn about this person?
+- What kind of work do they want me to associate with them?
+- What evidence do they provide beyond the CV?
+- Is the website mostly a professional landing page, a research portfolio, or an impact narrative?
+- What would I remember about this person after two minutes?
+:::
+
+### Example 1: Ujjwol Paudel
+
+[Ujjwol Paudel’s website](https://ujjwolpaudel.github.io/)
+
+This is a strong example of a clean academic job-market-style website. The homepage quickly communicates current position, PhD completion, research areas, methods, job market status, CV, upcoming talks, education, and professional links. It is easy to find the basic information someone would want when learning about a PhD student or early-career researcher. :contentReference[oaicite:0]{index=0}
+
+**What this website does well:**
+
+- makes the researcher’s field and methods clear quickly
+- links to the CV, Google Scholar, LinkedIn, and other professional profiles
+- includes a simple navigation structure: About, Research, CV, Teaching, and Miscellaneous
+- foregrounds job market status and recent talks
+
+**Differentiation lesson:**  
+This type of website helps visitors quickly understand your research identity and professional status. It is especially useful when you want a clean, low-friction academic presence.
+
+### Example 2: Matthew Patrick Rabbitt
+
+[Matthew Patrick Rabbitt’s website](https://matthewpatrickrabbitt.com/)
+
+This website presents a broader professional narrative around food security research, measurement, policy impact, media, programs, teaching, talks, and awards. The homepage highlights expertise, policy relevance, public-facing impact, and specific examples of how the work has been used by government agencies and other organizations. :contentReference[oaicite:1]{index=1}
+
+**What this website does well:**
+
+- communicates a clear area of expertise
+- makes policy and public impact visible
+- gives context for why the research matters
+- organizes work across research, awards, media, policy impact, programs, teaching, and talks
+
+**Differentiation lesson:**  
+This type of website helps visitors understand why your work matters and where it has had influence. For students with policy, extension, media, data, or public scholarship interests, a website can show dimensions of your work that may not fit neatly on a CV.
+
+### Example 3: Jacqueline Rifkin
+
+[Jacqueline Rifkin’s website](http://jacquelinerifkin.com/)
+
+Use this example to think about branding, clarity, and audience. As you look through the site, notice how the homepage communicates research identity, professional positioning, and the kinds of work the visitor should associate with the scholar.
+
+**What to notice:**
+
+- What is emphasized on the homepage?
+- How quickly can you identify the person’s field and research interests?
+- What types of outputs are highlighted?
+- How does the website’s design or tone support the person’s professional identity?
+
+**Differentiation lesson:**  
+A website can help you communicate a coherent professional identity. The design does not need to be complicated, but it should help visitors understand what kind of scholar you are becoming.
+
+::: {.callout-note}
+## Your website should have a purpose {.unlisted .unnumbered}
+
+A good academic website does not need to be fancy.
+
+It should help people answer a few basic questions:
+
+- Who are you?
+- What do you study?
+- What are you working on now?
+- What should people read first?
+- How can people contact you?
+
+Once those questions are answered, you can decide what else you want the website to show: teaching materials, policy writing, data projects, media appearances, software, public scholarship, or other work that helps people understand your professional identity.
+:::
+
 ## The tools
 
-Before we start, it helps to separate the tools.
+Before we start, it helps to establish what tools we'll be using.
 
 | Tool | What it does | How we use it today |
 |---|---|---|
@@ -47,13 +168,6 @@ Before we start, it helps to separate the tools.
 | **GitHub** | Stores your Git project online | We will push the site to GitHub |
 | **GitHub Pages** | Publishes a GitHub repository as a website | We will make the site public online |
 
-A simple way to remember this:
-
-> RStudio is where you work.  
-> Git tracks your work.  
-> GitHub stores your work online.  
-> Quarto turns your writing into a website.  
-> GitHub Pages publishes the website.
 
 ## The website structure
 
@@ -78,40 +192,32 @@ project:
   type: website
   output-dir: docs
 ```
-
-That matters because GitHub Pages can be told to publish the site from the `docs/` folder on the `main` branch.
+:::{.callout-tip}
+GitHub Pages will publish the site from the `docs/` folder on the `main` branch.
+:::
 
 ## Instructor setup
 
-Before students begin, the instructor should decide whether students will use a **template repository** or a **fork**.
-
-**Recommended option: use a template repository**
-
-A template repository is usually the cleanest option for teaching. Students get their own copy of the files without preserving the full commit history of the original website.
-
-To make the repository a template:
-
-1. Go to the repository on GitHub.
-2. Click **Settings**.
-3. Scroll to **Template repository**.
-4. Check the box.
-
-Then students can click **Use this template** and create their own copy.
-
-**Backup option: fork the repository**
-
-If the repository is not set as a template, students can click **Fork**.
-
-A fork also creates a copy, but it keeps a visible connection to the original repository. That is fine for this workshop, but a template is a little easier to explain.
+For this lab, students will **fork** my website repository.
 
 ::: {.callout-tip}
-## Teaching recommendation {.unlisted .unnumbered}
+## What does it mean to fork a repository? {.unlisted .unnumbered}
 
-For this lab, I recommend using **Use this template** if possible.
+A **fork** is your own copy of someone else’s GitHub repository.
 
-Say this to students:
+For this lab, you will fork my website repository. That means GitHub will create a copy of my website files inside your own GitHub account. You are **not editing my website**. You are creating your own version that you can change.
 
-> We are using my website as a starter template. You are not editing my website. You are creating your own copy and then customizing it.
+After you fork the repository, you can replace my content with yours. For example, you can change:
+
+- the site title
+- the About page
+- your photo
+- your research interests
+- your teaching page
+- your CV
+- the colors and layout
+
+By the end of the lab, your website should start looking like **your academic website**, not mine. My repository is just the starting structure.
 :::
 
 ## Student setup
@@ -184,39 +290,6 @@ C:/Program Files/Git/bin/git.exe
 Go to the starter repository:
 
 <https://github.com/laurenchenarides/website>
-
-**Option A: If you see "Use this template"**
-
-Click **Use this template**.
-
-Choose **Create a new repository**.
-
-Use one of these repository names:
-
-| Repository name | Resulting website address |
-|---|---|
-| `username.github.io` | `https://username.github.io` |
-| `website` | `https://username.github.io/website` |
-
-For a personal academic website, I recommend:
-
-```text
-username.github.io
-```
-
-Replace `username` with your actual GitHub username.
-
-For example:
-
-```text
-janedoe.github.io
-```
-
-Choose **Public**.
-
-Click **Create repository**.
-
-**Option B: If you see "Fork"**
 
 Click **Fork**.
 
@@ -708,19 +781,8 @@ Check:
 4. Is the folder set to `/docs`?
 5. Does the `docs/` folder contain an `index.html` file?
 
-## Workshop plan
-
-| Time | Activity |
-|---:|---|
-| 0--5 min | Explain Git, GitHub, Quarto, RStudio, and GitHub Pages |
-| 5--10 min | Students create or log into GitHub |
-| 10--15 min | Students create their own copy of the repository |
-| 15--20 min | Students clone the repository into RStudio |
-| 20--25 min | Students edit `index.qmd`, render the site, and preview it |
-| 25--30 min | Students commit, push, and configure GitHub Pages |
-
 ::: {.callout-tip}
-## Good stopping point {.unlisted .unnumbered}
+## Best case scenario {.unlisted .unnumbered}
 
 The minimum successful outcome is:
 
