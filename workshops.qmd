@@ -44,7 +44,7 @@ Sponsored by the Council on Food, Agricultural, and Resource Economics
 New Orleans, Louisiana  
 Sponsored by the USDA Economic Research Service and the Agricultural & Applied Economics Association
 
-[Visit workshop page](https://bit.ly/3Lm9zX8){.btn .btn-primary}
+[Visit workshop page](https://laurenchenarides.github.io/usda_food_prices_workshop/){.btn .btn-primary}
 :::
 
 ::: {.g-col-12 .g-col-md-6}
