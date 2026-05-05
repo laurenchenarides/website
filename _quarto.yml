@@ -32,6 +32,8 @@ website:
         href: research.qmd
       - text: "Teaching"
         href: teaching.qmd
+      - text: "Workshops"
+        href: workshops.qmd
       - text: "Media"
         href: media.qmd
       - text: "CV"

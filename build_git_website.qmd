@@ -196,31 +196,8 @@ project:
 GitHub Pages will publish the site from the `docs/` folder on the `main` branch.
 :::
 
-## Instructor setup
 
-For this lab, students will **fork** my website repository.
-
-::: {.callout-tip}
-## What does it mean to fork a repository? {.unlisted .unnumbered}
-
-A **fork** is your own copy of someone else’s GitHub repository.
-
-For this lab, you will fork my website repository. That means GitHub will create a copy of my website files inside your own GitHub account. You are **not editing my website**. You are creating your own version that you can change.
-
-After you fork the repository, you can replace my content with yours. For example, you can change:
-
-- the site title
-- the About page
-- your photo
-- your research interests
-- your teaching page
-- your CV
-- the colors and layout
-
-By the end of the lab, your website should start looking like **your academic website**, not mine. My repository is just the starting structure.
-:::
-
-## Student setup
+## Setup
 
 ### Create a GitHub account {.unlisted .unnumbered}
 
@@ -293,22 +270,38 @@ Go to the starter repository:
 
 Click **Fork**.
 
+::: {.callout-tip}
+## What does it mean to fork a repository? {.unlisted .unnumbered}
+
+A **fork** is your own copy of someone else’s GitHub repository.
+
+For this lab, you will fork my website repository. That means GitHub will create a copy of my website files inside your own GitHub account. You are **not editing my website**. You are creating your own version that you can change.
+
+After you fork the repository, you can replace my content with yours. For example, you can change:
+
+- the site title
+- the About page
+- your photo
+- your research interests
+- your teaching page
+- your CV
+- the colors and layout
+
+By the end of the lab, your website should start looking like **your academic website**, not mine. My repository is just the starting structure.
+:::
+
 Change the repository name if needed.
 
-For a personal academic website, use:
+Change the description.
 
-```text
-username.github.io
-```
-
-Choose **Public**.
+Leave "Copy the `main` branch only" selected. 
 
 Click **Create fork**.
 
 ::: {.callout-important}
 ## Public vs. private {.unlisted .unnumbered}
 
-Use **Public** for this lab.
+The default option after forking a public repository is to keep it public. You can change the repository visibility by going into the Settings.
 
 GitHub Pages websites are intended to be visible online. Do not put private information, sensitive data, unpublished datasets, passwords, API keys, or confidential files in this repository.
 :::
@@ -322,6 +315,23 @@ The easiest beginner-friendly workflow is:
 1. Use GitHub to create the repository.
 2. Use RStudio to clone the repository.
 3. Use RStudio's Git tab to commit and push changes.
+
+::: {.callout-note}
+## Forking and cloning are different steps {.unlisted .unnumbered}
+
+In this lab, you will do two different things with the repository.
+
+**Forking** happens on GitHub. When you fork my repository, GitHub creates your own copy of the website repository inside your GitHub account. This is the version of the website that you will edit and eventually publish.
+
+**Cloning** happens in RStudio. When you clone your forked repository, RStudio downloads a copy of your GitHub repository onto your computer. This lets you edit the website files locally, render the site, and send your changes back to GitHub.
+
+Put simply:
+
+- **Fork = make your own copy on GitHub**
+- **Clone = download your GitHub copy to your computer**
+
+You fork the repository once. You clone it once on each computer where you want to work on the website.
+:::
 
 **Copy your repository URL**
 
@@ -358,19 +368,6 @@ Choose where the project should live on your computer.
 Click **Create Project**.
 
 RStudio will download the website files and open the project.
-
-::: {.callout-tip collapse="true"}
-## What does "clone" mean? {.unlisted .unnumbered}
-
-To clone a repository means to download a copy from GitHub to your computer.
-
-After cloning, you have two connected versions:
-
-- the local version on your computer
-- the remote version on GitHub
-
-When you edit files locally, you commit and push them back to GitHub.
-:::
 
 ## Edit and preview the site
 
