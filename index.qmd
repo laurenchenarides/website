@@ -21,6 +21,6 @@ about:
 
 ### Welcome to my personal website!
 
-I am an applied economist, data geek, baker, dog mom, and Assistant Professor in the Department of Agricultural and Resource Economics at Colorado State University. My research examines food retail markets, consumer food decisions, and the role of data infrastructure in supporting evidence-based food policy. Through projects like [DemocratizingData.ai](https://democratizingdata.ai/), I work to make data and research tools more transparent, accessible, and useful for public decision-making.
+I am an applied economist, data geek, baker, dog mom, and Associate Professor in the Department of Agricultural and Resource Economics at Colorado State University. My research examines food retail markets, consumer food decisions, and the role of data infrastructure in supporting evidence-based food policy. Through projects like [DemocratizingData.ai](https://democratizingdata.ai/), I work to make data and research tools more transparent, accessible, and useful for public decision-making.
 
 Please visit my [research](research.qmd) page, read more [about me](bio.qmd), or [get in touch](bio.qmd#looking-for-a-speaker-advisor-or-collaborator-lets-talk) if you are interested in collaborating or learning more about my work.

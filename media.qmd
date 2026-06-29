@@ -14,6 +14,16 @@ execute:
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+[![](images/media/ig_pod.png){fig-alt="The Ignorance Institute thumbnail"}](https://youtu.be/3fY5eDJ_OZA?si=9iAUdpcRa_X-XOdG)
+
+### [How do we make decisions in complex food systems?](https://youtu.be/3fY5eDJ_OZA?si=9iAUdpcRa_X-XOdG)
+
+*The Ignorance Podcast / June 2026*  
+A conversation with Dr. Mayla Boguslav about how we make decisions in complex food systems.
+:::
+
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 [![](images/media/on-point-grocery-prices.jpg){fig-alt="On Point story thumbnail"}](https://www.wbur.org/onpoint/2025/04/08/how-groceries-priced-pandemic-inflation)
 
 ### [How groceries are priced](https://www.wbur.org/onpoint/2025/04/08/how-groceries-priced-pandemic-inflation)
