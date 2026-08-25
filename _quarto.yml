@@ -32,6 +32,8 @@ website:
         href: research.qmd
       - text: "Teaching"
         href: teaching.qmd
+      - text: "Orchard"
+        href: chenlab/lab-notes.qmd
       - text: "Workshops"
         href: workshops.qmd
       - text: "Media"

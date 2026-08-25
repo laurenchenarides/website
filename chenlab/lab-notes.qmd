@@ -1,0 +1,73 @@
+---
+title: "Orchard Lab Notes"
+subtitle: "Shared resources and meeting notes for students working with consumer and retail data"
+page-layout: full
+css: custom.css
+listing:
+  - id: lab-notes
+    contents: lab-notes-*.qmd
+    sort: "date asc"
+    type: grid
+    categories: false
+    sort-ui: false
+    filter-ui: false
+    feed: false
+    fields: [image, date, title, author]
+page-navigation: false
+title-block-banner: false
+repo-actions: false
+---
+
+## About the Lab
+
+The Orchard Scanner Data Lab brings together students working with large consumer, retail, and establishment datasets, including Numerator, NielsenIQ/Kilts, Circana/IRI, TDLinx, and related data sources.
+
+Our meetings provide a regular space to share project progress, work through bottlenecks, exchange updates about the Orchard server, and develop practical approaches to managing and analyzing microdata. The goal is to learn from one another and build shared tools, documentation, and research practices along the way.
+
+::: {.callout-important title="Fall 2026 Meetings"}
+We meet **in person every other Monday from 2:00–3:30 p.m.**, beginning August 24.
+
+Each meeting includes project updates and group problem solving, followed by a practical discussion or demonstration shaped by issues that arise in meetings and one-on-one conversations.
+:::
+
+## Meeting Structure
+
+Meetings will follow a loose two-part structure.
+
+### Part 1: Project Updates and Group Problem Solving
+
+We will go around the room and briefly share:
+
+- what we are working on;
+- what has moved forward since the last meeting;
+- where we are stuck or uncertain; and
+- how others in the group may be able to help.
+
+This part of the meeting is intended to surface problems early and make it easier for students to learn from one another's experiences.
+
+### Part 2: Practical Approaches for Managing Microdata
+
+Lauren will lead a short, practical discussion or demonstration related to managing and working with microdata. Topics will draw from challenges, questions, and useful practices that emerge during lab meetings and one-on-one conversations.
+
+Possible topics include data organization, efficient queries, project documentation, reproducible workflows, product and retailer matching, server use, and strategies for working with large datasets.
+
+## Fall 2026 Meeting Schedule
+
+| Date | Time | Format | Notes |
+|---|---|---|---|
+| August 24 | 2:00–3:30 p.m. | In person | First lab meeting |
+| September 7 | -- |  | Labor Day; university offices closed |
+| September 21 | 2:00–3:30 p.m. | In person |  |
+| October 5 | 2:00–3:30 p.m. | In person |  |
+| October 19 | 2:00–3:30 p.m. | In person |  |
+| November 2 | 2:00–3:30 p.m. | In person |  |
+| November 16 | 2:00–3:30 p.m. | In person |  |
+| November 30 | 2:00–3:30 p.m. | In person |  |
+| December 14 | 2:00–3:30 p.m. | In person |  |
+
+## Lab Notes
+
+Meeting notes, resources, and follow-up items are collected below.
+
+::: {#lab-notes}
+:::

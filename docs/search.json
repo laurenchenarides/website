@@ -119,6 +119,41 @@
     "text": "Welcome to my personal website!\nI am an applied economist, data geek, baker, dog mom, and Associate Professor in the Department of Agricultural and Resource Economics at Colorado State University. My research examines food retail markets, consumer food decisions, and the role of data infrastructure in supporting evidence-based food policy. Through projects like DemocratizingData.ai, I work to make data and research tools more transparent, accessible, and useful for public decision-making.\nPlease visit my research page, read more about me, or get in touch if you are interested in collaborating or learning more about my work."
   },
   {
+    "objectID": "chenlab/lab-notes.html",
+    "href": "chenlab/lab-notes.html",
+    "title": "Orchard Lab Notes",
+    "section": "",
+    "text": "The Orchard Scanner Data Lab brings together students working with large consumer, retail, and establishment datasets, including Numerator, NielsenIQ/Kilts, Circana/IRI, TDLinx, and related data sources.\nOur meetings provide a regular space to share project progress, work through bottlenecks, exchange updates about the Orchard server, and develop practical approaches to managing and analyzing microdata. The goal is to learn from one another and build shared tools, documentation, and research practices along the way.\n\n\n\n\n\n\nImportantFall 2026 Meetings\n\n\n\nWe meet in person every other Monday from 2:00–3:30 p.m., beginning August 24.\nEach meeting includes project updates and group problem solving, followed by a practical discussion or demonstration shaped by issues that arise in meetings and one-on-one conversations."
+  },
+  {
+    "objectID": "chenlab/lab-notes.html#about-the-lab",
+    "href": "chenlab/lab-notes.html#about-the-lab",
+    "title": "Orchard Lab Notes",
+    "section": "",
+    "text": "The Orchard Scanner Data Lab brings together students working with large consumer, retail, and establishment datasets, including Numerator, NielsenIQ/Kilts, Circana/IRI, TDLinx, and related data sources.\nOur meetings provide a regular space to share project progress, work through bottlenecks, exchange updates about the Orchard server, and develop practical approaches to managing and analyzing microdata. The goal is to learn from one another and build shared tools, documentation, and research practices along the way.\n\n\n\n\n\n\nImportantFall 2026 Meetings\n\n\n\nWe meet in person every other Monday from 2:00–3:30 p.m., beginning August 24.\nEach meeting includes project updates and group problem solving, followed by a practical discussion or demonstration shaped by issues that arise in meetings and one-on-one conversations."
+  },
+  {
+    "objectID": "chenlab/lab-notes.html#meeting-structure",
+    "href": "chenlab/lab-notes.html#meeting-structure",
+    "title": "Orchard Lab Notes",
+    "section": "Meeting Structure",
+    "text": "Meeting Structure\nMeetings will follow a loose two-part structure.\n\nPart 1: Project Updates and Group Problem Solving\nWe will go around the room and briefly share:\n\nwhat we are working on;\nwhat has moved forward since the last meeting;\nwhere we are stuck or uncertain; and\nhow others in the group may be able to help.\n\nThis part of the meeting is intended to surface problems early and make it easier for students to learn from one another’s experiences.\n\n\nPart 2: Practical Approaches for Managing Microdata\nLauren will lead a short, practical discussion or demonstration related to managing and working with microdata. Topics will draw from challenges, questions, and useful practices that emerge during lab meetings and one-on-one conversations.\nPossible topics include data organization, efficient queries, project documentation, reproducible workflows, product and retailer matching, server use, and strategies for working with large datasets."
+  },
+  {
+    "objectID": "chenlab/lab-notes.html#fall-2026-meeting-schedule",
+    "href": "chenlab/lab-notes.html#fall-2026-meeting-schedule",
+    "title": "Orchard Lab Notes",
+    "section": "Fall 2026 Meeting Schedule",
+    "text": "Fall 2026 Meeting Schedule\n\n\n\nDate\nTime\nFormat\nNotes\n\n\n\n\nAugust 24\n2:00–3:30 p.m.\nIn person\nFirst lab meeting\n\n\nSeptember 7\n–\n\nLabor Day; university offices closed\n\n\nSeptember 21\n2:00–3:30 p.m.\nIn person\n\n\n\nOctober 5\n2:00–3:30 p.m.\nIn person\n\n\n\nOctober 19\n2:00–3:30 p.m.\nIn person\n\n\n\nNovember 2\n2:00–3:30 p.m.\nIn person\n\n\n\nNovember 16\n2:00–3:30 p.m.\nIn person\n\n\n\nNovember 30\n2:00–3:30 p.m.\nIn person\n\n\n\nDecember 14\n2:00–3:30 p.m.\nIn person"
+  },
+  {
+    "objectID": "chenlab/lab-notes.html#lab-notes",
+    "href": "chenlab/lab-notes.html#lab-notes",
+    "title": "Orchard Lab Notes",
+    "section": "Lab Notes",
+    "text": "Lab Notes\nMeeting notes, resources, and follow-up items are collected below.\n\n\n\n\n\n\n\n\nLab Meeting 8-24-26\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "center.html",
     "href": "center.html",
     "title": "Colorado Center for Food Innovation",
@@ -313,6 +348,41 @@
     "title": "Build Your Academic Website with Quarto and GitHub",
     "section": "Final workflow",
     "text": "Final workflow\nEvery time you update your website, use the same workflow:\n1. Edit the .qmd files in RStudio\n2. Render the website\n3. Look at the preview\n4. Commit the changed files\n5. Push to GitHub\n6. Check the live website\nThat is the foundation of a reproducible website workflow."
+  },
+  {
+    "objectID": "chenlab/lab-notes-20260824.html",
+    "href": "chenlab/lab-notes-20260824.html",
+    "title": "Lab Meeting 8-24-26",
+    "section": "",
+    "text": "This semester, I would like our lab meetings to help us:\n\nshare project progress and identify useful next steps;\ndiscuss bottlenecks before they stall a project;\nexchange updates about the Orchard server, datasets, and computing resources;\ndevelop shared best practices for data organization, documentation, and reproducible research;\nsolve common data and coding problems together;\nidentify tools, code, and documentation that can be reused across projects; and\nbuild a supportive research community among students working with related data.\n\n\n\n\n\n\n\nNoteA collaborative lab\n\n\n\nYou do not need to arrive with a polished result. A clearly explained problem, an unexpected result, or a workflow that is still in progress can be especially useful for group discussion.\n\n\n\n\nOur first meeting will focus on getting to know everyone’s work and making sure the server supports the tools students need. By the end of the meeting, we should have:\n\na snapshot of the projects and datasets represented in the group;\na list of preferred software and tools to install or update on the server;\nan initial set of shared workflow priorities; and\na plan for what would be most useful to discuss in future meetings.\n\nPlease be ready to give a brief update using the following prompts:\n\nWhat project are you currently working on?\nWhich dataset or datasets are you using?\nWhat stage is the project in?\nWhat is one current bottleneck, question, or decision?\nWhat software or computing tools do you use or prefer?"
+  },
+  {
+    "objectID": "chenlab/lab-notes-20260824.html#first-lab-meeting",
+    "href": "chenlab/lab-notes-20260824.html#first-lab-meeting",
+    "title": "Lab Meeting 8-24-26",
+    "section": "",
+    "text": "This semester, I would like our lab meetings to help us:\n\nshare project progress and identify useful next steps;\ndiscuss bottlenecks before they stall a project;\nexchange updates about the Orchard server, datasets, and computing resources;\ndevelop shared best practices for data organization, documentation, and reproducible research;\nsolve common data and coding problems together;\nidentify tools, code, and documentation that can be reused across projects; and\nbuild a supportive research community among students working with related data.\n\n\n\n\n\n\n\nNoteA collaborative lab\n\n\n\nYou do not need to arrive with a polished result. A clearly explained problem, an unexpected result, or a workflow that is still in progress can be especially useful for group discussion.\n\n\n\n\nOur first meeting will focus on getting to know everyone’s work and making sure the server supports the tools students need. By the end of the meeting, we should have:\n\na snapshot of the projects and datasets represented in the group;\na list of preferred software and tools to install or update on the server;\nan initial set of shared workflow priorities; and\na plan for what would be most useful to discuss in future meetings.\n\nPlease be ready to give a brief update using the following prompts:\n\nWhat project are you currently working on?\nWhich dataset or datasets are you using?\nWhat stage is the project in?\nWhat is one current bottleneck, question, or decision?\nWhat software or computing tools do you use or prefer?"
+  },
+  {
+    "objectID": "chenlab/lab-notes-20260824.html#software-and-server-inventory",
+    "href": "chenlab/lab-notes-20260824.html#software-and-server-inventory",
+    "title": "Lab Meeting 8-24-26",
+    "section": "Software and Server Inventory",
+    "text": "Software and Server Inventory\nDuring the first meeting, we will compile a shared list of software needs. Please consider each of the following categories.\n\n\n\n\n\n\n\n\nCategory\nExamples\nWhat to Report\n\n\n\n\nStatistical software\nR, Stata, Python, SAS\nProgram and preferred version\n\n\nDevelopment environment\nRStudio, VS Code, JupyterLab\nPreferred interface and extensions\n\n\nDatabase tools\nDuckDB, DBeaver, SQL Server tools\nClient, database engine, and drivers\n\n\nPackages and libraries\nR packages, Python packages, Stata commands\nPackages used regularly or needed soon\n\n\nVersion control\nGit, GitHub Desktop\nCurrent workflow and support needed\n\n\nData transfer and access\nRDP, SSH, SFTP\nTools used and any access problems\n\n\nOther tools\nQuarto, Tableau, LaTeX\nSoftware needed for analysis or communication\n\n\n\nFor each requested installation, we should record:\n\nthe name of the software or package;\nthe version, if a specific version is required;\nwho needs it;\nwhat project or task requires it; and\nwhether it is needed immediately or later in the semester."
+  },
+  {
+    "objectID": "chenlab/lab-notes-20260824.html#shared-practices-to-develop",
+    "href": "chenlab/lab-notes-20260824.html#shared-practices-to-develop",
+    "title": "Lab Meeting 8-24-26",
+    "section": "Shared Practices to Develop",
+    "text": "Shared Practices to Develop\nAs the semester progresses, we will document practices that make it easier to collaborate and reproduce our work. Initial topics may include:\n\norganizing project folders and separating raw, intermediate, and final data;\ndocumenting data sources, samples, filters, and variable construction;\nusing scripts instead of manual data-cleaning steps;\nwriting code that can run on the server without relying on personal file paths;\nusing Git and GitHub for code and documentation;\nkeeping sensitive or licensed data out of GitHub repositories;\ncreating reusable functions, queries, and crosswalks; and\nrecording solutions to common data problems for future lab members."
+  },
+  {
+    "objectID": "chenlab/lab-notes-20260824.html#possible-topics-for-future-meetings",
+    "href": "chenlab/lab-notes-20260824.html#possible-topics-for-future-meetings",
+    "title": "Lab Meeting 8-24-26",
+    "section": "Possible Topics for Future Meetings",
+    "text": "Possible Topics for Future Meetings\n\nNavigating Numerator tables and identifying appropriate analysis samples\nWorking efficiently with large files using DuckDB or SQL\nUnderstanding product identifiers, UPCs, and item descriptions\nMatching products, retailers, or establishments across datasets\nUsing TDLinx to measure market structure and retail change\nDeveloping reproducible data-cleaning pipelines\nReviewing code and diagnosing slow or memory-intensive workflows\nDocumenting constructed variables and analytic decisions\nUsing GitHub for collaborative research\nPresenting preliminary results and receiving feedback\n\n\n\n\n\n\n\nNoteMeeting Notes\n\n\n\n\n\nNotes, shared resources, and follow-up items from the meeting.\n\nMeeting 1: Getting Started\nDate: August 24, 2026\nDiscussion lead: Lauren Chenarides\n\nKey Updates\n\nIT was asked whether Orchard could be added to VMware Horizon, allowing users to access a virtual computer lab and connect remotely to the server.\nVMware Horizon is being sunsetted within the next two months. IT plans to replace it with another service.\nLauren is developing documentation and instructions for logging into and using the server.\n\n\n\nSoftware and Server Requests\n\nAdd Stata to Orchard.\nFive-device Stata licenses may be available.\nIf additional licensing is needed, we will document anticipated use and make the case for broader access.\n\n\n\nDecisions and Shared Practices\n\nCreate shared instructions for logging into Orchard.\nGive students time during the next meeting to log in and become familiar with the server.\nContinue documenting server procedures and common workflows as questions arise.\n\n\n\nFollow-Up Items\n\n\n\n\n\n\n\n\nAction Item\nPerson Responsible\nTarget Date\n\n\n\n\nAsk IT about the replacement for VMware Horizon and whether Orchard can be included\nLauren\nTBD\n\n\nConfirm available Stata licenses and whether additional access is needed\nLauren\nTBD\n\n\nContinue developing server documentation\nLauren\nOngoing\n\n\nCreate instructions for logging into Orchard\nLauren\nBefore the next meeting\n\n\nEmail Sione about CFT funding\nLauren\nBefore the next meeting\n\n\nComplete Orchard access and necessary Windows setup\nSione, Caroline, and Connor\nBefore the next meeting\n\n\n\n\n\nNext Meeting\nThe next meeting will include dedicated time for everyone to log into Orchard, confirm that their access works, and become familiar with the server environment."
   },
   {
     "objectID": "media.html",

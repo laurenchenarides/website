@@ -1,0 +1,135 @@
+---
+title: "Lab Meeting 8-24-26"
+subtitle: "Shared resources and meeting notes for students working with consumer and retail data"
+toc: true
+toc-location: left
+execute:
+  echo: false
+  warning: false
+---
+
+
+## First Lab Meeting
+
+This semester, I would like our lab meetings to help us:
+
+- share project progress and identify useful next steps;
+- discuss bottlenecks before they stall a project;
+- exchange updates about the Orchard server, datasets, and computing resources;
+- develop shared best practices for data organization, documentation, and reproducible research;
+- solve common data and coding problems together;
+- identify tools, code, and documentation that can be reused across projects; and
+- build a supportive research community among students working with related data.
+
+::: {.callout-note title="A collaborative lab"}
+You do not need to arrive with a polished result. A clearly explained problem, an unexpected result, or a workflow that is still in progress can be especially useful for group discussion.
+:::
+
+
+### Meeting Goals
+
+Our first meeting will focus on getting to know everyone's work and making sure the server supports the tools students need. By the end of the meeting, we should have:
+
+- a snapshot of the projects and datasets represented in the group;
+- a list of preferred software and tools to install or update on the server;
+- an initial set of shared workflow priorities; and
+- a plan for what would be most useful to discuss in future meetings.
+
+Please be ready to give a brief update using the following prompts:
+
+1. What project are you currently working on?
+2. Which dataset or datasets are you using?
+3. What stage is the project in?
+4. What is one current bottleneck, question, or decision?
+5. What software or computing tools do you use or prefer?
+
+## Software and Server Inventory
+
+During the first meeting, we will compile a shared list of software needs. Please consider each of the following categories.
+
+| Category | Examples | What to Report |
+|---|---|---|
+| Statistical software | R, Stata, Python, SAS | Program and preferred version |
+| Development environment | RStudio, VS Code, JupyterLab | Preferred interface and extensions |
+| Database tools | DuckDB, DBeaver, SQL Server tools | Client, database engine, and drivers |
+| Packages and libraries | R packages, Python packages, Stata commands | Packages used regularly or needed soon |
+| Version control | Git, GitHub Desktop | Current workflow and support needed |
+| Data transfer and access | RDP, SSH, SFTP | Tools used and any access problems |
+| Other tools | Quarto, Tableau, LaTeX | Software needed for analysis or communication |
+
+For each requested installation, we should record:
+
+- the name of the software or package;
+- the version, if a specific version is required;
+- who needs it;
+- what project or task requires it; and
+- whether it is needed immediately or later in the semester.
+
+## Shared Practices to Develop
+
+As the semester progresses, we will document practices that make it easier to collaborate and reproduce our work. Initial topics may include:
+
+- organizing project folders and separating raw, intermediate, and final data;
+- documenting data sources, samples, filters, and variable construction;
+- using scripts instead of manual data-cleaning steps;
+- writing code that can run on the server without relying on personal file paths;
+- using Git and GitHub for code and documentation;
+- keeping sensitive or licensed data out of GitHub repositories;
+- creating reusable functions, queries, and crosswalks; and
+- recording solutions to common data problems for future lab members.
+
+## Possible Topics for Future Meetings
+
+- Navigating Numerator tables and identifying appropriate analysis samples
+- Working efficiently with large files using DuckDB or SQL
+- Understanding product identifiers, UPCs, and item descriptions
+- Matching products, retailers, or establishments across datasets
+- Using TDLinx to measure market structure and retail change
+- Developing reproducible data-cleaning pipelines
+- Reviewing code and diagnosing slow or memory-intensive workflows
+- Documenting constructed variables and analytic decisions
+- Using GitHub for collaborative research
+- Presenting preliminary results and receiving feedback
+
+::: {.callout-note title="Meeting Notes" collapse=true}
+
+Notes, shared resources, and follow-up items from the meeting.
+
+### Meeting 1: Getting Started
+
+**Date:** August 24, 2026  
+**Discussion lead:** Lauren Chenarides
+
+#### Key Updates
+
+- IT was asked whether Orchard could be added to VMware Horizon, allowing users to access a virtual computer lab and connect remotely to the server.
+- VMware Horizon is being sunsetted within the next two months. IT plans to replace it with another service.
+- Lauren is developing documentation and instructions for logging into and using the server.
+
+#### Software and Server Requests
+
+- Add Stata to Orchard.
+- Five-device Stata licenses may be available.
+- If additional licensing is needed, we will document anticipated use and make the case for broader access.
+
+#### Decisions and Shared Practices
+
+- Create shared instructions for logging into Orchard.
+- Give students time during the next meeting to log in and become familiar with the server.
+- Continue documenting server procedures and common workflows as questions arise.
+
+#### Follow-Up Items
+
+| Action Item | Person Responsible | Target Date |
+|---|---|---|
+| Ask IT about the replacement for VMware Horizon and whether Orchard can be included | Lauren | TBD |
+| Confirm available Stata licenses and whether additional access is needed | Lauren | TBD |
+| Continue developing server documentation | Lauren | Ongoing |
+| Create instructions for logging into Orchard | Lauren | Before the next meeting |
+| Email Sione about CFT funding | Lauren | Before the next meeting |
+| Complete Orchard access and necessary Windows setup | Sione, Caroline, and Connor | Before the next meeting |
+
+#### Next Meeting
+
+The next meeting will include dedicated time for everyone to log into Orchard, confirm that their access works, and become familiar with the server environment.
+:::
