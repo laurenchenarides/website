@@ -161,6 +161,8 @@ To sign out:
 3. Select your user icon.
 4. Select **Sign out**.
 
+![](orchard-screenshot.png)
+
 If you need to leave code running overnight, post a message in the [General | CAS DARE Chenarides Lab Teams channel](https://teams.microsoft.com/l/channel/19%3AGljGY_kUUCZDxWBB5hm44SiohrJVQ9KwPDFPzrV8PFE1%40thread.tacv2/General?groupId=8e1a5748-4ec2-447c-b360-d9ca0bef668b&tenantId=afb58802-ff7a-4bb1-ab21-367ff2ecfc8b) before disconnecting.
 
 ## Additional resources
