@@ -22,6 +22,14 @@ repo-actions: false
 
 The Orchard Scanner Data Lab brings together students working with large consumer, retail, and establishment datasets, including Numerator, NielsenIQ/Kilts, Circana/IRI, TDLinx, and related data sources.
 
+::: {.callout-note title="Connect to Orchard"}
+New to the Orchard server? Follow the instructions for your computer:
+
+[**Remote Desktop Connection Instructions**](orchard-remote-desktop.qmd){.btn .btn-primary}
+
+Instructions are available for both Windows and Mac users.
+:::
+
 Our meetings provide a regular space to share project progress, work through bottlenecks, exchange updates about the Orchard server, and develop practical approaches to managing and analyzing microdata. The goal is to learn from one another and build shared tools, documentation, and research practices along the way.
 
 ::: {.callout-important title="Fall 2026 Meetings"}

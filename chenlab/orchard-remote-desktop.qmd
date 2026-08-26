@@ -1,0 +1,154 @@
+---
+title: "Connecting to the Orchard Server"
+toc: true
+toc-depth: 2
+number-sections: false
+---
+
+These instructions explain how to connect to the **Orchard** server from a Windows PC or Mac.
+
+## Before you begin
+
+You will need:
+
+- A CSU NetID and password
+- Access to Duo two-factor authentication
+- Permission to access the Orchard server
+- An internet connection
+
+If you are off campus, connect to CSU's **GlobalProtect VPN** before opening the remote desktop application. Instructions for installing and using GlobalProtect are available on the [CSU GlobalProtect VPN website](https://csusystem.freshservice.com/support/solutions/folders/23000047198). 
+
+::: {.callout-note}
+## Login information
+
+- **Server:** `Orchard.cas.colostate.edu`
+- **Username:** `COLOSTATE\YourNetID`
+- **Password:** Your CSU NetID password
+
+Replace `YourNetID` with your own NetID. Do not share or email your password.
+:::
+
+## Windows PC
+
+Windows computers include the **Remote Desktop Connection** application.
+
+### Set up the connection
+
+1. Open the Windows **Start** menu.
+2. Search for **Remote Desktop Connection** and open it.
+3. Select **Show Options**.
+4. In the **Computer** field, enter:
+
+   ```text
+   Orchard.cas.colostate.edu
+   ```
+
+5. In the **User name** field, enter `COLOSTATE\YourNetID`.
+
+<!-- Suggested screenshot: Remote Desktop Connection > General tab with the Computer and User name fields completed. -->
+
+### Make your local drives available on Orchard
+
+This setting allows you to open files from or save files to your own computer while working on Orchard. **You will only need to set this up once.**
+
+1. In **Remote Desktop Connection**, select **Show Options** to expand window.
+2. Navigate to the **Local Resources** tab.
+3. Under **Local devices and resources**, select **More...**.
+4. Mark the checkbox next to **Drives**.
+5. Select **OK**.
+6. Return to the **General** tab.
+
+<!-- Suggested screenshot: Local Resources > More with Drives checked. -->
+
+After you log in, your local drives should appear in **File Explorer** under **This PC**. They may be labeled with names such as `C on YourComputerName`.
+
+::: {.callout-caution}
+Files opened from Orchard may be saved to the redirected drive on your local computer.
+:::
+
+### Connect
+
+1. Select **Connect**.
+2. When prompted for your password, enter your CSU NetID password.
+
+You should now see the Windows desktop for Orchard.
+
+## Mac
+
+Mac users will connect through Microsoft's **Windows App**, which replaced the former Microsoft Remote Desktop app.
+
+### Install Windows App
+
+1. Open the **App Store** on your Mac.
+2. Search for **Windows App** by Microsoft Corporation.
+3. Install and open the app.
+
+You can also access the official download through [Microsoft's Windows App instructions](https://learn.microsoft.com/en-us/windows-app/get-started-connect-devices-desktops-apps#connect-to-a-remote-pc).
+
+### Add Orchard
+
+1. Open **Windows App** and select the **Devices** tab.
+2. Select the **+** icon, then choose **Add PC**.
+3. In **PC Name**, enter:
+
+   ```text
+   Orchard.cas.colostate.edu
+   ```
+
+4. If you want to save your username, add a user account using `COLOSTATE\YourNetID`. You may also leave the account setting as **Ask when required**.
+5. Optional: enter **Orchard** as the friendly name.
+6. Select **Add**.
+
+<!-- Suggested screenshot: Windows App > Add PC with the Orchard server name entered. -->
+
+### Make a folder on your Mac available on Orchard
+
+Folder redirection allows you to open files from or save files to a selected folder on your Mac while working on Orchard. **You will only need to set this up once.**
+
+1. In the **Devices** tab, find the Orchard connection.
+2. Select the **...** menu on the Orchard card, then select **Edit**.
+3. Open the **Folders** tab.
+4. Mark **Redirect folders**, then select the **+** icon.
+5. Choose the folder you want to make available on Orchard.
+6. Select **Save**.
+
+<!-- Suggested screenshot: Windows App > Edit > Folders with Redirect folders enabled. -->
+
+The redirected folder should appear as a network drive in **File Explorer** during your Orchard session. If macOS asks whether Windows App may access files or folders, select **Allow** for the folder you chose.
+
+::: {.callout-caution}
+Files opened from Orchard may be saved to the redirected drive on your local computer.
+:::
+
+### Connect
+
+1. Double-click the **Orchard** connection in the **Devices** tab.
+2. When prompted, enter `COLOSTATE\YourNetID` and your CSU NetID password.
+3. Complete Duo authentication if prompted.
+4. If a certificate or identity message appears, confirm that the computer name is `Orchard.cas.colostate.edu`. If a different computer is listed, cancel the connection and ask for help.
+
+You should now see the Windows desktop for Orchard.
+
+## After your first successful login
+
+Once you have successfully connected to Orchard, notify Dr. Chenarides. We will schedule a time to meet with **Alex in IT** to activate and connect your Microsoft 365 account on the server.
+
+::: {.callout-important}
+Please confirm that you can reach the Orchard desktop before the meeting with Alex. Do not try to configure Microsoft 365 on the server on your own.
+:::
+
+## Ending your session
+
+Save your work before ending the session. When you are finished:
+
+1. On Orchard, open the Windows **Start** menu.
+2. Select your user icon.
+3. Select **Sign out**.
+
+Closing the remote desktop window only disconnects the session and may leave applications running on the server. Sign out when you are finished unless you have been instructed to leave a process running.
+
+## Additional resources
+
+- [CSU GlobalProtect VPN](https://it.colostate.edu/cybersecurity/globalprotect-vpn/)
+- [Microsoft: Connect to a remote PC](https://support.microsoft.com/en-us/windows/experience/connectivity-networking/how-to-use-remote-desktop)
+- [Microsoft: Redirect local devices and folders in Windows App](https://learn.microsoft.com/en-us/windows-app/device-audio-folder-redirection-teams)
