@@ -16,6 +16,9 @@ listing:
 page-navigation: false
 title-block-banner: false
 repo-actions: false
+toc: true
+toc-depth: 2
+number-sections: false
 ---
 
 ## About the Lab
