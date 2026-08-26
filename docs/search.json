@@ -130,7 +130,7 @@
     "href": "chenlab/orchard-remote-desktop.html#before-you-begin",
     "title": "Connecting to the Orchard Server",
     "section": "Before you begin",
-    "text": "Before you begin\nYou will need:\n\nA CSU NetID and password\nAccess to Duo two-factor authentication\nPermission to access the Orchard server\nAn internet connection\n\nIf you are off campus, connect to CSU’s GlobalProtect VPN before opening the remote desktop application. Instructions for installing and using GlobalProtect are available on the CSU GlobalProtect VPN website.\n\n\n\n\n\n\nNoteLogin information\n\n\n\n\nServer: Orchard.cas.colostate.edu\nUsername: COLOSTATE\\YourNetID\nPassword: Your CSU NetID password\n\nReplace YourNetID with your own NetID. Do not share or email your password."
+    "text": "Before you begin\nYou will need:\n\nA CSU NetID and password\nAccess to Duo two-factor authentication\nPermission to access the Orchard server\nAn internet connection\n\nIf you are off campus, connect to CSU’s GlobalProtect VPN before opening the remote desktop application. Instructions for installing and using GlobalProtect are available on the CSU GlobalProtect VPN website.\n\n\n\n\n\n\nNoteLogin information\n\n\n\n\nServer: Orchard.cas.colostate.edu\nUsername: COLOSTATE\\YourNetID\nPassword: Your CSU NetID password\n\nReplace YourNetID with your own NetID. Do not share or email your password.\n\n\n\n\n\n\n\n\nWarningHaving trouble connecting?\n\n\n\nOrchard currently supports only two active Remote Desktop connections at a time. If you cannot log in, both connections may be in use.\nWait 15 minutes and try again. If you are still unable to connect, post a message in the General | CAS DARE Chenarides Lab Teams channel."
   },
   {
     "objectID": "chenlab/orchard-remote-desktop.html#windows-pc",
@@ -151,7 +151,7 @@
     "href": "chenlab/orchard-remote-desktop.html#after-your-first-successful-login",
     "title": "Connecting to the Orchard Server",
     "section": "After your first successful login",
-    "text": "After your first successful login\nOnce you have successfully connected to Orchard, notify Dr. Chenarides. We will schedule a time to meet with Alex in IT to activate and connect your Microsoft 365 account on the server.\n\n\n\n\n\n\nImportant\n\n\n\nPlease confirm that you can reach the Orchard desktop before the meeting with Alex. Do not try to configure Microsoft 365 on the server on your own."
+    "text": "After your first successful login\nOnce you have successfully connected to Orchard, notify Dr. Chenarides. We will schedule a time to meet with CSU IT to activate and connect your Microsoft 365 account on the server.\n\n\n\n\n\n\nImportant\n\n\n\nPlease confirm that you can reach the Orchard desktop before the meeting with CSU IT. Do not try to configure Microsoft 365 on the server on your own."
   },
   {
     "objectID": "chenlab/orchard-remote-desktop.html#ending-your-session",

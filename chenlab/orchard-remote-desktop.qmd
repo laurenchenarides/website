@@ -28,6 +28,12 @@ If you are off campus, connect to CSU's **GlobalProtect VPN** before opening the
 Replace `YourNetID` with your own NetID. Do not share or email your password.
 :::
 
+::: {.callout-warning title="Having trouble connecting?"}
+Orchard currently supports only **two active Remote Desktop connections at a time**. If you cannot log in, both connections may be in use.
+
+Wait **15 minutes** and try again. If you are still unable to connect, post a message in the [General | CAS DARE Chenarides Lab Teams channel](https://teams.microsoft.com/l/channel/19%3AGljGY_kUUCZDxWBB5hm44SiohrJVQ9KwPDFPzrV8PFE1%40thread.tacv2/General?groupId=8e1a5748-4ec2-447c-b360-d9ca0bef668b&tenantId=afb58802-ff7a-4bb1-ab21-367ff2ecfc8b).
+:::
+
 ## Windows PC
 
 Windows computers include the **Remote Desktop Connection** application.
@@ -131,10 +137,10 @@ You should now see the Windows desktop for Orchard.
 
 ## After your first successful login
 
-Once you have successfully connected to Orchard, notify Dr. Chenarides. We will schedule a time to meet with **Alex in IT** to activate and connect your Microsoft 365 account on the server.
+Once you have successfully connected to Orchard, **notify Dr. Chenarides**. We will schedule a time to meet with **CSU IT** to activate and connect your Microsoft 365 account on the server.
 
 ::: {.callout-important}
-Please confirm that you can reach the Orchard desktop before the meeting with Alex. Do not try to configure Microsoft 365 on the server on your own.
+Please confirm that you can reach the Orchard desktop before the meeting with CSU IT. Do not try to configure Microsoft 365 on the server on your own.
 :::
 
 ## Ending your session
