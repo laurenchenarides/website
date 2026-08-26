@@ -158,7 +158,7 @@
     "href": "chenlab/orchard-remote-desktop.html#ending-your-session",
     "title": "Connecting to the Orchard Server",
     "section": "Ending your session",
-    "text": "Ending your session\nSave your work before ending the session. When you are finished:\n\nOn Orchard, open the Windows Start menu.\nSelect your user icon.\nSelect Sign out.\n\nClosing the remote desktop window only disconnects the session and may leave applications running on the server. Sign out when you are finished unless you have been instructed to leave a process running."
+    "text": "Ending your session\nThere is an important difference between disconnecting and signing out:\n\nDisconnecting leaves your session active. When you reconnect, your applications and work should still be open, although you may need to enter your password again. The session continues to occupy one of Orchard’s available remote desktop connections.\nSigning out closes your applications, ends your session, and frees the connection for another user.\n\n\n\n\n\n\n\nWarningAlways sign out when finished\n\n\n\nUntil further notice, sign out of Orchard when you finish working so that one of the server’s two remote desktop connections remains available to others.\n\n\nTo sign out:\n\nSave your work and close any applications.\nOpen the Windows Start menu on Orchard.\nSelect your user icon.\nSelect Sign out.\n\nIf you need to leave code running overnight, post a message in the General | CAS DARE Chenarides Lab Teams channel before disconnecting."
   },
   {
     "objectID": "chenlab/orchard-remote-desktop.html#additional-resources",

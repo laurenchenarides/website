@@ -11,6 +11,7 @@ project:
     - "css"
     - "static/"
     - "images/"
+    - CNAME
 
 website:
   title: "laurenchenarides.com"

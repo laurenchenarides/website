@@ -139,13 +139,23 @@ Please confirm that you can reach the Orchard desktop before the meeting with Al
 
 ## Ending your session
 
-Save your work before ending the session. When you are finished:
+There is an important difference between **disconnecting** and **signing out**:
 
-1. On Orchard, open the Windows **Start** menu.
-2. Select your user icon.
-3. Select **Sign out**.
+- **Disconnecting** leaves your session active. When you reconnect, your applications and work should still be open, although you may need to enter your password again. The session continues to occupy one of Orchard’s available remote desktop connections.
+- **Signing out** closes your applications, ends your session, and frees the connection for another user.
 
-Closing the remote desktop window only disconnects the session and may leave applications running on the server. Sign out when you are finished unless you have been instructed to leave a process running.
+::: {.callout-warning title="Always sign out when finished"}
+Until further notice, sign out of Orchard when you finish working so that one of the server’s two remote desktop connections remains available to others.
+:::
+
+To sign out:
+
+1. Save your work and close any applications.
+2. Open the Windows **Start** menu on Orchard.
+3. Select your user icon.
+4. Select **Sign out**.
+
+If you need to leave code running overnight, post a message in the [General | CAS DARE Chenarides Lab Teams channel](https://teams.microsoft.com/l/channel/19%3AGljGY_kUUCZDxWBB5hm44SiohrJVQ9KwPDFPzrV8PFE1%40thread.tacv2/General?groupId=8e1a5748-4ec2-447c-b360-d9ca0bef668b&tenantId=afb58802-ff7a-4bb1-ab21-367ff2ecfc8b) before disconnecting.
 
 ## Additional resources
 
