@@ -1,7 +1,7 @@
 ---
 title: "Connecting to the Orchard Server"
 toc: true
-toc-depth: 2
+toc-depth: 3
 number-sections: false
 ---
 
@@ -152,18 +152,30 @@ There is an important difference between **disconnecting** and **signing out**:
 
 ::: {.callout-warning title="Always sign out when finished"}
 Until further notice, sign out of Orchard when you finish working so that one of the server’s two remote desktop connections remains available to others.
+
+If you need to leave code running overnight, post a message in the [General | CAS DARE Chenarides Lab Teams channel](https://teams.microsoft.com/l/channel/19%3AGljGY_kUUCZDxWBB5hm44SiohrJVQ9KwPDFPzrV8PFE1%40thread.tacv2/General?groupId=8e1a5748-4ec2-447c-b360-d9ca0bef668b&tenantId=afb58802-ff7a-4bb1-ab21-367ff2ecfc8b) before disconnecting.
 :::
 
-To sign out:
+### To sign out
 
 1. Save your work and close any applications.
 2. Open the Windows **Start** menu on Orchard.
 3. Select your user icon.
 4. Select **Sign out**.
 
-![](orchard-screenshot.png)
+![](orchard-screenshot.png){
+  fig-alt="The Orchard Start menu showing the Sign out option."
+  width="70%"
+  fig-align="center"
+}
 
-If you need to leave code running overnight, post a message in the [General | CAS DARE Chenarides Lab Teams channel](https://teams.microsoft.com/l/channel/19%3AGljGY_kUUCZDxWBB5hm44SiohrJVQ9KwPDFPzrV8PFE1%40thread.tacv2/General?groupId=8e1a5748-4ec2-447c-b360-d9ca0bef668b&tenantId=afb58802-ff7a-4bb1-ab21-367ff2ecfc8b) before disconnecting.
+### To disconnect
+
+Close the Remote Desktop window by selecting the **X** at the top of the window. This leaves your Orchard session and any open applications running.
+
+::: {.callout-important title="Never restart or shut down Orchard"}
+Do not select **Restart** or **Shut down** from the Windows Power menu. These options affect the entire server and could interrupt other users’ work. Only authorized IT personnel should restart or shut down Orchard.
+:::
 
 ## Additional resources
 

@@ -98,6 +98,7 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:description" content="The personal website of Lauren Chenarides">
 <meta property="og:image" content="https://www.laurenchenarides.com/chenlab/orchard-screenshot.png">
 <meta property="og:site_name" content="laurenchenarides.com">
+<meta property="og:image:alt" content="The Orchard Start menu showing the Sign out option.">
 <meta property="og:image:height" content="680">
 <meta property="og:image:width" content="647">
 </head>
@@ -166,12 +167,27 @@ ul.task-list li input[type="checkbox"] {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
+  <ul>
   <li><a href="#before-you-begin" id="toc-before-you-begin" class="nav-link active" data-scroll-target="#before-you-begin">Before you begin</a></li>
-  <li><a href="#windows-pc" id="toc-windows-pc" class="nav-link" data-scroll-target="#windows-pc">Windows PC</a></li>
-  <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac">Mac</a></li>
+  <li><a href="#windows-pc" id="toc-windows-pc" class="nav-link" data-scroll-target="#windows-pc">Windows PC</a>
+  <ul class="collapse">
+  <li><a href="#set-up-the-connection" id="toc-set-up-the-connection" class="nav-link" data-scroll-target="#set-up-the-connection">Set up the connection</a></li>
+  <li><a href="#make-your-local-drives-available-on-orchard" id="toc-make-your-local-drives-available-on-orchard" class="nav-link" data-scroll-target="#make-your-local-drives-available-on-orchard">Make your local drives available on Orchard</a></li>
+  <li><a href="#connect" id="toc-connect" class="nav-link" data-scroll-target="#connect">Connect</a></li>
+  </ul></li>
+  <li><a href="#mac" id="toc-mac" class="nav-link" data-scroll-target="#mac">Mac</a>
+  <ul class="collapse">
+  <li><a href="#install-windows-app" id="toc-install-windows-app" class="nav-link" data-scroll-target="#install-windows-app">Install Windows App</a></li>
+  <li><a href="#add-orchard" id="toc-add-orchard" class="nav-link" data-scroll-target="#add-orchard">Add Orchard</a></li>
+  <li><a href="#make-a-folder-on-your-mac-available-on-orchard" id="toc-make-a-folder-on-your-mac-available-on-orchard" class="nav-link" data-scroll-target="#make-a-folder-on-your-mac-available-on-orchard">Make a folder on your Mac available on Orchard</a></li>
+  <li><a href="#connect-1" id="toc-connect-1" class="nav-link" data-scroll-target="#connect-1">Connect</a></li>
+  </ul></li>
   <li><a href="#after-your-first-successful-login" id="toc-after-your-first-successful-login" class="nav-link" data-scroll-target="#after-your-first-successful-login">After your first successful login</a></li>
-  <li><a href="#ending-your-session" id="toc-ending-your-session" class="nav-link" data-scroll-target="#ending-your-session">Ending your session</a></li>
+  <li><a href="#ending-your-session" id="toc-ending-your-session" class="nav-link" data-scroll-target="#ending-your-session">Ending your session</a>
+  <ul class="collapse">
+  <li><a href="#to-sign-out" id="toc-to-sign-out" class="nav-link" data-scroll-target="#to-sign-out">To sign out</a></li>
+  <li><a href="#to-disconnect" id="toc-to-disconnect" class="nav-link" data-scroll-target="#to-disconnect">To disconnect</a></li>
+  </ul></li>
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional resources</a></li>
   </ul>
 </nav>
@@ -391,17 +407,40 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <p>Until further notice, sign out of Orchard when you finish working so that one of the server’s two remote desktop connections remains available to others.</p>
+<p>If you need to leave code running overnight, post a message in the <a href="https://teams.microsoft.com/l/channel/19%3AGljGY_kUUCZDxWBB5hm44SiohrJVQ9KwPDFPzrV8PFE1%40thread.tacv2/General?groupId=8e1a5748-4ec2-447c-b360-d9ca0bef668b&amp;tenantId=afb58802-ff7a-4bb1-ab21-367ff2ecfc8b">General | CAS DARE Chenarides Lab Teams channel</a> before disconnecting.</p>
 </div>
 </div>
-<p>To sign out:</p>
+<section id="to-sign-out" class="level3">
+<h3 class="anchored" data-anchor-id="to-sign-out">To sign out</h3>
 <ol type="1">
 <li>Save your work and close any applications.</li>
 <li>Open the Windows <strong>Start</strong> menu on Orchard.</li>
 <li>Select your user icon.</li>
 <li>Select <strong>Sign out</strong>.</li>
 </ol>
-<p><img src="orchard-screenshot.png" class="img-fluid"></p>
-<p>If you need to leave code running overnight, post a message in the <a href="https://teams.microsoft.com/l/channel/19%3AGljGY_kUUCZDxWBB5hm44SiohrJVQ9KwPDFPzrV8PFE1%40thread.tacv2/General?groupId=8e1a5748-4ec2-447c-b360-d9ca0bef668b&amp;tenantId=afb58802-ff7a-4bb1-ab21-367ff2ecfc8b">General | CAS DARE Chenarides Lab Teams channel</a> before disconnecting.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="orchard-screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" alt="The Orchard Start menu showing the Sign out option."></p>
+</figure>
+</div>
+</section>
+<section id="to-disconnect" class="level3">
+<h3 class="anchored" data-anchor-id="to-disconnect">To disconnect</h3>
+<p>Close the Remote Desktop window by selecting the <strong>X</strong> at the top of the window. This leaves your Orchard session and any open applications running.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Never restart or shut down Orchard">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Never restart or shut down Orchard
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not select <strong>Restart</strong> or <strong>Shut down</strong> from the Windows Power menu. These options affect the entire server and could interrupt other users’ work. Only authorized IT personnel should restart or shut down Orchard.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="additional-resources" class="level2">
 <h2 class="anchored" data-anchor-id="additional-resources">Additional resources</h2>
