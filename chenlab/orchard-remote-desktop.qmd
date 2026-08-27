@@ -85,7 +85,7 @@ Mac users will connect through Microsoft's **Windows App**, which replaced the f
 
 ### Install Windows App
 
-1. Download and install the [**Windows App*](https://apps.apple.com/us/app/windows-app/id1295203466?mt=12) from the App Store.
+1. Download and install the [Windows App](https://apps.apple.com/us/app/windows-app/id1295203466?mt=12) from the App Store.
 2. Follow the [Microsoft's Windows App instructions](https://learn.microsoft.com/en-us/windows-app/get-started-connect-devices-desktops-apps?tabs=macos-avd%2Cwindows-w365%2Cwindows-devbox%2Cmacos-rds%2Cwindows-pc&pivots=azure-virtual-desktop#connect-to-your-devices-and-apps) for macOS to install and open the app.
 
 ### Add Orchard
