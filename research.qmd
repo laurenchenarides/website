@@ -137,6 +137,10 @@ This area of my research studies how access to data, research infrastructure, an
 
 ## Selected publications
 
+**Data-Usage Descriptors as Search Metadata: The Case of Food Security Data and the National Data Platform**  
+Chenarides, L., R. Ladislau, M. Parashar, D. Hook, S. Porter, and J. Lane. 2026. *Nature: Scientific Data*.
+[Published version](https://doi.org/10.1038/s41597-026-07753-8)
+
 **A Review of Data Linkages for Policy-Informing Research in Food and Agricultural Economics**  
 Chenarides, L., A. S. Hanks, J. Berard, A. Carlson, G. Davis, and A. Finaret. 2025. *Food Policy*.  
 [Published version](https://doi.org/10.1016/j.foodpol.2025.102996)
@@ -162,9 +166,6 @@ Wilson, N., L. Chenarides, J. Kolodinsky, and K. Boys. 2024. *Choices*.
 [Published version](https://shorturl.at/nK9vt)
 
 ## Working papers and ongoing research
-
-**Data-Usage Descriptors as Search Metadata: The Case of Food Security Data and the National Data Platform, 2015–2025**  
-Chenarides, L., R. Ladislau, M. Parashar, D. Hook, S. Porter, and J. Lane.
 
 **The Economic Trade-offs between Subscription-Based and Open-Access Publication Models**  
 Bryan, C., L. Chenarides, J. I. Lane, and M. Wang.
