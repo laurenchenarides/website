@@ -168,7 +168,7 @@ If you need to leave code running overnight, post a message in the [General | CA
 
 ### To disconnect
 
-Close the Remote Desktop window by selecting the **X** at the top of the window. This leaves your Orchard session and any open applications running.
+Close the Remote Desktop window by selecting the **X** at the top of the window. This leaves your Orchard session and any open applications running. **Only disconnect if you need to leave a program running overnight. Otherwise, please sign out so the connection is available to another user.**
 
 ::: {.callout-important title="Never restart or shut down Orchard"}
 Do not select **Restart** or **Shut down** from the Windows Power menu. These options affect the entire server and could interrupt other users’ work. Only authorized IT personnel should restart or shut down Orchard.
