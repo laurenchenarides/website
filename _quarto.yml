@@ -6,7 +6,6 @@ project:
     browser: true
   render:
     - "*.qmd"
-    - "!chenlab/hidden/"
   resources:
     - "content/"
     - "css"

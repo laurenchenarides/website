@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lauren Chenarides">
+<meta name="dcterms.date" content="2026-09-21">
+
+<title>Lab Meeting 9-21-26 – laurenchenarides.com</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9bca800319d8ad04a038e1cefbc170e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<!-- academic icons -->
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+
+
+<!-- altmetric icons -->
+
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+
+<!-- fontawesome icons -->
+
+<script src="https://kit.fontawesome.com/1392a7030f.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Lab Meeting 9-21-26 – laurenchenarides.com">
+<meta property="og:description" content="Getting started with Numerator: households, baskets, and sample coverage">
+<meta property="og:image" content="https://www.laurenchenarides.com/chenlab/images/projection-factor-comparison.png">
+<meta property="og:site_name" content="laurenchenarides.com">
+<meta property="og:image:alt" content="A bar chart comparing 50 dollars observed without projection factors with 8,000 dollars after applying the illustrative basket projection factors.">
+<meta property="og:image:height" content="900">
+<meta property="og:image:width" content="1400">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">laurenchenarides.com</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../bio.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chenlab/lab-notes.html"> 
+<span class="menu-text">Orchard</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../workshops.html"> 
+<span class="menu-text">Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../media.html"> 
+<span class="menu-text">Media</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../podcast.html"> 
+<span class="menu-text">Podcast</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#todays-goals" id="toc-todays-goals" class="nav-link active" data-scroll-target="#todays-goals">Today’s goals</a></li>
+  <li><a href="#files-for-this-lab" id="toc-files-for-this-lab" class="nav-link" data-scroll-target="#files-for-this-lab">Files for this lab</a></li>
+  <li><a href="#reading-an-er-diagram" id="toc-reading-an-er-diagram" class="nav-link" data-scroll-target="#reading-an-er-diagram">1. Reading an ER diagram</a></li>
+  <li><a href="#connecting-r-to-duckdb" id="toc-connecting-r-to-duckdb" class="nav-link" data-scroll-target="#connecting-r-to-duckdb">2. Connecting R to DuckDB</a></li>
+  <li><a href="#static-households-and-participation-spells" id="toc-static-households-and-participation-spells" class="nav-link" data-scroll-target="#static-households-and-participation-spells">3. Static households and participation spells</a></li>
+  <li><a href="#projection-factors-and-expenditure-comparisons" id="toc-projection-factors-and-expenditure-comparisons" class="nav-link" data-scroll-target="#projection-factors-and-expenditure-comparisons">4. Projection factors and expenditure comparisons</a></li>
+  <li><a href="#homework-your-first-database-workflow-in-r" id="toc-homework-your-first-database-workflow-in-r" class="nav-link" data-scroll-target="#homework-your-first-database-workflow-in-r">5. Homework: your first database workflow in R</a></li>
+  <li><a href="#questions-to-resolve-before-final-estimates" id="toc-questions-to-resolve-before-final-estimates" class="nav-link" data-scroll-target="#questions-to-resolve-before-final-estimates">Questions to resolve before final estimates</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab Meeting 9-21-26</h1>
+<p class="subtitle lead">Getting started with Numerator: households, baskets, and sample coverage</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lauren Chenarides </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 21, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="todays-goals" class="level2">
+<h2 class="anchored" data-anchor-id="todays-goals">Today’s goals</h2>
+<p>We will spend the first <strong>30 minutes</strong> sharing project updates, questions, and current obstacles. We will use the remaining <strong>hour</strong> to cover:</p>
+<ul>
+<li>how to read the Numerator entity-relationship diagram;</li>
+<li>how the Numerator database, schemas, and Parquet source files are organized;</li>
+<li>why we use DuckDB and how R connects to it;</li>
+<li>how the household, basket, banner, and static reference tables relate;</li>
+<li>how to interpret static-household membership, participation spells, and gaps;</li>
+<li>how the available projection factors are intended to be used; and</li>
+<li>how to begin the sample-flow diagnostics in R.</li>
+</ul>
+<p>By the end of the lab, you should be able to connect R to the Numerator DuckDB database on Orchard, inspect the available tables, retrieve a household- or basket-level result, and close the connection. We will begin at the <strong>household and basket level</strong>; product-level work comes later.</p>
+</section>
+<section id="files-for-this-lab" class="level2">
+<h2 class="anchored" data-anchor-id="files-for-this-lab">Files for this lab</h2>
+<p>The following files will be available in the designated lab folder on Orchard. Copy them into your own R project before you begin. They are not distributed through the public website or GitHub repository.</p>
+<ul>
+<li><code>config.R</code>: open and close a read-only connection.</li>
+<li><code>read_numerator.R</code>: inspect columns and retrieve a small extract.</li>
+<li><code>example_script.R</code>: walk through the first connection, table previews, and SQL queries.</li>
+</ul>
+</section>
+<section id="reading-an-er-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="reading-an-er-diagram">1. Reading an ER diagram</h2>
+<p>An <strong>entity-relationship (ER) diagram</strong> is a visual map of a database. Each box represents a table, the entries inside the box are its columns, and the lines show how tables can be connected. ER diagrams are useful because they help you find the variables you need, identify the columns used to join tables, and see whether a relationship is one-to-one or one-to-many before you write code.</p>
+<p>When reading an ER diagram:</p>
+<ol type="1">
+<li>Find the table that contains the outcome or observation you want to study.</li>
+<li>Read its column names and identify its ID fields.</li>
+<li>Follow a connecting line to see which ID links it to another table.</li>
+<li>Read the symbols at the ends of the line. A <code>1</code> means one matching record; a <code>*</code> means that several records may match.</li>
+<li>Ask what one row represents in each table. For example, one row may represent a household, a shopping basket, or an item within a basket.</li>
+</ol>
+<p>We will walk through the supplied Numerator ER diagram together and use the example below to connect it to the tables we will use in R.</p>
+<section id="example-explain-how-these-tables-are-related" class="level3">
+<h3 class="anchored" data-anchor-id="example-explain-how-these-tables-are-related">Example: Explain how these tables are related</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>Grain and purpose</th>
+<th>Key fields</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>people_table</code></td>
+<td>Demographics table</td>
+<td><code>user_id</code>, <code>postal_code</code>, and other fields</td>
+</tr>
+<tr class="even">
+<td><code>banner_table</code></td>
+<td>Retailer information table</td>
+<td><code>banner_id</code>, <code>banner</code>, <code>channel</code>, <code>parent_channel</code>, and other fields</td>
+</tr>
+<tr class="odd">
+<td><code>summarylvl_fact_table</code></td>
+<td>Summary level transaction table</td>
+<td><code>basket_id</code>, <code>user_id</code>, <code>banner_id</code>, <code>transaction_date</code>, spending and other fields</td>
+</tr>
+</tbody>
+</table>
+<section id="people_table" class="level4">
+<h4 class="anchored" data-anchor-id="people_table"><code>people_table</code></h4>
+<ul>
+<li><code>user_id</code> = unique household id</li>
+<li><code>postal_code</code> = household’s current home postal code</li>
+</ul>
+<blockquote class="blockquote">
+<p>Note: For historical residence, the dictionary describes <code>people_history_table.FROM_DATE</code> and <code>UNTIL_DATE</code> as <strong>demographic validity dates</strong>, not enrollment dates. We will need a validated time-varying join for that work.</p>
+</blockquote>
+</section>
+<section id="banner_table" class="level4">
+<h4 class="anchored" data-anchor-id="banner_table"><code>banner_table</code></h4>
+<ul>
+<li><code>banner_id</code> = identifier used to connect a transaction to a retailer banner</li>
+<li><code>banner</code> = retailer banner name</li>
+<li><code>retailer</code> = retailer name</li>
+<li><code>channel</code> and <code>parent_channel</code> = retail channel classifications</li>
+</ul>
+</section>
+<section id="summarylvl_fact_table" class="level4">
+<h4 class="anchored" data-anchor-id="summarylvl_fact_table"><code>summarylvl_fact_table</code></h4>
+<ul>
+<li><code>basket_id</code> = internal id that designates a unique trip</li>
+<li><code>basket_total</code> = receipt total</li>
+<li><code>basket_sub_total</code> = pre-tax subtotal</li>
+<li><code>basket_adjusted_subtotal</code> = basket subtotal after discounts and adjustments are applied</li>
+<li><code>store_postal_code</code> = postal code of the store location (where available)</li>
+<li><code>store_longitude</code> = longitude coordinate of the store location (where available)</li>
+<li><code>store_latitude</code> = latitude coordinate of the store location (where available)</li>
+<li><code>order_method_type</code> = method used to place the order (e.g., in-store, online, app)</li>
+<li><code>order_provider</code> = platform or service through which the order was placed (e.g., retailer app, third-party marketplace)</li>
+<li><code>delivery_method_type</code> = method used to deliver the order (e.g., home delivery, curbside pickup, in-store pickup)</li>
+<li><code>delivery_provider</code> = third-party or retailer service that fulfilled the delivery (e.g., Instacart, DoorDash)</li>
+<li><code>order_delivery_type</code> = combined classification of the order and delivery method (e.g., BOPIS, ship-to-home, delivery)</li>
+</ul>
+<blockquote class="blockquote">
+<p>Note: A store basket is not necessarily all food. Additional field descriptions are available on the server in the <code>MASTER Numerator Data Dictionary.xlsx</code> file.</p>
+</blockquote>
+<div class="callout callout-style-default callout-note callout-titled" title="On Your Own">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>On Your Own
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Describe how you would join the three tables. Before joining, check what relationship the tables have. Are they one-to-one? One-to-many? Many-to-many?</p>
+</div>
+</div>
+</section>
+</section>
+<section id="database-structure" class="level3">
+<h3 class="anchored" data-anchor-id="database-structure">Database structure</h3>
+<p>Numerator delivers the source data as <strong>Parquet files</strong>. Parquet is a compressed, column-based file format designed for large analytical datasets. The current release is stored in table-specific folders under <code>D:\numerator\2026_07\</code>, and it includes retail purchases from <strong>1-1-2018 through 6-30-2026</strong>. Keeping the vendor files in their original format gives us an unchanged source copy and lets DuckDB read only the columns and rows needed for a query.</p>
+<p>The DuckDB database is stored at:</p>
+<pre class="text"><code>D:\numerator\Database\numerator</code></pre>
+<p>The database organizes its objects into <strong>schemas</strong>. A schema is a named section of a database, similar to a folder. It keeps tables with different purposes separate and allows two schemas to contain tables with the same name. In SQL and R, we identify a table with <code>schema_name.table_name</code>, such as <code>core_new.people_table</code>.</p>
+<p>Our main schemas are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Schema</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>core_new</code></td>
+<td>Current Numerator delivery. Its tables are views over the Parquet source files. Use this schema for the vendor tables in this lab.</td>
+</tr>
+<tr class="even">
+<td><code>core</code></td>
+<td>Earlier Numerator delivery retained for comparison. Do not use it unless a project specifically requires that release.</td>
+</tr>
+<tr class="odd">
+<td><code>reference</code></td>
+<td>Shared classifications, crosswalks, and household reference tables that can be reused across projects.</td>
+</tr>
+<tr class="even">
+<td><code>diagnostics</code></td>
+<td>Reproducible checks and summaries built from the source data.</td>
+</tr>
+</tbody>
+</table>
+<p>We keep shared reference tables in their own schema because some definitions require substantial setup and should be consistent across projects. For example, each student should not independently rebuild participation spells or retailer-channel classifications. A maintained table in <code>reference</code> can be created once, checked, and then read by many people. <strong>Transaction tables</strong> record purchases; <strong>reference tables</strong> describe, classify, or summarize the records used in those analyses.</p>
+</section>
+<section id="why-duckdb" class="level3">
+<h3 class="anchored" data-anchor-id="why-duckdb">Why DuckDB?</h3>
+<p>DuckDB is designed for analytical queries over large files. It can query Parquet directly, perform joins and summaries before data enter R, and return only the smaller result that you need. The full transaction tables are too large to load into R at once. DuckDB is also embedded: R opens the database file directly through the <code>DBI</code> package, so you can work from RStudio without running a separate database server. We use read-only connections so several people can query the shared database without changing its source tables.</p>
+</section>
+<section id="sample-of-tables-in-the-numerator-schemas" class="level3">
+<h3 class="anchored" data-anchor-id="sample-of-tables-in-the-numerator-schemas">Sample of tables in the Numerator schemas</h3>
+<p>The current vendor tables in <code>core_new</code> are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>What one row represents</th>
+<th>Main contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>core_new.banner_table</code></td>
+<td>One retailer banner</td>
+<td>Retailer, banner, channel, and parent channel</td>
+</tr>
+<tr class="even">
+<td><code>core_new.item_table</code></td>
+<td>One catalog item</td>
+<td>UPC/GTIN, brand, manufacturer, and product hierarchy</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.itemlvl_fact_table</code></td>
+<td>One purchased item within a basket</td>
+<td>Item quantity, price, spending, transaction date, and item-level factors</td>
+</tr>
+<tr class="even">
+<td><code>core_new.summarylvl_fact_table</code></td>
+<td>One basket or trip</td>
+<td>Basket spending, transaction date, store geography, ordering, delivery, and basket factors</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.people_table</code></td>
+<td>One current household record</td>
+<td>Current household demographics and home geography</td>
+</tr>
+<tr class="even">
+<td><code>core_new.people_history_table</code></td>
+<td>One household demographic period</td>
+<td>Time-varying demographics with validity dates</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.people_attributes_table</code></td>
+<td>One household attribute or tag</td>
+<td>Themes, topics, tags, and tag dates</td>
+</tr>
+<tr class="even">
+<td><code>core_new.static_table</code></td>
+<td>One household weighting window</td>
+<td>Static-file dates and household weighting fields</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.numerator_variable_metadata</code></td>
+<td>One documented column</td>
+<td>Table names, column names, positions, and data types</td>
+</tr>
+</tbody>
+</table>
+<p>The database also contains shared <code>reference</code> objects. The first five objects below support several projects. The three static-household objects are <strong>local lab tables derived from Numerator’s <code>core_new.static_table</code></strong>; they are not tables supplied directly by Numerator. The instructor creates or refreshes them before students use the lab examples.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table or view</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>reference.dept_category</code></td>
+<td>Distinct Numerator department and category hierarchy</td>
+</tr>
+<tr class="even">
+<td><code>reference.channel_fah_fafh_mapping</code></td>
+<td>Shared parent-channel and channel classifications</td>
+</tr>
+<tr class="odd">
+<td><code>reference.ecommerce_retailer_mapping</code></td>
+<td>Retailer-level classifications for e-commerce banners</td>
+</tr>
+<tr class="even">
+<td><code>reference.numerator_channel_type</code></td>
+<td>Banner-level channel classification built from the shared mappings</td>
+</tr>
+<tr class="odd">
+<td><code>reference.household_size_spend_threshold</code></td>
+<td>Household-size spending thresholds used by an earlier project-specific diagnostic definition</td>
+</tr>
+<tr class="even">
+<td><code>reference.static_household_months</code></td>
+<td>One record per household and observed static-file endpoint month; created locally from <code>core_new.static_table</code></td>
+</tr>
+<tr class="odd">
+<td><code>reference.static_household_spells</code></td>
+<td>One record per consecutive observed static-file coverage spell; created locally from <code>reference.static_household_months</code></td>
+</tr>
+<tr class="even">
+<td><code>reference.static_households</code></td>
+<td>One summary record per household appearing in the static file; created locally as a view of the spell table</td>
+</tr>
+</tbody>
+</table>
+<p>The database may gain tables as it is updated. After connecting, run <code>list_numerator_tables(con)</code> to see the live list rather than relying only on this page.</p>
+</section>
+</section>
+<section id="connecting-r-to-duckdb" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-r-to-duckdb">2. Connecting R to DuckDB</h2>
+<p>Run R/RStudio inside your Orchard session. R connects directly to <code>D:\numerator\Database\numerator</code>. The database file has no extension, and its views depend on Parquet files stored elsewhere on Orchard, so copying only the database file to another computer is not enough.</p>
+<p>Install the packages once into your own R library:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"DBI"</span>, <span class="st">"duckdb"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You only need to install these packages once. At the start of a work session, begin with four steps: load the connection instructions, open the database, run a query, and close the database.</p>
+<section id="a-first-query" class="level3">
+<h3 class="anchored" data-anchor-id="a-first-query">A first query</h3>
+<p>Run this example one section at a time rather than running the entire script at once.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Load the connection instructions.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Open a read-only connection to the shared DuckDB database.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Ask DuckDB for five household records.</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>households <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT user_id, postal_code, census_region_name</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM core_new.people_table</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">  LIMIT 5</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the data frame that DuckDB returned to R.</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(households)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Close the connection as soon as the query is finished.</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">close_numerator_connection</span>(con)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The text inside quotation marks is <strong>SQL</strong>. SQL is the language used to ask a database for information:</p>
+<ul>
+<li><code>SELECT</code> names the columns to return.</li>
+<li><code>FROM</code> names the schema and table containing those columns.</li>
+<li><code>LIMIT 5</code> asks for only five rows.</li>
+</ul>
+<p><code>DBI::dbGetQuery()</code> sends that SQL from R to DuckDB. DuckDB does the database work and returns the result as an ordinary R data frame called <code>households</code>.</p>
+</section>
+<section id="using-the-helper-script" class="level3">
+<h3 class="anchored" data-anchor-id="using-the-helper-script">Using the helper script</h3>
+<p><code>read_numerator.R</code> contains shortcuts for common tasks. Source it after <code>config.R</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"read_numerator.R"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>available_tables <span class="ot">&lt;-</span> <span class="fu">list_numerator_tables</span>(con)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>people_columns <span class="ot">&lt;-</span> <span class="fu">describe_numerator</span>(con, <span class="st">"people_table"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>people_preview <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(con, <span class="st">"people_table"</span>, <span class="at">limit =</span> <span class="dv">10</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">close_numerator_connection</span>(con)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This produces three R data frames:</p>
+<ul>
+<li><code>available_tables</code> lists the tables and schemas you can query;</li>
+<li><code>people_columns</code> lists the columns in <code>people_table</code>; and</li>
+<li><code>people_preview</code> contains ten example rows.</li>
+</ul>
+<p>The functions in <code>read_numerator.R</code> protect long ID numbers by reading them as text and use lowercase column names in R. A preview shows you the table’s structure; it is not a random or representative sample. Large transaction tables should be filtered or summarized by DuckDB before their results are brought into R.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Always close the connection">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Always close the connection
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The function <code>open_numerator_connection()</code> comes from <code>config.R</code>. It opens the database in read-only mode. This allows multiple R users to read the shared database at the same time, but a read-write connection left open in another program can lock the database and prevent other people from connecting.</p>
+<p>Close your connection as soon as your query finishes. If your code stops with an error before reaching the closing line, run <code>close_numerator_connection(con)</code> in the Console. If the database remains locked, check for an open connection in RStudio or another database program and close it.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="More advanced: close the connection automatically">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>More advanced: close the connection automatically
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>After you are comfortable with the four basic steps, you can place them inside a function. <code>on.exit()</code> tells R to close the connection when the function ends, including when a query produces an error.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>count_households_by_month <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">on.exit</span>(<span class="fu">close_numerator_connection</span>(con), <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT date_trunc('month', transaction_date)::DATE AS month,</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">           COUNT(DISTINCT user_id) AS n_households</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM core_new.summarylvl_fact_table</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE transaction_date &gt;= DATE '2025-01-01'</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">      AND transaction_date &lt; DATE '2026-01-01'</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY month</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="st">    ORDER BY month</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>monthly_households <span class="ot">&lt;-</span> <span class="fu">count_households_by_month</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This advanced version follows the same sequence as the first example. The only difference is that R handles the cleanup automatically.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="static-households-and-participation-spells" class="level2">
+<h2 class="anchored" data-anchor-id="static-households-and-participation-spells">3. Static households and participation spells</h2>
+<p>Households join and leave consumer panels at different times, and they do not all submit receipts consistently. This creates a problem for research over time: a decline in purchases could mean that a household stopped buying something, or it could mean that the household stopped reporting purchases. A <strong>static household</strong> sample attempts to identify households with sufficiently consistent reporting for comparisons over time.</p>
+<p>“Static” does <strong>not</strong> mean that the household’s demographics never change or that it participates forever. It refers to reporting consistency during a defined period.</p>
+<section id="numerators-official-definition" class="level3">
+<h3 class="anchored" data-anchor-id="numerators-official-definition">Numerator’s official definition</h3>
+<p>The documentation supplied with the data describes Numerator’s official Omnipanel static sample as households meeting all of these conditions:</p>
+<ul>
+<li>12 consecutive calendar months of reporting paper receipts in <strong>FMCG (fast-moving consumer goods)</strong> channels, which cover frequently purchased products sold through grocery, mass-market, drug, convenience, and related retailers;</li>
+<li>gas-only receipts excluded;</li>
+<li>demographic and geographic representation requirements; and</li>
+<li>at least 95% of receipts fully transcribed.</li>
+</ul>
+<p>Numerator caps that official panel at approximately 100,000 households nationally. The files on Orchard do not contain a field that clearly identifies which households belong to that official panel.</p>
+<p>Numerator does supply <code>core_new.static_table</code>, but that table serves a different observable purpose: it contains repeated 12-month weighting windows and the household-level fields <code>DEMO_WEIGHT</code> and <code>NATIONAL_FACTOR</code>. It also contains far more households than the documented official panel. We therefore treat it as a <strong>monthly weighting file</strong> and do not assume that every household in it satisfies Numerator’s official static-panel criteria.</p>
+</section>
+<section id="definitions-available-on-orchard" class="level3">
+<h3 class="anchored" data-anchor-id="definitions-available-on-orchard">Definitions available on Orchard</h3>
+<p>There are two related resources in the database, and they answer different questions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Resource</th>
+<th>What it means</th>
+<th>Appropriate use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>diagnostics.static_households</code></td>
+<td>An internal project proxy requiring at least 36 active months, at least 26 receipts, and a household-size spending floor, excluding gas-only activity</td>
+<td>RQs that require a more consistently active analytic sample</td>
+</tr>
+<tr class="even">
+<td><code>reference.static_households</code> and <code>reference.static_household_spells</code></td>
+<td>A description of when households appear in <code>core_new.static_table</code></td>
+<td>Studying observed weighting-file coverage, gaps, and returns</td>
+</tr>
+</tbody>
+</table>
+<p>The internal proxy is not Numerator’s official classification. Its 36 <strong>active</strong> months also do not have to be consecutive. The reference tables do not claim that a household met the official static criteria; they describe what we can observe in the supplied weighting file.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Which static table are we using?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Which static table are we using?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Numerator provides the source table <code>core_new.static_table</code>. The lab’s setup SQL uses that source to create three local reference objects: <code>reference.static_household_months</code>, <code>reference.static_household_spells</code>, and <code>reference.static_households</code>.</p>
+<p>In <code>reference.static_households</code>, <code>is_static_household = 1</code> means only that the household appears in Numerator’s <code>core_new.static_table</code>. In these notes, we call this <strong>static-file membership</strong>. It does not mean that we have verified the household against Numerator’s official Omnipanel static criteria.</p>
+<p>The reference view contains only households found in the source static file. To compare them with all observed households, start with the full household sample and left join <code>reference.static_households</code>. A match receives <code>is_static_household = 1</code>; a household without a match receives <code>is_static_household = 0</code> for that comparison.</p>
+</div>
+</div>
+</section>
+<section id="what-is-a-participation-spell" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-participation-spell">What is a participation spell?</h3>
+<p>The dictionary defines <code>START_DATE</code> and <code>END_DATE</code> in <code>static_table</code> as the beginning and end of a 12-calendar-month weighting period. These are not verified panel enrollment and exit dates. We use the month of <code>END_DATE</code> to identify the monthly sequence of weighting-file records for each household.</p>
+<p>For this lab, a <strong>coverage spell</strong> is one uninterrupted sequence of those observed endpoint months. A missing month ends one spell. If the household appears again later, a new spell begins. Looking only at the earliest and latest month would hide the gap. The spell measures continuity in the weighting file; it does not prove continuous panel enrollment or receipt reporting.</p>
+<p>Consider a fictional household with endpoint months January, February, March, June, and July:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Spell</th>
+<th>First observed month</th>
+<th>Last observed month</th>
+<th style="text-align: right;">Months in spell</th>
+<th style="text-align: right;">Missing months before spell</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>January</td>
+<td>March</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>June</td>
+<td>July</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p>This household has two observed spells and returns after an April–May gap. Its overall January–July span contains five observed months, not seven months of continuous coverage.</p>
+<p>The spell reference records:</p>
+<ul>
+<li><code>user_id</code>: the household identifier;</li>
+<li><code>spell_id</code>: the first, second, or later spell for that household;</li>
+<li><code>spell_start_month</code> and <code>spell_end_month</code>: the observed bounds of that spell;</li>
+<li><code>n_months_in_spell</code>: the number of covered months in the spell;</li>
+<li><code>gap_months_before</code>: the number of missing months before a returning spell; and</li>
+<li><code>n_spells</code> and <code>is_return</code>: indicators that help identify households that disappear and later return.</li>
+</ul>
+<p>The one-row <code>reference.static_households</code> table is useful when you need one household-level label. The multi-row <code>reference.static_household_spells</code> table is useful when the timing and continuity of coverage matter.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Observed coverage is not confirmed enrollment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Observed coverage is not confirmed enrollment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The actual <code>panel_entry_date</code> and <code>panel_exit_date</code> remain missing because the reviewed files do not establish them. A missing receipt is not proof that a household left the panel, and disappearance from the weighting file is not proof that it stopped purchasing. These distinctions matter because attrition and changing sample composition can look like changes in purchasing behavior.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="projection-factors-and-expenditure-comparisons" class="level2">
+<h2 class="anchored" data-anchor-id="projection-factors-and-expenditure-comparisons">4. Projection factors and expenditure comparisons</h2>
+<p>Numerator is an opt-in panel, not a census of every US household or every purchase. Some types of households and purchases are more common in the panel than others. A <strong>projection factor</strong> is a multiplier supplied with the data to scale an observed record toward a larger target population.</p>
+<p>A factor of 100 means that the record contributes 100 units to a projected calculation. It does not mean that the observed household literally made 100 identical purchases. The factor changes how much influence the record has in the estimate.</p>
+<p>The supplied dictionary describes the fields’ intended roles:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Table</th>
+<th>Intended role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ER_FACTOR</code></td>
+<td><code>itemlvl_fact_table</code></td>
+<td>Extended-reach projection applied to an item-level purchase row</td>
+</tr>
+<tr class="even">
+<td><code>BASKET_ER_FACTOR</code></td>
+<td><code>summarylvl_fact_table</code></td>
+<td>Extended-reach projection applied to a basket-level purchase row</td>
+</tr>
+<tr class="odd">
+<td><code>TREND_FACTOR</code> / <code>BASKET_TREND_FACTOR</code></td>
+<td>Corresponding fact table</td>
+<td>Trend-adjusted projection at the item or basket level</td>
+</tr>
+<tr class="even">
+<td><code>DEMO_WEIGHT</code> / <code>NATIONAL_FACTOR</code></td>
+<td><code>static_table</code></td>
+<td>Demographic weighting and national scaling for the static-file population</td>
+</tr>
+</tbody>
+</table>
+<p>Use the factor that matches the level of the outcome. For basket expenditure from <code>summarylvl_fact_table</code>, use the basket-level factor. For item expenditure from <code>itemlvl_fact_table</code>, use the item-level factor. Do not attach an item factor to a basket total, and do not multiply the different factor families together unless Numerator confirms that procedure.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="What we do not yet know">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>What we do not yet know
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We do not have documentation explaining how Numerator constructs these factors, including the calibration targets, normalization, trimming, eligible population, or how the factor families relate. The field descriptions tell us their intended level of use, but they are not enough to certify a final national estimator for every subset of the data.</p>
+</div>
+</div>
+<section id="a-step-by-step-example" class="level3">
+<h3 class="anchored" data-anchor-id="a-step-by-step-example">A step-by-step example</h3>
+<p>Suppose we observe two baskets:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Basket</th>
+<th style="text-align: right;">Observed expenditure</th>
+<th style="text-align: right;"><code>BASKET_ER_FACTOR</code></th>
+<th style="text-align: right;">Expenditure × factor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td style="text-align: right;">$20</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">$2,000</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td style="text-align: right;">$30</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">$6,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 1: Calculate the observed total.</strong></p>
+<p>The two recorded baskets contain $20 + $30 = <strong>$50</strong> in observed expenditure.</p>
+<p><strong>Step 2: Multiply each basket by its factor.</strong></p>
+<ul>
+<li>Basket A: $20 × 100 = $2,000</li>
+<li>Basket B: $30 × 200 = $6,000</li>
+</ul>
+<p><strong>Step 3: Add the projected contributions.</strong></p>
+<p>$2,000 + $6,000 = <strong>$8,000</strong>. Under the assumption that <code>BASKET_ER_FACTOR</code> is the appropriate standalone multiplier, this is the illustrative projected expenditure total for these records.</p>
+<p>In notation, the same calculation is:</p>
+<p><span class="math display">\[
+\widehat{E}_t = \sum_{b \in \mathcal{B}_t} E_b\,w_b,
+\qquad w_b = \text{BASKET\_ER\_FACTOR}_b.
+\]</span></p>
+<p><strong>Step 4: Distinguish a projected total from a weighted mean.</strong></p>
+<p>The sum of the factors is 100 + 200 = 300. Dividing $8,000 by 300 gives <strong>$26.67</strong>, the weighted mean expenditure per basket in this example. It is not total national expenditure, annual household expenditure, or expenditure per household. Those are different outcomes with different denominators.</p>
+</section>
+<section id="reproducing-the-example-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="reproducing-the-example-in-r">Reproducing the example in R</h3>
+<p>The following R code creates the same two fictional baskets and repeats each step of the calculation. This example does not connect to DuckDB; its purpose is to make the arithmetic visible before applying it to the full data.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>basket_example <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">basket =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">basket_total =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">basket_er_factor =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Multiply each basket's expenditure by its factor.</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>basket_example<span class="sc">$</span>projected_contribution <span class="ot">&lt;-</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  basket_example<span class="sc">$</span>basket_total <span class="sc">*</span> basket_example<span class="sc">$</span>basket_er_factor</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the observed expenditures: 20 + 30 = 50.</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>observed_total <span class="ot">&lt;-</span> <span class="fu">sum</span>(basket_example<span class="sc">$</span>basket_total)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the projected contributions: 2,000 + 6,000 = 8,000.</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>projected_total <span class="ot">&lt;-</span> <span class="fu">sum</span>(basket_example<span class="sc">$</span>projected_contribution)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Divide projected expenditure by the sum of the factors.</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>weighted_mean <span class="ot">&lt;-</span> projected_total <span class="sc">/</span> <span class="fu">sum</span>(basket_example<span class="sc">$</span>basket_er_factor)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>basket_example</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>observed_total</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>projected_total</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>weighted_mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The four results should match the hand calculation above: $50 observed, $8,000 projected, and a $26.67 weighted mean. The figure compares the two totals. The weighted bar is much taller because the factors scale the two observed baskets toward a larger population.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/projection-factor-comparison.png" class="img-fluid figure-img" style="width:85.0%" alt="A bar chart comparing 50 dollars observed without projection factors with 8,000 dollars after applying the illustrative basket projection factors."></p>
+<figcaption>Observed and illustrative factor-adjusted expenditure in the two-basket example.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="More advanced: apply the calculation to DuckDB">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>More advanced: apply the calculation to DuckDB
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Once the arithmetic is clear, the same calculation can be placed inside a SQL query and sent from R to DuckDB. This query summarizes January 2025 baskets without loading every basket into R. It also counts records with missing spending or unusable factors so that those records are not silently ignored.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>projection_example <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">      COUNT(*) AS n_baskets,</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">      COUNT(*) FILTER (WHERE basket_total IS NULL) AS missing_spending,</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">      COUNT(*) FILTER (</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">          WHERE basket_er_factor IS NULL</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">             OR NOT isfinite(basket_er_factor)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="st">             OR basket_er_factor &lt;= 0</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="st">      ) AS unusable_factors,</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="st">      SUM(basket_total) FILTER (</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="st">          WHERE basket_total IS NOT NULL</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="st">            AND basket_er_factor IS NOT NULL</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="st">            AND isfinite(basket_er_factor)</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="st">            AND basket_er_factor &gt; 0</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="st">      ) AS observed_spending_for_usable_records,</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="st">      SUM(basket_total * basket_er_factor) FILTER (</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="st">          WHERE basket_total IS NOT NULL</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="st">            AND basket_er_factor IS NOT NULL</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="st">            AND isfinite(basket_er_factor)</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="st">            AND basket_er_factor &gt; 0</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="st">      ) AS illustrative_projected_spending</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM core_new.summarylvl_fact_table</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="st">  WHERE transaction_date &gt;= DATE '2025-01-01'</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="st">    AND transaction_date &lt; DATE '2025-02-01'</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="fu">close_numerator_connection</span>(con)</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(projection_example)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Check <code>missing_spending</code> and <code>unusable_factors</code> before interpreting the factor-adjusted columns. Do not replace a missing factor with 1.</p>
+</div>
+</div>
+</div>
+<p>The database example uses all January 2025 basket records and is meant to show the mechanics of the calculation. Restricting the data to static-file members, selected ZIP codes, channels, or continuously observed households changes the sample, and the supplied factors may not project that restricted sample nationally.</p>
+<p>When comparing an estimate with a national benchmark, make sure the time period, population, retail channels, tax treatment, and definition of expenditure match. Always report the observed sample size and unweighted expenditure alongside a factor-adjusted result. Weighting does not by itself fix missing geographic coverage, household attrition, or a mismatch between the panel outcome and the benchmark.</p>
+</section>
+</section>
+<section id="homework-your-first-database-workflow-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="homework-your-first-database-workflow-in-r">5. Homework: your first database workflow in R</h2>
+<p>The goal for this assignment is to practice the complete workflow once:</p>
+<p><strong>connect to DuckDB → inspect tables → read a preview → run SQL from R → close the connection.</strong></p>
+<section id="part-1-run-the-example-script" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-run-the-example-script">Part 1: Run the example script</h3>
+<ol type="1">
+<li>Locate <code>config.R</code>, <code>read_numerator.R</code>, and <code>example_script.R</code> in your project folder on Orchard.</li>
+<li>Open <code>example_script.R</code> in RStudio.</li>
+<li>Run the script <strong>one section at a time</strong> with Ctrl+Enter. Read the comments before running each section.</li>
+<li>Stop after each <code>View()</code> command and look at the returned R data frame.</li>
+<li>Confirm that the final section closes the connection.</li>
+</ol>
+<p>The script creates these objects:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>R object</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>available_tables</code></td>
+<td>Tables and schemas available in the database</td>
+</tr>
+<tr class="even">
+<td><code>people_columns</code> and <code>basket_columns</code></td>
+<td>Column names and data types</td>
+</tr>
+<tr class="odd">
+<td><code>people_preview</code>, <code>static_preview</code>, and <code>basket_preview</code></td>
+<td>Ten example rows from three tables</td>
+</tr>
+<tr class="even">
+<td><code>sample_flow</code></td>
+<td>All 2025 basket households → static-file households → static-file households with a postal code</td>
+</tr>
+<tr class="odd">
+<td><code>monthly_coverage</code></td>
+<td>Observed households and baskets for each month of 2025</td>
+</tr>
+</tbody>
+</table>
+<p>Answer these questions:</p>
+<ol type="1">
+<li>Which schema contains <code>people_table</code>, <code>summarylvl_fact_table</code>, and <code>static_households</code>?</li>
+<li>Which IDs connect the household, banner, and basket tables?</li>
+<li>How many households are retained at each row of <code>sample_flow</code>?</li>
+<li>How many households are lost when the static-file condition is applied? How many more are lost when a current postal code is required?</li>
+<li>Which month has the largest number of observed households in <code>monthly_coverage</code>?</li>
+</ol>
+</section>
+<section id="part-2-run-your-own-sql-query-from-r" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-run-your-own-sql-query-from-r">Part 2: Run your own SQL query from R</h3>
+<p>Create a new R script. Use the same four basic steps from the lab notes: source <code>config.R</code>, open the connection, run the query below, and close the connection.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>households_by_region <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">  SELECT</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">      census_region_name,</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">      COUNT(*) AS n_household_records</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="st">  FROM core_new.people_table</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="st">  GROUP BY census_region_name</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">  ORDER BY n_household_records DESC</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="st">"</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">close_numerator_connection</span>(con)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(households_by_region)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In two or three sentences, explain what the SQL query asks DuckDB to do. Identify what <code>SELECT</code>, <code>FROM</code>, <code>GROUP BY</code>, and <code>ORDER BY</code> contribute to the result.</p>
+</section>
+<section id="what-to-bring-to-the-next-lab" class="level3">
+<h3 class="anchored" data-anchor-id="what-to-bring-to-the-next-lab">What to bring to the next lab</h3>
+<p>Bring your completed R scripts, the <code>sample_flow</code> result, the <code>households_by_region</code> result, and your written answers. Also bring any error messages you encountered and a note describing how you resolved them. Keep all household extracts and detailed geographic outputs on Orchard or other approved lab storage.</p>
+</section>
+</section>
+<section id="questions-to-resolve-before-final-estimates" class="level2">
+<h2 class="anchored" data-anchor-id="questions-to-resolve-before-final-estimates">Questions to resolve before final estimates</h2>
+<p>The live DuckDB schema is the authority for the tables and column types currently available on Orchard. The supplied data dictionary describes the variables, but several methodological questions remain open. Before using these data for final estimates, we still need to confirm:</p>
+<ul>
+<li>whether an official Numerator static-panel flag is available;</li>
+<li>how to interpret months when a household is absent from the weighting file;</li>
+<li>whether any available dates represent actual panel enrollment and exit;</li>
+<li>how household weights should be aligned with transaction dates; and</li>
+<li>how Numerator constructs and intends researchers to combine the projection factors.</li>
+</ul>
+<p>The participation-spell reference gives us an auditable description of observed coverage under the current definition. It can be revised when additional documentation becomes available.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.laurenchenarides\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ <a href="cv.html">CV</a> &nbsp;<a href="https://github.com/laurenchenarides" target="blank"><i class="bi bi-github"></i></a> &nbsp;<a href="https://www.linkedin.com/in/laurenchenarides/" target="blank"><i class="bi bi-linkedin"></i></a> &nbsp;<a href="https://scholar.google.com/citations?user=07RAgEQAAAAJ&amp;hl=en" target="blank"><i class="ai ai-google-scholar fa-lg"></i></a> &nbsp;<a href="https://orcid.org/my-orcid?orcid=0000-0001-8983-9694" target="blank"><i class="ai ai-orcid fa-lg"></i></a><br>Site made with <i class="bi bi-heart-fill"></i>, <a href="https://github.com/laurenchenarides/personal_website" target="_blank"><i class="bi bi-git"></i></a>, and <a href="https://quarto.org/" target="_blank"><img src="https://quarto.org/favicon.png" width="12"> quarto</a><br>© 2026 Lauren Chenarides
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
