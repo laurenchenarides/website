@@ -132,9 +132,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
@@ -238,12 +235,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#todays-goals" id="toc-todays-goals" class="nav-link active" data-scroll-target="#todays-goals">Today’s goals</a></li>
   <li><a href="#files-for-this-lab" id="toc-files-for-this-lab" class="nav-link" data-scroll-target="#files-for-this-lab">Files for this lab</a></li>
-  <li><a href="#read-the-er-diagram" id="toc-read-the-er-diagram" class="nav-link" data-scroll-target="#read-the-er-diagram">Read the ER diagram</a></li>
-  <li><a href="#connect-r-to-duckdb" id="toc-connect-r-to-duckdb" class="nav-link" data-scroll-target="#connect-r-to-duckdb">Connect R to DuckDB</a></li>
-  <li><a href="#static-households-and-participation-spells" id="toc-static-households-and-participation-spells" class="nav-link" data-scroll-target="#static-households-and-participation-spells">Static households and participation spells</a></li>
-  <li><a href="#projection-factors-and-expenditure-comparisons" id="toc-projection-factors-and-expenditure-comparisons" class="nav-link" data-scroll-target="#projection-factors-and-expenditure-comparisons">Projection factors and expenditure comparisons</a></li>
-  <li><a href="#homework-build-the-first-sample-flow-diagnostics" id="toc-homework-build-the-first-sample-flow-diagnostics" class="nav-link" data-scroll-target="#homework-build-the-first-sample-flow-diagnostics">Homework: build the first sample-flow diagnostics</a></li>
-  <li><a href="#source-notes-and-questions-to-resolve" id="toc-source-notes-and-questions-to-resolve" class="nav-link" data-scroll-target="#source-notes-and-questions-to-resolve">Source notes and questions to resolve</a></li>
+  <li><a href="#reading-an-er-diagram" id="toc-reading-an-er-diagram" class="nav-link" data-scroll-target="#reading-an-er-diagram">1. Reading an ER diagram</a></li>
+  <li><a href="#connecting-r-to-duckdb" id="toc-connecting-r-to-duckdb" class="nav-link" data-scroll-target="#connecting-r-to-duckdb">2. Connecting R to DuckDB</a></li>
+  <li><a href="#static-households-and-participation-spells" id="toc-static-households-and-participation-spells" class="nav-link" data-scroll-target="#static-households-and-participation-spells">3. Static households and participation spells</a></li>
+  <li><a href="#projection-factors-and-expenditure-comparisons" id="toc-projection-factors-and-expenditure-comparisons" class="nav-link" data-scroll-target="#projection-factors-and-expenditure-comparisons">4. Projection factors and expenditure comparisons</a></li>
+  <li><a href="#homework-build-the-first-sample-flow-diagnostics" id="toc-homework-build-the-first-sample-flow-diagnostics" class="nav-link" data-scroll-target="#homework-build-the-first-sample-flow-diagnostics">5. Homework: build the first sample-flow diagnostics</a></li>
+  <li><a href="#questions-to-resolve-before-final-estimates" id="toc-questions-to-resolve-before-final-estimates" class="nav-link" data-scroll-target="#questions-to-resolve-before-final-estimates">Questions to resolve before final estimates</a></li>
   </ul>
 </nav>
 </nav>
@@ -288,92 +285,41 @@ window.Quarto = {
 
 <section id="todays-goals" class="level2">
 <h2 class="anchored" data-anchor-id="todays-goals">Today’s goals</h2>
-<p>By the end of this lab, you should be able to connect R to the Numerator DuckDB database on Orchard, read a small household or basket extract, close the connection, and explain which households your analysis includes. We will begin at the <strong>household and basket level</strong>; product-level work comes later.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Activity</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2:00–2:30</td>
-<td>Project updates, access checks, and questions</td>
-</tr>
-<tr class="even">
-<td>2:30–2:40</td>
-<td>Read the ER diagram and identify our starting tables</td>
-</tr>
-<tr class="odd">
-<td>2:40–2:55</td>
-<td>Connect R, inspect columns, and read a small extract</td>
-</tr>
-<tr class="even">
-<td>2:55–3:10</td>
-<td>Static membership, spells, gaps, and attrition</td>
-</tr>
-<tr class="odd">
-<td>3:10–3:20</td>
-<td>Projection factors and expenditure comparisons</td>
-</tr>
-<tr class="even">
-<td>3:20–3:30</td>
-<td>Start the sample-flow homework</td>
-</tr>
-</tbody>
-</table>
+<p>We will spend the first <strong>30 minutes</strong> sharing project updates, questions, and current obstacles. We will use the remaining <strong>hour</strong> to cover:</p>
+<ul>
+<li>how to read the Numerator entity-relationship diagram;</li>
+<li>how the Numerator database, schemas, and Parquet source files are organized;</li>
+<li>why we use DuckDB and how R connects to it;</li>
+<li>how the household, basket, banner, and static reference tables relate;</li>
+<li>how to interpret static-household membership, participation spells, and gaps;</li>
+<li>how the available projection factors are intended to be used; and</li>
+<li>how to begin the sample-flow diagnostics in R.</li>
+</ul>
+<p>By the end of the lab, you should be able to connect R to the Numerator DuckDB database on Orchard, inspect the available tables, retrieve a household- or basket-level result, and close the connection. We will begin at the <strong>household and basket level</strong>; product-level work comes later.</p>
 </section>
 <section id="files-for-this-lab" class="level2">
 <h2 class="anchored" data-anchor-id="files-for-this-lab">Files for this lab</h2>
-<p>Dr.&nbsp;Chenarides will provide the following files in the designated lab folder on Orchard. They are not distributed through the public website or GitHub repository. Copy <code>config.R</code> and <code>read_numerator.R</code> into your own R project on Orchard for the examples below.</p>
+<p>The following files will be available in the designated lab folder on Orchard. Copy them into your own R project before you begin. They are not distributed through the public website or GitHub repository.</p>
 <ul>
 <li><code>config.R</code>: open and close a read-only connection.</li>
 <li><code>read_numerator.R</code>: inspect columns and retrieve a small extract.</li>
-<li><code>02_static_household_spells.sql</code>: instructor setup for the shared household reference tables.</li>
-<li><code>03_sample_flow.sql</code>: student diagnostic exercise.</li>
+<li><code>03_sample_flow.R</code>: run the sample-flow diagnostics from R and return the results as R data frames.</li>
 </ul>
-<p>These are teaching versions of the earlier scripts. They use <code>core_new</code> consistently, do not depend on a saved metadata table, and do not run the older plant-based project’s spending/activity filters. The supplied ER diagram, dictionary, scripts, and internal draft documentation are private lab materials; access them on Orchard during the discussion.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Instructor preparation">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Instructor preparation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Before class, verify that <code>core_new</code> points to the intended release and that its parquet files are available on Orchard. The reviewed setup script identifies this as the July 2026 delivery, with purchases through June 30, 2026; verify the actual date ranges in the database.</p>
-<p>Run <code>02_static_household_spells.sql</code> once in a DBeaver SQL editor attached to that database. It requires <code>core_new.static_table</code>, already created by the corresponding section of <code>00_setup.sql</code>. Students do <strong>not</strong> need to rerun the full setup or <code>01_household_diagnostics.sql</code>. Stop on SQL errors and issue <code>ROLLBACK</code> before retrying. Rebuild the reference tables after a data refresh.</p>
-<p>Coordinate this write with other users: disconnect R readers first, then disconnect the DBeaver write connection before the class connects. Multiple direct DuckDB readers can share the file when all connections are read-only. See the <a href="https://duckdb.org/docs/current/connect/concurrency">DuckDB concurrency documentation</a>.</p>
-</div>
-</div>
 </section>
-<section id="read-the-er-diagram" class="level2">
-<h2 class="anchored" data-anchor-id="read-the-er-diagram">Read the ER diagram</h2>
-<p>An <strong>entity-relationship (ER) diagram</strong> shows tables, their fields, and the keys connecting them. Start with the <strong>grain</strong>: what does one row represent? Then identify the join key and whether one record can match several records in the other table. A <code>1</code> means one; <code>*</code> means many. A line suggests a relationship, but we must still check uniqueness in the actual data.</p>
-<p>For this lab, use this simplified map alongside the supplied diagram:</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  P["people_table&lt;br/&gt;one household"] --&gt;|user_id| B["summarylvl_fact_table&lt;br/&gt;one basket"]
-  C["banner_table&lt;br/&gt;one retailer banner"] --&gt;|banner_id| B
-  H["static_households&lt;br/&gt;one household"] --&gt;|user_id| B
-  H --&gt;|user_id| S["static_household_spells&lt;br/&gt;one household + spell"]
-  M["static_household_months&lt;br/&gt;one household + endpoint month"] --&gt; S
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>The three <code>static_household...</code> objects are lab-created references, not vendor tables. The arrows show how to relate them; they are not instructions to join every object at once.</p>
-<section id="start-with-these-tables" class="level3">
-<h3 class="anchored" data-anchor-id="start-with-these-tables">Start with these tables</h3>
+<section id="reading-an-er-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="reading-an-er-diagram">1. Reading an ER diagram</h2>
+<p>An <strong>entity-relationship (ER) diagram</strong> is a visual map of a database. Each box represents a table, the entries inside the box are its columns, and the lines show how tables can be connected. ER diagrams are useful because they help you find the variables you need, identify the columns used to join tables, and see whether a relationship is one-to-one or one-to-many before you write code.</p>
+<p>When reading an ER diagram:</p>
+<ol type="1">
+<li>Find the table that contains the outcome or observation you want to study.</li>
+<li>Read its column names and identify its ID fields.</li>
+<li>Follow a connecting line to see which ID links it to another table.</li>
+<li>Read the symbols at the ends of the line. A <code>1</code> means one matching record; a <code>*</code> means that several records may match.</li>
+<li>Ask what one row represents in each table. For example, one row may represent a household, a shopping basket, or an item within a basket.</li>
+</ol>
+<p>We will walk through the supplied Numerator ER diagram together and use the example below to connect it to the tables we will use in R.</p>
+<section id="example-explain-how-these-tables-are-related" class="level3">
+<h3 class="anchored" data-anchor-id="example-explain-how-these-tables-are-related">Example: Explain how these tables are related</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -389,93 +335,241 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>core_new.people_table</code></td>
+<td><code>people_table</code></td>
 <td>One current household record; home geography</td>
 <td><code>user_id</code>, <code>postal_code</code>, <code>census_region_name</code></td>
 </tr>
 <tr class="even">
-<td><code>reference.static_households</code></td>
-<td>One household appearing in the supplied static file; safe household-level join</td>
-<td><code>user_id</code>, <code>is_static_household</code>, observed bounds, <code>n_spells</code></td>
-</tr>
-<tr class="odd">
-<td><code>reference.static_household_spells</code></td>
-<td>One consecutive run of monthly static-file coverage per household</td>
-<td><code>user_id</code>, <code>spell_id</code>, spell bounds, gap length</td>
-</tr>
-<tr class="even">
-<td><code>core_new.summarylvl_fact_table</code></td>
+<td><code>summarylvl_fact_table</code></td>
 <td>One basket/trip; our main transaction table</td>
 <td><code>basket_id</code>, <code>user_id</code>, <code>banner_id</code>, <code>transaction_date</code>, spending and order fields</td>
 </tr>
 <tr class="odd">
-<td><code>core_new.banner_table</code></td>
+<td><code>banner_table</code></td>
 <td>One banner; add when interpreting retail channel</td>
 <td><code>banner_id</code>, <code>banner</code>, <code>channel</code>, <code>parent_channel</code></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Reference tables</strong> describe or classify observations. <strong>Transaction tables</strong> record purchases. The <code>reference</code> schema holds our derived lab references; vendor lookup tables such as <code>people_table</code> and <code>banner_table</code> remain in <code>core_new</code>. A schema is a namespace, not a guarantee of a table’s grain.</p>
 <p><code>postal_code</code> is the household’s current home postal code. <code>store_postal_code</code> is the store’s postal code. They answer different geographic questions. Preserve both as text so leading zeros survive. For historical residence, the dictionary describes <code>people_history_table.FROM_DATE</code> and <code>UNTIL_DATE</code> as <strong>demographic validity dates</strong>, not enrollment dates. We will need a validated time-varying join for that work.</p>
 <p>The basket table includes <code>basket_total</code> (receipt total), <code>basket_sub_total</code> (pre-tax subtotal), <code>basket_adjusted_subtotal</code>, transaction dates, store geography, and <code>order_method_type</code>, <code>order_provider</code>, <code>delivery_method_type</code>, <code>delivery_provider</code>, and <code>order_delivery_type</code>. Choose an expenditure measure and document it. Retail channel comes from <code>banner_table</code>; ordering and fulfillment describe a different dimension. A grocery-store basket is not necessarily all food.</p>
 <p>Before joining, check that the household and banner references have unique keys. The homework checks the candidate basket key <code>(basket_id, user_id, banner_id, transaction_date)</code>. Joining baskets to all spells using only <code>user_id</code> repeats each basket for households with multiple spells. Use the one-row household view for household labels, or an explicit month match for monthly coverage. Item rows also repeat basket totals, which is why we start with the summary table.</p>
 </section>
+<section id="database-structure" class="level3">
+<h3 class="anchored" data-anchor-id="database-structure">Database structure</h3>
+<p>Numerator delivers the source data as <strong>Parquet files</strong>. Parquet is a compressed, column-based file format designed for large analytical datasets. The current release is stored in table-specific folders under <code>D:\numerator\2026_07\</code>. Keeping the vendor files in their original format gives us an unchanged source copy and lets DuckDB read only the columns and rows needed for a query.</p>
+<p>The DuckDB database is stored at:</p>
+<pre class="text"><code>D:\numerator\Database\numerator</code></pre>
+<p>The database organizes its objects into <strong>schemas</strong>. A schema is a named section of a database, similar to a folder. It keeps tables with different purposes separate and allows two schemas to contain tables with the same name. In SQL and R, we identify a table with <code>schema_name.table_name</code>, such as <code>core_new.people_table</code>.</p>
+<p>Our main schemas are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Schema</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>core_new</code></td>
+<td>Current Numerator delivery. Its tables are views over the Parquet source files. Use this schema for the vendor tables in this lab.</td>
+</tr>
+<tr class="even">
+<td><code>core</code></td>
+<td>Earlier Numerator delivery retained for comparison. Do not use it unless a project specifically requires that release.</td>
+</tr>
+<tr class="odd">
+<td><code>reference</code></td>
+<td>Shared classifications, crosswalks, and household reference tables that can be reused across projects.</td>
+</tr>
+<tr class="even">
+<td><code>diagnostics</code></td>
+<td>Reproducible checks and summaries built from the source data.</td>
+</tr>
+<tr class="odd">
+<td><code>pb_project</code></td>
+<td>Tables created for the plant-based project. These are project-specific rather than general Numerator resources.</td>
+</tr>
+</tbody>
+</table>
+<p>We keep shared reference tables in their own schema because some definitions require substantial setup and should be consistent across projects. For example, each student should not independently rebuild participation spells or retailer-channel classifications. A maintained table in <code>reference</code> can be created once, checked, and then read by many people. <strong>Transaction tables</strong> record purchases; <strong>reference tables</strong> describe, classify, or summarize the records used in those analyses.</p>
 </section>
-<section id="connect-r-to-duckdb" class="level2">
-<h2 class="anchored" data-anchor-id="connect-r-to-duckdb">Connect R to DuckDB</h2>
-<p><strong>DBeaver is a database client. R connects directly to the same DuckDB file; it does not read DBeaver’s screen or export a DBeaver table.</strong> Run R/RStudio inside your Orchard session. In DBeaver’s connection settings, find the database file path and copy it, using forward slashes in R. The file may have no extension. Its views may refer to parquet files elsewhere on Orchard, so copying only the database to a laptop is not enough.</p>
+<section id="why-duckdb" class="level3">
+<h3 class="anchored" data-anchor-id="why-duckdb">Why DuckDB?</h3>
+<p>DuckDB is designed for analytical queries over large files. It can query Parquet directly, perform joins and summaries before data enter R, and return only the smaller result that you need. This matters because the full transaction tables are too large to load into R at once. DuckDB is also embedded: R opens the database file directly through the <code>DBI</code> package, so you can work from RStudio without running a separate database server. We use read-only connections so several people can query the shared database without changing its source tables.</p>
+</section>
+<section id="tables-available-for-this-lab" class="level3">
+<h3 class="anchored" data-anchor-id="tables-available-for-this-lab">Tables available for this lab</h3>
+<p>The current vendor tables in <code>core_new</code> are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>What one row represents</th>
+<th>Main contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>core_new.banner_table</code></td>
+<td>One retailer banner</td>
+<td>Retailer, banner, channel, and parent channel</td>
+</tr>
+<tr class="even">
+<td><code>core_new.item_table</code></td>
+<td>One catalog item</td>
+<td>UPC/GTIN, brand, manufacturer, and product hierarchy</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.itemlvl_fact_table</code></td>
+<td>One purchased item within a basket</td>
+<td>Item quantity, price, spending, transaction date, and item-level factors</td>
+</tr>
+<tr class="even">
+<td><code>core_new.summarylvl_fact_table</code></td>
+<td>One basket or trip</td>
+<td>Basket spending, transaction date, store geography, ordering, delivery, and basket factors</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.people_table</code></td>
+<td>One current household record</td>
+<td>Current household demographics and home geography</td>
+</tr>
+<tr class="even">
+<td><code>core_new.people_history_table</code></td>
+<td>One household demographic period</td>
+<td>Time-varying demographics with validity dates</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.people_attributes_table</code></td>
+<td>One household attribute or tag</td>
+<td>Themes, topics, tags, and tag dates</td>
+</tr>
+<tr class="even">
+<td><code>core_new.static_table</code></td>
+<td>One household weighting window</td>
+<td>Static-file dates and household weighting fields</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.numerator_variable_metadata</code></td>
+<td>One documented column</td>
+<td>Table names, column names, positions, and data types</td>
+</tr>
+</tbody>
+</table>
+<p>The shared <code>reference</code> objects currently used with these data are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table or view</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>reference.dept_category</code></td>
+<td>Distinct Numerator department and category hierarchy</td>
+</tr>
+<tr class="even">
+<td><code>reference.channel_fah_fafh_mapping</code></td>
+<td>Shared parent-channel and channel classifications</td>
+</tr>
+<tr class="odd">
+<td><code>reference.ecommerce_retailer_mapping</code></td>
+<td>Retailer-level classifications for e-commerce banners</td>
+</tr>
+<tr class="even">
+<td><code>reference.numerator_channel_type</code></td>
+<td>Banner-level channel classification built from the shared mappings</td>
+</tr>
+<tr class="odd">
+<td><code>reference.household_size_spend_threshold</code></td>
+<td>Household-size spending thresholds used by an earlier project-specific diagnostic definition</td>
+</tr>
+<tr class="even">
+<td><code>reference.static_household_months</code></td>
+<td>One record per household and observed static-file endpoint month</td>
+</tr>
+<tr class="odd">
+<td><code>reference.static_household_spells</code></td>
+<td>One record per consecutive observed coverage spell</td>
+</tr>
+<tr class="even">
+<td><code>reference.static_households</code></td>
+<td>One summary record per household appearing in the static file</td>
+</tr>
+</tbody>
+</table>
+<p>The database may gain tables as it is updated. After connecting, run <code>list_numerator_tables(con)</code> to see the live list rather than relying only on this page.</p>
+</section>
+</section>
+<section id="connecting-r-to-duckdb" class="level2">
+<h2 class="anchored" data-anchor-id="connecting-r-to-duckdb">2. Connecting R to DuckDB</h2>
+<p>Run R/RStudio inside your Orchard session. R connects directly to <code>D:\numerator\Database\numerator</code>. The database file has no extension, and its views depend on Parquet files stored elsewhere on Orchard, so copying only the database file to another computer is not enough.</p>
 <p>Install the packages once into your own R library:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"DBI"</span>, <span class="st">"duckdb"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>At the start of each session, set the actual path and source the helpers:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace this example with the database file shown in DBeaver.</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">NUMERATOR_DB_PATH =</span> <span class="st">"D:/path/to/numerator.duckdb"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"read_numerator.R"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_numerator</span>(con, <span class="st">"people_table"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_numerator</span>(con, <span class="st">"summarylvl_fact_table"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The path is supplied per user; no personal path is built into the scripts. Opening is read-only and fails if the database file does not exist. Use one lab connection at a time; the close helper disconnects and shuts down its database instance to release the file lock. If a file-lock error appears, check whether DBeaver or another process still has a write connection. Use the <a href="https://duckdb.org/docs/current/clients/r">DuckDB R client documentation</a> for connection details.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"DBI"</span>, <span class="st">"duckdb"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>At the start of each session, source the two helper files and open a connection:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"read_numerator.R"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">list_numerator_tables</span>(con)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_numerator</span>(con, <span class="st">"people_table"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_numerator</span>(con, <span class="st">"summarylvl_fact_table"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><code>config.R</code> uses <code>D:/numerator/Database/numerator</code> by default. Forward slashes are used in R paths even though Windows displays the path with backslashes. The connection is read-only and fails if the database file is unavailable. Use one lab connection at a time, and always close it when you finish. The close helper disconnects and releases the database file. See the <a href="https://duckdb.org/docs/current/clients/r">DuckDB R client documentation</a> for additional connection details.</p>
 <p>Read selected columns and a small preview:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>households <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"people_table"</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"user_id"</span>, <span class="st">"postal_code"</span>, <span class="st">"census_region_name"</span>), <span class="at">limit =</span> <span class="dv">10</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>spells <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"static_household_spells"</span>, <span class="at">schema =</span> <span class="st">"reference"</span>, <span class="at">limit =</span> <span class="dv">10</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>baskets <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"summarylvl_fact_table"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"basket_id"</span>, <span class="st">"user_id"</span>, <span class="st">"banner_id"</span>, <span class="st">"transaction_date"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">"basket_total"</span>, <span class="st">"store_postal_code"</span>, <span class="st">"order_method_type"</span>,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">"delivery_method_type"</span>, <span class="st">"basket_er_factor"</span>),</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">where =</span> <span class="st">"transaction_date &gt;= ? AND transaction_date &lt; ?"</span>,</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="fu">as.Date</span>(<span class="st">"2025-01-01"</span>), <span class="fu">as.Date</span>(<span class="st">"2025-02-01"</span>)),</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">limit =</span> <span class="dv">100</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">close_numerator_connection</span>(con)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>households <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"people_table"</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"user_id"</span>, <span class="st">"postal_code"</span>, <span class="st">"census_region_name"</span>), <span class="at">limit =</span> <span class="dv">10</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>spells <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"static_household_spells"</span>, <span class="at">schema =</span> <span class="st">"reference"</span>, <span class="at">limit =</span> <span class="dv">10</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>baskets <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"summarylvl_fact_table"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"basket_id"</span>, <span class="st">"user_id"</span>, <span class="st">"banner_id"</span>, <span class="st">"transaction_date"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">"basket_total"</span>, <span class="st">"store_postal_code"</span>, <span class="st">"order_method_type"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">"delivery_method_type"</span>, <span class="st">"basket_er_factor"</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">where =</span> <span class="st">"transaction_date &gt;= ? AND transaction_date &lt; ?"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="fu">as.Date</span>(<span class="st">"2025-01-01"</span>), <span class="fu">as.Date</span>(<span class="st">"2025-02-01"</span>)),</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">limit =</span> <span class="dv">100</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">close_numerator_connection</span>(con)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The helpers cast identifiers to character <strong>inside DuckDB</strong>, before R can round a large <code>DECIMAL(38,0)</code> value, and return lowercase column names. A <code>LIMIT</code> preview is not a random or representative sample. The independently previewed tables need not contain matching households. For analysis, filter or aggregate in SQL first; even a one-month extract can be large. <code>limit = NULL</code> deliberately collects all rows matching your condition.</p>
 <p>For a reusable script, put the work inside a function so the connection closes even if a query fails:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>run_lab <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">on.exit</span>(<span class="fu">close_numerator_connection</span>(con), <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT date_trunc('month', transaction_date)::DATE AS month,</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">           COUNT(*) AS basket_rows, COUNT(DISTINCT user_id) AS households</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM core_new.summarylvl_fact_table</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE transaction_date &gt;= DATE '2025-01-01'</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">      AND transaction_date &lt; DATE '2026-01-01'</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY 1 ORDER BY 1</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>monthly_counts <span class="ot">&lt;-</span> <span class="fu">run_lab</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>run_lab <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">on.exit</span>(<span class="fu">close_numerator_connection</span>(con), <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT date_trunc('month', transaction_date)::DATE AS month,</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="st">           COUNT(*) AS basket_rows, COUNT(DISTINCT user_id) AS households</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM core_new.summarylvl_fact_table</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE transaction_date &gt;= DATE '2025-01-01'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">      AND transaction_date &lt; DATE '2026-01-01'</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY 1 ORDER BY 1</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>monthly_counts <span class="ot">&lt;-</span> <span class="fu">run_lab</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Only the small result enters R. The database does the scan and aggregation.</p>
 </section>
 <section id="static-households-and-participation-spells" class="level2">
-<h2 class="anchored" data-anchor-id="static-households-and-participation-spells">Static households and participation spells</h2>
+<h2 class="anchored" data-anchor-id="static-households-and-participation-spells">3. Static households and participation spells</h2>
 <p>“Static” generally refers to a sample selected for sustained reporting over a specified period. It does <strong>not</strong> mean that a household never moves, never changes, or participates forever.</p>
 <p>Our internal draft describes Numerator’s official criteria in terms of consecutive reporting, qualifying receipts, demographic balance, and transcription completeness. It also says the relationship between those criteria and membership in <code>static_table</code> is unresolved. The older diagnostics implement a separate project proxy: at least 36 active months, at least 26 receipts, and a household-size spending floor, using gas-excluded activity in selected channels. <strong>Active months are not necessarily consecutive months.</strong> That proxy is not an official vendor classification.</p>
 <div class="callout callout-style-default callout-important callout-titled" title="The operational definition for this exercise">
@@ -492,7 +586,7 @@ window.Quarto = {
 <p>The dictionary defines <code>START_DATE</code> and <code>END_DATE</code> as the endpoints of a 12-calendar-month static period. We index each record by the <strong>month of <code>END_DATE</code></strong>, the trailing window’s endpoint, and identify consecutive runs of those monthly records. This labels weighting coverage; it does not establish that this is the correct month-matching rule for applying household weights to transactions.</p>
 </div>
 </div>
-<p>The SQL first reduces the source to one record per <code>user_id</code> and endpoint month, recording duplicate source-row counts for review. It then starts a new spell whenever at least one endpoint month is missing. It does <strong>not</strong> fill all months inside every overlapping 12-month window, which would hide gaps between weighting records.</p>
+<p>The shared reference table reduces the source to one record per <code>user_id</code> and endpoint month, recording duplicate source-row counts for review. It starts a new spell whenever at least one endpoint month is missing. It does <strong>not</strong> fill all months inside every overlapping 12-month window, which would hide gaps between weighting records.</p>
 <p>Consider a fictional household with endpoint months January, February, March, June, and July:</p>
 <table class="caption-top table">
 <colgroup>
@@ -533,7 +627,7 @@ window.Quarto = {
 <p>A missing receipt is not proof that a household left the panel, and disappearance from the weighting file is not proof that it stopped purchasing. Returns may reflect renewed reporting or weighting eligibility. Attrition and changing sample composition can affect expenditure trends, event studies, and duration models. Compare unbalanced and continuously covered samples, but recognize that requiring future coverage can select survivors. Keep recent reporting lags in mind; low activity at the release boundary may reflect incomplete collection. Do not convert these gaps into verified enrollment events.</p>
 </section>
 <section id="projection-factors-and-expenditure-comparisons" class="level2">
-<h2 class="anchored" data-anchor-id="projection-factors-and-expenditure-comparisons">Projection factors and expenditure comparisons</h2>
+<h2 class="anchored" data-anchor-id="projection-factors-and-expenditure-comparisons">4. Projection factors and expenditure comparisons</h2>
 <p>The supplied dictionary describes the fields’ intended roles:</p>
 <table class="caption-top table">
 <colgroup>
@@ -591,44 +685,82 @@ window.Quarto = {
 \]</span></p>
 <p>For example, fictional baskets of $20 and $30 with factors 100 and 200 produce a raw total of $50 and an illustrative projected sum of $8,000. Dividing that sum by <span class="math inline">\(100 + 200\)</span> gives a weighted <strong>mean basket expenditure</strong>, not national total expenditure or expenditure per household. At the item level, the analogous calculation would use item spending and <code>ER_FACTOR</code>; do not put an item factor on repeated basket totals.</p>
 <p>Before calculating, inspect missing, nonfinite, zero, and negative factors, missing expenditures, and duplicate baskets. Do not replace missing factors with 1 or silently report a sum based on only the valid rows. Negative spending may represent returns and needs its own interpretation. This example reports factor coverage and returns an illustrative sum only when every basket has a finite positive factor and nonmissing spending:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    date_trunc(<span class="st">'month'</span>, transaction_date):<span class="ch">:DATE</span> <span class="kw">AS</span> <span class="dt">month</span>,</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n_baskets,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (<span class="kw">WHERE</span> basket_total <span class="kw">IS</span> <span class="kw">NULL</span>) <span class="kw">AS</span> missing_spending,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">WHERE</span> basket_er_factor <span class="kw">IS</span> <span class="kw">NULL</span> <span class="kw">OR</span> <span class="kw">NOT</span> isfinite(basket_er_factor)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>           <span class="kw">OR</span> basket_er_factor <span class="op">&lt;=</span> <span class="dv">0</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">AS</span> invalid_factors,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(basket_total) <span class="kw">AS</span> observed_spending_nonmissing,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">CASE</span> <span class="cf">WHEN</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">WHERE</span> basket_total <span class="kw">IS</span> <span class="kw">NULL</span> <span class="kw">OR</span> basket_er_factor <span class="kw">IS</span> <span class="kw">NULL</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>           <span class="kw">OR</span> <span class="kw">NOT</span> isfinite(basket_er_factor) <span class="kw">OR</span> basket_er_factor <span class="op">&lt;=</span> <span class="dv">0</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">=</span> <span class="dv">0</span> <span class="cf">THEN</span> <span class="fu">SUM</span>(basket_total <span class="op">*</span> basket_er_factor) <span class="cf">END</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">AS</span> illustrative_er_weighted_sum</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> core_new.summarylvl_fact_table</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> transaction_date <span class="op">&gt;=</span> <span class="dt">DATE</span> <span class="st">'2025-01-01'</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> transaction_date <span class="op">&lt;</span> <span class="dt">DATE</span> <span class="st">'2026-01-01'</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span> <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dv">1</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Run the homework’s duplicate-key check first. This illustration uses the full basket population in the date window, not the static/ZIP-filtered homework subset. Restricting to static-file members, known ZIPs, or continuously observed households changes the represented sample; supplied factors may not project that restricted sample nationally. Do not multiply ER, trend, demographic, and national factors together without explicit instructions from Numerator.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>summarize_projection_factors <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">on.exit</span>(<span class="fu">close_numerator_connection</span>(con), <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="st">        date_trunc('month', transaction_date)::DATE AS month,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="st">        COUNT(*) AS n_baskets,</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="st">        COUNT(*) FILTER (WHERE basket_total IS NULL) AS missing_spending,</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">        COUNT(*) FILTER (</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="st">            WHERE basket_er_factor IS NULL</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st">               OR NOT isfinite(basket_er_factor)</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="st">               OR basket_er_factor &lt;= 0</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">        ) AS invalid_factors,</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="st">        SUM(basket_total) AS observed_spending_nonmissing,</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="st">        CASE WHEN COUNT(*) FILTER (</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="st">            WHERE basket_total IS NULL</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="st">               OR basket_er_factor IS NULL</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="st">               OR NOT isfinite(basket_er_factor)</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="st">               OR basket_er_factor &lt;= 0</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="st">        ) = 0</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="st">        THEN SUM(basket_total * basket_er_factor)</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="st">        END AS illustrative_er_weighted_sum</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM core_new.summarylvl_fact_table</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE transaction_date &gt;= DATE '2025-01-01'</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a><span class="st">      AND transaction_date &lt; DATE '2026-01-01'</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY 1</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="st">    ORDER BY 1</span></span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>factor_summary <span class="ot">&lt;-</span> <span class="fu">summarize_projection_factors</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This R function opens the connection, sends the SQL query to DuckDB, returns the monthly summary to R, and closes the connection. Run the duplicate-key check in <code>03_sample_flow.R</code> before treating baskets as unique. This illustration uses the full basket population in the date window, not the static/ZIP-filtered homework subset. Restricting to static-file members, known ZIPs, or continuously observed households changes the represented sample; supplied factors may not project that restricted sample nationally. Do not multiply ER, trend, demographic, and national factors together without explicit instructions from Numerator.</p>
 <p>For national comparisons, align time periods, population, channels, tax treatment, and expenditure scope with the benchmark. Basket totals from grocery retailers cannot stand in for food spending without resolving nonfood purchases. Report raw counts and unweighted spending beside any projected calculation, examine changes in sample composition and missing weights, and distinguish nominal changes from inflation-adjusted changes. Weighting alone does not establish representative ZIP coverage or correct all attrition bias.</p>
 </section>
 <section id="homework-build-the-first-sample-flow-diagnostics" class="level2">
-<h2 class="anchored" data-anchor-id="homework-build-the-first-sample-flow-diagnostics">Homework: build the first sample-flow diagnostics</h2>
-<p>Start with <code>03_sample_flow.sql</code>. It uses temporary tables, so run it in one connection; they disappear when you disconnect. Use <strong>calendar year 2025</strong> initially, after checking that the source covers it. The end date is exclusive (<code>2026-01-01</code>). Keep the same period at every step and record the release used.</p>
+<h2 class="anchored" data-anchor-id="homework-build-the-first-sample-flow-diagnostics">5. Homework: build the first sample-flow diagnostics</h2>
+<p>Complete the exercise in RStudio on Orchard. <code>03_sample_flow.R</code> shows how R can send SQL to DuckDB with two <code>DBI</code> functions:</p>
+<ul>
+<li><code>DBI::dbExecute()</code> creates temporary working tables when no result needs to be returned.</li>
+<li><code>DBI::dbGetQuery()</code> runs a query and returns its result as an R data frame.</li>
+</ul>
+<p>The large transaction data remain in DuckDB. Only the diagnostic summaries enter R. Start the exercise with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"03_sample_flow.R"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>diagnostics <span class="ot">&lt;-</span> <span class="fu">run_sample_flow</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">date_from =</span> <span class="fu">as.Date</span>(<span class="st">"2025-01-01"</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">date_to =</span> <span class="fu">as.Date</span>(<span class="st">"2026-01-01"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(diagnostics)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(diagnostics<span class="sc">$</span>sample_flow)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(diagnostics<span class="sc">$</span>geography_by_region)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(diagnostics<span class="sc">$</span>monthly_coverage)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use <strong>calendar year 2025</strong> initially, after checking <code>diagnostics$source_coverage</code> and <code>diagnostics$static_coverage</code>. The end date is exclusive, so <code>2026-01-01</code> is not included. Keep the same period at every step and record the release used.</p>
 <p><strong>All observed households → static-file members → geographic coverage → coverage over time.</strong></p>
 <ol type="1">
-<li><strong>All observed households:</strong> Count distinct nonmissing <code>user_id</code> values with a basket in the analysis window, across all channels, including gas-only baskets. This is an observed purchaser population, not every enrolled household or every row of <code>people_table</code>. Report missing IDs and dates separately.</li>
-<li><strong>Static-file members:</strong> Among those households, retain membership in at least one static endpoint month within the same analysis window. Do not treat membership somewhere else in the full release as membership this year. Report retained counts, losses, and shares of the starting sample.</li>
-<li><strong>Geographic coverage:</strong> Left join current <code>people_table</code> geography. Report missing household records, missing postal codes, and other postal formats separately. Count households and distinct ZIPs by region. The provided five-digit/ZIP+4 check establishes only a ZIP-shaped string; it does not validate a ZIP against a geographic crosswalk or measure population coverage.</li>
-<li><strong>Coverage over time:</strong> Plot monthly observed households, households with same-month static-file coverage, and those also passing the ZIP-format screen. Retain zero-count months. Compare static members with and without an observed basket that month, and show the distribution of spell counts. Also report the additional loss from requiring static coverage in every analysis month as a sensitivity check.</li>
+<li><strong>All observed households:</strong> Use <code>diagnostics$sample_flow</code> to identify distinct nonmissing <code>user_id</code> values with a basket in the analysis window, across all channels, including gas-only baskets. This is an observed purchaser population, not every enrolled household or every row of <code>people_table</code>. Report missing IDs and dates from <code>diagnostics$source_coverage</code> separately.</li>
+<li><strong>Static-file members:</strong> Report how many observed households appear in at least one static endpoint month within the same analysis window. Do not treat membership elsewhere in the full release as membership in 2025. Report the number retained, the number lost, and the share of the starting sample.</li>
+<li><strong>Geographic coverage:</strong> Use <code>diagnostics$geography_status</code> and <code>diagnostics$geography_by_region</code> to report missing household records, missing postal codes, other postal formats, household counts, and distinct ZIP counts. The five-digit/ZIP+4 check establishes only a ZIP-shaped string; it does not validate a ZIP against a geographic crosswalk or measure population coverage.</li>
+<li><strong>Coverage over time:</strong> Use <code>diagnostics$monthly_coverage</code> to make a line plot in R showing observed households, households with same-month static-file coverage, and those also passing the ZIP-format screen. Retain zero-count months. Use <code>diagnostics$spell_distribution</code> and <code>diagnostics$coverage_cross_tab</code> to compare participation patterns. Report the additional loss from requiring static coverage in every analysis month as a sensitivity check.</li>
 </ol>
-<p><strong>Bring to the next lab:</strong> one sample-flow table, one geography summary, one monthly line plot, and a short paragraph stating your inclusion rules and explaining a gap/return example. Include the SQL/R needed to reproduce them. Identify the largest source of sample loss and one reason it could affect your research question. Discuss whether a changing monthly count reflects purchase activity, weighting coverage, reporting lag, or something the available fields cannot distinguish.</p>
+<p><strong>Bring to the next lab:</strong> one sample-flow table, one geography summary, one monthly line plot, and a short paragraph stating your inclusion rules and explaining a gap/return example. Submit the R code needed to reproduce them. Identify the largest source of sample loss and one reason it could affect your research question. Discuss whether a changing monthly count reflects purchase activity, weighting coverage, reporting lag, or something the available fields cannot distinguish.</p>
 <p>The exercise deliberately keeps the number of basket-active months separate from the number of static-coverage months. <strong>No observed basket is not automatically zero spending.</strong> Homework counts are unweighted; national projection is a separate question. Keep household extracts and detailed geographic outputs on Orchard or other approved lab storage.</p>
 </section>
-<section id="source-notes-and-questions-to-resolve" class="level2">
-<h2 class="anchored" data-anchor-id="source-notes-and-questions-to-resolve">Source notes and questions to resolve</h2>
-<p>These notes use the supplied ER diagram, <code>numerator_variable_metadata_new.csv</code>, the master data dictionary, the internal documentation draft, and the earlier R/SQL scripts. Where the dictionary and draft differ, the lab makes the uncertainty explicit: the dictionary identifies demographic validity periods, while the older draft still treated their meaning as an open question. The live DuckDB schema is the authority for loaded column types.</p>
-<p>Before using these data for final estimates, resolve the official static-panel flag, the interpretation of absent weighting months, the correct time alignment of household weights, and the construction/application of each projection factor. The lab’s spell table is an auditable coverage reference that can be revised when those answers arrive.</p>
+<section id="questions-to-resolve-before-final-estimates" class="level2">
+<h2 class="anchored" data-anchor-id="questions-to-resolve-before-final-estimates">Questions to resolve before final estimates</h2>
+<p>The live DuckDB schema is the authority for the tables and column types currently available on Orchard. The supplied data dictionary describes the variables, but several methodological questions remain open. Before using these data for final estimates, we still need to confirm:</p>
+<ul>
+<li>whether an official Numerator static-panel flag is available;</li>
+<li>how to interpret months when a household is absent from the weighting file;</li>
+<li>whether any available dates represent actual panel enrollment and exit;</li>
+<li>how household weights should be aligned with transaction dates; and</li>
+<li>how Numerator constructs and intends researchers to combine the projection factors.</li>
+</ul>
+<p>The participation-spell reference gives us an auditable description of observed coverage under the current definition. It can be revised when additional documentation becomes available.</p>
 
 
 </section>

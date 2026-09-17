@@ -10,64 +10,47 @@ toc-depth: 2
 
 ## Today’s goals
 
-By the end of this lab, you should be able to connect R to the Numerator DuckDB database on Orchard, read a small household or basket extract, close the connection, and explain which households your analysis includes. We will begin at the **household and basket level**; product-level work comes later.
+We will spend the first **30 minutes** sharing project updates, questions, and current obstacles. We will use the remaining **hour** to cover:
 
-| Time | Activity |
-|---|---|
-| 2:00–2:30 | Project updates, access checks, and questions |
-| 2:30–2:40 | Read the ER diagram and identify our starting tables |
-| 2:40–2:55 | Connect R, inspect columns, and read a small extract |
-| 2:55–3:10 | Static membership, spells, gaps, and attrition |
-| 3:10–3:20 | Projection factors and expenditure comparisons |
-| 3:20–3:30 | Start the sample-flow homework |
+- how to read the Numerator entity-relationship diagram;
+- how the Numerator database, schemas, and Parquet source files are organized;
+- why we use DuckDB and how R connects to it;
+- how the household, basket, banner, and static reference tables relate;
+- how to interpret static-household membership, participation spells, and gaps;
+- how the available projection factors are intended to be used; and
+- how to begin the sample-flow diagnostics in R.
+
+By the end of the lab, you should be able to connect R to the Numerator DuckDB database on Orchard, inspect the available tables, retrieve a household- or basket-level result, and close the connection. We will begin at the **household and basket level**; product-level work comes later.
 
 ## Files for this lab
 
-Dr. Chenarides will provide the following files in the designated lab folder on Orchard. They are not distributed through the public website or GitHub repository. Copy `config.R` and `read_numerator.R` into your own R project on Orchard for the examples below.
+The following files will be available in the designated lab folder on Orchard. Copy them into your own R project before you begin. They are not distributed through the public website or GitHub repository.
 
 - `config.R`: open and close a read-only connection.
 - `read_numerator.R`: inspect columns and retrieve a small extract.
-- `02_static_household_spells.sql`: instructor setup for the shared household reference tables.
-- `03_sample_flow.sql`: student diagnostic exercise.
+- `03_sample_flow.R`: run the sample-flow diagnostics from R and return the results as R data frames.
 
-These are teaching versions of the earlier scripts. They use `core_new` consistently, do not depend on a saved metadata table, and do not run the older plant-based project's spending/activity filters. The supplied ER diagram, dictionary, scripts, and internal draft documentation are private lab materials; access them on Orchard during the discussion.
+## 1. Reading an ER diagram
 
-::: {.callout-important title="Instructor preparation"}
-Before class, verify that `core_new` points to the intended release and that its parquet files are available on Orchard. The reviewed setup script identifies this as the July 2026 delivery, with purchases through June 30, 2026; verify the actual date ranges in the database.
+An **entity-relationship (ER) diagram** is a visual map of a database. Each box represents a table, the entries inside the box are its columns, and the lines show how tables can be connected. ER diagrams are useful because they help you find the variables you need, identify the columns used to join tables, and see whether a relationship is one-to-one or one-to-many before you write code.
 
-Run `02_static_household_spells.sql` once in a DBeaver SQL editor attached to that database. It requires `core_new.static_table`, already created by the corresponding section of `00_setup.sql`. Students do **not** need to rerun the full setup or `01_household_diagnostics.sql`. Stop on SQL errors and issue `ROLLBACK` before retrying. Rebuild the reference tables after a data refresh.
+When reading an ER diagram:
 
-Coordinate this write with other users: disconnect R readers first, then disconnect the DBeaver write connection before the class connects. Multiple direct DuckDB readers can share the file when all connections are read-only. See the [DuckDB concurrency documentation](https://duckdb.org/docs/current/connect/concurrency).
-:::
+1. Find the table that contains the outcome or observation you want to study.
+2. Read its column names and identify its ID fields.
+3. Follow a connecting line to see which ID links it to another table.
+4. Read the symbols at the ends of the line. A `1` means one matching record; a `*` means that several records may match.
+5. Ask what one row represents in each table. For example, one row may represent a household, a shopping basket, or an item within a basket.
 
-## Read the ER diagram
+We will walk through the supplied Numerator ER diagram together and use the example below to connect it to the tables we will use in R.
 
-An **entity-relationship (ER) diagram** shows tables, their fields, and the keys connecting them. Start with the **grain**: what does one row represent? Then identify the join key and whether one record can match several records in the other table. A `1` means one; `*` means many. A line suggests a relationship, but we must still check uniqueness in the actual data.
-
-For this lab, use this simplified map alongside the supplied diagram:
-
-```{mermaid}
-flowchart LR
-  P["people_table<br/>one household"] -->|user_id| B["summarylvl_fact_table<br/>one basket"]
-  C["banner_table<br/>one retailer banner"] -->|banner_id| B
-  H["static_households<br/>one household"] -->|user_id| B
-  H -->|user_id| S["static_household_spells<br/>one household + spell"]
-  M["static_household_months<br/>one household + endpoint month"] --> S
-```
-
-The three `static_household...` objects are lab-created references, not vendor tables. The arrows show how to relate them; they are not instructions to join every object at once.
-
-### Start with these tables
+### Example: Explain how these tables are related
 
 | Table | Grain and purpose | Key fields |
 |---|---|---|
-| `core_new.people_table` | One current household record; home geography | `user_id`, `postal_code`, `census_region_name` |
-| `reference.static_households` | One household appearing in the supplied static file; safe household-level join | `user_id`, `is_static_household`, observed bounds, `n_spells` |
-| `reference.static_household_spells` | One consecutive run of monthly static-file coverage per household | `user_id`, `spell_id`, spell bounds, gap length |
-| `core_new.summarylvl_fact_table` | One basket/trip; our main transaction table | `basket_id`, `user_id`, `banner_id`, `transaction_date`, spending and order fields |
-| `core_new.banner_table` | One banner; add when interpreting retail channel | `banner_id`, `banner`, `channel`, `parent_channel` |
-
-**Reference tables** describe or classify observations. **Transaction tables** record purchases. The `reference` schema holds our derived lab references; vendor lookup tables such as `people_table` and `banner_table` remain in `core_new`. A schema is a namespace, not a guarantee of a table's grain.
+| `people_table` | One current household record; home geography | `user_id`, `postal_code`, `census_region_name` |
+| `summarylvl_fact_table` | One basket/trip; our main transaction table | `basket_id`, `user_id`, `banner_id`, `transaction_date`, spending and order fields |
+| `banner_table` | One banner; add when interpreting retail channel | `banner_id`, `banner`, `channel`, `parent_channel` |
 
 `postal_code` is the household's current home postal code. `store_postal_code` is the store's postal code. They answer different geographic questions. Preserve both as text so leading zeros survive. For historical residence, the dictionary describes `people_history_table.FROM_DATE` and `UNTIL_DATE` as **demographic validity dates**, not enrollment dates. We will need a validated time-varying join for that work.
 
@@ -75,9 +58,68 @@ The basket table includes `basket_total` (receipt total), `basket_sub_total` (pr
 
 Before joining, check that the household and banner references have unique keys. The homework checks the candidate basket key `(basket_id, user_id, banner_id, transaction_date)`. Joining baskets to all spells using only `user_id` repeats each basket for households with multiple spells. Use the one-row household view for household labels, or an explicit month match for monthly coverage. Item rows also repeat basket totals, which is why we start with the summary table.
 
-## Connect R to DuckDB
+### Database structure
 
-**DBeaver is a database client. R connects directly to the same DuckDB file; it does not read DBeaver's screen or export a DBeaver table.** Run R/RStudio inside your Orchard session. In DBeaver's connection settings, find the database file path and copy it, using forward slashes in R. The file may have no extension. Its views may refer to parquet files elsewhere on Orchard, so copying only the database to a laptop is not enough.
+Numerator delivers the source data as **Parquet files**. Parquet is a compressed, column-based file format designed for large analytical datasets. The current release is stored in table-specific folders under `D:\numerator\2026_07\`. Keeping the vendor files in their original format gives us an unchanged source copy and lets DuckDB read only the columns and rows needed for a query.
+
+The DuckDB database is stored at:
+
+```text
+D:\numerator\Database\numerator
+```
+
+The database organizes its objects into **schemas**. A schema is a named section of a database, similar to a folder. It keeps tables with different purposes separate and allows two schemas to contain tables with the same name. In SQL and R, we identify a table with `schema_name.table_name`, such as `core_new.people_table`.
+
+Our main schemas are:
+
+| Schema | Purpose |
+|---|---|
+| `core_new` | Current Numerator delivery. Its tables are views over the Parquet source files. Use this schema for the vendor tables in this lab. |
+| `core` | Earlier Numerator delivery retained for comparison. Do not use it unless a project specifically requires that release. |
+| `reference` | Shared classifications, crosswalks, and household reference tables that can be reused across projects. |
+| `diagnostics` | Reproducible checks and summaries built from the source data. |
+| `pb_project` | Tables created for the plant-based project. These are project-specific rather than general Numerator resources. |
+
+We keep shared reference tables in their own schema because some definitions require substantial setup and should be consistent across projects. For example, each student should not independently rebuild participation spells or retailer-channel classifications. A maintained table in `reference` can be created once, checked, and then read by many people. **Transaction tables** record purchases; **reference tables** describe, classify, or summarize the records used in those analyses.
+
+### Why DuckDB?
+
+DuckDB is designed for analytical queries over large files. It can query Parquet directly, perform joins and summaries before data enter R, and return only the smaller result that you need. This matters because the full transaction tables are too large to load into R at once. DuckDB is also embedded: R opens the database file directly through the `DBI` package, so you can work from RStudio without running a separate database server. We use read-only connections so several people can query the shared database without changing its source tables.
+
+### Tables available for this lab
+
+The current vendor tables in `core_new` are:
+
+| Table | What one row represents | Main contents |
+|---|---|---|
+| `core_new.banner_table` | One retailer banner | Retailer, banner, channel, and parent channel |
+| `core_new.item_table` | One catalog item | UPC/GTIN, brand, manufacturer, and product hierarchy |
+| `core_new.itemlvl_fact_table` | One purchased item within a basket | Item quantity, price, spending, transaction date, and item-level factors |
+| `core_new.summarylvl_fact_table` | One basket or trip | Basket spending, transaction date, store geography, ordering, delivery, and basket factors |
+| `core_new.people_table` | One current household record | Current household demographics and home geography |
+| `core_new.people_history_table` | One household demographic period | Time-varying demographics with validity dates |
+| `core_new.people_attributes_table` | One household attribute or tag | Themes, topics, tags, and tag dates |
+| `core_new.static_table` | One household weighting window | Static-file dates and household weighting fields |
+| `core_new.numerator_variable_metadata` | One documented column | Table names, column names, positions, and data types |
+
+The shared `reference` objects currently used with these data are:
+
+| Table or view | Purpose |
+|---|---|
+| `reference.dept_category` | Distinct Numerator department and category hierarchy |
+| `reference.channel_fah_fafh_mapping` | Shared parent-channel and channel classifications |
+| `reference.ecommerce_retailer_mapping` | Retailer-level classifications for e-commerce banners |
+| `reference.numerator_channel_type` | Banner-level channel classification built from the shared mappings |
+| `reference.household_size_spend_threshold` | Household-size spending thresholds used by an earlier project-specific diagnostic definition |
+| `reference.static_household_months` | One record per household and observed static-file endpoint month |
+| `reference.static_household_spells` | One record per consecutive observed coverage spell |
+| `reference.static_households` | One summary record per household appearing in the static file |
+
+The database may gain tables as it is updated. After connecting, run `list_numerator_tables(con)` to see the live list rather than relying only on this page.
+
+## 2. Connecting R to DuckDB
+
+Run R/RStudio inside your Orchard session. R connects directly to `D:\numerator\Database\numerator`. The database file has no extension, and its views depend on Parquet files stored elsewhere on Orchard, so copying only the database file to another computer is not enough.
 
 Install the packages once into your own R library:
 
@@ -85,20 +127,19 @@ Install the packages once into your own R library:
 install.packages(c("DBI", "duckdb"))
 ```
 
-At the start of each session, set the actual path and source the helpers:
+At the start of each session, source the two helper files and open a connection:
 
 ```r
-# Replace this example with the database file shown in DBeaver.
-Sys.setenv(NUMERATOR_DB_PATH = "D:/path/to/numerator.duckdb")
 source("config.R")
 source("read_numerator.R")
 
 con <- open_numerator_connection()
+list_numerator_tables(con)
 describe_numerator(con, "people_table")
 describe_numerator(con, "summarylvl_fact_table")
 ```
 
-The path is supplied per user; no personal path is built into the scripts. Opening is read-only and fails if the database file does not exist. Use one lab connection at a time; the close helper disconnects and shuts down its database instance to release the file lock. If a file-lock error appears, check whether DBeaver or another process still has a write connection. Use the [DuckDB R client documentation](https://duckdb.org/docs/current/clients/r) for connection details.
+`config.R` uses `D:/numerator/Database/numerator` by default. Forward slashes are used in R paths even though Windows displays the path with backslashes. The connection is read-only and fails if the database file is unavailable. Use one lab connection at a time, and always close it when you finish. The close helper disconnects and releases the database file. See the [DuckDB R client documentation](https://duckdb.org/docs/current/clients/r) for additional connection details.
 
 Read selected columns and a small preview:
 
@@ -147,7 +188,7 @@ monthly_counts <- run_lab()
 
 Only the small result enters R. The database does the scan and aggregation.
 
-## Static households and participation spells
+## 3. Static households and participation spells
 
 “Static” generally refers to a sample selected for sustained reporting over a specified period. It does **not** mean that a household never moves, never changes, or participates forever.
 
@@ -159,7 +200,7 @@ For this lab, `is_static_household = 1` means that the household appears in the 
 The dictionary defines `START_DATE` and `END_DATE` as the endpoints of a 12-calendar-month static period. We index each record by the **month of `END_DATE`**, the trailing window's endpoint, and identify consecutive runs of those monthly records. This labels weighting coverage; it does not establish that this is the correct month-matching rule for applying household weights to transactions.
 :::
 
-The SQL first reduces the source to one record per `user_id` and endpoint month, recording duplicate source-row counts for review. It then starts a new spell whenever at least one endpoint month is missing. It does **not** fill all months inside every overlapping 12-month window, which would hide gaps between weighting records.
+The shared reference table reduces the source to one record per `user_id` and endpoint month, recording duplicate source-row counts for review. It starts a new spell whenever at least one endpoint month is missing. It does **not** fill all months inside every overlapping 12-month window, which would hide gaps between weighting records.
 
 Consider a fictional household with endpoint months January, February, March, June, and July:
 
@@ -174,7 +215,7 @@ The reference exposes `observed_entry_month`, `observed_last_month`, `spell_star
 
 A missing receipt is not proof that a household left the panel, and disappearance from the weighting file is not proof that it stopped purchasing. Returns may reflect renewed reporting or weighting eligibility. Attrition and changing sample composition can affect expenditure trends, event studies, and duration models. Compare unbalanced and continuously covered samples, but recognize that requiring future coverage can select survivors. Keep recent reporting lags in mind; low activity at the release boundary may reflect incomplete collection. Do not convert these gaps into verified enrollment events.
 
-## Projection factors and expenditure comparisons
+## 4. Projection factors and expenditure comparisons
 
 The supplied dictionary describes the fields' intended roles:
 
@@ -200,48 +241,89 @@ For example, fictional baskets of $20 and $30 with factors 100 and 200 produce a
 
 Before calculating, inspect missing, nonfinite, zero, and negative factors, missing expenditures, and duplicate baskets. Do not replace missing factors with 1 or silently report a sum based on only the valid rows. Negative spending may represent returns and needs its own interpretation. This example reports factor coverage and returns an illustrative sum only when every basket has a finite positive factor and nonmissing spending:
 
-```sql
-SELECT
-    date_trunc('month', transaction_date)::DATE AS month,
-    COUNT(*) AS n_baskets,
-    COUNT(*) FILTER (WHERE basket_total IS NULL) AS missing_spending,
-    COUNT(*) FILTER (
-        WHERE basket_er_factor IS NULL OR NOT isfinite(basket_er_factor)
-           OR basket_er_factor <= 0
-    ) AS invalid_factors,
-    SUM(basket_total) AS observed_spending_nonmissing,
-    CASE WHEN COUNT(*) FILTER (
-        WHERE basket_total IS NULL OR basket_er_factor IS NULL
-           OR NOT isfinite(basket_er_factor) OR basket_er_factor <= 0
-    ) = 0 THEN SUM(basket_total * basket_er_factor) END
-        AS illustrative_er_weighted_sum
-FROM core_new.summarylvl_fact_table
-WHERE transaction_date >= DATE '2025-01-01'
-  AND transaction_date < DATE '2026-01-01'
-GROUP BY 1 ORDER BY 1;
+```r
+summarize_projection_factors <- function() {
+  con <- open_numerator_connection()
+  on.exit(close_numerator_connection(con), add = TRUE)
+
+  DBI::dbGetQuery(con, "
+    SELECT
+        date_trunc('month', transaction_date)::DATE AS month,
+        COUNT(*) AS n_baskets,
+        COUNT(*) FILTER (WHERE basket_total IS NULL) AS missing_spending,
+        COUNT(*) FILTER (
+            WHERE basket_er_factor IS NULL
+               OR NOT isfinite(basket_er_factor)
+               OR basket_er_factor <= 0
+        ) AS invalid_factors,
+        SUM(basket_total) AS observed_spending_nonmissing,
+        CASE WHEN COUNT(*) FILTER (
+            WHERE basket_total IS NULL
+               OR basket_er_factor IS NULL
+               OR NOT isfinite(basket_er_factor)
+               OR basket_er_factor <= 0
+        ) = 0
+        THEN SUM(basket_total * basket_er_factor)
+        END AS illustrative_er_weighted_sum
+    FROM core_new.summarylvl_fact_table
+    WHERE transaction_date >= DATE '2025-01-01'
+      AND transaction_date < DATE '2026-01-01'
+    GROUP BY 1
+    ORDER BY 1
+  ")
+}
+
+factor_summary <- summarize_projection_factors()
 ```
 
-Run the homework's duplicate-key check first. This illustration uses the full basket population in the date window, not the static/ZIP-filtered homework subset. Restricting to static-file members, known ZIPs, or continuously observed households changes the represented sample; supplied factors may not project that restricted sample nationally. Do not multiply ER, trend, demographic, and national factors together without explicit instructions from Numerator.
+This R function opens the connection, sends the SQL query to DuckDB, returns the monthly summary to R, and closes the connection. Run the duplicate-key check in `03_sample_flow.R` before treating baskets as unique. This illustration uses the full basket population in the date window, not the static/ZIP-filtered homework subset. Restricting to static-file members, known ZIPs, or continuously observed households changes the represented sample; supplied factors may not project that restricted sample nationally. Do not multiply ER, trend, demographic, and national factors together without explicit instructions from Numerator.
 
 For national comparisons, align time periods, population, channels, tax treatment, and expenditure scope with the benchmark. Basket totals from grocery retailers cannot stand in for food spending without resolving nonfood purchases. Report raw counts and unweighted spending beside any projected calculation, examine changes in sample composition and missing weights, and distinguish nominal changes from inflation-adjusted changes. Weighting alone does not establish representative ZIP coverage or correct all attrition bias.
 
-## Homework: build the first sample-flow diagnostics
+## 5. Homework: build the first sample-flow diagnostics
 
-Start with `03_sample_flow.sql`. It uses temporary tables, so run it in one connection; they disappear when you disconnect. Use **calendar year 2025** initially, after checking that the source covers it. The end date is exclusive (`2026-01-01`). Keep the same period at every step and record the release used.
+Complete the exercise in RStudio on Orchard. `03_sample_flow.R` shows how R can send SQL to DuckDB with two `DBI` functions:
+
+- `DBI::dbExecute()` creates temporary working tables when no result needs to be returned.
+- `DBI::dbGetQuery()` runs a query and returns its result as an R data frame.
+
+The large transaction data remain in DuckDB. Only the diagnostic summaries enter R. Start the exercise with:
+
+```r
+source("03_sample_flow.R")
+
+diagnostics <- run_sample_flow(
+  date_from = as.Date("2025-01-01"),
+  date_to = as.Date("2026-01-01")
+)
+
+names(diagnostics)
+View(diagnostics$sample_flow)
+View(diagnostics$geography_by_region)
+View(diagnostics$monthly_coverage)
+```
+
+Use **calendar year 2025** initially, after checking `diagnostics$source_coverage` and `diagnostics$static_coverage`. The end date is exclusive, so `2026-01-01` is not included. Keep the same period at every step and record the release used.
 
 **All observed households → static-file members → geographic coverage → coverage over time.**
 
-1. **All observed households:** Count distinct nonmissing `user_id` values with a basket in the analysis window, across all channels, including gas-only baskets. This is an observed purchaser population, not every enrolled household or every row of `people_table`. Report missing IDs and dates separately.
-2. **Static-file members:** Among those households, retain membership in at least one static endpoint month within the same analysis window. Do not treat membership somewhere else in the full release as membership this year. Report retained counts, losses, and shares of the starting sample.
-3. **Geographic coverage:** Left join current `people_table` geography. Report missing household records, missing postal codes, and other postal formats separately. Count households and distinct ZIPs by region. The provided five-digit/ZIP+4 check establishes only a ZIP-shaped string; it does not validate a ZIP against a geographic crosswalk or measure population coverage.
-4. **Coverage over time:** Plot monthly observed households, households with same-month static-file coverage, and those also passing the ZIP-format screen. Retain zero-count months. Compare static members with and without an observed basket that month, and show the distribution of spell counts. Also report the additional loss from requiring static coverage in every analysis month as a sensitivity check.
+1. **All observed households:** Use `diagnostics$sample_flow` to identify distinct nonmissing `user_id` values with a basket in the analysis window, across all channels, including gas-only baskets. This is an observed purchaser population, not every enrolled household or every row of `people_table`. Report missing IDs and dates from `diagnostics$source_coverage` separately.
+2. **Static-file members:** Report how many observed households appear in at least one static endpoint month within the same analysis window. Do not treat membership elsewhere in the full release as membership in 2025. Report the number retained, the number lost, and the share of the starting sample.
+3. **Geographic coverage:** Use `diagnostics$geography_status` and `diagnostics$geography_by_region` to report missing household records, missing postal codes, other postal formats, household counts, and distinct ZIP counts. The five-digit/ZIP+4 check establishes only a ZIP-shaped string; it does not validate a ZIP against a geographic crosswalk or measure population coverage.
+4. **Coverage over time:** Use `diagnostics$monthly_coverage` to make a line plot in R showing observed households, households with same-month static-file coverage, and those also passing the ZIP-format screen. Retain zero-count months. Use `diagnostics$spell_distribution` and `diagnostics$coverage_cross_tab` to compare participation patterns. Report the additional loss from requiring static coverage in every analysis month as a sensitivity check.
 
-**Bring to the next lab:** one sample-flow table, one geography summary, one monthly line plot, and a short paragraph stating your inclusion rules and explaining a gap/return example. Include the SQL/R needed to reproduce them. Identify the largest source of sample loss and one reason it could affect your research question. Discuss whether a changing monthly count reflects purchase activity, weighting coverage, reporting lag, or something the available fields cannot distinguish.
+**Bring to the next lab:** one sample-flow table, one geography summary, one monthly line plot, and a short paragraph stating your inclusion rules and explaining a gap/return example. Submit the R code needed to reproduce them. Identify the largest source of sample loss and one reason it could affect your research question. Discuss whether a changing monthly count reflects purchase activity, weighting coverage, reporting lag, or something the available fields cannot distinguish.
 
 The exercise deliberately keeps the number of basket-active months separate from the number of static-coverage months. **No observed basket is not automatically zero spending.** Homework counts are unweighted; national projection is a separate question. Keep household extracts and detailed geographic outputs on Orchard or other approved lab storage.
 
-## Source notes and questions to resolve
+## Questions to resolve before final estimates
 
-These notes use the supplied ER diagram, `numerator_variable_metadata_new.csv`, the master data dictionary, the internal documentation draft, and the earlier R/SQL scripts. Where the dictionary and draft differ, the lab makes the uncertainty explicit: the dictionary identifies demographic validity periods, while the older draft still treated their meaning as an open question. The live DuckDB schema is the authority for loaded column types.
+The live DuckDB schema is the authority for the tables and column types currently available on Orchard. The supplied data dictionary describes the variables, but several methodological questions remain open. Before using these data for final estimates, we still need to confirm:
 
-Before using these data for final estimates, resolve the official static-panel flag, the interpretation of absent weighting months, the correct time alignment of household weights, and the construction/application of each projection factor. The lab's spell table is an auditable coverage reference that can be revised when those answers arrive.
+- whether an official Numerator static-panel flag is available;
+- how to interpret months when a household is absent from the weighting file;
+- whether any available dates represent actual panel enrollment and exit;
+- how household weights should be aligned with transaction dates; and
+- how Numerator constructs and intends researchers to combine the projection factors.
+
+The participation-spell reference gives us an auditable description of observed coverage under the current definition. It can be revised when additional documentation becomes available.

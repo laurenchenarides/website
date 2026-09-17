@@ -1,11 +1,11 @@
 ---
 title: "Lab Meeting 8-24-26"
 subtitle: "Shared resources and meeting notes for students working with consumer and retail data"
+date: 2026-08-24
+author: "Lauren Chenarides"
 toc: true
 toc-location: left
-execute:
-  echo: false
-  warning: false
+toc-depth: 2
 ---
 
 
