@@ -68,7 +68,7 @@ Possible topics include data organization, efficient queries, project documentat
 |---|---|---|---|
 | August 24 | 2:00–3:30 p.m. | In person | First lab meeting |
 | September 7 | -- |  | Labor Day; university offices closed |
-| September 21 | 2:00–3:30 p.m. | In person |  |
+| September 21 | 2:00–3:30 p.m. | In person | [Numerator: households, baskets, and sample coverage](lab-notes-20260921.qmd) |
 | October 5 | 2:00–3:30 p.m. | In person |  |
 | October 19 | 2:00–3:30 p.m. | In person |  |
 | November 2 | 2:00–3:30 p.m. | In person |  |

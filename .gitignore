@@ -7,3 +7,7 @@
 .positai
 
 **/*.quarto_ipynb
+
+/chenlab/hidden/
+/chenlab/scripts/
+/docs/chenlab/scripts/

@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lauren Chenarides">
+<meta name="dcterms.date" content="2026-09-21">
+
+<title>Lab Meeting 9-21-26 – laurenchenarides.com</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9bca800319d8ad04a038e1cefbc170e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<!-- academic icons -->
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+
+
+<!-- altmetric icons -->
+
+<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+
+
+
+<!-- fontawesome icons -->
+
+<script src="https://kit.fontawesome.com/1392a7030f.js" crossorigin="anonymous"></script>
+
+
+
+
+
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Lab Meeting 9-21-26 – laurenchenarides.com">
+<meta property="og:description" content="Getting started with Numerator: households, baskets, and sample coverage">
+<meta property="og:image" content="https://www.laurenchenarides.com/chenlab/images/photo.png">
+<meta property="og:site_name" content="laurenchenarides.com">
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">laurenchenarides.com</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../bio.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../chenlab/lab-notes.html"> 
+<span class="menu-text">Orchard</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../workshops.html"> 
+<span class="menu-text">Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../media.html"> 
+<span class="menu-text">Media</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../cv.html"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../podcast.html"> 
+<span class="menu-text">Podcast</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#todays-goals" id="toc-todays-goals" class="nav-link active" data-scroll-target="#todays-goals">Today’s goals</a></li>
+  <li><a href="#files-for-this-lab" id="toc-files-for-this-lab" class="nav-link" data-scroll-target="#files-for-this-lab">Files for this lab</a></li>
+  <li><a href="#read-the-er-diagram" id="toc-read-the-er-diagram" class="nav-link" data-scroll-target="#read-the-er-diagram">Read the ER diagram</a></li>
+  <li><a href="#connect-r-to-duckdb" id="toc-connect-r-to-duckdb" class="nav-link" data-scroll-target="#connect-r-to-duckdb">Connect R to DuckDB</a></li>
+  <li><a href="#static-households-and-participation-spells" id="toc-static-households-and-participation-spells" class="nav-link" data-scroll-target="#static-households-and-participation-spells">Static households and participation spells</a></li>
+  <li><a href="#projection-factors-and-expenditure-comparisons" id="toc-projection-factors-and-expenditure-comparisons" class="nav-link" data-scroll-target="#projection-factors-and-expenditure-comparisons">Projection factors and expenditure comparisons</a></li>
+  <li><a href="#homework-build-the-first-sample-flow-diagnostics" id="toc-homework-build-the-first-sample-flow-diagnostics" class="nav-link" data-scroll-target="#homework-build-the-first-sample-flow-diagnostics">Homework: build the first sample-flow diagnostics</a></li>
+  <li><a href="#source-notes-and-questions-to-resolve" id="toc-source-notes-and-questions-to-resolve" class="nav-link" data-scroll-target="#source-notes-and-questions-to-resolve">Source notes and questions to resolve</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab Meeting 9-21-26</h1>
+<p class="subtitle lead">Getting started with Numerator: households, baskets, and sample coverage</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lauren Chenarides </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 21, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="todays-goals" class="level2">
+<h2 class="anchored" data-anchor-id="todays-goals">Today’s goals</h2>
+<p>By the end of this lab, you should be able to connect R to the Numerator DuckDB database on Orchard, read a small household or basket extract, close the connection, and explain which households your analysis includes. We will begin at the <strong>household and basket level</strong>; product-level work comes later.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2:00–2:30</td>
+<td>Project updates, access checks, and questions</td>
+</tr>
+<tr class="even">
+<td>2:30–2:40</td>
+<td>Read the ER diagram and identify our starting tables</td>
+</tr>
+<tr class="odd">
+<td>2:40–2:55</td>
+<td>Connect R, inspect columns, and read a small extract</td>
+</tr>
+<tr class="even">
+<td>2:55–3:10</td>
+<td>Static membership, spells, gaps, and attrition</td>
+</tr>
+<tr class="odd">
+<td>3:10–3:20</td>
+<td>Projection factors and expenditure comparisons</td>
+</tr>
+<tr class="even">
+<td>3:20–3:30</td>
+<td>Start the sample-flow homework</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="files-for-this-lab" class="level2">
+<h2 class="anchored" data-anchor-id="files-for-this-lab">Files for this lab</h2>
+<p>Dr.&nbsp;Chenarides will provide the following files in the designated lab folder on Orchard. They are not distributed through the public website or GitHub repository. Copy <code>config.R</code> and <code>read_numerator.R</code> into your own R project on Orchard for the examples below.</p>
+<ul>
+<li><code>config.R</code>: open and close a read-only connection.</li>
+<li><code>read_numerator.R</code>: inspect columns and retrieve a small extract.</li>
+<li><code>02_static_household_spells.sql</code>: instructor setup for the shared household reference tables.</li>
+<li><code>03_sample_flow.sql</code>: student diagnostic exercise.</li>
+</ul>
+<p>These are teaching versions of the earlier scripts. They use <code>core_new</code> consistently, do not depend on a saved metadata table, and do not run the older plant-based project’s spending/activity filters. The supplied ER diagram, dictionary, scripts, and internal draft documentation are private lab materials; access them on Orchard during the discussion.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Instructor preparation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Instructor preparation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before class, verify that <code>core_new</code> points to the intended release and that its parquet files are available on Orchard. The reviewed setup script identifies this as the July 2026 delivery, with purchases through June 30, 2026; verify the actual date ranges in the database.</p>
+<p>Run <code>02_static_household_spells.sql</code> once in a DBeaver SQL editor attached to that database. It requires <code>core_new.static_table</code>, already created by the corresponding section of <code>00_setup.sql</code>. Students do <strong>not</strong> need to rerun the full setup or <code>01_household_diagnostics.sql</code>. Stop on SQL errors and issue <code>ROLLBACK</code> before retrying. Rebuild the reference tables after a data refresh.</p>
+<p>Coordinate this write with other users: disconnect R readers first, then disconnect the DBeaver write connection before the class connects. Multiple direct DuckDB readers can share the file when all connections are read-only. See the <a href="https://duckdb.org/docs/current/connect/concurrency">DuckDB concurrency documentation</a>.</p>
+</div>
+</div>
+</section>
+<section id="read-the-er-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="read-the-er-diagram">Read the ER diagram</h2>
+<p>An <strong>entity-relationship (ER) diagram</strong> shows tables, their fields, and the keys connecting them. Start with the <strong>grain</strong>: what does one row represent? Then identify the join key and whether one record can match several records in the other table. A <code>1</code> means one; <code>*</code> means many. A line suggests a relationship, but we must still check uniqueness in the actual data.</p>
+<p>For this lab, use this simplified map alongside the supplied diagram:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  P["people_table&lt;br/&gt;one household"] --&gt;|user_id| B["summarylvl_fact_table&lt;br/&gt;one basket"]
+  C["banner_table&lt;br/&gt;one retailer banner"] --&gt;|banner_id| B
+  H["static_households&lt;br/&gt;one household"] --&gt;|user_id| B
+  H --&gt;|user_id| S["static_household_spells&lt;br/&gt;one household + spell"]
+  M["static_household_months&lt;br/&gt;one household + endpoint month"] --&gt; S
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The three <code>static_household...</code> objects are lab-created references, not vendor tables. The arrows show how to relate them; they are not instructions to join every object at once.</p>
+<section id="start-with-these-tables" class="level3">
+<h3 class="anchored" data-anchor-id="start-with-these-tables">Start with these tables</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Table</th>
+<th>Grain and purpose</th>
+<th>Key fields</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>core_new.people_table</code></td>
+<td>One current household record; home geography</td>
+<td><code>user_id</code>, <code>postal_code</code>, <code>census_region_name</code></td>
+</tr>
+<tr class="even">
+<td><code>reference.static_households</code></td>
+<td>One household appearing in the supplied static file; safe household-level join</td>
+<td><code>user_id</code>, <code>is_static_household</code>, observed bounds, <code>n_spells</code></td>
+</tr>
+<tr class="odd">
+<td><code>reference.static_household_spells</code></td>
+<td>One consecutive run of monthly static-file coverage per household</td>
+<td><code>user_id</code>, <code>spell_id</code>, spell bounds, gap length</td>
+</tr>
+<tr class="even">
+<td><code>core_new.summarylvl_fact_table</code></td>
+<td>One basket/trip; our main transaction table</td>
+<td><code>basket_id</code>, <code>user_id</code>, <code>banner_id</code>, <code>transaction_date</code>, spending and order fields</td>
+</tr>
+<tr class="odd">
+<td><code>core_new.banner_table</code></td>
+<td>One banner; add when interpreting retail channel</td>
+<td><code>banner_id</code>, <code>banner</code>, <code>channel</code>, <code>parent_channel</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Reference tables</strong> describe or classify observations. <strong>Transaction tables</strong> record purchases. The <code>reference</code> schema holds our derived lab references; vendor lookup tables such as <code>people_table</code> and <code>banner_table</code> remain in <code>core_new</code>. A schema is a namespace, not a guarantee of a table’s grain.</p>
+<p><code>postal_code</code> is the household’s current home postal code. <code>store_postal_code</code> is the store’s postal code. They answer different geographic questions. Preserve both as text so leading zeros survive. For historical residence, the dictionary describes <code>people_history_table.FROM_DATE</code> and <code>UNTIL_DATE</code> as <strong>demographic validity dates</strong>, not enrollment dates. We will need a validated time-varying join for that work.</p>
+<p>The basket table includes <code>basket_total</code> (receipt total), <code>basket_sub_total</code> (pre-tax subtotal), <code>basket_adjusted_subtotal</code>, transaction dates, store geography, and <code>order_method_type</code>, <code>order_provider</code>, <code>delivery_method_type</code>, <code>delivery_provider</code>, and <code>order_delivery_type</code>. Choose an expenditure measure and document it. Retail channel comes from <code>banner_table</code>; ordering and fulfillment describe a different dimension. A grocery-store basket is not necessarily all food.</p>
+<p>Before joining, check that the household and banner references have unique keys. The homework checks the candidate basket key <code>(basket_id, user_id, banner_id, transaction_date)</code>. Joining baskets to all spells using only <code>user_id</code> repeats each basket for households with multiple spells. Use the one-row household view for household labels, or an explicit month match for monthly coverage. Item rows also repeat basket totals, which is why we start with the summary table.</p>
+</section>
+</section>
+<section id="connect-r-to-duckdb" class="level2">
+<h2 class="anchored" data-anchor-id="connect-r-to-duckdb">Connect R to DuckDB</h2>
+<p><strong>DBeaver is a database client. R connects directly to the same DuckDB file; it does not read DBeaver’s screen or export a DBeaver table.</strong> Run R/RStudio inside your Orchard session. In DBeaver’s connection settings, find the database file path and copy it, using forward slashes in R. The file may have no extension. Its views may refer to parquet files elsewhere on Orchard, so copying only the database to a laptop is not enough.</p>
+<p>Install the packages once into your own R library:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"DBI"</span>, <span class="st">"duckdb"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>At the start of each session, set the actual path and source the helpers:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace this example with the database file shown in DBeaver.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">NUMERATOR_DB_PATH =</span> <span class="st">"D:/path/to/numerator.duckdb"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"read_numerator.R"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_numerator</span>(con, <span class="st">"people_table"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">describe_numerator</span>(con, <span class="st">"summarylvl_fact_table"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The path is supplied per user; no personal path is built into the scripts. Opening is read-only and fails if the database file does not exist. Use one lab connection at a time; the close helper disconnects and shuts down its database instance to release the file lock. If a file-lock error appears, check whether DBeaver or another process still has a write connection. Use the <a href="https://duckdb.org/docs/current/clients/r">DuckDB R client documentation</a> for connection details.</p>
+<p>Read selected columns and a small preview:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>households <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"people_table"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"user_id"</span>, <span class="st">"postal_code"</span>, <span class="st">"census_region_name"</span>), <span class="at">limit =</span> <span class="dv">10</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>spells <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"static_household_spells"</span>, <span class="at">schema =</span> <span class="st">"reference"</span>, <span class="at">limit =</span> <span class="dv">10</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>baskets <span class="ot">&lt;-</span> <span class="fu">read_numerator</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  con, <span class="st">"summarylvl_fact_table"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">"basket_id"</span>, <span class="st">"user_id"</span>, <span class="st">"banner_id"</span>, <span class="st">"transaction_date"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>              <span class="st">"basket_total"</span>, <span class="st">"store_postal_code"</span>, <span class="st">"order_method_type"</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>              <span class="st">"delivery_method_type"</span>, <span class="st">"basket_er_factor"</span>),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">where =</span> <span class="st">"transaction_date &gt;= ? AND transaction_date &lt; ?"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="fu">as.Date</span>(<span class="st">"2025-01-01"</span>), <span class="fu">as.Date</span>(<span class="st">"2025-02-01"</span>)),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">limit =</span> <span class="dv">100</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">close_numerator_connection</span>(con)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The helpers cast identifiers to character <strong>inside DuckDB</strong>, before R can round a large <code>DECIMAL(38,0)</code> value, and return lowercase column names. A <code>LIMIT</code> preview is not a random or representative sample. The independently previewed tables need not contain matching households. For analysis, filter or aggregate in SQL first; even a one-month extract can be large. <code>limit = NULL</code> deliberately collects all rows matching your condition.</p>
+<p>For a reusable script, put the work inside a function so the connection closes even if a query fails:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>run_lab <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  con <span class="ot">&lt;-</span> <span class="fu">open_numerator_connection</span>()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">on.exit</span>(<span class="fu">close_numerator_connection</span>(con), <span class="at">add =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  DBI<span class="sc">::</span><span class="fu">dbGetQuery</span>(con, <span class="st">"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT date_trunc('month', transaction_date)::DATE AS month,</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">           COUNT(*) AS basket_rows, COUNT(DISTINCT user_id) AS households</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM core_new.summarylvl_fact_table</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE transaction_date &gt;= DATE '2025-01-01'</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">      AND transaction_date &lt; DATE '2026-01-01'</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY 1 ORDER BY 1</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">  "</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>monthly_counts <span class="ot">&lt;-</span> <span class="fu">run_lab</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Only the small result enters R. The database does the scan and aggregation.</p>
+</section>
+<section id="static-households-and-participation-spells" class="level2">
+<h2 class="anchored" data-anchor-id="static-households-and-participation-spells">Static households and participation spells</h2>
+<p>“Static” generally refers to a sample selected for sustained reporting over a specified period. It does <strong>not</strong> mean that a household never moves, never changes, or participates forever.</p>
+<p>Our internal draft describes Numerator’s official criteria in terms of consecutive reporting, qualifying receipts, demographic balance, and transcription completeness. It also says the relationship between those criteria and membership in <code>static_table</code> is unresolved. The older diagnostics implement a separate project proxy: at least 36 active months, at least 26 receipts, and a household-size spending floor, using gas-excluded activity in selected channels. <strong>Active months are not necessarily consecutive months.</strong> That proxy is not an official vendor classification.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="The operational definition for this exercise">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>The operational definition for this exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For this lab, <code>is_static_household = 1</code> means that the household appears in the supplied <code>core_new.static_table</code>. Call it <strong>static-file membership</strong> in your homework. This is not a verified official static-panel flag or proof of continuous reporting. The reference contains only members; use a left join from all observed households when comparing members and nonmembers.</p>
+<p>The dictionary defines <code>START_DATE</code> and <code>END_DATE</code> as the endpoints of a 12-calendar-month static period. We index each record by the <strong>month of <code>END_DATE</code></strong>, the trailing window’s endpoint, and identify consecutive runs of those monthly records. This labels weighting coverage; it does not establish that this is the correct month-matching rule for applying household weights to transactions.</p>
+</div>
+</div>
+<p>The SQL first reduces the source to one record per <code>user_id</code> and endpoint month, recording duplicate source-row counts for review. It then starts a new spell whenever at least one endpoint month is missing. It does <strong>not</strong> fill all months inside every overlapping 12-month window, which would hide gaps between weighting records.</p>
+<p>Consider a fictional household with endpoint months January, February, March, June, and July:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Spell</th>
+<th>First observed month</th>
+<th>Last observed month</th>
+<th style="text-align: right;">Months in spell</th>
+<th style="text-align: right;">Missing months before spell</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>January</td>
+<td>March</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>June</td>
+<td>July</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p>This household has two observed coverage spells and returns after an April–May gap. Its overall January–July span contains five observed months, not seven continuously observed months. A single spell can still cover only a short portion of the full release.</p>
+<p>The reference exposes <code>observed_entry_month</code>, <code>observed_last_month</code>, <code>spell_start_month</code>, <code>spell_end_month</code>, <code>n_spells</code>, <code>gap_months_before</code>, and <code>is_return</code>. The actual <code>panel_entry_date</code> and <code>panel_exit_date</code> remain <strong>NULL</strong> because the reviewed files do not establish them. <code>touches_release_start</code> and <code>touches_release_end</code> flag spells that reach the available static-file boundaries; activity may extend outside what we can observe.</p>
+<p>A missing receipt is not proof that a household left the panel, and disappearance from the weighting file is not proof that it stopped purchasing. Returns may reflect renewed reporting or weighting eligibility. Attrition and changing sample composition can affect expenditure trends, event studies, and duration models. Compare unbalanced and continuously covered samples, but recognize that requiring future coverage can select survivors. Keep recent reporting lags in mind; low activity at the release boundary may reflect incomplete collection. Do not convert these gaps into verified enrollment events.</p>
+</section>
+<section id="projection-factors-and-expenditure-comparisons" class="level2">
+<h2 class="anchored" data-anchor-id="projection-factors-and-expenditure-comparisons">Projection factors and expenditure comparisons</h2>
+<p>The supplied dictionary describes the fields’ intended roles:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Where it lives</th>
+<th>Intended role</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ER_FACTOR</code></td>
+<td>Item-level facts</td>
+<td>Extended-reach projection beyond the observed panel</td>
+</tr>
+<tr class="even">
+<td><code>BASKET_ER_FACTOR</code></td>
+<td>Basket-level facts</td>
+<td>Extended-reach projection of basket purchases</td>
+</tr>
+<tr class="odd">
+<td><code>TREND_FACTOR</code> / <code>BASKET_TREND_FACTOR</code></td>
+<td>Corresponding fact table</td>
+<td>Trend-adjusted projection</td>
+</tr>
+<tr class="even">
+<td><code>DEMO_WEIGHT</code> / <code>NATIONAL_FACTOR</code></td>
+<td><code>static_table</code></td>
+<td>Demographic weighting / national scaling for the static reference population</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled" title="What we do not yet know">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>What we do not yet know
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We do <strong>not</strong> yet have documentation explaining how Numerator constructs these weights: calibration targets, normalization, trimming, eligible populations, or how the factor families relate. Field descriptions explain intended use, but do not verify a national estimator for a chosen subset. We must confirm the applicable spending measure, population, period, and whether any factors combine before presenting national expenditure estimates.</p>
+</div>
+</div>
+<p>The basic projection calculation to discuss is a sum of expenditures times their corresponding factor, <strong>if Numerator confirms that factor is the appropriate standalone multiplier</strong>:</p>
+<p><span class="math display">\[
+\widehat{E}_t = \sum_{b \in \mathcal{B}_t} E_b\,w_b,
+\qquad w_b = \text{BASKET\_ER\_FACTOR}_b.
+\]</span></p>
+<p>For example, fictional baskets of $20 and $30 with factors 100 and 200 produce a raw total of $50 and an illustrative projected sum of $8,000. Dividing that sum by <span class="math inline">\(100 + 200\)</span> gives a weighted <strong>mean basket expenditure</strong>, not national total expenditure or expenditure per household. At the item level, the analogous calculation would use item spending and <code>ER_FACTOR</code>; do not put an item factor on repeated basket totals.</p>
+<p>Before calculating, inspect missing, nonfinite, zero, and negative factors, missing expenditures, and duplicate baskets. Do not replace missing factors with 1 or silently report a sum based on only the valid rows. Negative spending may represent returns and needs its own interpretation. This example reports factor coverage and returns an illustrative sum only when every basket has a finite positive factor and nonmissing spending:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    date_trunc(<span class="st">'month'</span>, transaction_date):<span class="ch">:DATE</span> <span class="kw">AS</span> <span class="dt">month</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n_baskets,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (<span class="kw">WHERE</span> basket_total <span class="kw">IS</span> <span class="kw">NULL</span>) <span class="kw">AS</span> missing_spending,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">WHERE</span> basket_er_factor <span class="kw">IS</span> <span class="kw">NULL</span> <span class="kw">OR</span> <span class="kw">NOT</span> isfinite(basket_er_factor)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>           <span class="kw">OR</span> basket_er_factor <span class="op">&lt;=</span> <span class="dv">0</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="kw">AS</span> invalid_factors,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(basket_total) <span class="kw">AS</span> observed_spending_nonmissing,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">CASE</span> <span class="cf">WHEN</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">FILTER</span> (</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">WHERE</span> basket_total <span class="kw">IS</span> <span class="kw">NULL</span> <span class="kw">OR</span> basket_er_factor <span class="kw">IS</span> <span class="kw">NULL</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>           <span class="kw">OR</span> <span class="kw">NOT</span> isfinite(basket_er_factor) <span class="kw">OR</span> basket_er_factor <span class="op">&lt;=</span> <span class="dv">0</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">=</span> <span class="dv">0</span> <span class="cf">THEN</span> <span class="fu">SUM</span>(basket_total <span class="op">*</span> basket_er_factor) <span class="cf">END</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="kw">AS</span> illustrative_er_weighted_sum</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> core_new.summarylvl_fact_table</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> transaction_date <span class="op">&gt;=</span> <span class="dt">DATE</span> <span class="st">'2025-01-01'</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> transaction_date <span class="op">&lt;</span> <span class="dt">DATE</span> <span class="st">'2026-01-01'</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span> <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dv">1</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Run the homework’s duplicate-key check first. This illustration uses the full basket population in the date window, not the static/ZIP-filtered homework subset. Restricting to static-file members, known ZIPs, or continuously observed households changes the represented sample; supplied factors may not project that restricted sample nationally. Do not multiply ER, trend, demographic, and national factors together without explicit instructions from Numerator.</p>
+<p>For national comparisons, align time periods, population, channels, tax treatment, and expenditure scope with the benchmark. Basket totals from grocery retailers cannot stand in for food spending without resolving nonfood purchases. Report raw counts and unweighted spending beside any projected calculation, examine changes in sample composition and missing weights, and distinguish nominal changes from inflation-adjusted changes. Weighting alone does not establish representative ZIP coverage or correct all attrition bias.</p>
+</section>
+<section id="homework-build-the-first-sample-flow-diagnostics" class="level2">
+<h2 class="anchored" data-anchor-id="homework-build-the-first-sample-flow-diagnostics">Homework: build the first sample-flow diagnostics</h2>
+<p>Start with <code>03_sample_flow.sql</code>. It uses temporary tables, so run it in one connection; they disappear when you disconnect. Use <strong>calendar year 2025</strong> initially, after checking that the source covers it. The end date is exclusive (<code>2026-01-01</code>). Keep the same period at every step and record the release used.</p>
+<p><strong>All observed households → static-file members → geographic coverage → coverage over time.</strong></p>
+<ol type="1">
+<li><strong>All observed households:</strong> Count distinct nonmissing <code>user_id</code> values with a basket in the analysis window, across all channels, including gas-only baskets. This is an observed purchaser population, not every enrolled household or every row of <code>people_table</code>. Report missing IDs and dates separately.</li>
+<li><strong>Static-file members:</strong> Among those households, retain membership in at least one static endpoint month within the same analysis window. Do not treat membership somewhere else in the full release as membership this year. Report retained counts, losses, and shares of the starting sample.</li>
+<li><strong>Geographic coverage:</strong> Left join current <code>people_table</code> geography. Report missing household records, missing postal codes, and other postal formats separately. Count households and distinct ZIPs by region. The provided five-digit/ZIP+4 check establishes only a ZIP-shaped string; it does not validate a ZIP against a geographic crosswalk or measure population coverage.</li>
+<li><strong>Coverage over time:</strong> Plot monthly observed households, households with same-month static-file coverage, and those also passing the ZIP-format screen. Retain zero-count months. Compare static members with and without an observed basket that month, and show the distribution of spell counts. Also report the additional loss from requiring static coverage in every analysis month as a sensitivity check.</li>
+</ol>
+<p><strong>Bring to the next lab:</strong> one sample-flow table, one geography summary, one monthly line plot, and a short paragraph stating your inclusion rules and explaining a gap/return example. Include the SQL/R needed to reproduce them. Identify the largest source of sample loss and one reason it could affect your research question. Discuss whether a changing monthly count reflects purchase activity, weighting coverage, reporting lag, or something the available fields cannot distinguish.</p>
+<p>The exercise deliberately keeps the number of basket-active months separate from the number of static-coverage months. <strong>No observed basket is not automatically zero spending.</strong> Homework counts are unweighted; national projection is a separate question. Keep household extracts and detailed geographic outputs on Orchard or other approved lab storage.</p>
+</section>
+<section id="source-notes-and-questions-to-resolve" class="level2">
+<h2 class="anchored" data-anchor-id="source-notes-and-questions-to-resolve">Source notes and questions to resolve</h2>
+<p>These notes use the supplied ER diagram, <code>numerator_variable_metadata_new.csv</code>, the master data dictionary, the internal documentation draft, and the earlier R/SQL scripts. Where the dictionary and draft differ, the lab makes the uncertainty explicit: the dictionary identifies demographic validity periods, while the older draft still treated their meaning as an open question. The live DuckDB schema is the authority for loaded column types.</p>
+<p>Before using these data for final estimates, resolve the official static-panel flag, the interpretation of absent weighting months, the correct time alignment of household weights, and the construction/application of each projection factor. The lab’s spell table is an auditable coverage reference that can be revised when those answers arrive.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.laurenchenarides\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ <a href="cv.html">CV</a> &nbsp;<a href="https://github.com/laurenchenarides" target="blank"><i class="bi bi-github"></i></a> &nbsp;<a href="https://www.linkedin.com/in/laurenchenarides/" target="blank"><i class="bi bi-linkedin"></i></a> &nbsp;<a href="https://scholar.google.com/citations?user=07RAgEQAAAAJ&amp;hl=en" target="blank"><i class="ai ai-google-scholar fa-lg"></i></a> &nbsp;<a href="https://orcid.org/my-orcid?orcid=0000-0001-8983-9694" target="blank"><i class="ai ai-orcid fa-lg"></i></a><br>Site made with <i class="bi bi-heart-fill"></i>, <a href="https://github.com/laurenchenarides/personal_website" target="_blank"><i class="bi bi-git"></i></a>, and <a href="https://quarto.org/" target="_blank"><img src="https://quarto.org/favicon.png" width="12"> quarto</a><br>© 2026 Lauren Chenarides
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
