@@ -5,7 +5,10 @@ page-layout: full
 css: custom.css
 listing:
   - id: lab-notes
-    contents: lab-notes-*.qmd
+    # List public notes explicitly so files in the private hidden folder can
+    # never be discovered by this website listing.
+    contents:
+      - lab-notes-20260824.qmd
     sort: "date asc"
     type: grid
     categories: false
@@ -68,7 +71,7 @@ Possible topics include data organization, efficient queries, project documentat
 |---|---|---|---|
 | August 24 | 2:00–3:30 p.m. | In person | [First lab meeting](lab-notes-20260824.qmd) |
 | September 7 | -- |  | Labor Day; university offices closed |
-| September 21 | 2:00–3:30 p.m. | In person | [Numerator: households, baskets, and sample coverage](lab-notes-20260921.qmd) |
+| September 21 | 2:00–3:30 p.m. | In person | Numerator: households, baskets, and sample coverage; notes available to lab members on Orchard |
 | October 5 | 2:00–3:30 p.m. | In person |  |
 | October 19 | 2:00–3:30 p.m. | In person |  |
 | November 2 | 2:00–3:30 p.m. | In person |  |
@@ -78,7 +81,7 @@ Possible topics include data organization, efficient queries, project documentat
 
 ## Lab Notes
 
-Meeting notes, resources, and follow-up items are collected below.
+Public meeting notes, resources, and follow-up items are collected below. Notes containing restricted data documentation or server details are distributed to authorized lab members through Orchard and are not published on this website.
 
 ::: {#lab-notes}
 :::
