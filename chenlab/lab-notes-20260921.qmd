@@ -3,6 +3,7 @@ title: "Lab Meeting 9-21-26"
 subtitle: "Getting started with Numerator: households, baskets, and sample coverage"
 date: 2026-09-21
 author: "Lauren Chenarides"
+image: images/projection-factor-comparison.png
 toc: true
 toc-location: left
 toc-depth: 2
@@ -15,8 +16,8 @@ We will spend the first **30 minutes** sharing project updates, questions, and c
 - how to read the Numerator entity-relationship diagram;
 - how the Numerator database, schemas, and Parquet source files are organized;
 - why we use DuckDB and how R connects to it;
-- how the household, basket, banner, and static reference tables relate;
-- how to interpret static-household membership, participation spells, and gaps;
+- how the household, basket, banner, and static weighting tables relate;
+- how to interpret static-household definitions and gaps in weighting-file coverage;
 - how the available projection factors are intended to be used; and
 - how to begin the sample-flow diagnostics in R.
 
@@ -108,7 +109,7 @@ Our main schemas are:
 | `reference` | Shared classifications, crosswalks, and household reference tables that can be reused across projects. |
 | `diagnostics` | Reproducible checks and summaries built from the source data. |
 
-We keep shared reference tables in their own schema because some definitions require substantial setup and should be consistent across projects. For example, each student should not independently rebuild participation spells or retailer-channel classifications. A maintained table in `reference` can be created once, checked, and then read by many people. **Transaction tables** record purchases; **reference tables** describe, classify, or summarize the records used in those analyses.
+We keep shared reference tables in their own schema because some definitions require substantial setup and should be consistent across projects. For example, each student should not independently rebuild retailer-channel classifications. A maintained table in `reference` can be created once, checked, and then read by many people. **Transaction tables** record purchases; **reference tables** describe, classify, or summarize the records used in those analyses.
 
 ### Why DuckDB?
 
@@ -130,7 +131,7 @@ The current vendor tables in `core_new` are:
 | `core_new.static_table` | One household weighting window | Static-file dates and household weighting fields |
 | `core_new.numerator_variable_metadata` | One documented column | Table names, column names, positions, and data types |
 
-The database also contains shared `reference` objects. The first five objects below support several projects. The three static-household objects are **local lab tables derived from Numerator's `core_new.static_table`**; they are not tables supplied directly by Numerator. The instructor creates or refreshes them before students use the lab examples.
+The database also contains shared `reference` objects. These tables will be helpful for all students looking to understand the scope of data covered.
 
 | Table or view | Purpose |
 |---|---|
@@ -138,12 +139,8 @@ The database also contains shared `reference` objects. The first five objects be
 | `reference.channel_fah_fafh_mapping` | Shared parent-channel and channel classifications |
 | `reference.ecommerce_retailer_mapping` | Retailer-level classifications for e-commerce banners |
 | `reference.numerator_channel_type` | Banner-level channel classification built from the shared mappings |
-| `reference.household_size_spend_threshold` | Household-size spending thresholds used by an earlier project-specific diagnostic definition |
-| `reference.static_household_months` | One record per household and observed static-file endpoint month; created locally from `core_new.static_table` |
-| `reference.static_household_spells` | One record per consecutive observed static-file coverage spell; created locally from `reference.static_household_months` |
-| `reference.static_households` | One summary record per household appearing in the static file; created locally as a view of the spell table |
 
-The database may gain tables as it is updated. After connecting, run `list_numerator_tables(con)` to see the live list rather than relying only on this page.
+The database may gain tables as it is updated.
 
 ## 2. Connecting R to DuckDB
 
@@ -215,10 +212,18 @@ This produces three R data frames:
 
 The functions in `read_numerator.R` protect long ID numbers by reading them as text and use lowercase column names in R. A preview shows you the table's structure; it is not a random or representative sample. Large transaction tables should be filtered or summarized by DuckDB before their results are brought into R.
 
-::: {.callout-warning title="Always close the connection"}
-The function `open_numerator_connection()` comes from `config.R`. It opens the database in read-only mode. This allows multiple R users to read the shared database at the same time, but a read-write connection left open in another program can lock the database and prevent other people from connecting.
+::: {.callout-warning title="If the database will not open"}
+The function `open_numerator_connection()` opens the database in read-only mode, so several R users can usually query it at the same time. If `con <- open_numerator_connection()` returns a message saying that the file is already in use by another process, someone likely has the shared database open in DBeaver with a read-write connection.
 
-Close your connection as soon as your query finishes. If your code stops with an error before reaching the closing line, run `close_numerator_connection(con)` in the Console. If the database remains locked, check for an open connection in RStudio or another database program and close it.
+![Example of the connection error shown when DBeaver has locked the DuckDB file.](images/connection-error.png){fig-alt="An R error stating that the Numerator DuckDB file cannot be opened because it is already being used by DBeaver." width=95%}
+
+Post a message in the **Teams channel** so the person using DBeaver knows that others are waiting. For example:
+
+> I cannot connect to the Numerator database because the file appears to be locked by DBeaver. Is anyone using it now? Please close the DBeaver connection when you finish and let the channel know.
+
+Keep notifications turned on for the Teams channel while you have the database open in DBeaver so you see these requests. Close the DBeaver connection as soon as you finish and post that the database is available again.
+
+Always close an R connection as soon as your query finishes. If your code stops with an error after the connection opened, run `close_numerator_connection(con)` in the Console. A different error message may instead indicate a missing package, an incorrect path, or another setup problem.
 :::
 
 ::: {.callout-note collapse=true title="More advanced: close the connection automatically"}
@@ -243,10 +248,10 @@ count_households_by_month <- function() {
 monthly_households <- count_households_by_month()
 ```
 
-This advanced version follows the same sequence as the first example. The only difference is that R handles the cleanup automatically.
+This version follows the same sequence as the first example. Here you are creating a summary table that counts the number of distinct households that appear in the basket-level table by month from 1/1/25 to 1/1/26.
 :::
 
-## 3. Static households and participation spells
+## 3. Static households and weighting-file coverage
 
 Households join and leave consumer panels at different times, and they do not all submit receipts consistently. This creates a problem for research over time: a decline in purchases could mean that a household stopped buying something, or it could mean that the household stopped reporting purchases. A **static household** sample attempts to identify households with sufficiently consistent reporting for comparisons over time.
 
@@ -263,55 +268,37 @@ The documentation supplied with the data describes Numerator's official Omnipane
 
 Numerator caps that official panel at approximately 100,000 households nationally. The files on Orchard do not contain a field that clearly identifies which households belong to that official panel.
 
-Numerator does supply `core_new.static_table`, but that table serves a different observable purpose: it contains repeated 12-month weighting windows and the household-level fields `DEMO_WEIGHT` and `NATIONAL_FACTOR`. It also contains far more households than the documented official panel. We therefore treat it as a **monthly weighting file** and do not assume that every household in it satisfies Numerator's official static-panel criteria.
+Numerator supplies `core_new.static_table`, but the table does not identify the approximately 100,000 households in the official Omnipanel static sample. It contains a much larger set of households and repeated records used for weighting. We therefore treat it as a **monthly weighting file**, not as a ready-made static-household list.
 
-### Definitions available on Orchard
-
-There are two related resources in the database, and they answer different questions:
-
-| Resource | What it means | Appropriate use |
-|---|---|---|
-| `diagnostics.static_households` | An internal project proxy requiring at least 36 active months, at least 26 receipts, and a household-size spending floor, excluding gas-only activity | RQs that require a more consistently active analytic sample |
-| `reference.static_households` and `reference.static_household_spells` | A description of when households appear in `core_new.static_table` | Studying observed weighting-file coverage, gaps, and returns |
-
-The internal proxy is not Numerator's official classification. Its 36 **active** months also do not have to be consecutive. The reference tables do not claim that a household met the official static criteria; they describe what we can observe in the supplied weighting file.
-
-::: {.callout-important title="Which static table are we using?"}
-Numerator provides the source table `core_new.static_table`. The lab's setup SQL uses that source to create three local reference objects: `reference.static_household_months`, `reference.static_household_spells`, and `reference.static_households`.
-
-In `reference.static_households`, `is_static_household = 1` means only that the household appears in Numerator's `core_new.static_table`. In these notes, we call this **static-file membership**. It does not mean that we have verified the household against Numerator's official Omnipanel static criteria.
-
-The reference view contains only households found in the source static file. To compare them with all observed households, start with the full household sample and left join `reference.static_households`. A match receives `is_static_household = 1`; a household without a match receives `is_static_household = 0` for that comparison.
+::: {.callout-important title="A project's static sample must match its research question"}
+There is no shared `reference.static_households` or `reference.static_household_spells` table for this lab. A project studying annual spending, long-run changes, or responses to a specific event may need different continuity rules. Define the required observation period and reporting criteria for the research question, document those choices, and then create the project's analytic sample.
 :::
 
-### What is a participation spell?
+### How `core_new.static_table` represents time
 
-The dictionary defines `START_DATE` and `END_DATE` in `static_table` as the beginning and end of a 12-calendar-month weighting period. These are not verified panel enrollment and exit dates. We use the month of `END_DATE` to identify the monthly sequence of weighting-file records for each household.
+In `core_new.static_table`, each row describes one household and one **12-calendar-month weighting window**. `START_DATE` is the beginning of that window, and `END_DATE` is the end. Numerator refreshes these records monthly, so adjacent rows for the same household normally overlap for 11 months.
 
-For this lab, a **coverage spell** is one uninterrupted sequence of those observed endpoint months. A missing month ends one spell. If the household appears again later, a new spell begins. Looking only at the earliest and latest month would hide the gap. The spell measures continuity in the weighting file; it does not prove continuous panel enrollment or receipt reporting.
+For example:
 
-Consider a fictional household with endpoint months January, February, March, June, and July:
+| `START_DATE` | `END_DATE` | How to read the row |
+|---|---|---|
+| 2024-02-01 | 2025-01-31 | Weighting window ending in January 2025 |
+| 2024-03-01 | 2025-02-28 | Weighting window ending in February 2025 |
+| 2024-04-01 | 2025-03-31 | Weighting window ending in March 2025 |
 
-| Spell | First observed month | Last observed month | Months in spell | Missing months before spell |
+These are three monthly weighting records. They are not three separate participation periods, and the first `START_DATE` and last `END_DATE` are not verified panel entry and exit dates.
+
+When studying the sequence of records in this table, use the **month of `END_DATE`** as the label for each monthly weighting record. If a household has `END_DATE` months of January, February, March, June, and July, then its observed weighting-file coverage has two runs:
+
+| Observed run | First `END_DATE` month | Last `END_DATE` month | Observed months | Gap before run |
 |---|---|---|---:|---:|
 | 1 | January | March | 3 | 0 |
-| 2 | June | July | 2 | 2 |
+| 2 | June | July | 2 | 2 months |
 
-This household has two observed spells and returns after an April–May gap. Its overall January–July span contains five observed months, not seven months of continuous coverage.
+April and May are absent from that household's weighting records. This tells us that the household was missing from those monthly weighting files. It does **not** prove that the household left the panel, stopped submitting receipts, or stopped purchasing. For that reason, call these **observed weighting-file coverage runs**, rather than confirmed participation spells.
 
-The spell reference records:
-
-- `user_id`: the household identifier;
-- `spell_id`: the first, second, or later spell for that household;
-- `spell_start_month` and `spell_end_month`: the observed bounds of that spell;
-- `n_months_in_spell`: the number of covered months in the spell;
-- `gap_months_before`: the number of missing months before a returning spell; and
-- `n_spells` and `is_return`: indicators that help identify households that disappear and later return.
-
-The one-row `reference.static_households` table is useful when you need one household-level label. The multi-row `reference.static_household_spells` table is useful when the timing and continuity of coverage matter.
-
-::: {.callout-warning title="Observed coverage is not confirmed enrollment"}
-The actual `panel_entry_date` and `panel_exit_date` remain missing because the reviewed files do not establish them. A missing receipt is not proof that a household left the panel, and disappearance from the weighting file is not proof that it stopped purchasing. These distinctions matter because attrition and changing sample composition can look like changes in purchasing behavior.
+::: {.callout-warning title="`END_DATE` is a weighting endpoint, not a panel exit date"}
+Use `END_DATE` to order and label the monthly records in `core_new.static_table`. Do not interpret it as the date a household left Numerator. The available files do not yet provide verified panel entry and exit dates.
 :::
 
 ## 4. Projection factors and expenditure comparisons
@@ -320,20 +307,32 @@ Numerator is an opt-in panel, not a census of every US household or every purcha
 
 A factor of 100 means that the record contributes 100 units to a projected calculation. It does not mean that the observed household literally made 100 identical purchases. The factor changes how much influence the record has in the estimate.
 
-The supplied dictionary describes the fields' intended roles:
+The fields answer different weighting questions. The supplied dictionary describes their intended roles:
 
 | Field | Table | Intended role |
 |---|---|---|
-| `ER_FACTOR` | `itemlvl_fact_table` | Extended-reach projection applied to an item-level purchase row |
-| `BASKET_ER_FACTOR` | `summarylvl_fact_table` | Extended-reach projection applied to a basket-level purchase row |
+| `ER_FACTOR` | `itemlvl_fact_table` | Projects an item-level purchase beyond the observed panel to a broader population |
+| `BASKET_ER_FACTOR` | `summarylvl_fact_table` | Projects a basket-level purchase beyond the observed panel to a broader population |
 | `TREND_FACTOR` / `BASKET_TREND_FACTOR` | Corresponding fact table | Trend-adjusted projection at the item or basket level |
-| `DEMO_WEIGHT` / `NATIONAL_FACTOR` | `static_table` | Demographic weighting and national scaling for the static-file population |
+| `DEMO_WEIGHT` | `static_table` | Adjusts household contributions so the weighting sample represents the demographic composition of the US population |
+| `NATIONAL_FACTOR` | `static_table` | Scales panel activity toward national purchase estimates |
 
-Use the factor that matches the level of the outcome. For basket expenditure from `summarylvl_fact_table`, use the basket-level factor. For item expenditure from `itemlvl_fact_table`, use the item-level factor. Do not attach an item factor to a basket total, and do not multiply the different factor families together unless Numerator confirms that procedure.
+`ER_FACTOR` and `BASKET_ER_FACTOR` are attached directly to purchase rows. Use the item-level field for an item-level outcome and the basket-level field for a basket-level outcome. `DEMO_WEIGHT` and `NATIONAL_FACTOR` are attached to a household's 12-month weighting record in `core_new.static_table`. `DEMO_WEIGHT` addresses demographic representation. `NATIONAL_FACTOR` is also concerned with purchase activity and national scaling; it is not simply another demographic weight.
+
+This means the proposed distinction is only partly correct: the ER factors are purchase-level projection factors, and `DEMO_WEIGHT` is the demographic household weight. `NATIONAL_FACTOR` belongs with the household weighting records, but its documented purpose is to project panel activity to national purchase estimates. Do not treat `DEMO_WEIGHT` and `NATIONAL_FACTOR` as interchangeable, and do not multiply factor families together unless Numerator's methodology confirms the correct estimator and date alignment.
 
 ::: {.callout-warning title="What we do not yet know"}
-We do not have documentation explaining how Numerator constructs these factors, including the calibration targets, normalization, trimming, eligible population, or how the factor families relate. The field descriptions tell us their intended level of use, but they are not enough to certify a final national estimator for every subset of the data.
+We do not yet have documentation explaining how Numerator constructs these factors, including their calibration targets, normalization, trimming, eligible population, or how the factor families relate. The field descriptions tell us what each variable is intended to do, but they do not tell us whether factors should be combined or how a household weighting window should be matched to individual purchases. Until that methodology is confirmed, treat the calculations below as demonstrations of weighted arithmetic rather than certified national estimates.
 :::
+
+Use the outcome and the table's grain to decide where to begin:
+
+| Question | Field to investigate first | Reason |
+|---|---|---|
+| What do the observed baskets represent at a broader population level? | `BASKET_ER_FACTOR` | It is stored on each basket row. |
+| What do the observed item purchases represent at a broader population level? | `ER_FACTOR` | It is stored on each item-purchase row. |
+| How should households contribute when describing national demographic composition? | `DEMO_WEIGHT` | It adjusts household representation. |
+| How should the weighted household panel's activity scale to national purchase estimates? | `NATIONAL_FACTOR` | This is its documented role, but the calculation and time alignment still need confirmation. |
 
 ### A step-by-step example
 
@@ -442,7 +441,7 @@ View(projection_example)
 Check `missing_spending` and `unusable_factors` before interpreting the factor-adjusted columns. Do not replace a missing factor with 1.
 :::
 
-The database example uses all January 2025 basket records and is meant to show the mechanics of the calculation. Restricting the data to static-file members, selected ZIP codes, channels, or continuously observed households changes the sample, and the supplied factors may not project that restricted sample nationally.
+The database example uses all January 2025 basket records and is meant to show the mechanics of the calculation. Restricting the data to a project-defined static sample, selected ZIP codes, channels, or continuously observed households changes the sample, and the supplied factors may not project that restricted sample nationally.
 
 When comparing an estimate with a national benchmark, make sure the time period, population, retail channels, tax treatment, and definition of expenditure match. Always report the observed sample size and unweighted expenditure alongside a factor-adjusted result. Weighting does not by itself fix missing geographic coverage, household attrition, or a mismatch between the panel outcome and the benchmark.
 
@@ -467,15 +466,15 @@ The script creates these objects:
 | `available_tables` | Tables and schemas available in the database |
 | `people_columns` and `basket_columns` | Column names and data types |
 | `people_preview`, `static_preview`, and `basket_preview` | Ten example rows from three tables |
-| `sample_flow` | All 2025 basket households → static-file households → static-file households with a postal code |
+| `sample_flow` | All 2025 basket households → households matched to `people_table` → matched households with a postal code |
 | `monthly_coverage` | Observed households and baskets for each month of 2025 |
 
 Answer these questions:
 
-1. Which schema contains `people_table`, `summarylvl_fact_table`, and `static_households`?
+1. Which schema contains `people_table`, `summarylvl_fact_table`, and `static_table`?
 2. Which IDs connect the household, banner, and basket tables?
 3. How many households are retained at each row of `sample_flow`?
-4. How many households are lost when the static-file condition is applied? How many more are lost when a current postal code is required?
+4. How many households do not match a current record in `people_table`? How many more are lost when a nonblank postal code is required?
 5. Which month has the largest number of observed households in `monthly_coverage`?
 
 ### Part 2: Run your own SQL query from R
@@ -515,4 +514,4 @@ The live DuckDB schema is the authority for the tables and column types currentl
 - how household weights should be aligned with transaction dates; and
 - how Numerator constructs and intends researchers to combine the projection factors.
 
-The participation-spell reference gives us an auditable description of observed coverage under the current definition. It can be revised when additional documentation becomes available.
+Any future static-household or coverage-run reference table should record its project-specific definition and can be revised when additional documentation becomes available.
