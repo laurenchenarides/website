@@ -55,13 +55,13 @@ Core course elements include:
 - applied labs using real-world datasets
 - translating analysis into actionable insights
 
-[Course website](https://laurenchenarides.github.io/csu-arec-570/){.btn .btn-primary}
+[Course website](https://csu-arec-330.github.io/){.btn .btn-primary}
 
 ## AREC 570: Methodology of Economic Research
 
 AREC 570 examines the philosophical foundations of science and research with particular emphasis on the field of economics. Students will develop skills for planning, performing, reporting, and evaluating economic research. The goal with this course is to encourage students to think critically about the research process. Students will read about research methodology, and then analyze the logic and reasoning of others’ research as well as develop their own research proposal.
 
-[Course website](https://csu-arec-330.github.io/){.btn .btn-primary}
+[Course website](https://laurenchenarides.github.io/csu-arec-570/){.btn .btn-primary}
 
 # Additional Lab Notes
 
