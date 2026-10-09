@@ -11,6 +11,9 @@ project:
     - "css"
     - "static/"
     - "images/"
+    - "lectures/rendered/AREC222-2026-10-13.html"
+    - "lectures/rendered/AREC222-2026-10-13_files/"
+    - "lectures/rendered/styles/"
     - CNAME
 
 website:

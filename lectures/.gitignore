@@ -4,3 +4,6 @@
 # Publish only the rendered lectures and their required HTML/CSS/JS assets.
 !/.gitignore
 !/rendered/
+
+/.quarto/
+**/*.quarto_ipynb

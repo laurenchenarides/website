@@ -72,3 +72,13 @@ The following lab notes are designed for short, hands-on workshops and class act
 In this lab, students create a personal academic website using GitHub, RStudio, and Quarto. The notes assume no prior experience with GitHub or Git.
 
 [Open lab notes](build_git_website.html){.btn .btn-primary}
+
+# Guest Lectures
+
+## What would improve food access?
+
+AREC 222: Food Systems · Colorado State University · October 13, 2026
+
+How can public policy improve food access? This lecture examines evidence on new supermarkets, produce incentives, and dollar stores to consider what each approach can change for households.
+
+[View slides](lectures/rendered/AREC222-2026-10-13.html){.btn .btn-primary}
