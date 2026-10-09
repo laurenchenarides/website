@@ -1,0 +1,6 @@
+# Keep lecture sources, readings, notes, archives, and build files local.
+/*
+
+# Publish only the rendered lectures and their required HTML/CSS/JS assets.
+!/.gitignore
+!/rendered/

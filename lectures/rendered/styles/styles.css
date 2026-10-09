@@ -1,0 +1,35 @@
+/* css styles */
+
+/* Prevent image cropping in grid listings */
+.quarto-grid-item .card-img-top {
+  object-fit: contain;   /* Or use 'scale-down' for tighter fit */
+  height: auto;
+  max-height: 300px;     /* Adjust as needed */
+}
+
+.card .listing-categories .listing-label {
+  display: none;
+}
+
+
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  margin: 2px 4px 2px 0;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: capitalize;
+  color: white;
+}
+
+/* Define colors for each tag */
+.tag-finance           { background-color: #005f73; }
+.tag-ag-markets        { background-color: #0a9396; }
+.tag-entrepreneurship  { background-color: #94d2bd; color: black; }
+.tag-logistics         { background-color: #ee9b00; }
+.tag-leadership        { background-color: #ca6702; }
+.tag-food              { background-color: #bb3e03; }
+/* Add more as needed */
