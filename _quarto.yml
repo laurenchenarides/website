@@ -6,6 +6,7 @@ project:
     browser: true
   render:
     - "*.qmd"
+    - "!lectures/**"
   resources:
     - "content/"
     - "css"
@@ -13,6 +14,8 @@ project:
     - "images/"
     - "lectures/rendered/AREC222-2026-10-13.html"
     - "lectures/rendered/AREC222-2026-10-13_files/"
+    - "lectures/rendered/FSHN455-500-2026-10-14.html"
+    - "lectures/rendered/FSHN455-500-2026-10-14_files/"
     - "lectures/rendered/styles/"
     - CNAME
 

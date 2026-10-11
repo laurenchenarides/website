@@ -82,3 +82,11 @@ AREC 222: Food Systems · Colorado State University · October 13, 2026
 How can public policy improve food access? This lecture examines evidence on new supermarkets, produce incentives, and dollar stores to consider what each approach can change for households.
 
 [View slides](lectures/rendered/AREC222-2026-10-13.html){.btn .btn-primary}
+
+## Food access and public policy
+
+FSHN 455/500 · Colorado State University · October 14, 2026
+
+How do economists evaluate food-access policy? Using New York City's supermarket incentives, this lecture examines market failure, equity, and the mechanisms connecting policy to food availability, prices, and diets.
+
+[View slides](lectures/rendered/FSHN455-500-2026-10-14.html){.btn .btn-primary}
