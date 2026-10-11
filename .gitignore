@@ -8,6 +8,6 @@
 
 **/*.quarto_ipynb
 
-/chenlab/hidden/
-/chenlab/scripts/
-/docs/chenlab/scripts/
+# Orchard materials now live in the separate private orchard repository.
+/chenlab/
+/docs/chenlab/
