@@ -71,7 +71,7 @@ h2.rc-title { margin-top: 3rem; padding-top: 1.5rem; border-top: 3px solid var(-
 }
 
 /* Table */
-h4.rc-subhead { font-size: 1rem; margin: 1rem 0 0.5rem; }
+.rc-recipe h4.rc-subhead { font-size: 1rem; font-weight: 800; color: var(--rc-green-dark); margin: 1rem 0 0.5rem; }
 .rc-table-wrap { overflow-x: auto; margin-bottom: 1.25rem; }
 .rc-table { width: 100%; font-size: 0.9rem; border-collapse: collapse; }
 .rc-table th { background: var(--rc-tint); padding: 0.4rem 0.6rem !important; text-align: left; }

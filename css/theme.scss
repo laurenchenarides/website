@@ -127,22 +127,40 @@ pre {
 
 /* Tabs */
 .panel-tabset [role="tablist"] {
-  border-bottom: 5px solid $tabset-border-color;
+  border-bottom: 3px solid $tabset-border-color;
+  gap: 0.4rem;
+  padding-bottom: 0.5rem;
 }
 
 .panel-tabset [role="tab"] {
   background-color: #ffffff;
-  color: $navbar-bg;
-  border: 1px solid $tabset-border-color;
+  color: $primary-color-dark;
+  border: 1.5px solid $primary-color;
   border-radius: 10px;
-  padding: 0.75em 1em;
-  margin: 2px;
-  font-size: 0.85em;
+  padding: 0.5em 1em;
+  margin: 0;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-decoration: none;
 }
 
+.panel-tabset [role="tab"]:hover,
+.panel-tabset [role="tab"]:focus-visible {
+  background-color: $secondary-color-trans;
+  color: $primary-color-dark;
+  border-color: $primary-color;
+}
+
+/* Override the navbar's .nav-link.active color, which otherwise leaks into tabs */
 .panel-tabset [role="tab"][aria-selected="true"] {
-  background-color: $navbar-bg;
-  color: $body-bg;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.panel-tabset .tab-content {
+  padding-top: 1rem;
 }
 
 /* Details/Summary toggles */
