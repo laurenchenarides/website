@@ -33,6 +33,9 @@ a { color: inherit; text-decoration: none; }
 }
 .card-credit { margin: 6px 0 10px; font-size: 9pt; color: #5c5751; }
 .card-url { font-size: 8pt; color: #8a847c; }
+.rc-part-credit {
+  margin: 0 0 10px; font-size: 9pt; font-style: italic; color: #5c5751;
+}
 
 .rc-meta {
   display: flex; border-top: 1px solid #d9d4cc; border-bottom: 1px solid #d9d4cc;

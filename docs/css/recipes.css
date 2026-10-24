@@ -49,7 +49,8 @@ h2.rc-title { margin-top: 3rem; padding-top: 1.5rem; border-top: 3px solid var(-
 .rc-actions .btn-outline-primary { color: var(--rc-green); border-color: var(--rc-green); }
 .rc-actions .btn-outline-primary:hover { background: var(--rc-green); color: #fff; }
 .rc-top { margin-left: auto; font-size: 0.85rem; }
-.rc-part-subtitle { font-style: italic; color: var(--rc-muted); }
+.rc-part-subtitle { font-style: italic; color: var(--rc-muted); margin-bottom: 0.25rem; }
+.rc-part-credit { font-size: 0.92rem; margin-bottom: 0.75rem; }
 
 /* Meta strip */
 .rc-meta {

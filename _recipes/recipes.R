@@ -109,6 +109,7 @@ glossary_html <- function(gl) {
 part_html <- function(part) {
   has_ingredients <- !is.null(part$ingredients)
   paste0(
+    if (!is.null(part$credit)) paste0('<p class="rc-part-credit">', md_inline(part$credit), '</p>') else "",
     meta_html(part$meta),
     callout_html(part$callout),
     table_html(part$table),

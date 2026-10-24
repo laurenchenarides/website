@@ -76,7 +76,8 @@ recipes:
     subtitle: "Adapted for 5,000 ft elevation • Makes 12 muffins"
     blurb: "Tender, domed blueberry muffins with honey, buttermilk, and a crunchy turbinado top, calibrated for baking at altitude."
     tags: ["5,000 ft", "Quick"]
-    credit: "My high-altitude recipe"
+    credit: "Adapted for altitude from **Benjamin Delwiche**, *[Dessert Course](https://sites.prh.com/dessert-course)*"
+    source_url: "https://sites.prh.com/dessert-course"
     parts:
       - meta:
           - ["Bake temp", "400°F (205°C)"]
@@ -200,7 +201,8 @@ recipes:
     subtitle: "One master dry base, three variants • Calibrated for 5,000 ft"
     blurb: "Thick, bakery-style brown butter cookies at altitude. Mix one big dry base, then split it into chocolate chip, white chocolate cranberry orange, and caramel variants."
     tags: ["5,000 ft", "Chill overnight", "3 flavors"]
-    credit: "My high-altitude recipe"
+    credit: "Base recipe adapted for altitude from **Kiley Heard** · [Well Made by Kiley](https://www.wellmadebykiley.com/blog/brown-butter-chocolate-chip-cookies)"
+    source_url: "https://www.wellmadebykiley.com/blog/brown-butter-chocolate-chip-cookies"
     parts:
       - title: "Master Base"
         subtitle: "Master modular base guide"
@@ -235,6 +237,7 @@ recipes:
 
       - title: "A: Chocolate Chip"
         subtitle: "Variant A: Original brown butter chocolate chip • 15–16 cookies"
+        credit: "Adapted from **Kiley Heard's** [brown butter chocolate chip cookies](https://www.wellmadebykiley.com/blog/brown-butter-chocolate-chip-cookies)"
         callout:
           label: "Dry base needed"
           text: "1 portion (~365g) from the master mix"
@@ -259,6 +262,7 @@ recipes:
 
       - title: "B: Cranberry Orange"
         subtitle: "Variant B: White chocolate cranberry orange • 15–16 cookies"
+        credit: "My variation on the base recipe, developed with help from Gemini"
         callout:
           label: "Dry base needed"
           text: "1 portion (~365g) from the master mix"
@@ -285,6 +289,7 @@ recipes:
 
       - title: "C: Caramel"
         subtitle: "Variant C: Caramel-infused chocolate chip (direct caramel base) • 15–16 cookies"
+        credit: "Inspired by **Alix Traeger's** [salted caramel cookies](https://alixtraeger.substack.com/p/salted-caramel-cookies)"
         callout:
           label: "Dry base needed"
           text: "1 portion (~365g) from the master mix"
