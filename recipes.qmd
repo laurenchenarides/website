@@ -1,0 +1,27 @@
+---
+title: "Recipe Box"
+subtitle: "A few favorites from my kitchen, several of them tuned for baking at 5,000 feet."
+toc: true
+toc-location: left
+toc-depth: 2
+toc-expand: true
+toc-title: "Recipes"
+search: false
+css: css/recipes.css
+header-includes: |
+  <meta name="robots" content="noindex, nofollow">
+execute:
+  echo: false
+  warning: false
+---
+
+<!-- Hidden page: not linked from the navbar and excluded from site search.
+     Recipes live in _recipes/recipes.yml; see that file for how to rebuild. -->
+
+Every recipe has a printable card you can download. Where a recipe comes from someone else, the credit and a link to the original are right under the title. Go visit them, they have lots more good ideas.
+
+```{r}
+#| output: asis
+source("_recipes/recipes.R")
+cat(recipe_page_md(load_recipe_box()))
+```

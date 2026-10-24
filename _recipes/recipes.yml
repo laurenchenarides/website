@@ -1,0 +1,500 @@
+# Recipe box data. This one file drives both the hidden recipes page
+# (recipes.qmd) and the downloadable PDF cards (_recipes/build_cards.R).
+#
+# Text fields accept **bold**, *italic*, and [links](https://...).
+# After editing, rebuild the PDF cards:  Rscript _recipes/build_cards.R
+# then re-render the page:              quarto render recipes.qmd
+
+categories:
+  - id: breads
+    title: "Breads & Breakfast"
+  - id: cookies
+    title: "Cookies"
+  - id: pies
+    title: "Pies & Cheesecakes"
+
+recipes:
+
+  # ---------------------------------------------------------------------------
+  - id: sourdough-focaccia
+    category: breads
+    title: "Sourdough Focaccia"
+    subtitle: "Extra jiggly, extra bubbly • One 9×13\" pan"
+    blurb: "An 82% hydration sourdough focaccia with a wide-open, bubbly crumb. Start it in the morning; bake it for dinner."
+    tags: ["Sourdough", "All day"]
+    credit: "Adapted from **Kim** ([@cookim_mama](https://www.instagram.com/cookim_mama/))"
+    source_url: "https://www.instagram.com/cookim_mama/"
+    parts:
+      - meta:
+          - ["Oven", "450°F (230°C)"]
+          - ["Bake", "25–30 mins"]
+          - ["Pan", "9×13\", well oiled"]
+          - ["Hydration", "82%"]
+        callout:
+          label: "Timing"
+          text: "Start in the morning. Plan on roughly 1 hour of autolyse, 2–3 hours of folds, and 3–4 hours of proofing in the pan before baking. The proof may run longer or shorter depending on how warm your kitchen is."
+        ingredients:
+          - heading: "Dough (scales up or down)"
+            items:
+              - "**425g** bread flour"
+              - "**25g** whole wheat flour"
+              - "**370g** water (82% hydration), *20g reserved*"
+              - "**98g** sourdough starter (25% levain)"
+              - "**1g** instant yeast *(optional)*"
+              - "**9g** salt (2%)"
+              - "**9g** extra virgin olive oil (2%)"
+          - heading: "For the pan & top"
+            items:
+              - "**Olive oil** for the pan, your hands, and drizzling"
+              - "**Toppings** of your choice"
+        steps:
+          - items:
+              - "**Autolyse:** In the morning, mix the bread flour and whole wheat flour with the water, reserving 20g of water for step 2. Cover and rest at least 1 hour, or until your starter is ready."
+              - "**Mix:** Add the levain and combine. Add the salt, yeast, and remaining 20g of water. Once combined, add the olive oil. Slap and fold until the dough comes together. It will be very sticky but will come together over the next few steps. Return to the bowl, cover, and bulk ferment 30 mins."
+              - "**Stretch & folds:** Perform 2–3 rounds of stretch and folds, each separated by 20–30 mins."
+              - "**Coil folds:** Perform 2–3 rounds of coil folds, each separated by 20–30 mins. The dough should show signs of fermentation and be smoother now."
+              - "**Pan & proof:** Transfer the dough to a well-oiled 9×13\" pan and gently stretch it to fill the pan. If it doesn't reach the corners, that's fine; it will spread as it proofs. Cover and ferment at least 3–4 hours in a warm spot."
+              - "**Dimple & bake:** Preheat oven to 450°F. Drizzle the dough with olive oil, grease your hands, and dimple. Add toppings, drizzle with more oil, and bake 25–30 mins, until the top is golden brown."
+        glossary:
+          title: "Sourdough key: what means what"
+          terms:
+            - ["Sourdough starter", "The live culture of flour, water, wild yeast, and bacteria you keep and feed. It's \"ready\" when bubbly and about doubled, usually 4–12 hours after feeding."]
+            - ["Levain", "The portion of active starter that goes into this dough. Here the 98g of ready starter *is* the levain; the terms are used interchangeably."]
+            - ["Autolyse", "Resting flour and water together *before* adding starter, salt, or yeast. Hydrates the flour and starts gluten forming, so the dough is easier to work."]
+            - ["Hydration & %", "Baker's percentages are relative to total flour weight (450g). 82% hydration means a very wet dough, which is what makes the crumb open and bubbly."]
+            - ["Bulk ferment", "The first rise of the whole dough, during which the folds happen and the dough builds strength and flavor."]
+            - ["Slap & fold", "Lifting the sticky dough, slapping it onto the counter, and folding it over itself. Builds strength quickly in a wet dough."]
+            - ["Stretch & fold", "With wet hands, stretch one side of the dough up and fold it over. Turn the bowl and repeat on all four sides; that is one round."]
+            - ["Coil fold", "Lift the dough from the middle so the ends tuck under, turn the bowl, and repeat. Gentler than stretch and folds, so it keeps the bubbles."]
+            - ["Proof", "The final rise in the pan, where the dough puffs up and spreads before baking."]
+            - ["Dimple", "Pressing oiled fingertips straight down into the dough to make the classic focaccia wells."]
+
+  # ---------------------------------------------------------------------------
+  - id: high-altitude-blueberry-muffins
+    category: breads
+    title: "High-Altitude Blueberry Muffins"
+    subtitle: "Adapted for 5,000 ft elevation • Makes 12 muffins"
+    blurb: "Tender, domed blueberry muffins with honey, buttermilk, and a crunchy turbinado top, calibrated for baking at altitude."
+    tags: ["5,000 ft", "Quick"]
+    credit: "My high-altitude recipe"
+    parts:
+      - meta:
+          - ["Bake temp", "400°F (205°C)"]
+          - ["Bake time", "~20 mins (check at 15)"]
+          - ["Portion", "¼ cup (#16 scoop)"]
+          - ["Yield", "12 muffins"]
+        callout:
+          label: "Don't overmix"
+          text: "Fold the dry ingredients into the wet just until combined. A few small streaks of flour are fine. Overmixing develops gluten and gives you tough, tunneled muffins."
+        ingredients:
+          - heading: "Dry ingredients"
+            items:
+              - "**2 cups (280g)** all-purpose flour"
+              - "**1¼ tsp** baking powder"
+              - "**¼ tsp** baking soda"
+              - "**½ tsp** table salt"
+          - heading: "Wet ingredients"
+            items:
+              - "**140g (⅔ cup + 1 tbsp)** granulated sugar"
+              - "**¼ cup (84g)** honey"
+              - "**190g (¾ cup + 1 tbsp)** buttermilk"
+              - "**½ cup (100g)** vegetable oil"
+              - "**2 large eggs**"
+              - "**1 tsp** vanilla extract"
+          - heading: "Fold-in & topping"
+            items:
+              - "**1 cup (170g)** wild blueberries, fresh or frozen"
+              - "**¼ cup (50g)** turbinado sugar, for topping"
+        steps:
+          - items:
+              - "Preheat oven to 400°F. Line a 12-cup muffin pan with paper liners."
+              - "In a medium bowl, whisk together the flour, baking powder, baking soda, and salt."
+              - "In a separate large bowl, whisk the granulated sugar, honey, buttermilk, oil, eggs, and vanilla until well combined."
+              - "Add the dry ingredients to the wet. Fold gently with a spatula **just until combined**. A few streaks of flour are fine; do not overmix."
+              - "Gently fold in the blueberries. If using frozen, do not thaw them first."
+              - "Divide the batter evenly among the 12 cups, about ¼ cup each (#16 scoop)."
+              - "Sprinkle the tops with turbinado sugar."
+              - "Bake at 400°F for about 20 minutes, checking at 15. Muffins are done when the tops are golden and a toothpick in the center comes out clean or with a few moist crumbs."
+              - "Cool in the pan for about 5 minutes, then transfer to a wire rack."
+
+  # ---------------------------------------------------------------------------
+  - id: pumpkin-cinnamon-rolls
+    category: breads
+    title: "Homemade Pumpkin Cinnamon Rolls"
+    subtitle: "Pumpkin spice filling • Cream cheese frosting • 8 large or 12 smaller rolls"
+    blurb: "Soft, gooey pumpkin dough rolls around a pumpkin spice brown sugar filling, baked in warm cream, and finished with cream cheese frosting."
+    tags: ["Fall", "Make-ahead"]
+    credit: "Recipe by **Kiley Heard** · [Well Made by Kiley](https://www.wellmadebykiley.com/blog/homemade-pumpkin-cinnamon-rolls)"
+    source_url: "https://www.wellmadebykiley.com/blog/homemade-pumpkin-cinnamon-rolls"
+    parts:
+      - meta:
+          - ["Oven", "350°F, then 375°F"]
+          - ["Pan", "9×13\", buttered"]
+          - ["Prep", "30 mins"]
+          - ["Total", "2 hrs 45 mins"]
+        callout:
+          label: "Don't over-rise"
+          text: "The first rise is only 30–45 minutes, and the dough won't double. That's on purpose: a longer rise makes the rolls too airy."
+        ingredients:
+          - heading: "Dough"
+            items:
+              - "**¾ cup (180ml)** milk of choice, warmed to 110°F (warm bath, not hot)"
+              - "**½ cup (120g)** brown sugar, light or dark, divided"
+              - "**2½ tsp (11g)** active dry yeast (or instant yeast)"
+              - "**½ cup (120g)** pumpkin purée (not pie filling), room temp"
+              - "**½ cup (113g)** salted butter, very softened (almost melted)"
+              - "**1 egg**, room temp"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+              - "**4½ cups (540g)** bread flour (or all-purpose), spooned and leveled"
+              - "**1 tsp (6g)** salt"
+              - "**2 tsp (4g)** pumpkin pie spice"
+              - "**1½ tsp (3g)** cinnamon"
+          - heading: "Pumpkin spice filling"
+            items:
+              - "**½ cup (113g)** salted butter, softened (not melted)"
+              - "**1¼ cups (300g)** light brown sugar"
+              - "**¼ cup (60g)** pumpkin purée"
+              - "**1 tbsp (6g)** cinnamon"
+              - "**2 tsp (4g)** pumpkin pie spice"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+          - heading: "Before baking"
+            items:
+              - "**½ cup (120ml)** heavy cream, for pouring over the rolls"
+          - heading: "Cream cheese frosting"
+            items:
+              - "**8 oz (250g; 1 block)** cream cheese, softened"
+              - "**¼ cup (58g)** salted butter, softened"
+              - "**1¾ cups (210g)** powdered sugar"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+        steps:
+          - heading: "Dough"
+            items:
+              - "Stir 1 tbsp of the brown sugar into the warm milk and sprinkle the yeast over the top. Let it sit 5–7 minutes, until frothy. (With instant yeast, skip the wait.)"
+              - "In a large bowl, whisk together the flour, salt, pumpkin pie spice, and cinnamon."
+              - "In a stand mixer bowl, combine the yeast mixture, the rest of the brown sugar, the pumpkin, butter, egg, vanilla, and flour mixture. Mix with the dough hook on low for 1 minute, until barely combined, then rest 5 minutes."
+              - "Mix on medium 5–7 minutes (or knead by hand 7–9 minutes) until smooth, elastic, and pulling away from the bowl. If it's very sticky, add flour 1 tbsp at a time, but keep it slightly tacky."
+              - "Cover in a lightly greased bowl and let rise somewhere warm for **30–45 minutes only**."
+          - heading: "Fill & shape"
+            items:
+              - "While the dough rises, mix all the filling ingredients until combined. A little curdling is fine; it melts in the oven."
+              - "Butter a 9×13\" pan. On a lightly floured surface, roll the dough to **16×15\"** for 8 large rolls or **24×15\"** for 12 smaller rolls."
+              - "Spread the filling evenly over the dough, leaving a very thin border."
+              - "Cut along the long side into 2\"-wide strips. Roll each strip up from the short end into a tight coil and tuck the tail underneath. (Or roll the whole sheet into a log and slice 2\" rolls with a sharp knife or unflavored floss.)"
+              - "Arrange in the pan, cover, and proof 25–30 minutes until puffy while the oven heats to 350°F."
+          - heading: "Bake & frost"
+            items:
+              - "Warm the cream about 15 seconds in the microwave and pour it all over the rolls."
+              - "Bake at 350°F (22–24 minutes for 8 large rolls, 20–22 minutes for 12 smaller), then raise the oven to 375°F and bake 5–7 minutes more, until golden and cooked through."
+              - "While they bake, beat the cream cheese and butter until fluffy, then beat in the powdered sugar and vanilla."
+              - "Rest the rolls 10–15 minutes, spread on the frosting while they're still warm, and serve."
+        notes:
+          - label: "Overnight"
+            text: "Assemble the rolls in the pan, cover tightly, and refrigerate overnight instead of the second proof. In the morning, let them come to room temperature and proof 45–60 minutes, then add the cream and bake."
+          - label: "Storage"
+            text: "Covered at room temperature for 1 day (keep frosting in the fridge separately), frosted in the fridge for 3 days, or unfrosted and frozen for up to 2 months. Reheat at 325°F for 10–15 minutes and frost fresh."
+
+  # ---------------------------------------------------------------------------
+  - id: brown-butter-cookie-system
+    category: cookies
+    title: "High-Altitude Brown Butter Cookie System"
+    subtitle: "One master dry base, three variants • Calibrated for 5,000 ft"
+    blurb: "Thick, bakery-style brown butter cookies at altitude. Mix one big dry base, then split it into chocolate chip, white chocolate cranberry orange, and caramel variants."
+    tags: ["5,000 ft", "Chill overnight", "3 flavors"]
+    credit: "My high-altitude recipe"
+    parts:
+      - title: "Master Base"
+        subtitle: "Master modular base guide"
+        meta:
+          - ["Bake temp", "385°F (195°C)"]
+          - ["Bake time", "11 mins"]
+          - ["Dough ball", "3 oz (~85g / #12 scoop)"]
+          - ["Chill", "4 hrs minimum (overnight best)"]
+        callout:
+          label: "Modular prep strategy"
+          text: "Scale and mix a single large batch of dry ingredients (flour, baking soda, baking powder, salt). Divide the dry mix equally into bowls, then assemble each variant's customized wet base and fold-ins."
+        table:
+          title: "Master dry base scaling matrix"
+          header: ["Ingredient", "1 batch (15 cookies)", "2 batches (30 cookies)", "3 batches (45 cookies, all 3 flavors)"]
+          rows:
+            - ["All-purpose flour", "2¾ cups + 2 tbsp (356g)", "5¾ cups (712g)", "8½ cups + 2 tbsp (1,068g)"]
+            - ["Baking soda", "¾ tsp (3.75g)", "1½ tsp (7.5g)", "2¼ tsp (11.25g)"]
+            - ["Baking powder", "¾ tsp (3g)", "1½ tsp (6g)", "2¼ tsp (9g)"]
+            - ["Fine sea salt", "¼ tsp (2g)", "½ tsp (4g)", "¾ tsp (6g)"]
+            - ["**Total dry mix**", "**~365g**", "**~730g**", "**~1,095g**"]
+        steps:
+          - heading: "Universal prep & baking protocol"
+            items:
+              - "**Mix master dry base:** Whisk scaled flour, baking soda, baking powder, and salt thoroughly in a large bowl. If making all 3 variants, divide the dry mix into 3 equal portions (~365g per bowl)."
+              - "**Brown butter protocol:** Melt the specified salted butter over medium-high heat. Stir 5–8 mins as the milk solids turn deep golden amber and smell nutty. Pour into a bowl and cool 15–20 mins until warm, not hot."
+              - "**Wet base emulsification:** Whisk cooled brown butter with the specified sugars for 1 full minute. Whisk in eggs one at a time, then the liquids and flavorings, until glossy and caramel-like."
+              - "**Combine & chill:** Fold 1 dry base portion into the wet base just until combined. Fold in mix-ins. Scoop into 3 oz (~85g) balls. Cover tightly and chill at least 4 hours (overnight recommended)."
+              - "**Bake at 385°F:** Preheat oven to 385°F (195°C). Space chilled balls 2–3 inches apart on parchment-lined sheets. Bake 10–12 mins (aim for 11). Pull when edges are set and golden but centers look slightly underdone. Top immediately with extra mix-ins and flaky salt. Cool 5 mins on the pan."
+        notes:
+          - label: "High-altitude chemistry"
+            text: "All three recipes use the elevated flour mass (356g/batch) and reduced leaveners (¾ tsp soda and powder) to hold structure without collapsing or spreading thin at 5,000 ft. The 385°F oven sets the edges quickly, before faster evaporation at altitude causes spread, and fully chilled fat does the rest."
+
+      - title: "A: Chocolate Chip"
+        subtitle: "Variant A: Original brown butter chocolate chip • 15–16 cookies"
+        callout:
+          label: "Dry base needed"
+          text: "1 portion (~365g) from the master mix"
+        ingredients:
+          - heading: "Wet base & fold-ins"
+            items:
+              - "**254g (1 cup + 2 tbsp)** salted butter, browned & cooled (yields ~213g)"
+              - "**1 cup (240g)** light brown sugar, packed"
+              - "**⅓ cup (70g)** granulated sugar"
+              - "**2 large eggs**, room temp"
+              - "**3 tbsp (45ml)** heavy cream, room temp"
+              - "**2 tsp (8g)** vanilla bean paste or extract"
+              - "**1½ cups (250g)** semi-sweet chocolate chips or dark chunks"
+              - "**Flaky sea salt** for finishing"
+        steps:
+          - items:
+              - "Brown the butter over medium-high heat until dark amber and nutty (5–8 mins). Cool 15–20 mins."
+              - "Whisk cooled brown butter, brown sugar, and granulated sugar for 1 minute until well combined."
+              - "Add eggs one at a time, then whisk in heavy cream and vanilla paste until thick and glossy."
+              - "Fold in 1 dry base portion (~365g) until just combined, then fold in chocolate."
+              - "Scoop into 3 oz balls and chill at least 4 hours (overnight best). Bake at 385°F for 11 mins. Top with flaky salt and cool 5 mins on the pan."
+
+      - title: "B: Cranberry Orange"
+        subtitle: "Variant B: White chocolate cranberry orange • 15–16 cookies"
+        callout:
+          label: "Dry base needed"
+          text: "1 portion (~365g) from the master mix"
+        ingredients:
+          - heading: "Wet base & fold-ins"
+            items:
+              - "**254g (1 cup + 2 tbsp)** salted butter, browned & cooled (yields ~213g)"
+              - "**1 cup (240g)** light brown sugar, packed"
+              - "**⅓ cup (70g)** granulated sugar"
+              - "**2 large eggs**, room temp"
+              - "**3 tbsp (45ml)** heavy cream, room temp"
+              - "**2 tsp (8g)** vanilla paste + **1 tbsp** fresh orange zest"
+              - "**1 cup (200g)** white chocolate chunks"
+              - "**¾ cup (95g)** dried cranberries *(soaked & dried)*"
+              - "**1–2 navel oranges**, juiced, for soaking"
+              - "**Flaky sea salt** for finishing"
+        steps:
+          - items:
+              - "Warm the orange juice 30 seconds in the microwave. Soak cranberries 15–20 mins, then strain and pat completely dry on paper towels."
+              - "While the cranberries soak, brown the butter until golden amber (5–8 mins). Cool 15–20 mins."
+              - "Whisk brown butter with both sugars. Add eggs, heavy cream, vanilla, and orange zest until emulsified."
+              - "Fold in 1 dry base portion (~365g), then the white chocolate and dried cranberries."
+              - "Portion into 3 oz balls, chill at least 4 hours (overnight best), and bake at 385°F for 11 mins. Top with flaky salt."
+
+      - title: "C: Caramel"
+        subtitle: "Variant C: Caramel-infused chocolate chip (direct caramel base) • 15–16 cookies"
+        callout:
+          label: "Dry base needed"
+          text: "1 portion (~365g) from the master mix"
+        ingredients:
+          - heading: "Homemade caramel paste"
+            items:
+              - "**½ cup (100g)** granulated sugar"
+              - "**3 tbsp (42g)** salted butter"
+              - "**¼ cup (60ml)** heavy cream"
+          - heading: "Wet base & mix-ins"
+            items:
+              - "**184g (13 tbsp)** salted butter, browned & cooled (yields ~150g; reduced to offset caramel butter)"
+              - "**½ cup (120g)** light brown sugar, packed"
+              - "**¼ cup (50g)** granulated sugar"
+              - "**2 large eggs**, room temp"
+              - "**1 tbsp (15ml)** vanilla extract"
+              - "**1 cup (170g)** dark or semi-sweet chocolate chunks"
+              - "**Flaky sea salt** for finishing"
+        steps:
+          - items:
+              - "**Make caramel paste:** Melt ½ cup sugar in a saucepan over medium heat until golden amber. Carefully stir in 3 tbsp butter until melted, then slowly pour in ¼ cup heavy cream while stirring. Pour into a glass bowl and cool completely (20+ mins) until it thickens into a soft paste."
+              - "**Brown butter:** Brown 184g salted butter for 5–8 mins until golden amber and nutty. Cool 15–20 mins."
+              - "**Emulsify wet base:** Whisk cooled brown butter, cooled caramel paste, brown sugar, and granulated sugar until cohesive and glossy. Whisk in eggs and vanilla until silky."
+              - "**Combine & chill:** Fold in 1 dry base portion (~365g), then the chocolate chunks. Scoop into 3 oz balls and chill 8+ hours (overnight is mandatory for this variant)."
+              - "**Bake:** Preheat oven to 385°F. Space balls 2–3 inches apart on parchment. Bake 11 mins. Top immediately with extra chocolate chunks and flaky sea salt. Cool 5 mins on the pan."
+        notes:
+          - label: "Critical caramel science note"
+            text: "This variant adds liquid caramel to the wet base, so the dough fat is trimmed (184g butter instead of 254g) and the sugars are reduced. Chilling 8+ hours is required so the caramel's sugars and fats solidify fully, keeping the cookies thick at 385°F."
+
+  # ---------------------------------------------------------------------------
+  - id: smores-chocolate-pie
+    category: pies
+    title: "(No-Bake) S'mores Chocolate Pie"
+    subtitle: "Graham-style crust • Silky chocolate pudding • Toasted meringue"
+    blurb: "A honey cinnamon cookie crust, a rich dark and milk chocolate filling, and a torched marshmallowy meringue on top."
+    tags: ["Chill 4+ hrs", "Kitchen torch"]
+    credit: "Recipe from **A Bright Moment Co.** · [abrightmoment.com](https://abrightmoment.com/recipe_print/no-bake-smores-chocolate-pie)"
+    source_url: "https://abrightmoment.com/recipe_print/no-bake-smores-chocolate-pie"
+    parts:
+      - meta:
+          - ["Prep", "20 mins"]
+          - ["Cook", "10 mins"]
+          - ["Chill", "4 hrs to overnight"]
+          - ["Pan", "8\" or 9\" pie dish"]
+        callout:
+          label: "\"No-bake\""
+          text: "The filling is cooked on the stove and never goes in the oven. Only the crust gets a quick 10-minute bake."
+        ingredients:
+          - heading: "Crust"
+            items:
+              - "**8 oz** Simple Mills Honey Cinnamon Sweet Thins (about 2 boxes)"
+              - "**6 tbsp** melted butter"
+          - heading: "Chocolate filling"
+            items:
+              - "**½ cup** granulated sugar"
+              - "**¼ cup** cornstarch"
+              - "**¼ cup** unsweetened cocoa powder"
+              - "**¼ tsp** fine sea salt"
+              - "**2 cups** whole milk"
+              - "**1 cup** heavy cream"
+              - "**3 oz** dark chocolate, chopped"
+              - "**3 oz** milk chocolate, chopped"
+              - "**2 tbsp** unsalted butter, softened"
+              - "**2 tsp** espresso powder *(optional)*"
+              - "**2 tsp** vanilla extract"
+          - heading: "Meringue"
+            items:
+              - "**4 large** egg whites, room temp"
+              - "**1 cup** granulated sugar"
+              - "**⅛ tsp** fine sea salt"
+              - "**1 tsp** vanilla bean paste"
+        steps:
+          - heading: "Crust"
+            items:
+              - "Heat the oven to 350°F and butter an 8\" or 9\" pie dish."
+              - "Pulse the Sweet Thins to fine crumbs in a food processor, then pulse in the melted butter. Press evenly over the bottom and up the sides of the dish."
+              - "Bake on the middle rack 8–10 minutes, until golden. Cool at least 10 minutes."
+          - heading: "Chocolate filling"
+            items:
+              - "In a heavy-bottomed saucepan, whisk the sugar, cornstarch, cocoa, and salt. Whisk in ½ cup of the milk until mostly smooth."
+              - "Set over medium heat and gradually whisk in the rest of the milk and the cream. Keep whisking 8–10 minutes, until it thickens and small bubbles appear."
+              - "Off the heat, stir in the butter, both chocolates, vanilla, and espresso powder (if using) until smooth."
+              - "Pour into the crust and smooth the top. Cover and refrigerate at least 4 hours or overnight."
+          - heading: "Meringue"
+            items:
+              - "Bring a few inches of water to a boil in a saucepan. In a bowl wider than the pan, combine the egg whites, sugar, and salt. Set it over the water and whisk constantly until the sugar fully dissolves and the mix looks like simple syrup."
+              - "Move it straight to a stand mixer with the whisk and beat to stiff peaks, 8–10 minutes. Fold in the vanilla bean paste."
+              - "Spoon over the chilled pie and toast with a kitchen torch. Garnish with orange zest and chocolate curls, if you like."
+
+  # ---------------------------------------------------------------------------
+  - id: upside-down-cookies-and-cream-cheesecake
+    category: pies
+    title: "Upside-Down Cookies and Cream Cheesecake"
+    subtitle: "No-bake • Hot fudge center • Oreo crust on top • 14–16 servings"
+    blurb: "A no-bake Oreo cheesecake with a hidden hot fudge center, flipped at the table so the crunchy crust ends up on top."
+    tags: ["No-bake", "Make a day ahead", "Crowd"]
+    credit: "Recipe by **Kiley Heard** · [Well Made by Kiley](https://www.wellmadebykiley.com/blog/upside-down-cookies-and-cream-cheesecake)"
+    source_url: "https://www.wellmadebykiley.com/blog/upside-down-cookies-and-cream-cheesecake"
+    parts:
+      - meta:
+          - ["Prep", "1 hr"]
+          - ["Chill", "6 hrs to overnight"]
+          - ["Pan", "9\" springform"]
+          - ["Serves", "14–16"]
+        callout:
+          label: "Fudge must be cold"
+          text: "Let the hot fudge cool completely (thick but still runny) before it goes into the cheesecake, or it will melt the filling."
+        ingredients:
+          - heading: "Hot fudge sauce (or store-bought)"
+            items:
+              - "**¼ cup (58g)** salted butter"
+              - "**⅔ cup (135g)** semi-sweet chocolate chips"
+              - "**1 cup (240ml)** half-and-half or heavy cream"
+              - "**¾ cup (165g)** granulated sugar"
+              - "**6 tbsp (36g)** unsweetened cocoa powder"
+              - "**¼ tsp (1g)** salt"
+              - "**2 tbsp (27g)** vanilla extract"
+          - heading: "Oreo crust"
+            items:
+              - "**4 cups (580g)** crushed Oreos, with filling (or any chocolate sandwich cookie)"
+              - "**¾ cup (170g)** salted butter, melted"
+          - heading: "Cookies and cream filling"
+            items:
+              - "**1½ cups (360ml)** heavy cream, cold"
+              - "**24 oz (3 blocks; 678g)** cream cheese, room temp"
+              - "**¾ cup (90g)** powdered sugar"
+              - "**½ cup (120g)** sour cream or Greek yogurt"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+              - "**Pinch** of salt"
+              - "**18 Oreos** with filling, crushed (~205g)"
+          - heading: "Whipped cream (optional, for serving)"
+            items:
+              - "**1½ cups (360ml)** heavy cream, cold"
+              - "**⅓ cup (40g)** powdered sugar"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+        steps:
+          - heading: "Hot fudge"
+            items:
+              - "Grease a 9\" springform pan and line the bottom with a parchment circle."
+              - "In a saucepan over medium-low heat, melt the butter and chocolate chips, stirring often. Slowly whisk in the half-and-half, then the sugar, cocoa, and salt."
+              - "Cook about 5 minutes, until it just reaches a gentle boil, then simmer on low 2–3 minutes, stirring, until slightly thickened. Off the heat, stir in the vanilla."
+              - "Transfer to a bowl, cover tightly with plastic wrap so no skin forms, and chill until completely cool."
+          - heading: "Crust"
+            items:
+              - "Stir the crushed Oreos and melted butter together until they look like wet sand."
+              - "Press firmly and evenly over the bottom and all the way up the sides of the pan (the bottom of a measuring cup helps). Freeze 15–20 minutes."
+          - heading: "Filling"
+            items:
+              - "Whip the cold cream to stiff peaks, about 5 minutes. Set aside."
+              - "Beat the cream cheese until smooth. Beat in the powdered sugar for a minute, then the sour cream, vanilla, and salt for another minute."
+              - "Gently fold in the whipped cream without deflating it, then fold in the crushed Oreos."
+          - heading: "Assemble & chill"
+            items:
+              - "Spread about ⅔ of the filling over the crust, then push it out and up the sides to make a well in the center."
+              - "Pour the cooled fudge into the well and spread to fill it."
+              - "Cover with the rest of the filling, level with the rim of the pan. Cover and refrigerate at least 6 hours or overnight."
+          - heading: "Serve"
+            items:
+              - "For the whipped cream, beat the cold cream on medium until frothy, then on high 3–4 minutes until thickening. Add the powdered sugar and vanilla and beat to stiff peaks."
+              - "Set a round serving plate upside down on the pan, invert quickly, and release the springform. Smash into the crust and serve with whipped cream and crushed Oreos."
+
+  # ---------------------------------------------------------------------------
+  - id: small-batch-molten-cookie-dough-cheesecake
+    category: pies
+    title: "Small-Batch Molten Cookie Dough Cheesecake"
+    subtitle: "No eggs, no dairy • 9×5\" loaf pan • Serves 6"
+    blurb: "A vegan loaf-pan cheesecake layered with edible cookie dough on a cookie dough crust. No water bath needed."
+    tags: ["Vegan", "Dairy-free", "Gluten-free option"]
+    credit: "Recipe by **Britt Berlin** · [The Banana Diaries](https://thebananadiaries.com/small-batch-cookie-dough-cheesecake/)"
+    source_url: "https://thebananadiaries.com/small-batch-cookie-dough-cheesecake/"
+    parts:
+      - meta:
+          - ["Oven", "400°F, then broil"]
+          - ["Bake", "26 mins"]
+          - ["Chill", "4 hrs to overnight"]
+          - ["Pan", "9×5\" loaf, parchment-lined"]
+        callout:
+          label: "Heat-treat the flour"
+          text: "The cookie dough is eaten raw, so use heat-treated flour. For gluten-free, use a 1:1 baking flour (Britt likes King Arthur Measure for Measure)."
+        ingredients:
+          - heading: "Cookie dough crust & dough balls"
+            items:
+              - "**1 cup (125g)** heat-treated all-purpose flour or GF 1:1 flour, sifted, spooned & leveled"
+              - "**6 tbsp (85g)** unsalted vegan butter, melted and cooled"
+              - "**¼ cup (50g)** organic granulated sugar"
+              - "**⅓ cup (75g)** light brown sugar"
+              - "**3 tbsp (45g)** dairy-free yogurt or unsweetened applesauce, room temp"
+              - "**2 tsp** vanilla extract"
+              - "**¼ tsp** sea salt"
+              - "**½ cup (85g)** mini vegan chocolate chips"
+          - heading: "Vanilla chocolate chip cheesecake"
+            items:
+              - "**16 oz (450g)** vegan cream cheese, room temp"
+              - "**¼ cup (60g)** dairy-free yogurt, room temp"
+              - "**½ cup (120ml)** vegan heavy cream, room temp"
+              - "**¾ cup (150g)** organic granulated sugar"
+              - "**5 tbsp (60g)** cornstarch or arrowroot starch"
+              - "**1 tbsp (12g)** flour"
+              - "**½ cup** mini vegan chocolate chips"
+          - heading: "Toppings"
+            items:
+              - "**½ batch** vegan chocolate ganache (Britt's is on her site)"
+              - "**½ batch** extra cookie dough, made with heat-treated flour"
+        steps:
+          - items:
+              - "Heat the oven to 400°F and line a 9×5\" loaf pan with parchment. (A narrower pan will need a longer bake.)"
+              - "**Cookie dough:** Whisk the melted vegan butter, both sugars, yogurt, vanilla, and salt. Switch to a spatula and fold in the flour just until combined, then the chocolate chips. Press a third of the dough into the pan and chill it."
+              - "**Dough balls:** Roll the rest of the dough into teaspoon-size balls on a lined plate and chill. (If the dough is too soft, chill it 5 minutes first.)"
+              - "**Cheesecake batter:** Blend everything except the chocolate chips in a food processor (or with a hand mixer) until smooth, then fold in the chips."
+              - "**Assemble:** Spread a third of the batter over the crust. Scatter half the dough balls over it, add the second third of batter, press in the remaining dough balls, and top with the last of the batter."
+              - "**Bake:** 24 minutes, then switch to broil for 1–2 minutes, until the top just starts to char."
+              - "**Chill:** Cool 20–30 minutes, then cover and refrigerate at least 4 hours or overnight."
+              - "**Serve:** Top with ganache and extra cookie dough, then slice. Leftovers keep in an airtight container in the fridge for up to 5 days."
