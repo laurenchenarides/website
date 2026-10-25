@@ -16,16 +16,20 @@ categories:
 recipes:
 
   # ---------------------------------------------------------------------------
-  - id: sourdough-focaccia
+  - id: focaccia
     category: breads
-    title: "Sourdough Focaccia"
-    subtitle: "Extra jiggly, extra bubbly • One 9×13\" pan"
-    blurb: "An 82% hydration sourdough focaccia with a wide-open, bubbly crumb. Start it in the morning; bake it for dinner."
-    tags: ["Sourdough", "All day"]
-    credit: "Adapted from **Kim** ([@cookim_mama](https://www.instagram.com/cookim_mama/))"
-    source_url: "https://www.instagram.com/cookim_mama/"
+    title: "Focaccia"
+    subtitle: "Extra jiggly, extra bubbly • Sourdough or no-knead yeasted • One 9×13\" pan"
+    blurb: "A wet, bubbly focaccia with a wide-open crumb. Make it with sourdough starter, or with dried yeast if you don't keep a starter."
+    tags: ["Sourdough", "No-starter option"]
+    credit: "Sourdough adapted from **Kim** ([@cookim_mama](https://www.instagram.com/cookim_mama/)) · No-knead version by **Emma Fontanella** ([recipe](https://www.emmafontanella.com/no-knead-focaccia))"
+    source_url: "https://www.emmafontanella.com/no-knead-focaccia"
     parts:
-      - meta:
+      - title: "Sourdough"
+        subtitle: "Sourdough focaccia • 82% hydration"
+        badge: "Sourdough"
+        credit: "Adapted from **Kim** ([@cookim_mama](https://www.instagram.com/cookim_mama/))"
+        meta:
           - ["Oven", "400°F, then 450°F"]
           - ["Bake", "40–50 mins, in 3 stages"]
           - ["Pan", "9×13\", well oiled"]
@@ -60,6 +64,9 @@ recipes:
               - "**Top:** Remove from the oven and raise the temperature to 450°F (230°C). Add your toppings (I use brie). This step may vary depending on the topping and whether it's pre-cooked (e.g., veggies)."
               - "**Second bake:** Return to the 450°F oven for 10 mins."
               - "**Glaze & finish:** Remove the focaccia and turn the oven off. Brush or drizzle with honey or apricot glaze, then return it to the warm, cooling oven for 10–20 mins, checking often so it doesn't overbake."
+        notes:
+          - label: "Watch the hydration"
+            text: "How much water a focaccia dough needs depends on your flour, your kitchen, and where you live, especially at altitude. I've always needed to add more water than the recipe calls for. The dough should be very wet and loose; compare yours to the dough photos in [Emma Fontanella's recipe](https://www.emmafontanella.com/no-knead-focaccia), and if it looks stiffer, add water a little at a time while mixing."
         glossary:
           title: "Sourdough key: what means what"
           terms:
@@ -73,6 +80,58 @@ recipes:
             - ["Coil fold", "Lift the dough from the middle so the ends tuck under, turn the bowl, and repeat. Gentler than stretch and folds, so it keeps the bubbles."]
             - ["Proof", "The final rise in the pan, where the dough puffs up and spreads before baking."]
             - ["Dimple", "Pressing oiled fingertips straight down into the dough to make the classic focaccia wells."]
+
+      - title: "No-Knead (No Starter)"
+        subtitle: "Big bubble no-knead focaccia with dried yeast • ~84% hydration"
+        badge: "No starter"
+        credit: "Recipe by **Emma Fontanella** · [Big Bubble No-Knead Focaccia](https://www.emmafontanella.com/no-knead-focaccia)"
+        meta:
+          - ["Oven", "400°F (200°C), fan on if you have one"]
+          - ["Bake", "20–25 mins"]
+          - ["Pan", "9×13\", at least 2\" deep"]
+          - ["Hydration", "~84%"]
+        callout:
+          label: "Timing"
+          text: "Mixing and 4 rounds of stretch & folds take about 2½ hours. For the best flavor, cold-ferment overnight (up to 48 hours), then proof about 2 hours in the pan. For same-day focaccia, skip the fridge: rest 30–40 mins, then proof at least 1 hour in the pan."
+        ingredients:
+          - heading: "Dough"
+            items:
+              - "**2 cups (470g)** lukewarm water, 80–100°F (27–37°C), plus more as needed"
+              - "**2 tsp (11g)** salt"
+              - "**1 tbsp** extra virgin olive oil, plus plenty for the pan and drizzling"
+              - "**7g** dried yeast (active or instant)"
+              - "**4 cups (560g)** bread flour or Italian 00 flour (12% protein)"
+          - heading: "Toppings"
+            items:
+              - "**Rosemary**"
+              - "**Olives**"
+              - "**2 tbsp** olive oil"
+              - "**Flaky sea salt**"
+        steps:
+          - heading: "Mix"
+            items:
+              - "In a large bowl, whisk the water, salt, olive oil, and yeast."
+              - "Add the flour and mix with a spoon or spatula until fully combined and no dry flour remains. Scrape down the sides, cover, and rest 30 mins."
+              - "**Check the hydration:** the dough should be very wet and sticky. If it's stiff or dry, add water a little at a time (see the note below)."
+          - heading: "Stretch & fold"
+            items:
+              - "Stretch one side of the dough up and fold it over to the opposite side. Turn the bowl a quarter and repeat 3 more times. Cover and rest 30 mins."
+              - "Repeat for 3 more rounds (4 in total), resting 30 mins between each."
+          - heading: "Ferment, pan & proof"
+            items:
+              - "Cover and refrigerate overnight, or up to 48 hours. (Same day: rest 30–40 mins at room temperature instead.)"
+              - "Coat a 9×13\" pan with 3–4 tbsp olive oil (line the bottom with parchment first if it isn't nonstick). Give the dough one last gentle stretch & fold, set it in the pan, and drizzle with more oil."
+              - "Cover and proof about 2 hours if the dough came from the fridge, or at least 1 hour if same-day."
+          - heading: "Dimple & bake"
+            items:
+              - "Heat the oven to 400°F (200°C), with the fan on if you have one. Drizzle the dough with more oil, oil your hands, and dimple, jiggling the dough to spread it into the pan."
+              - "Add the toppings, oiled so they don't burn, and bake 20–25 mins, until golden and crispy."
+              - "Rest at least 10–15 mins before slicing. Serve warm or cold."
+        notes:
+          - label: "Watch the hydration"
+            text: "How much water a focaccia dough needs depends on your flour, your kitchen, and where you live, especially at altitude. I've always needed to add more water than the recipe calls for. Emma notes that higher-protein bread flour is \"thirstier\" than Italian 00 flour. Compare your dough to the photos in [her recipe](https://www.emmafontanella.com/no-knead-focaccia), and if it looks stiffer, add water a little at a time."
+          - label: "Smaller batch & leftovers"
+            text: "Halve the recipe for an 8\" square pan (at least 2\" deep). Leftovers reheat well: about 10 mins in the oven re-crisps the outside."
 
   # ---------------------------------------------------------------------------
   - id: high-altitude-blueberry-muffins

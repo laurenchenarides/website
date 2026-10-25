@@ -214,10 +214,12 @@ card_document_html <- function(r, css) {
       '<section class="card-page">',
       '<header class="card-head"><div><h1>', md_inline(heading), '</h1>',
       '<p class="card-sub">', md_inline(subtitle), '</p></div>',
-      if (!is.null(r$tags)) paste0('<span class="card-badge">', md_inline(r$tags[[1]]), '</span>') else "",
+      if (!is.null(p$badge)) paste0('<span class="card-badge">', md_inline(p$badge), '</span>')
+      else if (!is.null(r$tags)) paste0('<span class="card-badge">', md_inline(r$tags[[1]]), '</span>') else "",
       '</header>',
-      # Variant pages with their own credit show it (via part_html) instead
-      if (is.null(p$credit)) paste0(
+      # Page 1 always carries the recipe credit; later variant pages with their
+      # own credit show only that (via part_html)
+      if (first_page || is.null(p$credit)) paste0(
         '<p class="card-credit">', md_inline(r$credit),
         if (!is.null(r$source_url)) paste0('<br><span class="card-url">', htmlEscape(r$source_url), '</span>') else "",
         '</p>'

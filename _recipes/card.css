@@ -97,6 +97,8 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.04em; margin-bottom: 2px;
 }
 .rc-note p { margin: 0; }
+/* Notes point people to other pages, so print the address on paper */
+.rc-note a[href]::after { content: " (" attr(href) ")"; font-size: 8pt; color: #8a847c; word-break: break-all; }
 .rc-glossary dl {
   display: grid; grid-template-columns: 1.3in 1fr; column-gap: 14px; row-gap: 4px; margin: 6px 0 0;
 }
