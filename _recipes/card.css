@@ -33,8 +33,11 @@ a { color: inherit; text-decoration: none; }
 }
 .card-credit { margin: 6px 0 10px; font-size: 9pt; color: #5c5751; }
 .card-url { font-size: 8pt; color: #8a847c; }
+.rc-part-subtitle {
+  margin: 0 0 6px; font-size: 11pt; font-weight: bold; color: #48443f;
+}
 .rc-part-credit {
-  margin: 0 0 10px; font-size: 9pt; font-style: italic; color: #5c5751;
+  margin: 6px 0 10px; font-size: 9pt; font-style: italic; color: #5c5751;
 }
 
 .rc-meta {
@@ -72,7 +75,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase; letter-spacing: 0.03em;
 }
 .rc-ingredients ul { margin: 0; padding-left: 14px; }
-.rc-ingredients li { margin: 2px 0; font-size: 9.5pt; }
+.rc-ingredients li { margin: 1px 0; font-size: 9pt; line-height: 1.3; }
 
 .rc-steps ol { list-style: none; margin: 0; padding: 0; }
 .rc-steps li {

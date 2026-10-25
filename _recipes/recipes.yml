@@ -119,34 +119,121 @@ recipes:
               - "Cool in the pan for about 5 minutes, then transfer to a wire rack."
 
   # ---------------------------------------------------------------------------
-  - id: pumpkin-cinnamon-rolls
+  - id: tangzhong-cinnamon-rolls
     category: breads
-    title: "Homemade Pumpkin Cinnamon Rolls"
-    subtitle: "Pumpkin spice filling • Cream cheese frosting • 8 large or 12 smaller rolls"
-    blurb: "Soft, gooey pumpkin dough rolls around a pumpkin spice brown sugar filling, baked in warm cream, and finished with cream cheese frosting."
-    tags: ["Fall", "Make-ahead"]
-    credit: "Recipe by **Kiley Heard** · [Well Made by Kiley](https://www.wellmadebykiley.com/blog/homemade-pumpkin-cinnamon-rolls)"
-    source_url: "https://www.wellmadebykiley.com/blog/homemade-pumpkin-cinnamon-rolls"
+    title: "Tangzhong Cinnamon Rolls"
+    subtitle: "One method, two doughs: classic and pumpkin • 8 large or 12 smaller rolls"
+    blurb: "Soft, gooey cinnamon rolls made extra fluffy with a tangzhong. Choose the classic cinnamon dough or a pumpkin spice dough built on a pumpkin tangzhong."
+    tags: ["Tangzhong", "2 flavors", "Make-ahead"]
+    credit: "Adapted from **Kiley Heard's** [classic](https://www.wellmadebykiley.com/blog/perfect-classic-cinnamon-rolls) and [pumpkin](https://www.wellmadebykiley.com/blog/homemade-pumpkin-cinnamon-rolls) cinnamon rolls · Well Made by Kiley"
+    source_url: "https://www.wellmadebykiley.com/blog/perfect-classic-cinnamon-rolls"
     parts:
-      - meta:
+      - title: "Master Method"
+        subtitle: "Shared method for both variants: tangzhong, shaping, baking & frosting"
+        meta:
           - ["Oven", "350°F, then 375°F"]
           - ["Pan", "9×13\", buttered"]
-          - ["Prep", "30 mins"]
-          - ["Total", "2 hrs 45 mins"]
+          - ["Yield", "8 large or 12 smaller"]
+          - ["Total", "~3 hrs + tangzhong cooling"]
         callout:
-          label: "Don't over-rise"
-          text: "The first rise is only 30–45 minutes, and the dough won't double. That's on purpose: a longer rise makes the rolls too airy."
+          label: "Make the tangzhong first"
+          text: "Each variant starts with a tangzhong that has to cool to room temperature before it goes into the dough. Make it an hour ahead, or the day before and refrigerate it (let it warm up before using)."
         ingredients:
+          - heading: "Before baking (both variants)"
+            items:
+              - "**½ cup (120ml)** heavy cream, for pouring over the rolls"
+          - heading: "Cream cheese frosting (both variants)"
+            items:
+              - "**8 oz (250g; 1 block)** cream cheese, softened"
+              - "**¼ cup (58g)** salted butter, softened"
+              - "**1¾ cups (210g)** powdered sugar"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+        steps:
+          - heading: "Universal shape, bake & frost protocol"
+            items:
+              - "**Make the dough:** Follow the Classic or Pumpkin tab through the first rise and the filling."
+              - "**Roll out:** Butter a 9×13\" pan. On a lightly floured surface, roll the dough to **16×15\"** for 8 large rolls or **24×15\"** for 12 smaller rolls."
+              - "**Fill:** Spread the filling evenly over the dough, leaving a very thin border."
+              - "**Shape:** Cut along the long side into 2\"-wide strips. Roll each strip up from the short end into a tight coil and tuck the tail underneath. (Or roll the whole sheet into a log and slice 2\" rolls with a sharp knife or unflavored floss.)"
+              - "**Proof:** Arrange in the pan, cover, and proof 25–30 minutes until puffy while the oven heats to 350°F."
+              - "**Cream:** Warm the cream about 15 seconds in the microwave and pour it all over the rolls."
+              - "**Bake:** Bake at 350°F (22–24 minutes for 8 large rolls, 20–22 minutes for 12 smaller), then raise the oven to 375°F and bake 5–7 minutes more, until golden and cooked through."
+              - "**Frost:** While they bake, beat the cream cheese and butter until fluffy, then beat in the powdered sugar and vanilla. Rest the rolls 10–15 minutes, spread on the frosting while they're still warm, and serve."
+        notes:
+          - label: "What's a tangzhong?"
+            text: "A small portion of the recipe's flour cooked with liquid into a thick paste before it goes into the dough. Cooking lets the flour's starch absorb far more liquid than it could cold, and it holds onto that moisture through baking, so the rolls come out softer and fluffier and stay soft longer. The tangzhong's flour and liquid come out of the dough's totals, so the dough feels tackier than usual. Resist adding much extra flour."
+          - label: "Don't over-rise"
+            text: "The first rise is only 30–45 minutes, and the dough won't double. That's on purpose: a longer rise makes the rolls too airy."
+          - label: "Overnight"
+            text: "Assemble the rolls in the pan, cover tightly, and refrigerate overnight instead of the second proof. In the morning, let them come to room temperature and proof 45–60 minutes, then add the cream and bake."
+          - label: "Storage"
+            text: "Covered at room temperature for 1 day (keep frosting in the fridge separately), frosted in the fridge for 3 days, or unfrosted and frozen for up to 2 months. Reheat at 325°F for 10–15 minutes and frost fresh."
+
+      - title: "Classic"
+        subtitle: "Classic cinnamon rolls with a milk tangzhong"
+        credit: "Adapted from **Kiley Heard's** [Perfect Classic Cinnamon Rolls](https://www.wellmadebykiley.com/blog/perfect-classic-cinnamon-rolls), with the tangzhong from **Bon Appétit's** [Cinnamon Rolls with Cream Cheese Frosting](https://www.bonappetit.com/recipe/cinnamon-rolls-cream-cheese-frosting)"
+        callout:
+          label: "Still testing"
+          text: "The tangzhong uses the milk Kiley blooms the yeast in, so, as in Bon Appétit's recipe, instant yeast is whisked straight into the cooled tangzhong. Expect to adjust the flour by a tablespoon or two."
+        ingredients:
+          - heading: "Milk tangzhong"
+            items:
+              - "**¾ cup (180ml)** whole milk"
+              - "**¼ cup (31g)** all-purpose flour"
+          - heading: "Dough"
+            items:
+              - "**½ cup (110g)** granulated sugar"
+              - "**2½ tsp (9g)** instant yeast"
+              - "**½ cup (120g)** Greek yogurt (any %) or sour cream, room temp"
+              - "**½ cup (113g)** salted butter, very softened (almost melted)"
+              - "**2 eggs**, room temp"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+              - "**509g** bread flour (4½ cups minus the tangzhong's ¼ cup)"
+              - "**1 tsp (6g)** salt"
+          - heading: "Cinnamon filling"
+            items:
+              - "**½ cup (113g)** salted butter, softened (not melted)"
+              - "**1 cup (240g)** light brown sugar"
+              - "**2 tbsp (12g)** cinnamon"
+              - "**1 tsp (4g)** vanilla bean paste or extract"
+        steps:
+          - heading: "Tangzhong"
+            items:
+              - "In a medium saucepan, whisk the milk and flour until smooth. Cook over medium heat, whisking constantly, until thickened and the whisk leaves visible lines on the bottom of the pan, about 2 minutes."
+              - "Scrape the tangzhong into the bowl of a stand mixer and let it cool to room temperature."
+          - heading: "Dough"
+            items:
+              - "In a separate bowl, whisk together the flour and salt."
+              - "Add the instant yeast, sugar, yogurt, butter, eggs, and vanilla to the tangzhong and whisk to combine. Add the flour mixture and mix with the dough hook on low for 1 minute, until barely combined, then rest 5 minutes."
+              - "Mix on medium 5–7 minutes (or knead by hand 5–7 minutes) until smooth, elastic, and pulling away from the bowl. Add flour 1 tbsp at a time only if it won't pull away; keep it slightly tacky."
+              - "Cover in a lightly greased bowl and let rise somewhere warm for **30–45 minutes only**."
+              - "While the dough rises, mix the filling ingredients until combined."
+              - "Continue with the **Master Method**: roll, fill, shape, proof, bake, and frost."
+        notes:
+          - label: "Side-by-side test: yeast method"
+            text: "Still to test. This version follows Bon Appétit and whisks instant yeast straight into the cooled tangzhong, replacing Kiley's step of blooming the yeast in warm milk (her milk now goes into the tangzhong). Bake a batch of Kiley's original alongside this one and compare the rise, crumb, softness, and flavor."
+
+      - title: "Pumpkin"
+        subtitle: "Pumpkin spice cinnamon rolls with a pumpkin tangzhong"
+        credit: "Adapted from **Kiley Heard's** [Homemade Pumpkin Cinnamon Rolls](https://www.wellmadebykiley.com/blog/homemade-pumpkin-cinnamon-rolls), with the pumpkin tangzhong from **Justine Doiron's** [Pumpkin Tangzhong Cookies](https://justinesnacks.com/pumpkin-tangzhong-cookies/)"
+        callout:
+          label: "Still testing"
+          text: "A portion of pumpkin tangzhong replaces the dough's ½ cup purée and 20g of its flour. Cooking drives off water, so scale the portion to the finished weight: **use 140 × (finished weight ÷ 495) grams** (the raw mix is ~425g pumpkin + 70g flour). For example, 420g finished → about 119g; 450g → about 127g. Record your finished weight and how the dough felt."
+        ingredients:
+          - heading: "Pumpkin tangzhong (makes extra)"
+            items:
+              - "**1 (15 oz) can** pumpkin purée"
+              - "**½ cup (70g)** all-purpose flour"
           - heading: "Dough"
             items:
               - "**¾ cup (180ml)** milk of choice, warmed to 110°F (warm bath, not hot)"
               - "**½ cup (120g)** brown sugar, light or dark, divided"
               - "**2½ tsp (11g)** active dry yeast (or instant yeast)"
-              - "**½ cup (120g)** pumpkin purée (not pie filling), room temp"
+              - "**~140g** pumpkin tangzhong, room temp (in place of ½ cup pumpkin purée; adjust for evaporation, see above)"
               - "**½ cup (113g)** salted butter, very softened (almost melted)"
               - "**1 egg**, room temp"
               - "**1 tsp (4g)** vanilla bean paste or extract"
-              - "**4½ cups (540g)** bread flour (or all-purpose), spooned and leveled"
+              - "**520g** bread flour (4½ cups minus about 2½ tbsp)"
               - "**1 tsp (6g)** salt"
               - "**2 tsp (4g)** pumpkin pie spice"
               - "**1½ tsp (3g)** cinnamon"
@@ -154,45 +241,24 @@ recipes:
             items:
               - "**½ cup (113g)** salted butter, softened (not melted)"
               - "**1¼ cups (300g)** light brown sugar"
-              - "**¼ cup (60g)** pumpkin purée"
+              - "**¼ cup (60g)** leftover pumpkin tangzhong or plain pumpkin purée"
               - "**1 tbsp (6g)** cinnamon"
               - "**2 tsp (4g)** pumpkin pie spice"
               - "**1 tsp (4g)** vanilla bean paste or extract"
-          - heading: "Before baking"
-            items:
-              - "**½ cup (120ml)** heavy cream, for pouring over the rolls"
-          - heading: "Cream cheese frosting"
-            items:
-              - "**8 oz (250g; 1 block)** cream cheese, softened"
-              - "**¼ cup (58g)** salted butter, softened"
-              - "**1¾ cups (210g)** powdered sugar"
-              - "**1 tsp (4g)** vanilla bean paste or extract"
         steps:
+          - heading: "Pumpkin tangzhong"
+            items:
+              - "Add the pumpkin purée and flour to a pot over medium heat and stir into a paste. Cook, stirring constantly, 5–6 minutes, until it's a thick paste (almost like drying glue), starts to film on the bottom of the pot, and turns a shade darker."
+              - "**Weigh the finished tangzhong** (weigh the pot empty first, or scrape it all into a tared bowl). Cool completely (the fridge speeds this up), then let it come back to room temperature before using. Leftovers keep in the fridge for up to 2 weeks."
           - heading: "Dough"
             items:
               - "Stir 1 tbsp of the brown sugar into the warm milk and sprinkle the yeast over the top. Let it sit 5–7 minutes, until frothy. (With instant yeast, skip the wait.)"
               - "In a large bowl, whisk together the flour, salt, pumpkin pie spice, and cinnamon."
-              - "In a stand mixer bowl, combine the yeast mixture, the rest of the brown sugar, the pumpkin, butter, egg, vanilla, and flour mixture. Mix with the dough hook on low for 1 minute, until barely combined, then rest 5 minutes."
-              - "Mix on medium 5–7 minutes (or knead by hand 7–9 minutes) until smooth, elastic, and pulling away from the bowl. If it's very sticky, add flour 1 tbsp at a time, but keep it slightly tacky."
+              - "In a stand mixer bowl, combine the yeast mixture, the rest of the brown sugar, the pumpkin tangzhong, butter, egg, vanilla, and flour mixture. Mix with the dough hook on low for 1 minute, until barely combined, then rest 5 minutes."
+              - "Mix on medium 5–7 minutes (or knead by hand 7–9 minutes) until smooth, elastic, and pulling away from the bowl. Add flour 1 tbsp at a time only if it won't pull away; keep it slightly tacky."
               - "Cover in a lightly greased bowl and let rise somewhere warm for **30–45 minutes only**."
-          - heading: "Fill & shape"
-            items:
-              - "While the dough rises, mix all the filling ingredients until combined. A little curdling is fine; it melts in the oven."
-              - "Butter a 9×13\" pan. On a lightly floured surface, roll the dough to **16×15\"** for 8 large rolls or **24×15\"** for 12 smaller rolls."
-              - "Spread the filling evenly over the dough, leaving a very thin border."
-              - "Cut along the long side into 2\"-wide strips. Roll each strip up from the short end into a tight coil and tuck the tail underneath. (Or roll the whole sheet into a log and slice 2\" rolls with a sharp knife or unflavored floss.)"
-              - "Arrange in the pan, cover, and proof 25–30 minutes until puffy while the oven heats to 350°F."
-          - heading: "Bake & frost"
-            items:
-              - "Warm the cream about 15 seconds in the microwave and pour it all over the rolls."
-              - "Bake at 350°F (22–24 minutes for 8 large rolls, 20–22 minutes for 12 smaller), then raise the oven to 375°F and bake 5–7 minutes more, until golden and cooked through."
-              - "While they bake, beat the cream cheese and butter until fluffy, then beat in the powdered sugar and vanilla."
-              - "Rest the rolls 10–15 minutes, spread on the frosting while they're still warm, and serve."
-        notes:
-          - label: "Overnight"
-            text: "Assemble the rolls in the pan, cover tightly, and refrigerate overnight instead of the second proof. In the morning, let them come to room temperature and proof 45–60 minutes, then add the cream and bake."
-          - label: "Storage"
-            text: "Covered at room temperature for 1 day (keep frosting in the fridge separately), frosted in the fridge for 3 days, or unfrosted and frozen for up to 2 months. Reheat at 325°F for 10–15 minutes and frost fresh."
+              - "While the dough rises, mix the filling ingredients until combined. A little curdling is fine; it melts in the oven."
+              - "Continue with the **Master Method**: roll, fill, shape, proof, bake, and frost."
 
   # ---------------------------------------------------------------------------
   - id: brown-butter-cookie-system
@@ -215,14 +281,26 @@ recipes:
           label: "Modular prep strategy"
           text: "Scale and mix a single large batch of dry ingredients (flour, baking soda, baking powder, salt). Divide the dry mix equally into bowls, then assemble each variant's customized wet base and fold-ins."
         table:
-          title: "Master dry base scaling matrix"
-          header: ["Ingredient", "1 batch (15 cookies)", "2 batches (30 cookies)", "3 batches (45 cookies, all 3 flavors)"]
-          rows:
-            - ["All-purpose flour", "2¾ cups + 2 tbsp (356g)", "5¾ cups (712g)", "8½ cups + 2 tbsp (1,068g)"]
-            - ["Baking soda", "¾ tsp (3.75g)", "1½ tsp (7.5g)", "2¼ tsp (11.25g)"]
-            - ["Baking powder", "¾ tsp (3g)", "1½ tsp (6g)", "2¼ tsp (9g)"]
-            - ["Fine sea salt", "¼ tsp (2g)", "½ tsp (4g)", "¾ tsp (6g)"]
-            - ["**Total dry mix**", "**~365g**", "**~730g**", "**~1,095g**"]
+          - title: "Master dry base scaling matrix"
+            header: ["Ingredient", "1 batch (15 cookies)", "2 batches (30 cookies)", "3 batches (45 cookies, all 3 flavors)"]
+            rows:
+              - ["All-purpose flour", "2¾ cups + 2 tbsp (356g)", "5¾ cups (712g)", "8½ cups + 2 tbsp (1,068g)"]
+              - ["Baking soda", "¾ tsp (3.75g)", "1½ tsp (7.5g)", "2¼ tsp (11.25g)"]
+              - ["Baking powder", "¾ tsp (3g)", "1½ tsp (6g)", "2¼ tsp (9g)"]
+              - ["Fine sea salt", "¼ tsp (2g)", "½ tsp (4g)", "¾ tsp (6g)"]
+              - ["**Total dry mix**", "**~365g**", "**~730g**", "**~1,095g**"]
+          - title: "Wet base & fold-ins by variant (per batch)"
+            header: ["Ingredient", "A: Chocolate Chip", "B: Cranberry Orange", "C: Caramel"]
+            rows:
+              - ["Salted butter, browned & cooled", "254g (1 cup + 2 tbsp)", "254g (1 cup + 2 tbsp)", "184g (13 tbsp)"]
+              - ["Light brown sugar, packed", "1 cup (240g)", "1 cup (240g)", "½ cup (120g)"]
+              - ["Granulated sugar", "⅓ cup (70g)", "⅓ cup (70g)", "¼ cup (50g)"]
+              - ["Large eggs, room temp", "2", "2", "2"]
+              - ["Heavy cream, room temp", "3 tbsp (45ml)", "3 tbsp (45ml)", "— (in the caramel paste)"]
+              - ["Vanilla", "2 tsp (8g) paste or extract", "2 tsp (8g) paste", "1 tbsp (15ml) extract"]
+              - ["Flavoring", "—", "1 tbsp fresh orange zest", "Caramel paste: ½ cup (100g) sugar, 3 tbsp (42g) butter, ¼ cup (60ml) cream"]
+              - ["Fold-ins", "1½ cups (250g) semi-sweet chips or dark chunks", "1 cup (200g) white chocolate chunks + ¾ cup (95g) dried cranberries, soaked in orange juice", "1 cup (170g) dark or semi-sweet chunks"]
+              - ["Finish", "Flaky sea salt", "Flaky sea salt", "Extra chocolate + flaky sea salt"]
         steps:
           - heading: "Universal prep & baking protocol"
             items:

@@ -42,6 +42,8 @@ callout_html <- function(callout) {
 
 table_html <- function(tbl) {
   if (is.null(tbl)) return("")
+  # A part may hold one table or a list of tables
+  if (is.null(tbl$title)) return(paste(vapply(tbl, table_html, ""), collapse = ""))
   head <- paste0("<th>", vapply(tbl$header, md_inline, ""), "</th>", collapse = "")
   rows <- vapply(tbl$rows, function(r) paste0(
     "<tr>", paste0("<td>", vapply(r, md_inline, ""), "</td>", collapse = ""), "</tr>"
@@ -201,17 +203,26 @@ recipe_page_md <- function(box) {
 card_document_html <- function(r, css) {
   pages <- vapply(seq_along(r$parts), function(i) {
     p <- r$parts[[i]]
-    heading <- if (length(r$parts) > 1 && i > 1) p$title else r$title
-    subtitle <- if (!is.null(p$subtitle)) p$subtitle else r$subtitle
+    first_page <- i == 1
+    heading <- if (first_page) r$title else p$title
+    # Page 1 carries the recipe's subtitle; the first part's own subtitle goes below the header
+    subtitle <- if (first_page || is.null(p$subtitle)) r$subtitle else p$subtitle
+    part_sub <- if (first_page && length(r$parts) > 1 && !is.null(p$subtitle)) {
+      paste0('<p class="rc-part-subtitle">', md_inline(p$subtitle), '</p>')
+    } else ""
     paste0(
       '<section class="card-page">',
       '<header class="card-head"><div><h1>', md_inline(heading), '</h1>',
       '<p class="card-sub">', md_inline(subtitle), '</p></div>',
       if (!is.null(r$tags)) paste0('<span class="card-badge">', md_inline(r$tags[[1]]), '</span>') else "",
       '</header>',
-      '<p class="card-credit">', md_inline(r$credit),
-      if (!is.null(r$source_url)) paste0('<br><span class="card-url">', htmlEscape(r$source_url), '</span>') else "",
-      '</p>',
+      # Variant pages with their own credit show it (via part_html) instead
+      if (is.null(p$credit)) paste0(
+        '<p class="card-credit">', md_inline(r$credit),
+        if (!is.null(r$source_url)) paste0('<br><span class="card-url">', htmlEscape(r$source_url), '</span>') else "",
+        '</p>'
+      ) else "",
+      part_sub,
       part_html(p),
       '</section>'
     )
