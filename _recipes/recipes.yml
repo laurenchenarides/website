@@ -26,8 +26,8 @@ recipes:
     source_url: "https://www.instagram.com/cookim_mama/"
     parts:
       - meta:
-          - ["Oven", "450°F (230°C)"]
-          - ["Bake", "25–30 mins"]
+          - ["Oven", "400°F, then 450°F"]
+          - ["Bake", "40–50 mins, in 3 stages"]
           - ["Pan", "9×13\", well oiled"]
           - ["Hydration", "82%"]
         callout:
@@ -46,7 +46,8 @@ recipes:
           - heading: "For the pan & top"
             items:
               - "**Olive oil** for the pan, your hands, and drizzling"
-              - "**Toppings** of your choice"
+              - "**Toppings** of your choice (I use brie)"
+              - "**Honey or apricot glaze**, for finishing"
         steps:
           - items:
               - "**Autolyse:** In the morning, mix the bread flour and whole wheat flour with the water, reserving 20g of water for step 2. Cover and rest at least 1 hour, or until your starter is ready."
@@ -54,7 +55,11 @@ recipes:
               - "**Stretch & folds:** Perform 2–3 rounds of stretch and folds, each separated by 20–30 mins."
               - "**Coil folds:** Perform 2–3 rounds of coil folds, each separated by 20–30 mins. The dough should show signs of fermentation and be smoother now."
               - "**Pan & proof:** Transfer the dough to a well-oiled 9×13\" pan and gently stretch it to fill the pan. If it doesn't reach the corners, that's fine; it will spread as it proofs. Cover and ferment at least 3–4 hours in a warm spot."
-              - "**Dimple & bake:** Preheat oven to 450°F. Drizzle the dough with olive oil, grease your hands, and dimple. Add toppings, drizzle with more oil, and bake 25–30 mins, until the top is golden brown."
+              - "**Dimple:** Preheat oven to 400°F (205°C). Drizzle the dough with olive oil, grease your hands, and dimple."
+              - "**First bake:** Bake at 400°F for 20 mins."
+              - "**Top:** Remove from the oven and raise the temperature to 450°F (230°C). Add your toppings (I use brie). This step may vary depending on the topping and whether it's pre-cooked (e.g., veggies)."
+              - "**Second bake:** Return to the 450°F oven for 10 mins."
+              - "**Glaze & finish:** Remove the focaccia and turn the oven off. Brush or drizzle with honey or apricot glaze, then return it to the warm, cooling oven for 10–20 mins, checking often so it doesn't overbake."
         glossary:
           title: "Sourdough key: what means what"
           terms:

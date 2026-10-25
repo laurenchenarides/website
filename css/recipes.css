@@ -113,8 +113,8 @@ h2.rc-title { margin-top: 3rem; padding-top: 1.5rem; border-top: 3px solid var(-
   letter-spacing: 0.05em; color: var(--rc-green-dark); margin-bottom: 0.2rem;
 }
 .rc-note p { margin: 0; }
-.rc-glossary dl { display: grid; grid-template-columns: 1fr 1fr; column-gap: 1.5rem; margin: 0.25rem 0 0; }
-.rc-glossary dt { margin-top: 0.4rem; }
+.rc-glossary dl { display: grid; grid-template-columns: 10rem 1fr; column-gap: 1.25rem; row-gap: 0.5rem; margin: 0.5rem 0 0; }
+.rc-glossary dt { margin: 0; }
 .rc-glossary dd { margin: 0; color: var(--rc-muted); font-size: 0.88rem; }
 
 @media (max-width: 767px) {
