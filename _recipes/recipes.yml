@@ -1,11 +1,14 @@
-# Recipe box data. This one file drives both the hidden recipes page
-# (recipes.qmd) and the downloadable PDF cards (_recipes/build_cards.R).
+# My Recipe Box data. Drives the "My Recipe Box" collection on the hidden
+# recipes page (recipes.qmd) and the downloadable PDF cards (_recipes/build_cards.R).
 #
 # Text fields accept **bold**, *italic*, and [links](https://...).
 # After editing, rebuild the PDF cards:  Rscript _recipes/build_cards.R
 # then re-render the page:              quarto render recipes.qmd
 
 collection: mine
+title: "My Recipe Box"
+# Shown above this collection's search box
+intro: "Favorites from my own kitchen, several of them tuned for baking at 5,000 feet. Where a recipe comes from someone else, the credit and a link to the original are right under the title. Go visit them, they have lots more good ideas."
 
 categories:
   - id: breads

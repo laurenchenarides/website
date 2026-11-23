@@ -1,4 +1,4 @@
-/* Recipe collection pages (recipes.qmd, yiayia.qmd) */
+/* Recipe page (recipes.qmd): Yiayia's Kitchen and My Recipe Box */
 
 :root {
   --rc-green: #2e7d32;
@@ -10,22 +10,35 @@
   --rc-amber-tint: #fff3d6;
 }
 
-/* Optional photo at the top of a collection page */
-.rc-hero-photo img { border-radius: 12px; max-height: 360px; object-fit: cover; width: 100%; }
+/* Portraits beside the intro text; they stack above the text on phones */
+.rc-intro { display: flow-root; }
+.rc-intro img.rc-portrait {
+  float: right; width: 240px; max-width: 40%; margin: 0.25rem 0 1rem 1.5rem;
+  border-radius: 12px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+.rc-intro img.rc-portrait.rc-portrait-left { float: left; margin: 0.25rem 1.5rem 1rem 0; }
+@media (max-width: 575px) {
+  .rc-intro img.rc-portrait,
+  .rc-intro img.rc-portrait.rc-portrait-left { float: none; display: block; width: 70%; max-width: 260px; margin: 0.5rem auto 1.25rem; }
+}
+
+/* Collection toggle, then each collection's own index */
+.rc-hidden { display: none !important; }
+.rc-panel-intro { color: var(--rc-muted); margin-bottom: 0.9rem; }
 
 /* Index: collection switcher, search, category chips */
 .rc-index { margin: 1.5rem 0 2.5rem; scroll-margin-top: 5rem; }
 .rc-index [hidden] { display: none !important; }
 .rc-collections {
-  display: inline-flex; gap: 0.25rem; padding: 0.25rem; margin-bottom: 1rem;
+  display: flex; gap: 0.25rem; padding: 0.3rem; margin: 2rem 0 1.25rem;
   border: 1px solid var(--rc-line); border-radius: 999px; background: #fafcfa;
 }
-a.rc-collection {
-  padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;
-  color: var(--rc-green-dark); text-decoration: none;
+button.rc-collection {
+  flex: 1; padding: 0.55rem 1rem; border: 0; border-radius: 999px; background: transparent;
+  font-weight: 700; font-size: 1rem; color: var(--rc-green-dark); cursor: pointer;
 }
-a.rc-collection:hover { background: var(--rc-tint); color: var(--rc-green-dark); }
-a.rc-collection.is-current { background: var(--rc-green); color: #fff; }
+button.rc-collection:hover { background: var(--rc-tint); }
+button.rc-collection[aria-pressed="true"] { background: var(--rc-green); color: #fff; }
 .rc-toolbar { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.5rem; }
 .rc-search {
   width: 100%; padding: 0.6rem 0.9rem; font-size: 1rem;

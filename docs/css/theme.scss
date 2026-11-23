@@ -73,6 +73,21 @@ a.easter-egg:focus-visible {
   text-underline-offset: 3px;
 }
 
+/* Media page: every thumbnail fills its column in the same 16:9 frame,
+   so small or oddly shaped images line up on phones and desktops alike */
+.media-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 6px;
+}
+/* Logos and graphics that shouldn't be cropped: fit inside the frame */
+.media-grid img.media-contain {
+  object-fit: contain;
+  background: #e9e9e9;
+}
+
 /* Header buttons */
 div.quarto-about-trestles .about-entity .about-link {
   background-color: $primary-color;

@@ -1,20 +1,25 @@
-# Helpers for the recipe collections. Sourced by the web pages (recipes.qmd,
-# yiayia.qmd) and by _recipes/build_cards.R (the downloadable PDF cards), so
-# each page and its cards are built from the same YAML file in _recipes/.
+# Helpers for the recipe collections. Sourced by the web page (recipes.qmd)
+# and by _recipes/build_cards.R (the downloadable PDF cards), so the page and
+# the cards are built from the same YAML files in _recipes/.
 
 library(yaml)
 library(htmltools)
 
-# The collections, in the order their links appear at the top of each page
+# The collections, in the order their toggle buttons appear. The first one is
+# shown when the page opens.
 recipe_collections <- list(
-  list(id = "mine",   title = "My Recipe Box",    href = "recipes.html", data = "_recipes/recipes.yml"),
-  list(id = "yiayia", title = "Yiayia's Kitchen", href = "yiayia.html",  data = "_recipes/yiayia.yml")
+  list(id = "yiayia", title = "Yiayia's Kitchen", data = "_recipes/yiayia.yml"),
+  list(id = "mine",   title = "My Recipe Box",    data = "_recipes/recipes.yml")
 )
 
 load_recipe_box <- function(path = "_recipes/recipes.yml") {
   box <- yaml::read_yaml(path)
   card_dir <- if (is.null(box$card_dir)) file.path("content", "recipes") else box$card_dir
-  box$recipes <- lapply(box$recipes, function(r) { r$card_dir <- card_dir; r })
+  box$recipes <- lapply(box$recipes, function(r) {
+    r$card_dir <- card_dir
+    r$collection <- box$collection
+    r
+  })
   box
 }
 
@@ -154,12 +159,20 @@ tile_search_text <- function(r) {
   htmlEscape(tolower(strip_md(paste(text, collapse = " "))), attribute = TRUE)
 }
 
-collection_nav_html <- function(current) {
-  links <- vapply(recipe_collections, function(cl) paste0(
-    '<a class="rc-collection', if (cl$id == current) ' is-current" aria-current="page' else "",
-    '" href="', cl$href, '">', htmlEscape(cl$title), '</a>'
-  ), character(1))
-  paste0('<div class="rc-collections" aria-label="Recipe collections">', paste(links, collapse = ""), '</div>')
+# Toggle between collections. Buttons only work with JavaScript; without it
+# every collection simply shows, one after another.
+collection_switch_html <- function() {
+  buttons <- vapply(seq_along(recipe_collections), function(i) {
+    cl <- recipe_collections[[i]]
+    paste0(
+      '<button type="button" class="rc-collection" data-collection="', cl$id,
+      '" aria-pressed="', if (i == 1) "true" else "false", '">', htmlEscape(cl$title), '</button>'
+    )
+  }, character(1))
+  paste0(
+    '<div class="rc-collections" id="recipe-collections" role="group" aria-label="Recipe collections">',
+    paste(buttons, collapse = ""), '</div>'
+  )
 }
 
 recipe_index_html <- function(box) {
@@ -188,19 +201,18 @@ recipe_index_html <- function(box) {
       '</h3><div class="rc-tiles">', paste(tiles, collapse = ""), '</div></div>'
     )
   }, character(1))
-  script <- paste(readLines("_recipes/recipes.js", encoding = "UTF-8"), collapse = "\n")
+  search_id <- paste0("rc-search-", box$collection)
   paste0(
-    '<nav class="rc-index" id="recipe-index" aria-label="Recipe index">',
-    collection_nav_html(box$collection),
+    '<nav class="rc-index" id="', box$collection, '-index" data-collection="', box$collection, '" aria-label="', htmlEscape(box$title, TRUE), ' index">',
+    if (!is.null(box$intro)) paste0('<p class="rc-panel-intro">', md_inline(box$intro), '</p>') else "",
     '<div class="rc-toolbar">',
-    '<label class="visually-hidden" for="rc-search">Search recipes</label>',
-    '<input type="search" id="rc-search" class="rc-search" placeholder="Search recipes or ingredients…" autocomplete="off">',
+    '<label class="visually-hidden" for="', search_id, '">Search recipes</label>',
+    '<input type="search" id="', search_id, '" class="rc-search" placeholder="Search recipes or ingredients…" autocomplete="off">',
     '<div class="rc-chips" role="group" aria-label="Filter by category">', chips, '</div>',
     '</div>',
     paste(sections, collapse = ""),
     '<p class="rc-empty" hidden>No recipes match. Try another word or category.</p>',
-    '</nav>',
-    '<script>', script, '</script>'
+    '</nav>'
   )
 }
 
@@ -218,7 +230,7 @@ recipe_header_html <- function(r) {
     '<a class="btn btn-primary btn-sm" href="', card_path(r), '" download>',
     '<i class="bi bi-file-earmark-arrow-down"></i> Download recipe card (PDF)</a>',
     original,
-    '<a class="rc-top" href="#recipe-index">↑ All recipes</a>',
+    '<a class="rc-top" href="#', r$collection, '-index">↑ All recipes</a>',
     '</div>'
   )
 }
@@ -246,15 +258,30 @@ recipe_section_md <- function(r) {
   out
 }
 
-recipe_page_md <- function(box) {
+# One collection: its index (search, chips, tiles), then its recipes by
+# category. Category headings carry data-collection so the page script can
+# show one collection at a time. (No wrapping div: Quarto leaves headings
+# inside a div out of the table of contents.)
+recipe_panel_md <- function(box) {
   out <- raw_html(recipe_index_html(box))
   for (cat in box$categories) {
-    out <- paste0(out, "# ", cat$title, "\n\n")
-    for (r in Filter(function(r) r$category == cat$id, box$recipes)) {
-      out <- paste0(out, recipe_section_md(r))
-    }
+    recipes <- Filter(function(r) r$category == cat$id, box$recipes)
+    if (length(recipes) == 0) next
+    out <- paste0(out, "# ", cat$title, " {.rc-cat data-collection=\"", box$collection, "\"}\n\n")
+    for (r in recipes) out <- paste0(out, recipe_section_md(r))
   }
   out
+}
+
+# The whole recipe page: the toggle, every collection, and the page script
+recipe_book_md <- function() {
+  panels <- vapply(recipe_collections, function(cl) recipe_panel_md(load_recipe_box(cl$data)), character(1))
+  script <- paste(readLines("_recipes/recipes.js", encoding = "UTF-8"), collapse = "\n")
+  paste0(
+    raw_html(collection_switch_html()),
+    paste(panels, collapse = ""),
+    raw_html(paste0("<script>\n", script, "\n</script>"))
+  )
 }
 
 # ---- PDF card ------------------------------------------------------------------

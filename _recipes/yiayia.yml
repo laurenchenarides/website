@@ -1,4 +1,4 @@
-# Yiayia's Kitchen data. Drives yiayia.qmd and the PDF cards in
+# Yiayia's Kitchen data. Drives the "Yiayia's Kitchen" collection on recipes.qmd and the PDF cards in
 # content/recipes/yiayia/ (built by _recipes/build_cards.R).
 #
 # Transcribed from _recipes/yiayias_recipes.docx. Every recipe starts as
@@ -6,9 +6,10 @@
 # once you've made it.
 #
 # Text fields accept **bold**, *italic*, and [links](https://...).
-# After editing:  Rscript _recipes/build_cards.R  then  quarto render yiayia.qmd
+# After editing:  Rscript _recipes/build_cards.R  then  quarto render recipes.qmd
 
 collection: yiayia
+title: "Yiayia's Kitchen"
 card_dir: content/recipes/yiayia
 
 categories:
