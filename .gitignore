@@ -11,3 +11,7 @@
 # Orchard materials now live in the separate private orchard repository.
 /chenlab/
 /docs/chenlab/
+
+# Private source notes for the recipe pages (the published recipes live in _recipes/*.yml)
+/_recipes/yiayias_recipes.docx
+~$*.docx

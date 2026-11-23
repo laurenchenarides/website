@@ -1,6 +1,7 @@
-# Build the downloadable PDF recipe cards from _recipes/recipes.yml.
+# Build the downloadable PDF recipe cards for every collection in
+# recipe_collections (_recipes/recipes.R).
 # Run from the project root:  Rscript _recipes/build_cards.R
-# Writes content/recipes/<id>.pdf using headless Microsoft Edge (or Chrome).
+# Writes <card_dir>/<id>.pdf using headless Microsoft Edge (or Chrome).
 
 source("_recipes/recipes.R")
 
@@ -14,14 +15,13 @@ browser <- Filter(file.exists, c(
 ))[1]
 if (is.na(browser)) stop("No Edge/Chrome found; set RECIPE_CARD_BROWSER to its path.")
 
-box <- load_recipe_box()
 css <- paste(readLines("_recipes/card.css", encoding = "UTF-8"), collapse = "\n")
-out_dir <- file.path("content", "recipes")
-dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 work_dir <- tempfile("recipe-cards-")
 dir.create(work_dir)
 
-for (r in box$recipes) {
+recipes <- unlist(lapply(recipe_collections, function(cl) load_recipe_box(cl$data)$recipes), recursive = FALSE)
+for (r in recipes) {
+  dir.create(r$card_dir, recursive = TRUE, showWarnings = FALSE)
   html_file <- file.path(work_dir, paste0(r$id, ".html"))
   writeLines(enc2utf8(card_document_html(r, css)), html_file, useBytes = TRUE)
   pdf_file <- normalizePath(card_path(r), mustWork = FALSE)

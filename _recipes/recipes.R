@@ -1,16 +1,35 @@
-# Helpers for the recipe box. Sourced by recipes.qmd (the web page) and
-# _recipes/build_cards.R (the downloadable PDF cards) so both are built from
-# the same data in _recipes/recipes.yml.
+# Helpers for the recipe collections. Sourced by the web pages (recipes.qmd,
+# yiayia.qmd) and by _recipes/build_cards.R (the downloadable PDF cards), so
+# each page and its cards are built from the same YAML file in _recipes/.
 
 library(yaml)
 library(htmltools)
 
+# The collections, in the order their links appear at the top of each page
+recipe_collections <- list(
+  list(id = "mine",   title = "My Recipe Box",    href = "recipes.html", data = "_recipes/recipes.yml"),
+  list(id = "yiayia", title = "Yiayia's Kitchen", href = "yiayia.html",  data = "_recipes/yiayia.yml")
+)
+
 load_recipe_box <- function(path = "_recipes/recipes.yml") {
-  yaml::read_yaml(path)
+  box <- yaml::read_yaml(path)
+  card_dir <- if (is.null(box$card_dir)) file.path("content", "recipes") else box$card_dir
+  box$recipes <- lapply(box$recipes, function(r) { r$card_dir <- card_dir; r })
+  box
 }
 
 card_path <- function(recipe) {
-  file.path("content", "recipes", paste0(recipe$id, ".pdf"))
+  file.path(recipe$card_dir, paste0(recipe$id, ".pdf"))
+}
+
+# Recipes are tested unless marked `tested: false`
+is_untested <- function(recipe) isFALSE(recipe$tested)
+
+untested_badge <- '<span class="rc-tag rc-untested">Not yet tested</span>'
+
+strip_md <- function(x) {
+  x <- gsub("\\[([^]]+)\\]\\([^)]+\\)", "\\1", x)
+  gsub("\\*", "", x)
 }
 
 # Minimal inline markdown: **bold**, *italic*, [text](url)
@@ -128,23 +147,61 @@ part_html <- function(part) {
 
 raw_html <- function(x) paste0("\n```{=html}\n", x, "\n```\n\n")
 
+# Everything a reader might search for: title, blurb, tags, credit, ingredients
+tile_search_text <- function(r) {
+  ingredients <- unlist(lapply(r$parts, function(p) lapply(p$ingredients, function(g) g$items)))
+  text <- c(r$title, r$blurb, unlist(r$tags), r$credit, ingredients)
+  htmlEscape(tolower(strip_md(paste(text, collapse = " "))), attribute = TRUE)
+}
+
+collection_nav_html <- function(current) {
+  links <- vapply(recipe_collections, function(cl) paste0(
+    '<a class="rc-collection', if (cl$id == current) ' is-current" aria-current="page' else "",
+    '" href="', cl$href, '">', htmlEscape(cl$title), '</a>'
+  ), character(1))
+  paste0('<div class="rc-collections" aria-label="Recipe collections">', paste(links, collapse = ""), '</div>')
+}
+
 recipe_index_html <- function(box) {
-  sections <- vapply(box$categories, function(cat) {
+  cats <- Filter(function(cat) any(vapply(box$recipes, function(r) r$category == cat$id, logical(1))), box$categories)
+  chips <- paste0(
+    '<button type="button" class="rc-chip" data-category="all" aria-pressed="true">All</button>',
+    paste0(vapply(cats, function(cat) paste0(
+      '<button type="button" class="rc-chip" data-category="', cat$id, '" aria-pressed="false">',
+      md_inline(cat$title), '</button>'
+    ), character(1)), collapse = "")
+  )
+  sections <- vapply(cats, function(cat) {
     recipes <- Filter(function(r) r$category == cat$id, box$recipes)
     tiles <- vapply(recipes, function(r) paste0(
-      '<a class="rc-tile" href="#', r$id, '">',
+      '<a class="rc-tile" href="#', r$id, '" data-category="', cat$id,
+      '" data-search="', tile_search_text(r), '">',
       '<span class="rc-tile-title">', md_inline(r$title), '</span>',
       '<span class="rc-tile-blurb">', md_inline(r$blurb), '</span>',
       '<span class="rc-tags">',
+      if (is_untested(r)) untested_badge else "",
       paste0('<span class="rc-tag">', vapply(r$tags, md_inline, ""), '</span>', collapse = ""),
       '</span></a>'
     ), character(1))
     paste0(
-      '<div class="rc-index-group"><h3 class="rc-index-heading">', md_inline(cat$title),
+      '<div class="rc-index-group" data-category="', cat$id, '"><h3 class="rc-index-heading">', md_inline(cat$title),
       '</h3><div class="rc-tiles">', paste(tiles, collapse = ""), '</div></div>'
     )
   }, character(1))
-  paste0('<nav class="rc-index" id="recipe-index" aria-label="Recipe index">', paste(sections, collapse = ""), '</nav>')
+  script <- paste(readLines("_recipes/recipes.js", encoding = "UTF-8"), collapse = "\n")
+  paste0(
+    '<nav class="rc-index" id="recipe-index" aria-label="Recipe index">',
+    collection_nav_html(box$collection),
+    '<div class="rc-toolbar">',
+    '<label class="visually-hidden" for="rc-search">Search recipes</label>',
+    '<input type="search" id="rc-search" class="rc-search" placeholder="Search recipes or ingredients…" autocomplete="off">',
+    '<div class="rc-chips" role="group" aria-label="Filter by category">', chips, '</div>',
+    '</div>',
+    paste(sections, collapse = ""),
+    '<p class="rc-empty" hidden>No recipes match. Try another word or category.</p>',
+    '</nav>',
+    '<script>', script, '</script>'
+  )
 }
 
 recipe_header_html <- function(r) {
@@ -154,6 +211,8 @@ recipe_header_html <- function(r) {
   ) else ""
   paste0(
     '<p class="rc-subtitle">', md_inline(r$subtitle), '</p>',
+    if (is_untested(r)) paste0('<p class="rc-untested-note">', untested_badge,
+      ' I haven\'t tested this one yet, so amounts and times may need adjusting.</p>') else "",
     '<p class="rc-credit">', md_inline(r$credit), '</p>',
     '<div class="rc-actions">',
     '<a class="btn btn-primary btn-sm" href="', card_path(r), '" download>',
@@ -214,7 +273,8 @@ card_document_html <- function(r, css) {
       '<section class="card-page">',
       '<header class="card-head"><div><h1>', md_inline(heading), '</h1>',
       '<p class="card-sub">', md_inline(subtitle), '</p></div>',
-      if (!is.null(p$badge)) paste0('<span class="card-badge">', md_inline(p$badge), '</span>')
+      if (is_untested(r)) '<span class="card-badge card-untested">Not yet tested</span>'
+      else if (!is.null(p$badge)) paste0('<span class="card-badge">', md_inline(p$badge), '</span>')
       else if (!is.null(r$tags)) paste0('<span class="card-badge">', md_inline(r$tags[[1]]), '</span>') else "",
       '</header>',
       # Page 1 always carries the recipe credit; later variant pages with their

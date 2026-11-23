@@ -61,6 +61,18 @@ a:hover {
   color: $link-hover-color;
 }
 
+/* Hidden link (e.g. "baker" on the homepage): reads as plain text, hints on hover */
+a.easter-egg {
+  color: inherit;
+  text-decoration: none;
+}
+a.easter-egg:hover,
+a.easter-egg:focus-visible {
+  color: inherit;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
 /* Header buttons */
 div.quarto-about-trestles .about-entity .about-link {
   background-color: $primary-color;

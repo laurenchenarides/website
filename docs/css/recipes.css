@@ -1,4 +1,4 @@
-/* Recipe Box page (recipes.qmd) */
+/* Recipe collection pages (recipes.qmd, yiayia.qmd) */
 
 :root {
   --rc-green: #2e7d32;
@@ -6,10 +6,45 @@
   --rc-tint: rgba(102, 187, 106, 0.12);
   --rc-line: #dfe6df;
   --rc-muted: #5f6b60;
+  --rc-amber: #8a5a00;
+  --rc-amber-tint: #fff3d6;
 }
 
-/* Index tiles */
+/* Optional photo at the top of a collection page */
+.rc-hero-photo img { border-radius: 12px; max-height: 360px; object-fit: cover; width: 100%; }
+
+/* Index: collection switcher, search, category chips */
 .rc-index { margin: 1.5rem 0 2.5rem; scroll-margin-top: 5rem; }
+.rc-index [hidden] { display: none !important; }
+.rc-collections {
+  display: inline-flex; gap: 0.25rem; padding: 0.25rem; margin-bottom: 1rem;
+  border: 1px solid var(--rc-line); border-radius: 999px; background: #fafcfa;
+}
+a.rc-collection {
+  padding: 0.35rem 1rem; border-radius: 999px; font-weight: 700; font-size: 0.9rem;
+  color: var(--rc-green-dark); text-decoration: none;
+}
+a.rc-collection:hover { background: var(--rc-tint); color: var(--rc-green-dark); }
+a.rc-collection.is-current { background: var(--rc-green); color: #fff; }
+.rc-toolbar { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 0.5rem; }
+.rc-search {
+  width: 100%; padding: 0.6rem 0.9rem; font-size: 1rem;
+  border: 1.5px solid var(--rc-line); border-radius: 10px; background: #fff;
+}
+.rc-search:focus { outline: none; border-color: var(--rc-green); box-shadow: 0 0 0 3px var(--rc-tint); }
+.rc-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.rc-chip {
+  padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600;
+  border: 1.5px solid var(--rc-green); background: #fff; color: var(--rc-green-dark); cursor: pointer;
+}
+.rc-chip:hover { background: var(--rc-tint); }
+.rc-chip[aria-pressed="true"] { background: var(--rc-green); color: #fff; }
+.rc-empty { color: var(--rc-muted); font-style: italic; margin-top: 1rem; }
+
+/* "Not yet tested" badge */
+.rc-tag.rc-untested { background: var(--rc-amber-tint); color: var(--rc-amber); }
+.rc-untested-note { font-size: 0.9rem; color: var(--rc-amber); margin-bottom: 0.35rem; }
+.rc-untested-note .rc-untested { margin-right: 0.35rem; }
 .rc-index-heading {
   font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em;
   color: var(--rc-muted); margin: 1.25rem 0 0.5rem;

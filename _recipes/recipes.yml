@@ -5,6 +5,8 @@
 # After editing, rebuild the PDF cards:  Rscript _recipes/build_cards.R
 # then re-render the page:              quarto render recipes.qmd
 
+collection: mine
+
 categories:
   - id: breads
     title: "Breads & Breakfast"

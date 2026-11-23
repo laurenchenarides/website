@@ -1,0 +1,700 @@
+# Yiayia's Kitchen data. Drives yiayia.qmd and the PDF cards in
+# content/recipes/yiayia/ (built by _recipes/build_cards.R).
+#
+# Transcribed from _recipes/yiayias_recipes.docx. Every recipe starts as
+# `tested: false`, which shows a "Not yet tested" badge; delete that line
+# once you've made it.
+#
+# Text fields accept **bold**, *italic*, and [links](https://...).
+# After editing:  Rscript _recipes/build_cards.R  then  quarto render yiayia.qmd
+
+collection: yiayia
+card_dir: content/recipes/yiayia
+
+categories:
+  - id: greek
+    title: "Greek Sweets & Breads"
+  - id: baking
+    title: "Pies, Cakes & Cookies"
+  - id: savory
+    title: "Mains & Salads"
+  - id: sauces
+    title: "Sauces & Spreads"
+  - id: basics
+    title: "Basics"
+
+recipes:
+
+  # ---------------------------------------------------------------------------
+  - id: eros-kourabiedes
+    category: greek
+    tested: false
+    title: "Ero's Kourabiedes"
+    subtitle: "Greek butter cookies • Makes about 40"
+    blurb: "Tender butter cookies with a splash of whiskey, cognac, or ouzo, buried in powdered sugar."
+    tags: ["Holidays", "Cookies"]
+    credit: "From **Ero**, in Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "350°F (175°C)"]
+          - ["Prep", "15 mins"]
+          - ["Bake", "15–20 mins per batch"]
+          - ["Makes", "About 40 cookies"]
+        ingredients:
+          - items:
+              - "**1 lb (4 sticks)** sweet (unsalted) butter, softened"
+              - "**1 demitasse cup** confectioners' sugar (about ½ cup)"
+              - "**1** egg yolk, beaten"
+              - "**1 jigger** whiskey, cognac, or ouzo (about 1½ oz)"
+              - "**5 cups** all-purpose flour (Pillsbury recommended)"
+              - "**Confectioners' sugar**, for finishing"
+              - "**Rose water**, for brushing *(optional)*"
+        steps:
+          - items:
+              - "Preheat the oven to 350°F (175°C). Line baking sheets with parchment paper."
+          - heading: "Dough"
+            items:
+              - "Beat the butter until creamy and light, like whipped cream."
+              - "Gradually beat in the confectioners' sugar, then the egg yolk, until smooth and fluffy."
+              - "Stir in the whiskey, cognac, or ouzo."
+              - "Gradually add the flour until the dough is soft but not sticky. You may need a little more or less depending on humidity and your flour."
+          - heading: "Shape & bake"
+            items:
+              - "Shape walnut-size pieces into crescents or balls and set them about 1 inch apart on the sheets."
+              - "Bake 15–20 minutes, until just starting to turn golden around the edges."
+          - heading: "Finish"
+            items:
+              - "While still warm, lightly brush with rose water (if using) and sift confectioners' sugar generously over the top."
+              - "Cool a few minutes on the sheets, then move to a rack to cool completely. Sift on more sugar before serving."
+        notes:
+          - label: "Serving"
+            text: "Perfect for holidays and special occasions, and as gifts. Serve on a dessert platter with coffee or tea."
+
+  # ---------------------------------------------------------------------------
+  - id: galaktoboureko
+    category: greek
+    tested: false
+    title: "Galaktoboureko"
+    subtitle: "Custard in phyllo with light syrup • Serves 8–10"
+    blurb: "A creamy cream-of-rice custard baked in buttery phyllo until golden and soaked with a light lemon syrup."
+    tags: ["Custard", "Phyllo", "Make-ahead"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "350°F (175°C)"]
+          - ["Prep", "30 mins"]
+          - ["Bake", "45–55 mins"]
+          - ["Serves", "8–10"]
+        callout:
+          label: "Best guess"
+          text: "Yiayia's notes call this a phyllo pastry but leave the phyllo out. I've added it the traditional way, with sheets under and over the custard. Her custard uses cream of rice where many recipes use semolina, and it works the same way. If she topped it with shredded phyllo (kataifi) instead, see the note at the end."
+        ingredients:
+          - heading: "Custard"
+            items:
+              - "**¼ cup (½ stick)** butter"
+              - "**3 cups** milk"
+              - "**¾ cup** sugar"
+              - "**1 cup** cream of rice (or fine semolina)"
+              - "**1 tsp** vanilla extract"
+              - "**4 large eggs** (or 5 if small), beaten"
+          - heading: "Phyllo (best guess)"
+            items:
+              - "**1 lb (16 oz)** phyllo sheets, thawed"
+              - "**¾–1 cup (1½–2 sticks)** butter, melted, for brushing"
+          - heading: "Light syrup"
+            items:
+              - "**1 cup** water"
+              - "**½ cup** sugar"
+              - "**½ tsp** lemon juice"
+        steps:
+          - heading: "Custard"
+            items:
+              - "In a large saucepan, heat the milk, butter, and sugar over medium heat until nearly boiling."
+              - "Slowly whisk in the cream of rice and keep whisking until thick and smooth."
+              - "Remove from the heat and cool to lukewarm, stirring now and then so a skin doesn't form."
+              - "Gradually whisk in the beaten eggs until smooth and creamy, then stir in the vanilla."
+          - heading: "Syrup"
+            items:
+              - "In a small saucepan, bring the water, sugar, and lemon juice to a boil. Simmer until slightly thickened, about 10 minutes. Cool completely."
+          - heading: "Bake & finish"
+            items:
+              - "Preheat the oven to 350°F (175°C). Butter a 9×13-inch baking dish."
+              - "Layer about half the phyllo sheets in the dish, brushing each with melted butter and letting the edges hang over the sides. Keep the rest covered with a damp towel so it doesn't dry out."
+              - "Pour in the custard and smooth the top. Fold the overhanging phyllo over it."
+              - "Layer the remaining sheets on top, brushing each with butter. Tuck in the edges, then score the top layers into squares with a sharp knife, without cutting down to the custard."
+              - "Bake 45–55 minutes, until the phyllo is deep golden and the custard is set."
+              - "Let it cool slightly, then pour the cooled syrup evenly over the top so it soaks in."
+              - "Cool completely before cutting along the scored lines."
+        notes:
+          - label: "Serving"
+            text: "Serve chilled or at room temperature. It pairs beautifully with a cup of Greek coffee."
+          - label: "Shredded phyllo top"
+            text: "If Yiayia meant phyllo shreds on top, use 8 oz kataifi instead of the top sheets. Pull it apart, toss it with ½ cup melted butter, and spread it over the custard before baking."
+
+  # ---------------------------------------------------------------------------
+  - id: vasilopita
+    category: greek
+    tested: false
+    title: "Vasilopita"
+    subtitle: "Greek New Year bread with a hidden coin"
+    blurb: "A sweet, mastic- and mahlepi-scented New Year's bread. Whoever finds the coin has good luck all year."
+    tags: ["New Year's", "Yeasted"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "325°F (165°C)"]
+          - ["Rise", "2 × 1 hr"]
+          - ["Bake", "35–45 mins, to 190°F"]
+          - ["For", "New Year's Day"]
+        callout:
+          label: "Doneness"
+          text: "The family notes say about 20 minutes, but a loaf made with 4 cups of flour usually needs 35–45 minutes at 325°F. Go by temperature, not time: it's done when the center reads 190°F on an instant-read thermometer (about 185°F at high altitude, where water boils at a lower temperature). If the top browns before the inside is done, tent it loosely with foil. The notes sweeten it with Equal packets plus powdered sugar."
+        ingredients:
+          - heading: "Bread"
+            items:
+              - "**½ cup** water (for steeping the spices)"
+              - "**¼ tsp** mastic (mastiha), ground"
+              - "**¼ tsp** mahlepi (mahlab), ground"
+              - "**¼ lb (1 stick)** salted butter, melted"
+              - "**⅓ cup** sweetened condensed milk, warmed"
+              - "**3 eggs**, warmed"
+              - "**4 cups** flour"
+              - "**½ cup** confectioners' (powdered) sugar"
+              - "**4 packets** Equal sweetener"
+              - "**2 packages** instant yeast"
+              - "**1 dime** (or other coin), wrapped in aluminum foil"
+          - heading: "Glaze"
+            items:
+              - "**1** egg yolk"
+              - "**1 tbsp** water"
+              - "**Sesame seeds**, for sprinkling"
+        steps:
+          - heading: "Spiced liquid"
+            items:
+              - "Bring the ½ cup water to a boil in a small pot, add the mastic and mahlepi, and remove from the heat."
+              - "Add the melted butter and condensed milk. Cool to room temperature, then whisk in the warm eggs."
+          - heading: "Dough"
+            items:
+              - "Sift the flour into a large bowl and mix in the powdered sugar, Equal, and yeast."
+              - "Make a well in the center, pour in the liquid, and knead until the dough is soft and not sticky. (Buttered, gloved hands help.)"
+              - "Cover with a towel and let rise at room temperature for 1 hour."
+          - heading: "Shape & bake"
+            items:
+              - "Knead briefly, shape as you like, and press the foil-wrapped coin into the dough."
+              - "Mix the egg yolk and water, brush it over the top, and sprinkle with sesame seeds."
+              - "Let rise another hour at room temperature."
+              - "Bake at 325°F (165°C) until deep golden and the center reads 190°F, about 35–45 minutes. Start checking at 20 minutes (see the note above)."
+              - "Cool before slicing. Whoever finds the coin has good luck for the year!"
+        notes:
+          - label: "Using a KitchenAid"
+            text: "Mix the dry ingredients with the flat beater. Switch to the dough hook and add the liquid on low (speed 2), then knead on medium (speed 4–6) for 8–10 minutes until soft, smooth, elastic, and clear of the bowl. Let it rise in a greased, covered bowl until doubled, about 1 hour. Shape, set on a parchment-lined sheet, cover, and rise another hour."
+
+  # ---------------------------------------------------------------------------
+  - id: vivians-pumpkin-pie
+    category: baking
+    tested: false
+    title: "Vivian's Pumpkin Pie"
+    subtitle: "Two pies, with a touch of molasses • 8–10 servings each"
+    blurb: "A big-batch pumpkin pie warmed with ginger, cinnamon, and molasses. Makes two."
+    tags: ["Thanksgiving", "Makes 2"]
+    credit: "From **Vivian**, in Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "425°F, then 350°F"]
+          - ["Bake", "About 60 mins"]
+          - ["Makes", "2 pies"]
+          - ["Crust", "2 unbaked shells"]
+        ingredients:
+          - items:
+              - "**4 eggs**, slightly beaten"
+              - "**1 can (29 oz)** pumpkin purée (not pie filling)"
+              - "**1½ cups** granulated sugar"
+              - "**¾ tsp** salt"
+              - "**½ tsp** ground cinnamon, plus extra for sprinkling"
+              - "**1 tsp** pumpkin pie spice"
+              - "**1 tsp** ground ginger"
+              - "**2 cans (13 oz each)** evaporated milk, or 3½ cups half-and-half"
+              - "**⅓ cup** molasses"
+              - "**2** unbaked pie shells (try the Pie Crust under Basics)"
+        steps:
+          - items:
+              - "Preheat the oven to 425°F (220°C)."
+              - "In a large bowl, mix the eggs, pumpkin, sugar, salt, cinnamon, pumpkin pie spice, and ginger."
+              - "Gradually stir in the evaporated milk or half-and-half, then the molasses, until fully combined."
+              - "Divide the filling between the two pie shells."
+              - "Bake 15 minutes at 425°F, then lower the oven to 350°F (175°C) and bake about 45 minutes more. Halfway through, sprinkle the tops with cinnamon."
+              - "The pies are done when a knife inserted near the center comes out clean. Cool on a wire rack."
+        notes:
+          - label: "Swap"
+            text: "Cooked, mashed butternut squash can stand in for the pumpkin."
+          - label: "Serving"
+            text: "Serve at room temperature or chilled, with whipped cream or vanilla ice cream."
+
+  # ---------------------------------------------------------------------------
+  - id: roseanns-cheesecake
+    category: baking
+    tested: false
+    title: "RoseAnn's Cheese Cake"
+    subtitle: "Ricotta and cream cheese • Optional berry glaze • Serves 8–10"
+    blurb: "A tall ricotta and cream cheese cheesecake that finishes setting in a closed oven, with an optional cherry or blueberry glaze."
+    tags: ["Springform", "Make-ahead"]
+    credit: "From **RoseAnn**, in Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "325°F (163°C)"]
+          - ["Bake", "1 hr + 2 hrs in the closed oven"]
+          - ["Pan", "Springform, greased"]
+          - ["Serves", "8–10"]
+        ingredients:
+          - heading: "Cheesecake"
+            items:
+              - "**1 lb** whole-milk ricotta"
+              - "**1 lb** cream cheese"
+              - "**1½ cups** granulated sugar"
+              - "**4 large eggs**"
+              - "**3 drops** lemon juice"
+              - "**1 tsp** vanilla extract"
+              - "**5 tbsp** cornstarch"
+              - "**3 tbsp** all-purpose flour"
+              - "**¼ lb (1 stick)** butter, melted over hot water"
+              - "**1 pint (16 oz)** sour cream"
+          - heading: "Glaze (optional)"
+            items:
+              - "**½ cup** liquid (juice from the berries, topped up with water)"
+              - "**¼ cup** granulated sugar"
+              - "**1 tsp** lemon juice"
+              - "**1 tbsp** cornstarch"
+              - "**Cherries or blueberries**, for topping"
+        steps:
+          - heading: "Cheesecake"
+            items:
+              - "Preheat the oven to 325°F (163°C) and grease a springform pan."
+              - "Beat the ricotta and cream cheese until smooth. Gradually add the sugar."
+              - "Add the eggs one at a time, beating well after each, then the lemon juice and vanilla."
+              - "Whisk the cornstarch and flour together and mix them in."
+              - "Mix in the melted butter and sour cream until combined, then pour into the pan."
+              - "Bake 1 hour, then turn the oven off and leave the cheesecake in the closed oven for 2 more hours without opening the door."
+              - "Remove, cool completely, and refrigerate until serving."
+          - heading: "Glaze (optional)"
+            items:
+              - "In a saucepan over medium heat, cook the liquid, sugar, lemon juice, and cornstarch, stirring constantly, until thickened. Cool slightly."
+              - "Fold in the berries (or just top the cheesecake with them) and spread over the chilled cheesecake before serving."
+
+  # ---------------------------------------------------------------------------
+  - id: seven-up-cake
+    category: baking
+    tested: false
+    title: "7-Up Cake"
+    subtitle: "Cake mix + pudding + 7-Up • Bundt or tube pan • Serves 8–10"
+    blurb: "A moist, nutty lemon or yellow bundt cake that starts from a box. A family-gathering classic."
+    tags: ["Easy", "Bundt"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "350°F (175°C)"]
+          - ["Bake", "About 45 mins"]
+          - ["Pan", "Tube or bundt, greased"]
+          - ["Serves", "8–10"]
+        ingredients:
+          - items:
+              - "**1 box** lemon or yellow cake mix (preferably Duncan Hines)"
+              - "**1 box** instant pudding mix (lemon or vanilla)"
+              - "**½ cup** vegetable oil"
+              - "**1 cup** 7-Up or ginger ale"
+              - "**1 tsp** vanilla extract"
+              - "**4 large eggs**"
+              - "**1 cup** chopped nuts (walnuts recommended)"
+        steps:
+          - items:
+              - "Preheat the oven to 350°F (175°C) and grease a tube or bundt pan."
+              - "In a large bowl, combine the cake mix and pudding mix."
+              - "Add the oil, 7-Up, vanilla, and eggs, and beat with an electric mixer until smooth."
+              - "Fold in the nuts and pour the batter into the pan."
+              - "Bake about 45 minutes, until a toothpick in the center comes out clean."
+              - "Cool in the pan 10 minutes, then turn out onto a rack to cool completely."
+        notes:
+          - label: "Serving"
+            text: "Serve as is or with a light dusting of powdered sugar."
+
+  # ---------------------------------------------------------------------------
+  - id: jelly-cookies
+    category: baking
+    tested: false
+    title: "Jelly Cookies (Cut-Outs)"
+    subtitle: "Sandwich cookies with jelly • Makes about 24"
+    blurb: "Buttery cut-out sandwich cookies filled with your favorite jelly and dusted with powdered sugar."
+    tags: ["Cookies", "Holidays"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "350°F (175°C)"]
+          - ["Bake", "8–10 mins"]
+          - ["Roll", "¼ inch thick"]
+          - ["Makes", "About 24"]
+        callout:
+          label: "Best guess"
+          text: "The notes don't list any flour. This dough (butter, cream, and no sugar) matches a classic cream wafer, which uses about 2 cups of flour per cup of butter. With the extra cream here, start with 2 cups and add up to ¼ cup more until the dough rolls without sticking. Note the amount you use."
+        ingredients:
+          - items:
+              - "**1 cup** butter, softened"
+              - "**½ cup** light cream"
+              - "**1** egg yolk"
+              - "**1 tsp** baking powder"
+              - "**2–2¼ cups** all-purpose flour (best guess; see above)"
+              - "**Powdered sugar**, for dusting"
+              - "**About ½ cup** jelly (any flavor), for filling"
+        steps:
+          - heading: "Dough"
+            items:
+              - "Preheat the oven to 350°F (175°C). Line a baking sheet with parchment (or use a nonstick pan)."
+              - "Cream the butter and light cream until smooth. Mix in the egg yolk, then the baking powder."
+              - "Mix in 2 cups of flour. If the dough is still sticky, add more a tablespoon at a time. If it's soft, chill it for 30 minutes before rolling."
+          - heading: "Cut & bake"
+            items:
+              - "On a lightly floured surface, roll the dough about ¼ inch thick and cut shapes. Cut an even number: each cookie needs a top and a bottom."
+              - "Bake 8–10 minutes, until the edges just start to brown. Cool a few minutes on the sheet, then on a rack."
+          - heading: "Assemble"
+            items:
+              - "Dust half the cookies (the tops) with powdered sugar. Spread a little jelly in the center of the rest (the bottoms)."
+              - "Press the tops onto the bottoms. Let the jelly set slightly before serving, or store airtight."
+
+  # ---------------------------------------------------------------------------
+  - id: rolled-florettes
+    category: baking
+    tested: false
+    title: "Rolled Florettes"
+    subtitle: "Rolled jelly-nut cookies • Makes about 24"
+    blurb: "A tender yeasted dough rolled around jam, nuts, and nutmeg, then sliced and baked."
+    tags: ["Cookies", "1971"]
+    credit: "**L. Tsontarides**, September 1971, in Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "350°F (175°C)"]
+          - ["Bake", "12–15 mins"]
+          - ["Roll", "¼ inch thick"]
+          - ["Makes", "About 24"]
+        ingredients:
+          - heading: "Dough"
+            items:
+              - "**1 cup** butter, softened"
+              - "**½ cup** light cream, room temp"
+              - "**½ tsp** yeast, dissolved in the cream"
+              - "**1** egg yolk"
+              - "**1 tsp** baking powder"
+              - "**Flour**, as needed for a soft, rollable dough"
+          - heading: "Filling"
+            items:
+              - "**1 cup** jam or preserves (any flavor)"
+              - "**½ cup** chopped nuts"
+              - "**¼ tsp** nutmeg"
+              - "**2 tbsp** Zwieback crumbs (or crushed plain biscuits or breadcrumbs)"
+          - heading: "Finish"
+            items:
+              - "**Confectioners' sugar**, for dusting"
+        steps:
+          - heading: "Dough & filling"
+            items:
+              - "Cream the butter with the cream and dissolved yeast. Mix in the egg yolk."
+              - "Mix in the baking powder and enough flour to make a soft, rollable dough."
+              - "In another bowl, mix the jam, nuts, nutmeg, and Zwieback crumbs."
+          - heading: "Roll, slice & bake"
+            items:
+              - "Preheat the oven to 350°F (175°C) and butter a baking sheet."
+              - "On a floured surface, roll the dough about ¼ inch thick and spread the filling evenly over it."
+              - "Roll it up into a log and cut diagonally into slices about 1 inch thick."
+              - "Bake 12–15 minutes, until lightly golden. Cool a few minutes on the sheet, then on a rack."
+              - "Dust with confectioners' sugar once cool."
+
+  # ---------------------------------------------------------------------------
+  - id: apricot-jello-mold
+    category: baking
+    tested: false
+    title: "Apricot Jello Mold"
+    subtitle: "Layered apricot gelatin with sour cream • Serves 6–8"
+    blurb: "A retro layered apricot gelatin mold with a sour cream center. Make it a day ahead."
+    tags: ["No-bake", "Make-ahead"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Chill", "Until fully set (best overnight)"]
+          - ["Mold", "Greased (or nonstick Tupperware)"]
+          - ["Serves", "6–8"]
+          - ["Make", "A day ahead"]
+        ingredients:
+          - items:
+              - "**2 small boxes** apricot gelatin"
+              - "**2 cans (12 oz each)** apricot nectar"
+              - "**1 can (5.5 oz)** evaporated milk"
+              - "**½ pint** sour cream"
+              - "**1 cup** warm water"
+        steps:
+          - heading: "First layer"
+            items:
+              - "In a saucepan, dissolve one box of gelatin in the 1 cup warm water. Remove from the heat and stir in 1 cup apricot nectar."
+              - "Pour into a greased mold and refrigerate until fully set."
+          - heading: "Sour cream layer"
+            items:
+              - "Spread the sour cream evenly over the set gelatin and return it to the fridge."
+          - heading: "Second layer"
+            items:
+              - "Dissolve the second box of gelatin in 1 cup apricot nectar (no heat). Let it come to room temperature, then stir in the evaporated milk."
+              - "Pour gently over the sour cream layer and refrigerate until the whole mold is firm."
+
+  # ---------------------------------------------------------------------------
+  - id: stuffed-zucchini
+    category: savory
+    tested: false
+    title: "Stuffed Zucchini"
+    subtitle: "Vegetable, quinoa & Parmesan filling • Serves 5"
+    blurb: "Zucchini boats filled with sautéed vegetables, quinoa, and Parmesan, then baked until tender."
+    tags: ["Vegetarian", "Main or side"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Oven", "375°F (190°C)"]
+          - ["Prep", "20 mins"]
+          - ["Bake", "30 mins"]
+          - ["Serves", "5 (1 zucchini each)"]
+        ingredients:
+          - items:
+              - "**5** medium zucchini"
+              - "**3 tbsp** olive oil"
+              - "**3 cloves** garlic, minced"
+              - "**1** large onion, finely chopped"
+              - "**1** red bell pepper, finely chopped"
+              - "**½ cup** chopped celery"
+              - "**½ cup** chopped mushrooms"
+              - "**½ cup** cooked quinoa"
+              - "**Zucchini pulp**, chopped (saved from scooping)"
+              - "**¼ cup** grated Parmesan"
+              - "**Salt and pepper**, to taste"
+        steps:
+          - items:
+              - "Preheat the oven to 375°F (190°C)."
+              - "Halve the zucchini lengthwise and scoop out the pulp, leaving a ¼-inch shell. Chop the pulp and set it aside."
+              - "Heat the oil in a large skillet over medium heat. Sauté the garlic, onion, and red pepper until the onion is translucent, about 5 minutes."
+              - "Add the celery and mushrooms and cook until tender, about 5 minutes more."
+              - "Stir in the zucchini pulp and quinoa and cook 2–3 minutes. Season with salt and pepper."
+              - "Remove from the heat, cool slightly, and stir in the Parmesan."
+              - "Arrange the shells on a baking sheet and spoon in the filling, packing lightly."
+              - "Bake 30 minutes, until the shells are tender and the tops lightly browned. Serve warm, with extra Parmesan or a drizzle of olive oil."
+
+  # ---------------------------------------------------------------------------
+  - id: couscous-salad
+    category: savory
+    tested: false
+    title: "Couscous Salad"
+    subtitle: "Artichokes, chickpeas, mint & chicken • Serves 6–8"
+    blurb: "A make-ahead couscous salad with artichokes, chickpeas, tomatoes, cucumber, mint, and chicken."
+    tags: ["Picnic", "Make-ahead"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Prep", "About 20 mins"]
+          - ["Chill", "30 mins+"]
+          - ["Serves", "6–8"]
+          - ["Serve", "Cold"]
+        ingredients:
+          - items:
+              - "**1 cup** couscous"
+              - "**1 cup** vegetable broth"
+              - "**1 can (about 14 oz)** artichoke hearts, drained and chopped"
+              - "**1 bunch** scallions, chopped"
+              - "**¼ cup** fresh mint, chopped"
+              - "**1 large carton (about 15 oz)** chickpeas, drained and rinsed"
+              - "**1 cup** cherry tomatoes, halved"
+              - "**½** English cucumber, chopped"
+              - "**1** cooked chicken breast, chopped"
+              - "**½ cup** olive oil"
+              - "**Juice of ½** lemon"
+              - "**½ tsp** cayenne pepper (to taste)"
+        steps:
+          - items:
+              - "Bring the broth to a boil, stir in the couscous, and remove from the heat. Cover for 5 minutes, until the liquid is absorbed. Fluff with a fork and cool."
+              - "In a large bowl, combine the couscous, artichokes, scallions, mint, chickpeas, tomatoes, and cucumber."
+              - "Gently mix in the chicken. Drizzle with the olive oil and lemon juice, sprinkle with cayenne, and mix well."
+              - "Chill at least 30 minutes. Stir again before serving and adjust the lemon or cayenne to taste."
+        notes:
+          - label: "Vegetarian"
+            text: "The notes filed this under vegetarian dishes, but it includes chicken. Leave the chicken out for a vegetarian version."
+
+  # ---------------------------------------------------------------------------
+  - id: sausage-maple-hash
+    category: savory
+    tested: false
+    title: "Sausage Maple Hash with Sweet Potatoes"
+    subtitle: "With yellow tomato salsa and a melon-cucumber salad • Serves 4"
+    blurb: "Maple sausage and sweet potato hash with Manchego, a fresh yellow tomato salsa, and a mint-lime melon salad."
+    tags: ["Dinner", "Skillet"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Pan", "Large skillet"]
+          - ["Serves", "4"]
+          - ["Parts", "Hash, sauce, salad"]
+          - ["Heat", "Medium"]
+        ingredients:
+          - heading: "Hash"
+            items:
+              - "**1 lb** maple-flavored sausage"
+              - "**2** medium sweet potatoes, peeled and diced"
+              - "**1** large red onion, diced"
+              - "**1 tsp** chili powder"
+              - "**1 tsp** smoked cumin"
+              - "**½ tsp** ground coriander"
+              - "**½ cup** grated Manchego"
+          - heading: "Sauce"
+            items:
+              - "**3** yellow tomatoes"
+              - "**1** small jalapeño, seeded and finely chopped"
+              - "**1** small red onion, finely chopped"
+              - "**¼ cup** chopped fresh cilantro"
+              - "**Juice of 1** lime"
+          - heading: "Salad"
+            items:
+              - "**1 cup** diced melon (any kind)"
+              - "**1** English cucumber, diced, skin on"
+              - "**¼ cup** chopped red onion"
+              - "**½ cup** sliced radishes"
+          - heading: "Dressing"
+            items:
+              - "**2 tbsp** mint jelly"
+              - "**3 tbsp** olive oil"
+              - "**Juice of 1** lime"
+        steps:
+          - heading: "Hash"
+            items:
+              - "In a large skillet over medium heat, cook the sausage, breaking it up, until cooked through and slightly crispy."
+              - "Add the sweet potatoes and red onion and cook, stirring now and then, until the potatoes are tender and lightly browned."
+              - "Stir in the chili powder, smoked cumin, and coriander and cook 2 minutes more."
+              - "Off the heat, sprinkle the Manchego over the hot hash and let it melt."
+          - heading: "Sauce"
+            items:
+              - "Blanch the tomatoes to slip off the skins, remove the seeds, and dice."
+              - "Mix the tomatoes with the jalapeño, red onion, cilantro, and lime juice. Set aside to let the flavors meld."
+          - heading: "Salad & dressing"
+            items:
+              - "Combine the melon, cucumber, red onion, and radishes."
+              - "Whisk the mint jelly, olive oil, and lime juice, then toss with the salad."
+          - heading: "Serve"
+            items:
+              - "Divide the hash among plates, top with a spoonful of the sauce, and serve the salad on the side."
+
+  # ---------------------------------------------------------------------------
+  - id: skordalia
+    category: sauces
+    tested: false
+    title: "Skordalia"
+    subtitle: "Greek garlic sauce, two ways"
+    blurb: "A punchy garlic, bread, and olive oil sauce for vegetables, fish, and bread. Two versions from the notes."
+    tags: ["Greek", "Dip", "2 versions"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - title: "Blender"
+        subtitle: "Quick blender version • About 1 cup"
+        meta:
+          - ["Prep", "15 mins"]
+          - ["Chill", "1 hr for best flavor"]
+          - ["Makes", "About 1 cup"]
+          - ["Tool", "Food processor or blender"]
+        ingredients:
+          - items:
+              - "**1** medium clove garlic"
+              - "**¼ cup** vinegar (white or red wine vinegar preferred)"
+              - "**½ cup** olive oil"
+              - "**8 slices** white bread, crusts removed"
+              - "**Water**, for soaking the bread"
+        steps:
+          - items:
+              - "Soak the bread in water just until moistened, then squeeze out the excess thoroughly. It should be damp, not wet."
+              - "In a food processor or blender, pulse the bread, garlic, and vinegar into a smooth paste."
+              - "With the machine running, drizzle in the olive oil very slowly so it emulsifies and turns creamy."
+              - "Thin with a little water or vinegar if needed, and adjust the garlic and vinegar to taste."
+              - "Chill at least an hour to let the flavors meld. Serve chilled or at room temperature."
+        notes:
+          - label: "Serving"
+            text: "Serve as a dip with vegetables or fish, as a spread for bread, or on a meze platter alongside fried zucchini and eggplant."
+      - title: "Mortar & Pestle"
+        subtitle: "Whole-head garlic version • About 1–1½ cups"
+        meta:
+          - ["Prep", "20 mins"]
+          - ["Makes", "About 1–1½ cups"]
+          - ["Bread", "1–2 days old"]
+          - ["Tool", "Mortar & pestle, mixer"]
+        ingredients:
+          - items:
+              - "**1 whole head** garlic, cloves peeled"
+              - "**1 tsp** salt"
+              - "**¼ cup** white wine or cider vinegar"
+              - "**1 large loaf** dried bread (a day or two old)"
+              - "**About 1 cup** olive oil"
+        steps:
+          - items:
+              - "Mash the garlic with the salt in a mortar and pestle until smooth and pasty. (No mortar? Use the flat of a knife or a small food processor.)"
+              - "Cut off the bread crusts. Soak the soft center just until moistened, then squeeze out all the excess water."
+              - "Put the bread in a large bowl with the garlic paste and vinegar."
+              - "Beat with an electric mixer or a strong whisk while drizzling in the olive oil very slowly, until thick and creamy like a thick mayonnaise."
+              - "Adjust the salt and vinegar to taste, and loosen with a little vinegar or water if it's too thick."
+        notes:
+          - label: "Serving"
+            text: "Serve with vegetables, grilled meats, or warm bread, or as part of a Greek meze platter."
+
+  # ---------------------------------------------------------------------------
+  - id: balsamic-creme-fraiche-fruit-sauce
+    category: sauces
+    tested: false
+    title: "Balsamic and Crème Fraîche Fruit Sauce"
+    subtitle: "A rich drizzle for fresh fruit"
+    blurb: "Balsamic vinegar reduced with crème fraîche and a little sugar, for strawberries, blueberries, or pears."
+    tags: ["Quick", "3 ingredients"]
+    credit: "From Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Prep", "5 mins"]
+          - ["Cook", "10 mins"]
+          - ["Reduce", "By about half"]
+          - ["Serve", "Over fresh fruit"]
+        ingredients:
+          - items:
+              - "**¾ cup** balsamic vinegar"
+              - "**1 heaping tbsp** crème fraîche"
+              - "**1 tsp** sugar"
+        steps:
+          - items:
+              - "In a small saucepan over medium heat, whisk the vinegar, crème fraîche, and sugar together."
+              - "Bring to a boil, stirring so the sugar dissolves."
+              - "Lower the heat and simmer, stirring occasionally, until reduced by about half, 5–10 minutes."
+              - "Cool slightly and drizzle sparingly over fresh fruit; the flavor is rich."
+        notes:
+          - label: "Serving"
+            text: "Lovely with strawberries, blueberries, or sliced pears, on a dessert plate or in a fruit salad."
+
+  # ---------------------------------------------------------------------------
+  - id: pie-crust
+    category: basics
+    tested: false
+    title: "Pie Crust"
+    subtitle: "Shortening crust • 1 double or 2 single crusts"
+    blurb: "A simple, flaky shortening crust for sweet or savory pies, from apple to chicken pot pie."
+    tags: ["Basics", "Sweet or savory"]
+    credit: "From **Mrs. Myer's mother** (Tilson, NY), in Yiayia's recipe collection"
+    parts:
+      - meta:
+          - ["Makes", "1 double or 2 single"]
+          - ["Chill", "30 mins+"]
+          - ["Fat", "Crisco (shortening)"]
+          - ["Bake", "Per your pie recipe"]
+        ingredients:
+          - items:
+              - "**2 cups** all-purpose flour"
+              - "**1 tsp** salt"
+              - "**¾ cup** Crisco (vegetable shortening)"
+              - "**4–6 tbsp** ice water"
+        steps:
+          - items:
+              - "In a large bowl, mix the flour and salt."
+              - "Cut in the Crisco with a pastry cutter or two forks until it looks like coarse crumbs with some pea-size pieces."
+              - "Sprinkle 4 tablespoons ice water over it and mix gently with a fork, adding more a tablespoon at a time just until the dough starts to come together."
+              - "Turn it out onto a lightly floured surface and knead a few times into a ball. Divide in half for two single crusts."
+              - "Flatten into discs, wrap, and chill at least 30 minutes."
+              - "To use, let a well-chilled disc sit about 10 minutes, roll it out on a floured surface to fit your dish, and bake as your pie recipe directs."
