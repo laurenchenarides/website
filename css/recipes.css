@@ -17,9 +17,14 @@
   border-radius: 12px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 .rc-intro img.rc-portrait.rc-portrait-left { float: left; margin: 0.25rem 1.5rem 1rem 0; }
+.rc-intro img.rc-portrait.rc-photo-wide { width: 360px; max-width: 48%; }
+.rc-intro img.rc-portrait.rc-photo-small { width: 150px; max-width: 30%; }
 @media (max-width: 575px) {
   .rc-intro img.rc-portrait,
   .rc-intro img.rc-portrait.rc-portrait-left { float: none; display: block; width: 70%; max-width: 260px; margin: 0.5rem auto 1.25rem; }
+  .rc-intro img.rc-portrait.rc-photo-wide { width: 100%; max-width: none; }
+  /* The small portrait stays beside its paragraph on phones */
+  .rc-intro img.rc-portrait.rc-photo-small { float: left; width: 34%; max-width: 140px; margin: 0.25rem 1rem 0.5rem 0; }
 }
 
 /* Collection toggle, then each collection's own index */
