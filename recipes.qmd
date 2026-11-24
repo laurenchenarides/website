@@ -23,19 +23,19 @@ image-alt: "Me in my kitchen, smiling and holding a plate stacked with golden wa
      files for how to rebuild. -->
 
 ::: {.rc-intro}
-![](images/beach-web.jpg){.rc-portrait .rc-photo-wide fig-alt="My yiayia and me as a little girl, sitting in the sand on a crowded beach. She wears sunglasses, a patterned headband, and a white sleeveless top; I'm in a colorful swimsuit."}
+![](images/beach-web.jpg){.rc-portrait .rc-photo-wide fig-alt="My yiayia and me as a little girl, sitting in the sand on a crowded beach."}
 
 Like many, I learned to cook from my grandmother. But, unlike many, I learned from my *yiayia* (γιαγιά, Greek for grandmother). When I think of my yiayia, Mary, I picture her in the kitchen. She didn't cook just because people needed feeding (although I'm sure that gave her a lot of joy). I think she loved the kitchen because it was her craft, the place where she had the most freedom to create.
 
-She was born in the 1920s, the second of five children of parents who had immigrated from Greece. I often wonder what it was like to be a child then, trying to find your place in a world that was so foreign to your parents. We learn so much from our parents without realizing it, and she learned the art of cooking from her mother. I have plenty of stories from that kitchen, and a green tin recipe box full of recipes written in Greek. I imagine she was lucky to discover a craft: partly passed down through tradition, partly because she was the eldest girl, and partly because she had a gift for hospitality.
+She was born in the 1920s, the eldest of five children of parents who had immigrated from Greece. I often wonder what it was like to be a child then, trying to find your place in a world that was so foreign to your parents. We learn so much from our parents without realizing it, and she learned the art of cooking from her mother. I have plenty of stories from that kitchen, and a green tin recipe box full of recipes written in Greek. I imagine she was lucky to discover a craft: partly passed down through tradition, partly because she was the eldest girl, and partly because she had a gift for hospitality.
 
-![](images/yiayia.jpg){.rc-portrait .rc-portrait-left .rc-photo-small fig-alt="My yiayia, Mary, smiling outdoors in front of a brick wall and a leafy tree. She has short white hair and lavender-tinted glasses, and wears a black patterned sweater with a gold brooch."}
+![](images/yiayia.jpg){.rc-portrait .rc-portrait-left .rc-photo-small fig-alt="My yiayia, Mary, dressed up for my sister's high school graduation. Always wearing a fashionable pin or brooch."}
 
 These recipes come from her collection. Some are her own, and some came from the friends and family she cooked with: Ero's kourabiedes, Vivian's pumpkin pie, RoseAnn's cheesecake, and a pie crust from Mrs. Myer's mother in Tilson, New York.
 
 Like the ones in that green tin box, a lot of the recipes passed down to me call for things like "a dash of ouzo" or "a couple of spoonfuls of sugar." So I'm working through each of her recipes to give more precise measurements, because not everyone has a yiayia on standby. Cooking was something that she freely shared, and I hope to do the same here.
 
-![](images/waffles-web.jpg){.rc-portrait fig-alt="Me in my kitchen wearing a dark apron, smiling and holding a plate stacked with golden waffles."}
+![](images/waffles-web.jpg){.rc-portrait fig-alt="Me, holding a plate of warm, carmelized liege waffles."}
 
 I'm happy to have found something that I enjoy so much, and I thank my yiayia for all those days in the kitchen when we would create together. I love it when I make something and think, "This tastes like what my yiayia would make."
 
